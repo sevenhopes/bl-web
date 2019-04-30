@@ -2,7 +2,7 @@
 *.zip
 *.gif
 *.png
-*.jp[e]g
+*.jp*g
 bl-media (legacy)/
 bl-media-library/
 wp-admin/
