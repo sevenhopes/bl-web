@@ -1,0 +1,11 @@
+# ignore all dirs & files
+*/
+*.*
+
+# only allow this dir
+!wp-content/
+!wp-content/themes/
+!wp-content/themes/2017-child/
+!wp-content/themes/2017-child/*/
+!.gitignore
+
