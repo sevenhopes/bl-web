@@ -261,18 +261,6 @@ html[lang="ko-KR"] h6 {
 8.0 Lists
 --------------------------------------------------------------*/
 
-ul,
-ol {
-	list-style: none outside url( 'http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/ul-bullet.gif' );
-	padding-left: 1em;
-	line-height: 1.2;
-}
-
-ul li,
-ol li {
-	padding-top: 0.4em;
-}
-
 /*--------------------------------------------------------------
 9.0 Tables
 --------------------------------------------------------------*/
@@ -416,12 +404,10 @@ a:active {
 }
 
 .main-navigation li li {
-	/*border-bottom: 1px solid #ddd;*/
-	/*padding: 0 1em;*/
 	border-bottom: 0;
 }
 
-.main-navigation li li:after {
+.main-navigation li li:after { /* border-bottom effect */
 	content: "";
 	background: #ddd;
 	position: absolute;
@@ -889,6 +875,10 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	background-color: #eee;
 }
 */
+#bl-front-page-ko .bl-block-title {
+	padding-top: 1rem;
+}
+
 #bl-front-page-ko .bl-item-title {
 	font-weight: 400;
 }
@@ -1108,6 +1098,18 @@ body:not(.twentyseventeen-front-page) .entry-header {
 13.5 Pages
 --------------------------------------------------------------*/
 
+.site-content ul,
+.site-content ol {
+	list-style: none outside url( 'http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/ul-bullet.gif' );
+	padding-left: 1em;
+	line-height: 1.2;
+}
+
+.site-content ul li:not(:first-child),
+.site-content ol li:not(:first-child) {
+	padding-top: 1em;
+}
+
 .page .bl-more {
 	float: right;
 	text-align: right;
@@ -1155,7 +1157,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .bl-block-title {
-	padding: 1rem 0 0.4rem;
+	padding: 1.5rem 0 0.4rem;
 }
 
 .bl-item-title {
@@ -1177,9 +1179,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	display: inline-block;
 	vertical-align: top;
 	color: #ddd;
+	font-size: 1rem;
 	font-weight: 500;
 	letter-spacing: 0;
-	margin-top: -0.25em;
+	margin-top: 0.5em;
+	padding-top: 0;
 }
 
 .bl-quiet-title {
