@@ -1279,9 +1279,6 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-weight: 900;
 	vertical-align: middle;
 	margin-right: -55px;
-	/*display: inline;*/
-	/*top: 0;*/
-	/*left: 0;*/
 }
 
 #foundation-story {
@@ -1302,8 +1299,6 @@ body:not(.twentyseventeen-front-page) .entry-header {
 #teachers .bl-t-pic {
 	display: inline-block;
 	padding-bottom: -0.525rem;
-	/*max-width: 90px;*/
-	/*max-height: 120px;*/
 }
 
 #teachers .bl-t-info {
