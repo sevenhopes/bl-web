@@ -1,15 +1,18 @@
+# root dir's all files
 /*.*
+# image files in any dir
 *.zip
 *.gif
 *.png
 *.jp*g
+# dirs
 bl-media (legacy)/
 bl-media-library/
 wp-admin/
 wp-includes/
-#wp-content files and dirs
+# wp-content/ files and dirs
 index.php
 bl-responsive/
 twenty*/
-
+# don't ignore myself :)
 !.gitignore
