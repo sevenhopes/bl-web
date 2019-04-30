@@ -7,5 +7,5 @@
 !wp-content/themes/
 !wp-content/themes/2017-child/
 !wp-content/themes/2017-child/*/
+!wp-content/themes/2017-child/*
 !.gitignore
-
