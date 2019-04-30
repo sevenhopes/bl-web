@@ -1,5 +1,4 @@
 # ignore all dirs & files
-*/
 *.*
 
 # only allow this dir
