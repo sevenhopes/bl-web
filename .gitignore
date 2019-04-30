@@ -1,7 +1,12 @@
-# ignore all dirs & files
-*.*
+/*.*
+*.zip
+bl-media (legacy)/
+bl-media-library/
+wp-admin/
+wp-includes/
+#wp-content files and dirs
+index.php
+bl-responsive/
+twenty*/
 
-# only allow this dir
-!2017-child/
-!2017-child/*
 !.gitignore

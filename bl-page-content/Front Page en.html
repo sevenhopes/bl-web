@@ -1,0 +1,168 @@
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+
+		<!-- <header class="bl-front-page-pre-content">
+			<h1 class="bl-main-title">브릿지라잇 어학원</h1>
+		</header> -->
+
+		<h1><b>Explore</b> Bridge Light</h1>
+		<!-- <p>브릿지라잇을 둘러보세요</p> -->
+
+		<div class='bl-embed-container'>
+			<iframe src='https://www.youtube.com/embed//MljNT4bBcEg' frameborder='0' allowfullscreen></iframe>
+		</div>
+
+		<p>normal text looks like me!</p>
+
+		<h1><b>Admission</b></h1>
+		<!-- <p>등록 과정</p> -->
+
+		<p>normal text looks like me!</p>
+
+		<h2><b>Why</b> Bridge Light</h2>
+		<!-- <p>왜 브릿지라잇인가요</p> -->
+
+		<p>normal text looks like me!</p>
+
+		<h3><b>We</b> Speak English</h3>
+		<!-- <p>우리는 영어로 말합니다</p> -->
+
+		<p>normal text looks like me!</p>
+
+		<h4><b>Care</b> in Love</h4>
+		<!-- <p>사랑으로 살피는 교육</p> -->
+
+		<p>normal text looks like me!</p>
+
+		<h5><b>Quick</b> Level Test</h5>
+		<!-- <p>등록 테스트 체험</p> -->
+
+		<p>normal text looks like me!</p>
+
+		<h6><b>Starting</b> in the Middle of a Semester</h6>
+		<!-- <p>학기 중간에 시작하기</p> -->
+
+		<p>normal text looks like me!</p>
+
+		<p></p>		
+		<div style="clear:both;">
+
+		<h1>Header Popup Overlay Link</h1>
+		<a href="http://www.youtube.com" style="display:block;height:200px;width:200px;background:#007eff;"></a>
+
+		<p></p>		
+		<div style="clear:both;">
+
+
+		<h1>Tap to Dial</h1>
+		<a href="tel:033-243-5757" rel="nofollow">저를 <span style="font-size:large;">터치</span>하면 바로 예약 전화</a>
+
+		<p></p>
+		<div style="clear:both;">
+
+		<!-- BL Google Calendar: Monthly View -->
+		<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=400&amp;wkst=1&amp;hl=ko&amp;bgcolor=%23FFFFFF&amp;src=bridgelightels.com_ja99fp5euiivkgiu5vqtf76d0o%40group.calendar.google.com&amp;color=%23060D5E&amp;ctz=Asia%2FSeoul" style="border-width:0" width="600" height="400" frameborder="0" scrolling="no"></iframe>
+
+		<!-- BL Google Calendar: Agenda -->
+		<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=bridgelightels.com_ja99fp5euiivkgiu5vqtf76d0o%40group.calendar.google.com&amp;color=%23182C57&amp;ctz=Asia%2FSeoul" style="border-width:0" width="400" height="400" frameborder="0" scrolling="no"></iframe>
+
+
+		<!-- BL Getting RSS Feed 1 -->
+		<!--
+		<?php //$rss=simplexml_load_file('http://blog.bridgelightels.com/rss'); ?>
+		<h3><?php //echo $rss->channel->title; ?></h3>
+		<ul>
+		<?php //foreach ($rss->channel->item as $chan): ?>
+			제목: <?php //echo $chan->title; ?><br>
+			글 내용: <?php //echo $chan->description; ?><br>
+			Tag: <?php //echo $chan->tag; ?><br><br>
+		<?php //endforeach; ?>
+		-->
+
+
+		<!-- BL Getting RSS Feed 2 -->
+		<h1>Importing Blog Posts</h1>
+		<?php _e( '5 Recent Posts of BL Blog:', 'my-text-domain' ); ?>
+
+		<?php
+		include_once( ABSPATH . WPINC . '/feed.php' );
+
+		// 지정된 피드 소스에서 SimplePie 피드 개체 가져오기
+		$rss = fetch_feed( 'http://blog.bridgelightels.com/rss' );
+
+		if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
+			// 총 항목 확인하기 - 5개로 제한
+			$maxitems = $rss->get_item_quantity( 5 );
+			// 엘리먼트 0(첫 번째 엘리먼트)부터 모든 항목 배열 빌드하기
+			$rss_items = $rss->get_items( 0, $maxitems );
+		endif;
+		?>
+		<ul style="list-style-type:disc;">
+			<?php if ( $maxitems == 0 ) : ?>
+				<li><?php _e( 'No items', 'my-text-domain' ); ?></li>
+			<?php else : ?>
+				<?php // Loop through each feed item and display each item as a hyperlink. ?>
+				<?php foreach ( $rss_items as $item ) : ?>
+					<li>
+						<a href="<?php echo esc_url( $item->get_permalink() ); ?>"
+							title="<?php printf( __( 'Posted %s', 'my-text-domain' ), $item->get_date('j F Y | g:i a') ); ?>">
+							<?php echo esc_html( $item->get_title() ); ?>
+						</a>
+					</li>
+				<?php endforeach; ?>
+			<?php endif; ?>
+		</ul>
+
+
+
+
+
+		<?php
+		// Show the selected front page content.
+		if ( have_posts() ) :
+			while ( have_posts() ) :
+				the_post();
+				get_template_part( 'template-parts/page/content', 'front-page' );
+			endwhile;
+		else :
+			get_template_part( 'template-parts/post/content', 'none' );
+		endif;
+		?>
+
+		<?php
+		// Get each of our panels and show the post data.
+		if ( 0 !== twentyseventeen_panel_count() || is_customize_preview() ) : // If we have pages to show.
+
+			/**
+			 * Filter number of front page sections in Twenty Seventeen.
+			 *
+			 * @since Twenty Seventeen 1.0
+			 *
+			 * @param int $num_sections Number of front page sections.
+			 */
+			$num_sections = apply_filters( 'twentyseventeen_front_page_sections', 4 );
+			global $twentyseventeencounter;
+
+			// Create a setting and control for each of the sections available in the theme.
+			for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
+				$twentyseventeencounter = $i;
+				twentyseventeen_front_page_section( null, $i );
+			}
+
+		endif; // The if ( 0 !== twentyseventeen_panel_count() ) ends here.
+		?>
+
+
+
+
+		<p>e</p>
+		<p>d</p>
+		<p>c</p>
+		<p>b</p>
+		<p>a</p>
+
+
+	</main><!-- #main -->
+</div><!-- #primary -->
+
+<?php get_footer();
