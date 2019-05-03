@@ -135,9 +135,9 @@ h6 {
 	clear: both;
 	line-height: 1.15;
 	color: #222;
-	margin: 0;
+	padding: 0;
 	/*letter-spacing: -1px;*/
-	padding: 0.5em 0 0;
+	margin: 0.5em 0 0;
 }
 
 h1:first-child,
@@ -146,7 +146,7 @@ h3:first-child,
 h4:first-child,
 h5:first-child,
 h6:first-child {
-	/*padding-top: 0.5em;*/
+	/*margin-top: 0.5em;*/
 }
 
 h1 {
@@ -587,8 +587,8 @@ a.skip-link {
 
 .custom-header {
 	display: table;
-	margin: none;
-	padding: none;
+	margin: 0;
+	padding: 0;
 	min-width: 100vw;
 }
 
@@ -868,22 +868,23 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 
 #bl-front-page-ko .bl-block {
-	padding-bottom: 1.5em;
+	/*margin-bottom: 1.5em;*/
 }
 /*
 #bl-front-page-ko .bl-block:nth-child(even) {
 	background-color: #eee;
 }
 */
-#bl-front-page-ko .bl-block-title {
-	padding-top: 1rem;
+#bl-front-page-ko .bl-block-header {
+	/*margin-top: 1rem;*/
 }
 
-#bl-front-page-ko .bl-item-title {
+#bl-front-page-ko .bl-block-title {
+	display: block;
 	font-weight: 400;
 }
 
-#bl-front-page-ko .bl-item-title:first-letter {
+#bl-front-page-ko .bl-block-title:first-letter {
 	font-weight: 400;
 }
 
@@ -895,14 +896,11 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 
 #bl-hero-update {
-	margin-top: 0.5em;
-}
-
-#bl-hero-update .wp-caption-text {
-	text-align: right;
+	/*margin-top: 0.5em;*/
 }
 
 #bl-news {
+	padding-bottom: 0.5rem;
 }
 
 #bl-news .bl-news-list {
@@ -959,7 +957,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	margin: 0;
 	font-size: 1rem;
 	line-height: 1.2;
-	padding: 0.3em 0 0.25em 0.5em;
+	margin: 0.3em 0 0.25em 0.5em;
 }
 
 #bl-news .bl-news-content .bl-news-title {
@@ -969,17 +967,16 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 #bl-news .bl-news-content time {
 	margin: 0;
-	padding-top: 0.25em;
+	margin-top: 0.25em;
 }
 
 #bl-why-bl-frontpage {
 }
 
 #bl-curriculum {
-	display: inline-block;
 	max-width: 91.11vw;
 	width: 91.11vw;
-	padding-bottom: 1em;
+	/*margin-bottom: 1em;*/
 }
 
 #bl-curriculum .bl-hide-overflow {
@@ -996,7 +993,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 #bl-fact {
 	padding-right: 0;
-	padding-bottom: 1em;
+	/*margin-bottom: 1em;*/
 }
 
 #bl-fact .bl-fact-list {
@@ -1004,10 +1001,9 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 
 #bl-fact .bl-icon-li { /* li: list item */
-	padding: 0;
 	width: 100%;
+	padding: 0 0 0 0.75em;
 	margin-top: 1em;
-	padding-left: 0.75em;
 }
 
 #bl-fact .bl-icon-li:first-of-type {
@@ -1028,6 +1024,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	letter-spacing: 0;
 	margin-left: 0.75em;
 	margin-top: 0.25em;
+	text-indent: 0;
 }
 
 #bl-fact .bl-icon-li p b {
@@ -1103,11 +1100,12 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	list-style: none outside url( 'http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/ul-bullet.gif' );
 	padding-left: 1em;
 	line-height: 1.2;
+	margin: 0.5rem 0;
 }
 
 .site-content ul li:not(:first-child),
 .site-content ol li:not(:first-child) {
-	padding-top: 1em;
+	margin-top: 0.75em;
 }
 
 .page .bl-more {
@@ -1115,16 +1113,22 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	text-align: right;
 }
 
-.page .wp-caption-text {
-	margin-top: 0.25em;
-	margin-bottom: 0.25em;
+.page h3 {
+	color: #555;
 }
 
 .bl-page-header {
 	position: static;
+	/*padding: 0;*/
+	margin-bottom: 1.5rem;
 }
 
 .bl-page-header-media {
+	/*line-height: 0*/;
+}
+
+.bl-page-header-media img {
+	display: block;
 }
 
 .bl-heading {
@@ -1140,7 +1144,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-size: 2rem;
 	letter-spacing: -1px !important;
 	word-spacing: 5px;
-	padding: 0.75em 0 0;
+	/*padding*/: 0.75em 0 0;
+	margin-top: 0.75em;
 	color: rgb( 18, 101, 255 );
 	text-align: center;
 	position: static;
@@ -1151,8 +1156,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	color: #333;
 	font-weight: 400;
 	display: block;
-	margin: 0 0 1.5rem;
 	padding: 0;
+	margin: 0;
 	text-align: center;
 }
 
@@ -1160,13 +1165,44 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	margin-left: auto;
 	margin-right: auto;
 	min-width: 100vw;
+	padding: 0;
+	margin: 2rem 0;
+	/*box-shadow: 0px 5px 5px #ddd;*/
 }
 
+.bl-block.bl-first {
+	/*margin-top: 0;*/
+}
+
+.bl-block:last-child {
+	margin-bottom: 1.5rem;
+}
+
+.bl-block-header {
+	
+}
+
+.bl-block-header-media {
+	position: relative;
+	margin: 0.5em 0;
+}
+
+.bl-block-header-media img {
+	display: block;
+}
+
+.bl-block-header-media figure {
+	margin: 0 0 0.5rem;
+}
+/*
+.bl-block-header-media .bl-block-title {
+	position: absolute;
+	top: 0.2rem;
+	left: 0.2rem;
+	text-shadow: 1px 0px 1px #fff, -1px 0px 1px #fff, 0px 1px 1px #fff, 0px -1px 1px #fff;
+}
+*/
 .bl-block-title {
-	padding: 1.5rem 0 0.4rem;
-}
-
-.bl-item-title {
 	display: inline-block;
 	color: rgb( 24, 32, 170 );
 	font-size: 28px;
@@ -1174,9 +1210,10 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-weight: 500;
 	padding: 0 0 0 0.5rem;
 	line-height: 1.15;
+	margin: 0.5rem 0;
 }
 
-.bl-item-title:first-letter {
+.bl-block-title:first-letter {
 	font-weight: 900;
 }
 
@@ -1212,20 +1249,20 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .bl-wrap-more {
-	padding: 0 1.5em;
+	padding: 0 1.5rem;
 }
 
 .bl-block.bl-dark {
 	background: #111777;
 	color: #fff;
-	margin-top: 1em;
+	padding: 1em 0;
+}
+
+.bl-block.bl-dark .bl-block-header {
+	/*margin-top: 0.5em;*/
 }
 
 .bl-block.bl-dark .bl-block-title {
-	padding-top: 0.5em;
-}
-
-.bl-block.bl-dark .bl-item-title {
 	color: #fff;
 }
 
@@ -1446,7 +1483,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 #semester thead th {
-	padding-bottom: 0.3em;
+	margin-bottom: 0.3em;
 }
 
 #semester th {
@@ -1501,8 +1538,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .site-footer .wrap {
-	padding-bottom: 1.5em;
-	padding-top: 2em;
+	margin-bottom: 1.5em;
+	margin-top: 2em;
 }
 
 .social-navigation {
@@ -1563,7 +1600,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0;
+	margin: 0.25em 0.5em 0.25em 0;
 	text-align: right;
 }
 
