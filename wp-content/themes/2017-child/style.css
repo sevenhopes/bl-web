@@ -1127,6 +1127,14 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-page-header-media {
 }
 
+.bl-heading {
+	font-size: 1rem;
+	font-weight: 500;
+	color: #ddd;
+	letter-spacing: 0;
+	vertical-align: top;
+}
+
 .bl-page-title {
 	font-size: 32px;
 	font-size: 2rem;
@@ -1141,10 +1149,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-page-header h1.bl-heading {
 	display: block;
 	color: #333;
-	font-size: 1rem;
 	font-weight: 400;
 	display: block;
-	vertical-align: middle;
 	margin: 0 0 1.5rem;
 	padding: 0;
 	text-align: center;
@@ -1167,8 +1173,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-size: 1.75rem;
 	font-weight: 500;
 	padding: 0 0 0 0.5rem;
-	/*text-align: left;*/
-	/*display: block;*/
+	line-height: 1.15;
 }
 
 .bl-item-title:first-letter {
@@ -1177,12 +1182,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .bl-block h2.bl-heading {
 	display: inline-block;
-	vertical-align: top;
-	color: #ddd;
-	font-size: 1rem;
-	font-weight: 500;
-	letter-spacing: 0;
-	margin-top: 0.5em;
+	margin-top: 0.2em;
 	padding-top: 0;
 }
 
@@ -1190,6 +1190,21 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	color: #999;
 	font-weight: 400;
 	margin: 0.5em 0 0.1em;
+}
+
+.bl-child-item-title {
+	display: inline-block;
+	color: #555;
+	font-size: 20px;
+	font-size: 1.25rem;
+	font-weight: 500;
+	/*padding: 0 0 0 0.5rem;*/
+	line-height: 1.15;
+}
+
+.bl-child-item-title + .bl-heading {
+	display: inline-block;
+	margin-top: -0.2em;
 }
 
 .bl-wrap {
@@ -1288,6 +1303,9 @@ body:not(.twentyseventeen-front-page) .entry-header {
 #foundation-story {
 }
 
+#collaboration {
+}
+
 #teachers {
 }
 
@@ -1329,75 +1347,78 @@ body:not(.twentyseventeen-front-page) .entry-header {
 #teachers .bl-t-charge {
 }
 
-#curriculum h5 { /* 교육 과정 페이지 */
+#support-and-services {
+}
+
+#course-overview h5 { /* 교육 과정 페이지 */
 	color: #555;
 	font-weight: 300;
 	margin-left: 0;
 	margin-bottom: 0.25rem;
 }
 
-#curriculum .basic {
+#course-overview .basic {
 	background-color: #e8a10e;
 }
 
-#curriculum .special {
+#course-overview .special {
 	background-color: #a21a1a;
 }
 
-#curriculum .stage {
+#course-overview .stage {
 	background-color: #2c33c8;
 }
 
-#curriculum .w-camp {
+#course-overview .w-camp {
 	background-color: #1aa021;
 }
 
-#curriculum .s-camp {
+#course-overview .s-camp {
 	background-color: #1aa021;
 }
 
-#curriculum .a-camp {
+#course-overview .a-camp {
 	background-color: #1165ff;
 }
 
-#curriculum .test-p {
+#course-overview .test-p {
 	background-color: #1cbbb4;
 }
 
-#curriculum .bldg-s {
+#course-overview .bldg-s {
 	background-color: #1cbbb4;
 }
 
-#curriculum .e-contest {
+#course-overview .e-contest {
 	background-color: #1cbbb4;
 }
 
-#curriculum .halloween {
+#course-overview .halloween {
 	background-color: #1cbbb4;
 }
 
-#curriculum .christmas {
+#course-overview .christmas {
 	background-color: #1cbbb4;
 }
 
-#curriculum .bl-grid-square > div {
+#course-overview .bl-grid-square > div {
 	position: relative;
 }
 
-#curriculum .bl-grid-square > div a,
-#curriculum .bl-grid-square > div a:hover,
-#curriculum .bl-grid-square > div a:active {
+#course-overview .bl-grid-square > div a,
+#course-overview .bl-grid-square > div a:hover,
+#course-overview .bl-grid-square > div a:active {
 	color: #fff;
 	display: block;
 }
 
-#curriculum .bl-grid-square > div span {
+#course-overview .bl-grid-square > div span {
 	display: block;
 	padding: 1em 0.4em;
 	height: 50%;
 }
 
-#curriculum .bl-grid-square > div span.desc {
+#course-overview .bl-grid-square > div span.desc {
 	font-size: 0.75em;
 	position: absolute;
 	bottom: 0;
@@ -1408,12 +1429,35 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	text-align: center;
 }
 
-#curriculum ul {
+#course-overview ul {
 	/*list-style: none outside url( 'http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/ul-bullet.gif' );*/
 	/*padding-left: 1em;*/
 }
 
 #semester {
+}
+
+#semester table {
+	line-height: 1.15;
+}
+
+#semester thead {
+	color: rgb( 24, 32, 170 );
+}
+
+#semester thead th {
+	padding-bottom: 0.3em;
+}
+
+#semester th {
+	font-weight: 500;
+}
+
+#semester td {
+}
+
+#semester .colspan {
+	text-align: center;
 }
 
 #semester .basic {
@@ -1423,6 +1467,29 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 #semester .stage {
+}
+
+#extracurricular {
+}
+
+#extracurricular .x-e-contest {
+
+}
+
+#extracurricular .x-test-p {
+
+}
+
+#extracurricular .x-bldg-s {
+
+}
+
+#extracurricular .x-halloween {
+
+}
+
+#extracurricular .x-christmas {
+
 }
 
 /*--------------------------------------------------------------
