@@ -14,5 +14,6 @@ wp-includes/
 index.php
 bl-responsive/
 twenty*/
+_template.html
 # don't ignore myself :)
 !.gitignore
