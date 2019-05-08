@@ -27,11 +27,11 @@
 
 		// 프론트 페이지: 시간차를 두고 히어로 이미지 위의 헤더 html element들을 단계적 애니메이션으로 보여줌
 		if ( isFrontPage ) {
-			// $navTop.hide();	// coded in css
+			// $navTop.hide();	// coded in style.css
 
 			setTimeout(
 				function() {
-					$branding.addClass( 'bl-fade-in' );
+					$branding.addClass( 'bl-fade-in' );	// css로 효과 적용
 					$heroText.addClass( 'bl-fade-in' );
 					setTimeout( function() { $heroButton.addClass( 'bl-fade-in' ); }, 600 );
 					setTimeout( blinkHeroButton, 600 );
@@ -53,6 +53,25 @@
 		// 다른 페이지: 헤더 로고 (.custom-logo-link img) 만 보여주고, 히어로 이미지 (.custom-header-media) 숨김
 		} else {
 			$branding.css( { 'top' : '0', 'opacity' : '1' } );
+
+			// 네이버 지도 객체 생성
+			if ( $body.find( '#bl-map').length ) {
+				var location = new naver.maps.LatLng( 37.868873, 127.715002 );
+				var map = new naver.maps.Map( 'bl-map', {
+					center: location,
+					zoom: 12
+				});
+				var marker = new naver.maps.Marker( {
+					position: location.destinationPoint(90, 15),
+					map: map,
+					icon: {
+						url: 'http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/map-marker.png',
+						size: new naver.maps.Size( 100, 100 ),
+						// origin: new naver.maps.Point( 0, 0 ),
+						anchor: new naver.maps.Point( 50, 50 )
+				    }
+				} );
+			}
 		}
 
 		if ( ! $blMenuToggle.length ) {

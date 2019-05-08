@@ -780,7 +780,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	bottom: 20vh;
+	bottom: 23vh;
 	overflow: visible;
 	width: 100%;
 	height: auto;
@@ -805,7 +805,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	position: absolute;
 	left: 0;
 	right: 0;
-	bottom: 10vh;
+	bottom: 14vh;
 	width: 160px;
 	width: 10em;
 	height: 35.2px;
@@ -823,6 +823,35 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .home #bl-hero-button.bl-fade-in {
 	opacity: 1;
+}
+
+.home #bl-direct-buttons {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 0;
+	background-color: rgb( 12, 16, 85 );
+	padding: 0.5em;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 9;
+}
+
+#bl-direct-buttons > div {
+	/*border-right: 1px solid #333;*/
+	border-right: 1px solid rgb( 7, 40, 102 );
+}
+
+#bl-direct-buttons > div:last-child {
+	border-right: 0;
+}
+
+#bl-direct-buttons img {
+	vertical-align: middle;
+}
+
+#bl-direct-buttons {
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -890,9 +919,6 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 #bl-front-page-ko p {
 	text-indent: 0;
-}
-
-#bl-contact {
 }
 
 #bl-hero-update {
@@ -1144,8 +1170,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-size: 2rem;
 	letter-spacing: -1px !important;
 	word-spacing: 5px;
-	/*padding*/: 0.75em 0 0;
-	margin-top: 0.75em;
+	/*padding: 0.75em 0 0;*/
+	margin-top: 0.5em;
 	color: rgb( 18, 101, 255 );
 	text-align: center;
 	position: static;
@@ -1170,8 +1196,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	/*box-shadow: 0px 5px 5px #ddd;*/
 }
 
-.bl-block.bl-first {
-	/*margin-top: 0;*/
+.bl-block:nth-child(2) {
+	margin-top: 1.5rem;
 }
 
 .bl-block:last-child {
@@ -1527,6 +1553,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 #extracurricular .x-christmas {
 
+}
+
+#bl-map {
+	width: 100%;
+	height: 320px;
 }
 
 /*--------------------------------------------------------------
