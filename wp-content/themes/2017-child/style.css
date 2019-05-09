@@ -343,15 +343,19 @@ a:active {
 
 .navigation-top .current-menu-item > a,
 .navigation-top .current_page_item > a {
-	/*color: #777;*/
 	color: rgb( 70, 160, 255 );
-	font-weight: 500;
+	font-weight: 400;
 }
 
 .navigation-top .current-menu-item > a:hover,
 .navigation-top .current_page_item > a:focus,
-.navigation-top .current-menu-parent > a { /* 현재 페이지의 메뉴를 밝게 표시 */
+.navigation-top .current-menu-parent > a { /* 현재 페이지에 해당하는 메뉴를 밝게 표시 */
 	color: rgb( 70, 160, 255 );
+}
+
+.navigation-top .current_page_parent.current-menu-item > a,
+.navigation-top .current_page_parent.current_page_item > a {
+	font-weight: 300;
 }
 
 .main-navigation > div > ul {
@@ -408,7 +412,7 @@ a:active {
 	border-bottom: 0;
 }
 
-.main-navigation li li:after { /* border-bottom effect */
+.main-navigation li li:after { /* 서브메뉴 사이 경계선 효과 */
 	content: "";
 	background: #ddd;
 	position: absolute;
