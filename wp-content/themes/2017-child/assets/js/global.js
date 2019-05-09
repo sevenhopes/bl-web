@@ -189,11 +189,15 @@
 			} );
 		}
 
-		// 페이지 로드 시 현재 페이지가 속한 서브메뉴(드롭다운 메뉴)를 미리 펼치고 있게 함
+		// 현재 페이지가 속한 메뉴를 표시
 		if ( $currentMenuParent.length ) {
+			$currentMenuParent.addClass( 'bl-imhere' );
+		}
+		// 페이지 로드 시 현재 페이지가 속한 서브메뉴(드롭다운 메뉴)를 미리 펼치고 있게 함
+/*		if ( $currentMenuParent.length ) {
 			$currentMenuParent.addClass( 'toggled-on' );
 		}
-		// SVG 이미지 처리 (부모테마 Twentyseventeen에서 가져옴)
+*/		// SVG 이미지 처리 (부모테마 Twentyseventeen에서 가져옴)
 		if ( true === supportsInlineSVG() ) {
 			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
 		}

@@ -349,7 +349,8 @@ a:active {
 }
 
 .navigation-top .current-menu-item > a:hover,
-.navigation-top .current_page_item > a:focus {
+.navigation-top .current_page_item > a:focus,
+.navigation-top .current-menu-parent > a { /* 현재 페이지의 메뉴를 밝게 표시 */
 	color: rgb( 70, 160, 255 );
 }
 
@@ -465,7 +466,7 @@ a:active {
 }
 
 /* 비활성화: 부모 테마의 menu-toggle, menu-scroll-down */
-
+/*
 .menu-toggle {
 	display: none !important;
 }
@@ -473,7 +474,7 @@ a:active {
 .menu-scroll-down {
 	display: none !important;
 }
-
+*/
 /* 자식 테마를 위한 새로운 Menu Toggle (메뉴 보여주기 버튼) */
 
 #bl-menu-toggle {

@@ -43,12 +43,17 @@
 	</header><!-- #masthead -->
 
 	<?php 
-		// 부모테마 <header> 안의 <div .navigation-top>을 <header #masthead> 밖으로 꺼냄,
-		// 왜냐하면 메인페이지 이외의 페이지에서는 헤더보다 메뉴가 더 크기 때문.
+		// 1 부모테마 <header> 안의 <div .navigation-top>을 <header #masthead> 밖으로 꺼냄,
+		//   왜냐하면 메인페이지 이외의 페이지에서는 헤더보다 메뉴가 더 크기 때문.
+		// 2 부모테마 template-parts/navigation/navigation-top.php 대신 여기에 하드코딩.
+		// 3 사용하지 않는 .menu-toggle과 .menu-scroll-down을 삭제 (대신 header-image.php 안에서 .bl-menu-toggle을 사용)
 	if ( has_nav_menu( 'top' ) ) : ?>
 		<div class="navigation-top">
 			<div class="wrap">
-				<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+				<?php // get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+				<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentyseventeen' ); ?>">
+					<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_id' => 'top-menu', ) ); ?>
+				</nav>
 			</div><!-- .wrap -->
 		</div><!-- .navigation-top -->
 	<?php endif; ?>
