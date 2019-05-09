@@ -353,7 +353,7 @@ a:active {
 	color: rgb( 70, 160, 255 );
 }
 
-.navigation-top .current_page_parent.current-menu-item > a,
+.navigation-top .current_page_parent.current-menu-item > a, /* 현재 페이지가 서브메뉴가 없는 부모메뉴에 해당할 때 */
 .navigation-top .current_page_parent.current_page_item > a {
 	font-weight: 300;
 }
