@@ -23,11 +23,11 @@
 
 <meta property="og:site_name" content="브릿지라잇 어학원">
 <meta property="og:url" content="http://www.bridgelightels.com/m/">
-<meta property="og:image" content="http://www.bridgelightels.com/m/wp-content/uploads/2019/04/og-image-1200x630.jpg">
+<meta property="og:image" content="http://www.bridgelightels.com/m/wp-content/uploads/2019/05/og-image-1200x630.jpg">
 <meta property="og:image:height" content="630">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:type" content="image/jpeg">
-<meta property="og:description" content="상담예약: 033-243-5757 / 우수한 강사진 / 영어의 생활화 / 말하기, 듣기, 읽기, 쓰기 4대영역 통합교육 / TOEIC, TEPS 시험영어 / 춘천시 영어학원은 브릿지라잇 / 온의동 영어학원은 브릿지라잇">
+<meta property="og:description" content="상담예약: 033-243-5757 / 영어의 생활화 / 우수한 강사진 / 말하기, 듣기, 읽기, 쓰기 4대영역 통합교육 / TOEIC, TEPS 시험영어 / 여름/겨울방학 영어캠프 / 춘천시 전역 버스운행 / 춘천 영어학원 / 온의동 영어학원">
 <meta property="og:title" content="<?php the_title(); ?> - 브릿지라잇 어학원">
 <meta property="og:type" content="article">
 </head>
@@ -42,8 +42,10 @@
 
 	</header><!-- #masthead -->
 
-	<?php //부모테마 <header> 안의 <div .navigation-top>을 <header #masthead> 밖으로 꺼냄. ?>
-	<?php if ( has_nav_menu( 'top' ) ) : ?>
+	<?php 
+		// 부모테마 <header> 안의 <div .navigation-top>을 <header #masthead> 밖으로 꺼냄,
+		// 왜냐하면 메인페이지 이외의 페이지에서는 헤더보다 메뉴가 더 크기 때문.
+	if ( has_nav_menu( 'top' ) ) : ?>
 		<div class="navigation-top">
 			<div class="wrap">
 				<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
