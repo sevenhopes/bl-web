@@ -3,6 +3,8 @@
  * Theme functions file.
  *
  * Contains handlers for navigation and widget area.
+ *
+ * 부분 수정을 위해 부모테마에서 가져온 코드
  */
 
 (function( $ ) {
@@ -17,8 +19,9 @@
 
 		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
 
+/*		현재 페이지에 해당 하는 드롭다운 메뉴 펼치기를 하지 않음
 		// Set the active submenu dropdown toggle button initial state.
-/*		container.find( '.current-menu-ancestor > button' )
+		container.find( '.current-menu-ancestor > button' )
 			.addClass( 'toggled-on' )
 			.attr( 'aria-expanded', 'true' )
 			.find( '.screen-reader-text' )
@@ -73,7 +76,7 @@
 
 		// Toggle `focus` class to allow submenu access on tablets.
 		function toggleFocusClassTouchScreen() {
-			if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
+			if ( 'none' === $( '.bl-menu-toggle' ).css( 'display' ) ) {
 
 				$( document.body ).on( 'touchstart.twentyseventeen', function( e ) {
 					if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {

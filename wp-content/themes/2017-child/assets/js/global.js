@@ -110,11 +110,14 @@
 
 		function blToggleNavigation( hide = false ) {
 			if ( ! $navTop.is( ':animated' ) ) {
+				// 메뉴 숨기기
 				if ( $navTop.is( ':visible' ) || hide ) {
 					$navTop.animate( { 'right' : '-100px', 'opacity' : '0' }, function() {
 						$navTop.hide();
 						blToggleNavCSS(); // 이걸 여기서 해야 애니메이션 중 메뉴가 사라짐을 방지
+						$siteNavContain.find( '.dropdown-toggle.toggled-on' ).trigger( 'click' );
 					} );
+				// 메뉴 보이기
 				} else {
 					blToggleNavCSS(); // 이걸 먼저 해야 아래 애니메이션 중 메뉴가 보임
 					$navTop.show().animate( { 'right' : '0', 'opacity' : '1' } );
@@ -141,7 +144,7 @@
 
 			blToggleDropdownMenu( clickedDropdown );
 
-			// 열려 있는 '다른' 서브메뉴(droppedMenu)는 닫음
+			// 열려 있는 '다른' 서브메뉴(droppedMenu)는 닫음; jquery 객체끼리의 비교는 .get(0)
 			if ( droppedMenu.get(0) !== clickedDropdown.get(0) ) {
 				blToggleDropdownMenu( droppedMenu );
 			}
