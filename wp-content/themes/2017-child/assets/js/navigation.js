@@ -9,7 +9,7 @@
  */
 
 (function( $ ) {
-	// HTML 페이지 준비? 땅!
+	// document.ready() 밖으로 꺼내면 .dropdown-toggle을 선택하지 못 함.
 	$( document ).ready( function() {
 
 		var masthead, menuToggle, siteNavContain, siteNavigation;
