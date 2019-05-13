@@ -10,7 +10,7 @@
 
 (function( $ ) {
 	// document.ready() 밖으로 꺼내면 .dropdown-toggle을 선택하지 못 함.
-	$( document ).ready( function() {
+	$( document ).on( 'pageinit', function() {
 
 		var masthead, menuToggle, siteNavContain, siteNavigation;
 
