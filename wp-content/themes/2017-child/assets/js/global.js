@@ -62,7 +62,16 @@
 	}
 
 	// HTML 페이지 준비? 땅!
-	$( document ).ready( function() {
+	$( document ).on( 'pageinit', function() {
+
+		// 페이지 로드 시 현재 페이지가 속한 서브메뉴(드롭다운 메뉴)를 미리 펼치고 있게 함
+/*		if ( $currentMenuParent.length ) {
+			$currentMenuParent.addClass( 'toggled-on' );
+		}
+*/		// SVG 이미지 처리 (부모테마 Twentyseventeen에서 가져옴)
+		if ( true === supportsInlineSVG() ) {
+			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
+		}
 
 		// 지도가 있는 페이지: 네이버 지도 객체 생성
 		if ( $body.find( '#bl-map').length ) {
@@ -82,15 +91,6 @@
 			    }
 			} );
 		}
-
-		// 페이지 로드 시 현재 페이지가 속한 서브메뉴(드롭다운 메뉴)를 미리 펼치고 있게 함
-/*		if ( $currentMenuParent.length ) {
-			$currentMenuParent.addClass( 'toggled-on' );
-		}
-*/		// SVG 이미지 처리 (부모테마 Twentyseventeen에서 가져옴)
-		if ( true === supportsInlineSVG() ) {
-			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
-		}
 	}); // End of $(document).ready()
 
 	/*
@@ -103,4 +103,9 @@
 		div.innerHTML = '<svg/>';
 		return 'http://www.w3.org/2000/svg' === ( 'undefined' !== typeof SVGRect && div.firstChild && div.firstChild.namespaceURI );
 	}
+
+	// Add header video class after the video is loaded.
+	$( document ).on( 'wp-custom-header-video-loaded', function() {
+		$body.addClass( 'has-header-video' );
+	});
 })( jQuery );
