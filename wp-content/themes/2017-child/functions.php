@@ -53,6 +53,7 @@ function bridgelight_fonts_url_noto_sans() {
 
 	return esc_url_raw( $fonts_url );
 }
+
 function bridgelight_fonts_url_kopub_batang() {
 	$fonts_url = '';
 
@@ -82,7 +83,7 @@ function bridgelight_fonts_url_kopub_batang() {
 /**
  * 2017 Child: Customizer
  *
- * 관리자 화면의 테마 customize(사용자 정의하기)에서 변경 가능한 부분을 정의한다.
+ * 관리자 화면의 '테마 - 사용자 정의하기'에서 변경 가능한 부분을 정의한다.
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
