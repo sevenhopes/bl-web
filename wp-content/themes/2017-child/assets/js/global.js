@@ -3,9 +3,9 @@
 	var	$body = $( 'body' ),
 		$header = $body.find( '#masthead' ),
 		$branding = $header.find( '#bl-branding' ),
-		$heroText = $header.find( '#bl-hero-text' ),
-		$heroButton = $header.find( '#bl-hero-button' ),
-		$heroLink = $header.find( '#bl-hero-button a' ),
+		// $heroText = $header.find( '#bl-hero-text' ),
+		// $heroButton = $header.find( '#bl-hero-button' ),
+		// $heroLink = $header.find( '#bl-hero-button a' ),
 		isFrontPage = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
 		cnt = 1;	// 버튼 깜빡임 카운터
 
@@ -20,7 +20,7 @@
 	// 프론트 페이지
 	if ( isFrontPage ) {
 		// 헤더이미지 위에 1상단 로고(branding), 2히어로텍스트(heroText), 3히어로버튼(heroButton)을 차례로 애니메이션으로 보여줌
-		setTimeout(
+/*		setTimeout(
 			function() {
 				$branding.addClass( 'bl-fade-in' );
 				$heroText.addClass( 'bl-fade-in' );
@@ -29,6 +29,8 @@
 			},
 			600
 		);
+*/
+		// $branding.css( { 'top' : '0', 'opacity' : '1' } );
 
 		// 버튼을 일정 간격으로 깜박이다가 특정 횟수 후에 멈춤
 		// 예) 2초 간격으로 깜빡임을 원할 때는 2000 + 1200으로 설정
@@ -46,7 +48,7 @@
 		}
 
 		// 히어로 링크의 링크값이 '#'로 시작하면 같은 페이지내 북마크로 부드러운 스크롤
-		var href = $heroLink.attr( 'href' );
+/*		var href = $heroLink.attr( 'href' );
 		if ( '' == href ) {
 			href = '#bl-direct-buttons';
 		}
@@ -55,7 +57,7 @@
 				e.preventDefault();
 				$( window ).scrollTo( href, { duration: 600 } );
 			});
-		}
+		}*/
 	// 일반 페이지: 헤더 로고(.custom-logo-link img)만 보여주고, 히어로이미지(.custom-header-media) 숨김
 	} else {
 		$branding.css( { 'top' : '0', 'opacity' : '1' } );

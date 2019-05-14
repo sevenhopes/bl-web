@@ -492,7 +492,7 @@ a:active {
 	height: 76px;
 	position: relative;
 	overflow: hidden;
-	z-index: 9;
+	/*z-index*/: 9;
 	/*display: none; /* .js 자바스크립트가 작동해야 보여줌. 아래 .js #bl-menu-toggle {} 참조 */
 }
 
@@ -584,6 +584,8 @@ a.skip-link {
  */
 
 .site-header {
+	display: block;
+	position: static;
 	background: rgba( 8, 10, 52, 1 );
 	min-width: 100vw;
 	height: 76px;
@@ -606,7 +608,8 @@ a.skip-link {
 .home .site-header,
 .home .custom-header {
 	overflow: hidden;
-	min-height: 100vh;
+	/*min-height: 100vh;*/
+	height: calc( 76px + 216px + 55px );
 }
 
 /* custom-header의 width와 height는 이 스타일을 따름 */
@@ -615,18 +618,30 @@ a.skip-link {
 .has-header-image.home.blog .custom-header,
 .has-header-video.home.blog .custom-header {
 	display: table;
-	min-height: 100vh;
+	/*min-height: 100vh;*/
+	height: calc( 76px + 216px + 55px );
 	width: 100%;
 	overflow: hidden;
 }
 
 .home .custom-header-media {
-	display: inherit;
-	min-height: 100vh;
+	display: block;
+	overflow: auto;
+	position: static;
+	/*position: relative;*/
+	top: unset;
+	left: unset;
+	right: unset;
+	bottom: unset;
+	max-width: 100vw;
+	max-height: 30vh;
+	width: 100vw;
+	height: 30vh;
 }
 
 /* 모바일(안드로이드) 크롬 브라우저(v.73)에서 주소창 높이까지 vh로 인식하는 문제 해결 */
-@supports (-webkit-appearance:none) { /* Chrome hack (http://browserhacks.com/#ch) */
+/* Chrome hack (http://browserhacks.com/#ch) */
+/*@supports (-webkit-appearance:none) {
 	.os-android.home .site-header,
 	.os-android.home .custom-header,
 	.os-android.has-header-image.twentyseventeen-front-page .custom-header,
@@ -637,9 +652,9 @@ a.skip-link {
 		height: calc(100vh - 56px);
 		min-height: calc(100vh - 56px);
 	}
-}
+}*/
 /* 위 크롬 fix 때문에 네이버앱, 다음앱, 삼성인터넷앱에서 vh가 짧아지는 문제 다시 해결 */
-.browser-kor-mutant.home .site-header,
+/*.browser-kor-mutant.home .site-header,
 .browser-kor-mutant.home .custom-header,
 .browser-kor-mutant.has-header-image.twentyseventeen-front-page .custom-header,
 .browser-kor-mutant.has-header-video.twentyseventeen-front-page .custom-header,
@@ -648,7 +663,7 @@ a.skip-link {
 .browser-kor-mutant.home .custom-header-media {
 		height: 100vh;
 		min-height: 100vh;
-}
+}*/
 
 .custom-header-media:before {
 	background: -moz-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.3) 100%); /* FF3.6-15 */
@@ -666,17 +681,19 @@ a.skip-link {
 .has-header-image .custom-header-media img,
 .has-header-video .custom-header-media video,
 .has-header-video .custom-header-media iframe {
-	padding-bottom: 0; /* 폰 화면에서 헤더 하단에 1px의 배경색이 보이는 걸 방지: 부모테마의 style.css 라인 1699 참조 */
+	/*position: relative;*/
+	padding-bottom: 0; /* 폰 화면에서 헤더 하단에 1px의 배경색이 보이는 걸 방지: 부모테마의 style.css 라인 1711 참조 */
 	/*
 	 * 폰에서 스크롤 업-다운 시, .custom-header-media img의 크기가 변하는 걸 방지
 	 */
-	bottom: 0;
+/*	bottom: 0;
 	position: absolute;
 	top: auto;
 	-ms-transform: translateX(-50%) translateY(0);
 	-moz-transform: translateX(-50%) translateY(0);
 	-webkit-transform: translateX(-50%) translateY(0);
-	transform: translateX(-50%) translateY(0);
+	transform: translateX(-50%) translateY(0);*/
+	padding: 0;
 }
 
 /* For browsers that support 'object-fit' */
@@ -686,15 +703,19 @@ a.skip-link {
 	.has-header-video .custom-header-media iframe,
 	.has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img {
 		height: 100%;
-		left: 0;
-		-o-object-fit: cover;
-		object-fit: cover;
-		top: 0;
+		left: unset;
+		-o-object-fit: unset;
+		object-fit: unset;
+		top: unset;
 		-ms-transform: none;
 		-moz-transform: none;
 		-webkit-transform: none;
 		transform: none;
 		width: 100%;
+
+		position: relative;
+		display: block;
+		overflow: auto;
 	}
 }
 
@@ -740,20 +761,23 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	width: 100%;
 	height: 76px;
 	position: relative;
-	top: -40px;		/* fadeIn() 시작 위치 */
-	opacity: 0;		/* $(document).ready() 이후 fadeIn() 시작하며 1로 바뀜 */
+	/*top: 0;*/
+	opacity: 1;
+	z-index: 9;
+	/*top: -40px;*/		/* fadeIn() 시작 위치 */
+	/*opacity: 0;*/		/* $(document).ready() 이후 fadeIn() 시작하며 1로 바뀜 */
 
 	/*position: fixed;*/
 	/*top: 0;*/
 	/*left: 0;*/
 }
-
+/*
 .home #bl-branding {
 	background: rgba( 12, 16, 85, 0.9 );
 	-webkit-transition: top 0.6s, opacity 0.6s;
 	transition: top 0.6s, opacity 0.6s;
 }
-
+*/
 .home #bl-branding.bl-fade-in {
 	top: 0;			/* fadeIn() 종료 위치 */
 	opacity: 1;
@@ -790,56 +814,44 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	width: 100%;
 	height: auto;
 	z-index: 9;
-	opacity: 0;
+/*	opacity: 0;
 	-webkit-transition: opacity 0.6s 0.3s;
-	transition: opacity 0.6s 0.3s;
+	transition: opacity 0.6s 0.3s;*/
 }
 
 .home #bl-hero-text.bl-fade-in {
 	opacity: 1;
 }
 
-#bl-hero-button {
+.bl-button-container {
+	display: none;
+}
+
+.home .bl-button-container {
 	display: block;
-	text-align: center;
-	vertical-align: middle;
-	font-size: 16px;
-	font-size: 1rem;
-	font-weight: 300;
-	line-height: 100%;
 	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 14vh;
-	width: 160px;
-	width: 10em;
-	height: 35.2px;
-	height: 2.2em;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 0;
-	border: solid 1px #007eff;
-	background: none;
+	bottom: 0;
+	width: 100vw;
+	overflow: auto;
 	z-index: 9;
-	opacity: 0;
-	-webkit-transition: opacity 0.6s ease-in;
-	transition: opacity 0.6s ease-in;
 }
-
-.home #bl-hero-button.bl-fade-in {
-	opacity: 1;
+/*
+.home .bl-button-container::after {
+	content: "";
+	display: block;
+	clear: both;
 }
-
+*/
 .home #bl-direct-buttons {
 	display: grid;
 	grid-template-columns: auto auto auto auto;
 	grid-gap: 0;
 	background-color: rgb( 12, 16, 85 );
 	padding: 0.5em;
-	position: absolute;
+/*	position: absolute;
 	left: 0;
 	bottom: 0;
-	z-index: 9;
+	z-index: 9;*/
 }
 
 #bl-direct-buttons > div {
@@ -853,10 +865,6 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 #bl-direct-buttons img {
 	vertical-align: middle;
-}
-
-#bl-direct-buttons {
-	display: none;
 }
 
 /*--------------------------------------------------------------

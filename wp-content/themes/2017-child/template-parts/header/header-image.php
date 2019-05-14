@@ -11,10 +11,6 @@
 ?>
 <div class="custom-header">
 
-	<div class="custom-header-media">
-		<?php the_custom_header_markup(); ?>
-	</div>
-
 	<?php
 		/*
 		 * 부모 테마의 사이트 제목은 삭제
@@ -36,22 +32,17 @@
 		<!-- </div> -->
 	</div>
 
-	<?php
-	if ( is_front_page() ) :
-	$herotext = get_theme_mod( 'bl_herotext' );
-	?>
-	<div id="bl-hero-text"><?php echo $herotext; ?></div>
+	<div class="custom-header-media">
+		<?php the_custom_header_markup(); ?>
+	</div>
 
-	<button id="bl-hero-button">
-		<a href="<?php echo get_theme_mod( 'bl_herolink' ); ?>"><?php echo get_theme_mod( 'bl_herobutton' ); ?></a>
-	</button>
-	<?php endif; ?>
-
-	<div id="bl-direct-buttons">
-		<div><a href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/frontpage-button-phone.png" alt="상담전화" /></a></div>
-		<div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/#bl-map"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/frontpage-button-map.png" alt="지도보기" /></a></div>
-		<div><a href="http://blog.naver.com/blcorp" target="_blank"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/frontpage-button-blog.png" alt="블로그" /></a></div>
-		<div><a href="https://www.facebook.com/bridgelightels/" target="_blank"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/frontpage-button-facebook.png" alt="페이스북" /></a></div>
+	<div class="bl-button-container">
+		<div id="bl-direct-buttons">
+			<div><a href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/frontpage-button-phone.png" alt="상담전화" /></a></div>
+			<div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/#bl-map"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/frontpage-button-map.png" alt="지도보기" /></a></div>
+			<div><a href="http://blog.naver.com/blcorp" target="_blank"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/frontpage-button-blog.png" alt="블로그" /></a></div>
+			<div><a href="https://www.facebook.com/bridgelightels/" target="_blank"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/frontpage-button-facebook.png" alt="페이스북" /></a></div>
+		</div>
 	</div>
 
 </div><!-- .custom-header -->
