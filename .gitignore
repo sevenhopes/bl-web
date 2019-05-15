@@ -6,7 +6,7 @@
 *.png
 *.jp*g
 # dirs
-bl-backups
+bl-backups/
 bl-media (legacy)/
 bl-media-library/
 wp-admin/

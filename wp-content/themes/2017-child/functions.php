@@ -16,12 +16,10 @@ remove_filter( 'the_excerpt', 'wpautop' );
  * Enqueue styles of the parent theme and the child theme
  */
 function bridgelight_theme_enqueue_scripts() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
-    wp_enqueue_style( 'child-style', get_template_directory_uri().'/style.css', array( 'parent-style' ), wp_get_theme()->get('Version') );
-    wp_enqueue_style( 'bridgelight-fonts-noto-sans', bridgelight_fonts_url_noto_sans(), array(), null );
-    wp_enqueue_style( 'bridgelight-fonts-kopub-batang', bridgelight_fonts_url_kopub_batang(), array(), null );
-    // wp_enqueue_script( 'bridgelight-js', get_stylesheet_directory_uri().'/global-child.js', array( 'jquery' ), true );
-    wp_enqueue_script( 'bridgelight-map-js', 'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=lsnb5x78u2', array(), null );
+	wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri().'/style.css', array( 'parent-style' ), wp_get_theme()->get('Version') );
+	wp_enqueue_style( 'bridgelight-fonts-noto-sans', bridgelight_fonts_url_noto_sans(), array(), null );
+	wp_enqueue_script( 'bridgelight-map-js', 'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=lsnb5x78u2', array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'bridgelight_theme_enqueue_scripts' );
 
@@ -49,32 +47,6 @@ function bridgelight_fonts_url_noto_sans() {
 		);
 
 		$fonts_url = add_query_arg( $query_args, 'fonts.googleapis.com/earlyaccess/notosanskr.css' );
-	}
-
-	return esc_url_raw( $fonts_url );
-}
-
-function bridgelight_fonts_url_kopub_batang() {
-	$fonts_url = '';
-
-	/**
-	 * Translators: If there are characters in your language that are not
-	 * supported by KoPub Batang, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
-	$kopub_batang = _x( 'on', 'KoPub Batang Korean font: on or off', '2017-child' );
-
-	if ( 'off' !== $kopub_batang ) {
-		$font_families = array();
-		// 100: Thin / 300: Light / 400: Regular / 500: Medium / 700: Bold / 900: Black
-		$font_families[] = 'KoPub Batang:300,400,700';
-
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'KR' ),
-		);
-
-		$fonts_url = add_query_arg( $query_args, 'fonts.googleapis.com/earlyaccess/kopubbatang.css' );
 	}
 
 	return esc_url_raw( $fonts_url );
@@ -150,46 +122,6 @@ function bridgelight_customize_register( $wp_customize ) {
 		'selector'        => '#bl-hero-text',
 		'render_callback' => 'bridgelight_customize_partial_bl_herotext',
 	) );
-
-	// Hero Topic: 클릭하면 Hero Link로 이동하는 버튼의 텍스트
-	$wp_customize->add_setting( 'bl_herobutton', array(
-		'default'   => 'Latest News',
-		'transport' => 'postMessage',
-	) );
-	$wp_customize->add_control( 'bl_herobutton', array(
-		'label'    => __( 'Hero Button', '2017-child' ),
-		'section'  => 'bl_theme_options',
-		'type'     => 'text',
-		'priority' => 3,
-	) );
-
-	// Hero Link
-	$wp_customize->add_setting( 'bl_herolink', array(
-		'default'  => '/m/all-posts/',
-	) );
-	$wp_customize->add_control( 'bl_herolink', array(
-		'label'    => __( 'Hero Link', '2017-child' ),
-		'section'  => 'bl_theme_options',
-		'type'     => 'text',
-		'priority' => 4,
-	) );
-
-	// DISCARDED: 2018.06.19
-	// Hero Link Visibility
-	/*
-	$wp_customize->add_setting( 'bl_herolink_display', array(
-		'default'    => true,
-		'type'       => 'option',
-		'capability' => 'edit_theme_options'
-	) );
-	$wp_customize->add_control( 'bl_herolink_display', array(
-		'label'    => __( 'Display Hero Link', '2017-child' ),
-		'section'  => 'bl_theme_options',
-		'settings' => 'bl_herolink_display',
-		'type'     => 'checkbox',
-		'std'      => '1'
-	) );
-	*/
 }
 add_action( 'customize_register', 'bridgelight_customize_register' );
 
