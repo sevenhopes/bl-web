@@ -4,7 +4,8 @@
 *.zip
 *.gif
 *.png
-*.jp*g
+*.jpg
+*.jpeg
 # dirs
 bl-backups/
 bl-media (legacy)/
