@@ -37,15 +37,57 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
+		<div class="custom-header">
+			<?php
+				// 부모 테마의 사이트 제목은 삭제
+				// get_template_part( 'template-parts/header/site', 'branding' );
+			?>
+			<div id="bl-branding">
+				<button id="bl-menu-toggle" aria-controls="top-menu" aria-expanded="false">
+					<img src="<?php echo get_theme_mod( 'bl_menu_button_img' ); ?>" />
+				</button>
+				<?php the_custom_logo(); ?>
+			</div>
 
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+			<div class="custom-header-media">
+				<?php // the_custom_header_markup(); ?>
 
+				<div class="bl-ssslider">
+					<div>
+						<img src="<?php echo content_url(); ?>/uploads/2019/05/Bridge-Lighthouse.jpg" />
+						<span class="sss-caption" style="color:#fff;">This one has a caption This one has a caption This one has a caption This </span>
+					</div>
+					<div>
+						<img src="<?php echo content_url(); ?>/uploads/2019/05/scholarship-display.jpg" />
+						<span class="sss-caption" style="color:#fff;">This one has a captionThis one has a captionThis one has a captionThis one has a captionThis one has a captionThis one has a captionThis one has a captionThis one has a captionThis one has a caption</span>
+					</div>
+					<div>
+						<img src="<?php echo content_url(); ?>/uploads/2019/05/certificate-pics-wall.jpg" />
+						<span class="sss-caption" style="color:#fff;">This one has a caption</span>
+					</div>
+					<div>
+						<img src="<?php echo content_url(); ?>/uploads/2019/04/busing-evening-birdview.jpg" />
+						<span class="sss-caption" style="color:#fff;">This one has a captionThis one has a captionThis one has a captionThis one has a captionThis one has a captionThis one has a caption</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="bl-button-container">
+				<div id="bl-direct-buttons">
+					<div><a href="tel:033-243-5757"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/frontpage-button-phone.png" alt="상담전화" /></a></div>
+					<div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/#bl-map"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/frontpage-button-map.png" alt="지도보기" /></a></div>
+					<div><a href="http://blog.naver.com/blcorp" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/frontpage-button-blog.png" alt="블로그" /></a></div>
+					<div><a href="https://www.facebook.com/bridgelightels/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/frontpage-button-facebook.png" alt="페이스북" /></a></div>
+				</div>
+			</div>
+
+		</div><!-- .custom-header -->
 	</header><!-- #masthead -->
 
 	<?php 
 		// 1 부모테마 <header> 안의 <div .navigation-top>을 <header #masthead> 밖으로 꺼냄,
-		//   왜냐하면 메인페이지 이외의 페이지에서는 헤더보다 메뉴가 더 크기 때문.
-		// 2 부모테마 template-parts/navigation/navigation-top.php 대신 여기에 하드코딩.
+		//   왜냐하면 메인페이지 이외의 페이지에서는 헤더보다 메뉴가 더 크기 때문. (overflow 문제)
+		// 2 부모테마 template-parts/navigation/navigation-top.php 대신 여기에 코딩.
 		// 3 사용하지 않는 .menu-toggle과 .menu-scroll-down을 삭제 (대신 header-image.php 안에서 .bl-menu-toggle을 사용)
 	if ( has_nav_menu( 'top' ) ) : ?>
 		<div class="navigation-top">

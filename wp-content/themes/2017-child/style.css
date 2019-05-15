@@ -597,6 +597,7 @@ a.skip-link {
 	margin: 0;
 	padding: 0;
 	min-width: 100vw;
+	height: auto;
 }
 
 .custom-header-media {
@@ -608,8 +609,11 @@ a.skip-link {
 .home .site-header,
 .home .custom-header {
 	overflow: hidden;
-	/*min-height: 100vh;*/
-	height: calc( 76px + 216px + 55px );
+	/*height: calc( 76px + 216px + 55px );*/
+	display: flex;
+	flex-direction: column;
+	min-height: 76px;
+	height: auto;
 }
 
 /* custom-header의 width와 height는 이 스타일을 따름 */
@@ -617,26 +621,30 @@ a.skip-link {
 .has-header-video.twentyseventeen-front-page .custom-header,
 .has-header-image.home.blog .custom-header,
 .has-header-video.home.blog .custom-header {
-	display: table;
-	/*min-height: 100vh;*/
-	height: calc( 76px + 216px + 55px );
+	/*display: table;*/
+	/*height: calc( 76px + 216px + 55px );*/
 	width: 100%;
 	overflow: hidden;
+
+	display: flex;
+	flex-direction: column;
+	min-height: 76px;
+	height: auto;
 }
 
 .home .custom-header-media {
 	display: block;
-	overflow: auto;
+	overflow: visible;
 	position: static;
-	/*position: relative;*/
 	top: unset;
 	left: unset;
 	right: unset;
 	bottom: unset;
 	max-width: 100vw;
-	/*max-height: 30%;*/
 	width: 100vw;
-	height: 216px;
+	height: auto;
+
+	flex: 1;
 }
 
 /* 모바일(안드로이드) 크롬 브라우저(v.73)에서 주소창 높이까지 vh로 인식하는 문제 해결 */
@@ -681,8 +689,6 @@ a.skip-link {
 .has-header-image .custom-header-media img,
 .has-header-video .custom-header-media video,
 .has-header-video .custom-header-media iframe {
-	/*position: relative;*/
-	padding-bottom: 0; /* 폰 화면에서 헤더 하단에 1px의 배경색이 보이는 걸 방지: 부모테마의 style.css 라인 1711 참조 */
 	/*
 	 * 폰에서 스크롤 업-다운 시, .custom-header-media img의 크기가 변하는 걸 방지
 	 */
@@ -694,6 +700,23 @@ a.skip-link {
 	-webkit-transform: translateX(-50%) translateY(0);
 	transform: translateX(-50%) translateY(0);*/
 	padding: 0;
+	display: block;
+	overflow: auto;
+
+	position: relative;
+	height: auto;
+	left: 0;
+	max-width: 100%;
+	min-height: 100%;
+	min-width: 100%;
+	min-width: 100vw; /* vw prevents 1px gap on left that 100% has */
+	width: auto;
+	top: 0;
+	padding-bottom: 0; /* Prevent header from extending beyond the footer */
+	-ms-transform: none;
+	-moz-transform: none;
+	-webkit-transform: none;
+	transform: none;
 }
 
 /* For browsers that support 'object-fit' */
@@ -703,10 +726,10 @@ a.skip-link {
 	.has-header-video .custom-header-media iframe,
 	.has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img {
 		height: 100%;
-		left: unset;
+		left: 0;
 		-o-object-fit: unset;
 		object-fit: unset;
-		top: unset;
+		top: 0;
 		-ms-transform: none;
 		-moz-transform: none;
 		-webkit-transform: none;

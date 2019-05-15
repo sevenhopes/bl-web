@@ -19,6 +19,10 @@
 	// HTML 페이지 준비? 땅!
 	$( document ).ready( function() {
 
+		if ( isFrontPage ) {
+			$( '.bl-ssslider' ).sss();
+		}
+
 		// 페이지 로드 시 현재 페이지가 속한 서브메뉴(드롭다운 메뉴)를 미리 펼치고 있게 함
 		// if ( $currentMenuParent.length ) {
 		// 	$currentMenuParent.addClass( 'toggled-on' );
