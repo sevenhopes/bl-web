@@ -72,7 +72,7 @@
 				<a href="<?php echo home_url(); ?>/about/foundation-story/"><div>
 					<img src="<?php echo content_url(); ?>/uploads/2019/04/main-building-at-night.jpg" />
 					<span class="bl-title">Story of Establishment</span>
-					<span class="bl-caption">I'm just writing this in English so I can check how it looks. 한글도 섞어서 써봅니다. Yes, this homepage is a beta versoin. 여기저기 봐준다면 유혈사태는 일어나지 않을 것입니다. (인터넷 드립)</span>
+					<span class="bl-caption">I'm just writing this in English so I can check how it looks. 한글도 섞어서 써봅니다. Yes, this homepage is a beta versoin. "여기저기 둘러봐준다면 유혈사태는 일어나지 않을 것입니다." by 문명)</span>
 				</div></a>
 			</div>
 
