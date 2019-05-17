@@ -16,6 +16,15 @@
 
 		</div><!-- #content -->
 
+		<div class="bl-button-container">
+			<div id="bl-direct-buttons">
+				<div><a href="tel:033-243-5757"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/frontpage-button-phone.png" alt="상담전화" /></a></div>
+				<div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/#bl-map"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/frontpage-button-map.png" alt="지도보기" /></a></div>
+				<div><a href="http://blog.naver.com/blcorp" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/frontpage-button-blog.png" alt="블로그" /></a></div>
+				<div><a href="https://www.facebook.com/bridgelightels/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/frontpage-button-facebook.png" alt="페이스북" /></a></div>
+			</div>
+		</div>
+
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="wrap">
 				<?php

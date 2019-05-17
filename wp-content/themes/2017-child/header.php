@@ -37,15 +37,52 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
+		<div class="custom-header">
+			<?php
+				// 부모 테마의 사이트 제목은 삭제
+				// get_template_part( 'template-parts/header/site', 'branding' );
+			?>
+			<div id="bl-branding">
+				<button id="bl-menu-toggle" aria-controls="top-menu" aria-expanded="false">
+					<img src="<?php echo get_theme_mod( 'bl_menu_button_img' ); ?>" />
+				</button>
+				<?php the_custom_logo(); ?>
+			</div>
 
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+			<!-- <div class="custom-header-media"> -->
+				<?php // the_custom_header_markup(); ?>
+			<!-- </div> -->
 
+			<div class="bl-header-slides">
+				<a href="<?php echo home_url(); ?>/about/why-bridge-light/"><div>
+					<img src="<?php echo content_url(); ?>/uploads/2019/05/Bridge-Lighthouse.jpg" />
+					<span class="bl-title">Why Bridge Light?</span>
+					<span class="bl-caption">영어가 어려운가요? 다리를 놓았습니다. 빛을 밝혔습니다! 뚜벅뚜벅 따라만 오세요. 나머진 브릿지라잇이 책임지겠습니다.</span>
+				</div></a>
+				<a href="<?php echo home_url(); ?>/about/support-and-services/"><div>
+					<img src="<?php echo content_url(); ?>/uploads/2019/05/scholarship-display.jpg" />
+					<span class="bl-title">장학금을 주는 학원?!</span>
+					<span class="bl-caption">우리학원 디게 좋아요. 막 돈도 줘요. 엄청 많이요. 중3까지의 영어학업을 브릿지라잇에서 끝마치면 말이지요, 후후후... you just activated my trap card... 학생들이 매년 200만원씩 받아가요. 열심히 공부한 당신 떠나라, 고등학교로...?</span>
+				</div></a>
+				<a href="<?php echo home_url(); ?>/admission/appt-and-visit/"><div>
+					<img src="<?php echo content_url(); ?>/uploads/2019/05/certificate-pics-wall.jpg" />
+					<span class="bl-title">춘천대표 우수학원</span>
+					<span class="bl-caption">저희 로비 벽에 걸린 우수학원상입니다. 맞아요, 저희가 좀 우수해요. 우수한 강사진! 프로그램부터 학생 개개인까지 신경쓰는 원장단! 친절한 상담실장! 우수우수해요. 가을 되면 난리나요. 우수수..... 메롱</span>
+				</div></a>
+				<a href="<?php echo home_url(); ?>/about/foundation-story/"><div>
+					<img src="<?php echo content_url(); ?>/uploads/2019/04/main-building-at-night.jpg" />
+					<span class="bl-title">Story of Establishment</span>
+					<span class="bl-caption">I'm just writing this in English so I can check how it looks. 한글도 섞어서 써봅니다. Yes, this homepage is a beta versoin. "여기저기 둘러봐준다면 유혈사태는 일어나지 않을 것입니다." by 문명)</span>
+				</div></a>
+			</div>
+
+		</div><!-- .custom-header -->
 	</header><!-- #masthead -->
 
 	<?php 
 		// 1 부모테마 <header> 안의 <div .navigation-top>을 <header #masthead> 밖으로 꺼냄,
-		//   왜냐하면 메인페이지 이외의 페이지에서는 헤더보다 메뉴가 더 크기 때문.
-		// 2 부모테마 template-parts/navigation/navigation-top.php 대신 여기에 하드코딩.
+		//   왜냐하면 메인페이지 이외의 페이지에서는 헤더보다 메뉴가 더 크기 때문. (overflow 문제)
+		// 2 부모테마 template-parts/navigation/navigation-top.php 대신 여기에 코딩.
 		// 3 사용하지 않는 .menu-toggle과 .menu-scroll-down을 삭제 (대신 header-image.php 안에서 .bl-menu-toggle을 사용)
 	if ( has_nav_menu( 'top' ) ) : ?>
 		<div class="navigation-top">
