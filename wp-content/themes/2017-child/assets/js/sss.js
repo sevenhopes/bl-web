@@ -4,6 +4,13 @@
 
 	var timer;
 	var isSliding = false;
+	var target,
+		slides,
+		slider,
+		animating =false,
+		transition,
+		slide_count,
+		reset_timer;
 
 	$.fn.sss = function(options) {
 
@@ -12,7 +19,7 @@
 		var settings = $.extend({
 			slideShow : true,
 			startOn : 0,
-			speed : 7000,
+			speed : 1000,
 			transition : 600,
 			arrows : true
 		}, options);
@@ -22,7 +29,8 @@
 	// Variables
 
 			var
-			wrapper = $(this),
+			wrapper = $(this);
+
 			// slides = wrapper.children().wrapAll('<div class="sss"/>').addClass('ssslide'),
 			slides = wrapper.children().attr( 'class' ) === "sss" ? wrapper.children() : wrapper.children().wrapAll('<div class="sss"/>').addClass('ssslide'),
 			slider = wrapper.find('.sss'),
@@ -31,11 +39,11 @@
 			starting_slide = settings.startOn,
 			target = starting_slide > slide_count - 1 ? 0 : starting_slide,
 			animating = false,
-			clicked,
+			// clicked,
 			// timer,
-			key,
-			prev,
-			next;
+			// key,
+			// prev,
+			// next,
 
 		// Reset Slideshow
 
@@ -44,42 +52,42 @@
 				timer = setTimeout(next_slide, settings.speed);
 			} : $.noop;
 
-		// Animate Slider
+		// // Animate Slider
 
-			function get_height(target) {
-				return ((slides.eq(target).height() / slider.width()) * 100) + '%';
-			}
+		// 	function get_height(target) {
+		// 		return ((slides.eq(target).height() / slider.width()) * 100) + '%';
+		// 	}
 
-			function animate_slide(target) {
-				if (!animating) {
-					animating = true;
-					var target_slide = slides.eq(target);
+		// 	function animate_slide(target) {
+		// 		if (!animating) {
+		// 			animating = true;
+		// 			var target_slide = slides.eq(target);
 
-					target_slide.fadeIn(transition);
-					slides.not(target_slide).fadeOut(transition);
+		// 			target_slide.fadeIn(transition);
+		// 			slides.not(target_slide).fadeOut(transition);
 
-					slider.animate({paddingBottom: get_height(target)}, transition, function() {
-						animating = false;
-					});
+		// 			slider.animate({paddingBottom: get_height(target)}, transition, function() {
+		// 				animating = false;
+		// 			});
 
-					reset_timer();
+		// 			reset_timer();
 
-				}
-			};
+		// 		}
+		// 	};
 
-		// Next Slide
+		// // Next Slide
 
-			function next_slide() {
-				target = target === slide_count - 1 ? 0 : target + 1;
-				animate_slide(target);
-			}
+		// 	function next_slide() {
+		// 		target = target === slide_count - 1 ? 0 : target + 1;
+		// 		animate_slide(target);
+		// 	}
 
-		// Prev Slide
+		// // Prev Slide
 
-			function prev_slide() {
-				target = target === 0 ? slide_count - 1 : target - 1;
-				animate_slide(target);
-			}
+		// 	function prev_slide() {
+		// 		target = target === 0 ? slide_count - 1 : target - 1;
+		// 		animate_slide(target);
+		// 	}
 
 			// if (settings.arrows) {
 			// 	slider.append('<div class="sssprev"/>', '<div class="sssnext"/>');
@@ -126,21 +134,82 @@
 
 			// 화면이 헤더높이의 60% 이상 스크롤 되면 슬라이딩(이미지 전환) 멈춤
 			// 다시 올라오면 슬라이딩 시작
-			$( window ).on( 'scroll', function() {
-				var scrollTop = $( window ).scrollTop(),
-					pausingTop = $( '#masthead' ).height() * 0.6; // 헤더의 top은 늘 0이라고 가정
+			// $( window ).on( 'scroll', function() {
+			// 	var scrollTop = $( window ).scrollTop(),
+			// 		pausingTop = $( '#masthead' ).height() * 0.6; // 헤더의 top은 늘 0이라고 가정
 
-				if ( isSliding && pausingTop <= scrollTop ) {
-					clearTimeout(timer);
-					isSliding = false;
-				} else if ( !isSliding && scrollTop <= pausingTop ) {
-					slider.css({paddingBottom: get_height(target)});
-					animate_slide( target );
-					isSliding = true;
-				}
-			});
+			// 	if ( isSliding && pausingTop <= scrollTop ) {
+			// 		clearTimeout(timer);
+			// 		isSliding = false;
+			// 	} else if ( !isSliding && scrollTop <= pausingTop ) {
+			// 		slider.css({paddingBottom: get_height(target)});
+			// 		animate_slide( target );
+			// 		isSliding = true;
+			// 	}
+			// });
 
 		}); // End of return
 
+	}; // End of sss()
+
+// Animate Slider
+
+	function get_height(target) {
+		return ((slides.eq(target).height() / slider.width()) * 100) + '%';
+	}
+
+	function animate_slide(target) {
+		if (!animating) {
+			animating = true;
+			var target_slide = slides.eq(target);
+
+			target_slide.fadeIn(transition);
+			slides.not(target_slide).fadeOut(transition);
+
+			slider.animate({paddingBottom: get_height(target)}, transition, function() {
+				animating = false;
+			});
+
+			reset_timer();
+
+		}
 	};
+
+// Next Slide
+
+	function next_slide() {
+		target = target === slide_count - 1 ? 0 : target + 1;
+		animate_slide(target);
+	}
+
+// Prev Slide
+
+	function prev_slide() {
+		target = target === 0 ? slide_count - 1 : target - 1;
+		animate_slide(target);
+	}
+
+	$.fn.sssPause = function() {
+		return this.each( function() {
+			if ( isSliding ) {
+				clearTimeout(timer);
+				isSliding = false;
+			}
+		});
+	};
+
+	$.fn.sssResume = function() {
+		return this.each( function() {
+			if ( !isSliding ) {
+				slider.css({paddingBottom: get_height(target)});
+				animate_slide(target);
+				isSliding = true;
+			}
+		});
+	};
+
+	$.fn.sssIsSliding = function() {
+		return isSliding;
+	};
+
 })(jQuery, window, document);

@@ -94,25 +94,34 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 /*
  * super simple slider
  */
- .bl-header-slides {
- 	display: block;
- }
+.bl-header-slides {
+	display: block;
+}
 
- .bl-header-slides .bl-title {
- 	display: block;
- 	color: #eee;
- 	font-size: 1.5em;
- 	font-weight: 500;
- 	margin-top: 0.5rem;
- 	padding: 0 0.75rem; /* margin-top/bottom 효과 없음 */
- }
+.bl-header-slides:after {
+	content: "";
+	height: 0.5em;
+	line-height: 0;
+	display: block;
+}
 
- .bl-header-slides .bl-caption {
- 	display: block;
- 	color: #eee;
-	padding: 0 0.75em;
-	margin-bottom: 0.5em;
- }
+.bl-header-slides .bl-title {
+	display: block;
+	color: #111;
+	font-size: 1.5em;
+	font-weight: 500;
+	margin-top: 0.5rem;
+	padding: 0 0.75rem; /* margin-top/bottom 효과 없음 */
+}
+
+.bl-header-slides .bl-caption {
+	display: block;
+	color: #333;
+	font-size: 1rem;
+	font-weight: 400;
+padding: 0 0.75em;
+margin-bottom: 0.5em;
+}
 
 .sss {
 	height: 0;
@@ -594,7 +603,7 @@ a:active {
 --------------------------------------------------------------*/
 
 body {
-	background: #0c1055;
+	/* background: rgb( 12, 16, 85 ); /* #0c1055; */
 }
 
 #page {
@@ -606,7 +615,7 @@ body {
 	overflow-y: scroll;
 }
 
-.wrap { /* navigation-top / footer */
+.wrap { /* 부모테마에서는 navigation-top과 footer에서 사용했었음. */
 	margin: 0;
 	padding: 0;
 }
@@ -661,7 +670,9 @@ a.skip-link {
 .site-header {
 	display: block;
 	position: static;
-	background: rgba( 8, 10, 52, 1 );
+	/*background: rgba( 8, 10, 52, 1 );*/
+	/*background: rgba( 12, 16, 85, 1 );*/
+	background: #fff;
 	min-width: 100vw;
 	height: 76px;
 	overflow: hidden;
@@ -921,48 +932,6 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	opacity: 1;
 }
 
-.bl-button-container {
-	display: block;
-	/*position: fixed;
-	left: 0;
-	bottom: 0;*/
-	width: 100%;
-	width: 100vw;
-	/*overflow: auto;*/
-	z-index: 9;
-}
-/*
-.home .bl-button-container::after {
-	content: "";
-	display: block;
-	clear: both;
-}
-*/
-#bl-direct-buttons {
-	display: grid;
-	grid-template-columns: auto auto auto auto;
-	grid-gap: 0;
-	background-color: rgb( 12, 16, 85 );
-	padding: 0.5em;
-/*	position: absolute;
-	left: 0;
-	bottom: 0;
-	z-index: 9;*/
-}
-
-#bl-direct-buttons > div {
-	/*border-right: 1px solid #333;*/
-	border-right: 1px solid rgb( 7, 40, 102 );
-}
-
-#bl-direct-buttons > div:last-child {
-	border-right: 0;
-}
-
-#bl-direct-buttons img {
-	vertical-align: middle;
-}
-
 /*--------------------------------------------------------------
 13.2 Front Page
 --------------------------------------------------------------*/
@@ -1032,6 +1001,14 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 #bl-hero-update {
 	/*margin-top: 0.5em;*/
+	background: #f3f3f3;
+}
+
+#bl-hero-update.bl-block {
+	margin-top: 0;
+	padding-top: 1em;
+	margin-bottom: 0;
+	padding-bottom: 1em;
 }
 
 #bl-news {
@@ -1675,6 +1652,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .site-footer {
 	border-top: none;
+	background: rgb( 12, 16, 85);
+	margin: 2em 0 0 0;
 }
 
 .site-footer .wrap {
@@ -1720,6 +1699,48 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	top: 12px;
 	width: 16px;
 	vertical-align: top;
+}
+
+.bl-button-container {
+	display: block;
+	/*position: fixed;
+	left: 0;
+	bottom: 0;*/
+	width: 100%;
+	width: 100vw;
+	/*overflow: auto;*/
+	z-index: 9;
+}
+/*
+.home .bl-button-container::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+*/
+#bl-direct-buttons {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 0;
+	background-color: rgb( 12, 16, 85 );
+	padding: 0.5em;
+/*	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 9;*/
+}
+
+#bl-direct-buttons > div {
+	/*border-right: 1px solid #333;*/
+	border-right: 1px solid rgb( 7, 40, 102 );
+}
+
+#bl-direct-buttons > div:last-child {
+	border-right: 0;
+}
+
+#bl-direct-buttons img {
+	vertical-align: middle;
 }
 
 /*--------------------------------------------------------------
