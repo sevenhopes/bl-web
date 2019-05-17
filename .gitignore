@@ -6,7 +6,6 @@
 *.png
 *.jpg
 *.jpeg
-sss.js
 # dirs
 bl-backups/
 bl-media (legacy)/
