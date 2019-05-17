@@ -49,9 +49,9 @@
 				<?php the_custom_logo(); ?>
 			</div>
 
-			<div class="custom-header-media">
+			<!-- <div class="custom-header-media"> -->
 				<?php // the_custom_header_markup(); ?>
-			</div>
+			<!-- </div> -->
 
 			<div class="bl-header-slides">
 				<a href="<?php echo home_url(); ?>/about/why-bridge-light/"><div>
@@ -74,15 +74,6 @@
 					<span class="bl-title">Story of Establishment</span>
 					<span class="bl-caption">I'm just writing this in English so I can check how it looks. 한글도 섞어서 써봅니다. Yes, this homepage is a beta versoin. "여기저기 둘러봐준다면 유혈사태는 일어나지 않을 것입니다." by 문명)</span>
 				</div></a>
-			</div>
-
-			<div class="bl-button-container">
-				<div id="bl-direct-buttons">
-					<div><a href="tel:033-243-5757"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/frontpage-button-phone.png" alt="상담전화" /></a></div>
-					<div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/#bl-map"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/frontpage-button-map.png" alt="지도보기" /></a></div>
-					<div><a href="http://blog.naver.com/blcorp" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/frontpage-button-blog.png" alt="블로그" /></a></div>
-					<div><a href="https://www.facebook.com/bridgelightels/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/frontpage-button-facebook.png" alt="페이스북" /></a></div>
-				</div>
 			</div>
 
 		</div><!-- .custom-header -->
