@@ -999,6 +999,65 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	text-indent: 0;
 }
 
+#bl-front-menu {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1px 1px;
+	background-color: rgb( 7, 40, 102 );
+	margin-top: 0.5em;
+}
+
+#bl-front-menu > div {
+	font-size: 17px;
+	letter-spacing: 0;
+	padding: 0.5rem;
+	background-color: rgb( 12, 16, 85 );
+}
+
+#bl-front-menu > div:nth-child(odd) {
+	padding-left: 1.75rem;
+}
+
+#bl-front-menu > div:nth-child(even) {
+	padding-left: 1rem;
+}
+
+#bl-front-menu > div:nth-child(1),
+#bl-front-menu > div:nth-child(2) {
+	padding-top: 0.75em;
+}
+
+#bl-front-menu > div:nth-child(5),
+#bl-front-menu > div:nth-child(6) {
+	padding-bottom: 0.75em;
+}
+
+#bl-front-menu span {
+	display: inline-block;
+	padding: 0 0.5em;
+}
+
+#bl-front-menu span {
+	color: #fcfcfc;
+}
+
+#bl-front-menu img {
+	display: inline-block;
+	vertical-align: middle;
+	width: 2rem;
+	height: 2rem;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+
+#bl-front-menu > div:nth-child(odd) img {
+	margin-left: 0.5em;
+}
+
+#bl-front-menu > div:nth-child(even) img {
+	margin-right: 0.5em;
+}
+
 #bl-hero-update {
 	/*margin-top: 0.5em;*/
 	background: #f3f3f3;
