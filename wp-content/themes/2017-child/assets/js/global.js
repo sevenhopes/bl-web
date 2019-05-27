@@ -6,6 +6,8 @@
 		isFrontPage = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
 		cnt = 1;	// 버튼 깜빡임 카운터
 
+	var $slide = $header.find( '.bl-header-slides' );
+
 	const transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd';
 
 	var	dev = false;
@@ -21,7 +23,8 @@
 
 		if ( isFrontPage ) {
 			// 헤더에 슬라이드쇼
-			$( '.bl-header-slides' ).sss();
+			// $( '.bl-header-slides' ).sss();
+			$slide.sss();
 		}
 
 		// 페이지 로드 시 현재 페이지가 속한 서브메뉴(드롭다운 메뉴)를 미리 펼치고 있게 함
@@ -53,6 +56,19 @@
 			} );
 		}
 	}); // End of $(document).ready()
+
+	// 스크롤다운에 의해 헤더가 절반 밖에 안 보이면 슬라이딩(이미지 전환) 멈춤
+	// 스크롤업에 의해 반 이상이 보이면 슬라이딩 다시 시작
+	$( window ).on( 'scroll', function() {
+		var scrollTop = $( window ).scrollTop(),
+			pausingTop = $( '#masthead' ).height() * 0.5; // 헤더의 top은 늘 0이라고 가정
+
+		if ( pausingTop < scrollTop ) {
+			$slide.sssPause();
+		} else if ( scrollTop <= pausingTop ) {
+			$slide.sssResume();
+		}
+	});
 
 	/*
 	 * Test if inline SVGs are supported.
