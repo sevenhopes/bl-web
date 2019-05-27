@@ -57,11 +57,11 @@
 		}
 	}); // End of $(document).ready()
 
-	// 스크롤다운에 의해 헤더가 절반 밖에 안 보이면 슬라이딩(이미지 전환) 멈춤
-	// 스크롤업에 의해 반 이상이 보이면 슬라이딩 다시 시작
+	// 스크롤다운에 의해 헤더가 35% 이상 보이면 슬라이딩(이미지 전환) 멈춤
+	// 스크롤업에 의해 35% 이상이 보이면 슬라이딩 다시 시작
 	$( window ).on( 'scroll', function() {
 		var scrollTop = $( window ).scrollTop(),
-			pausingTop = $( '#masthead' ).height() * 0.5; // 헤더의 top은 늘 0이라고 가정
+			pausingTop = $( '#masthead' ).height() * 0.35; // 헤더의 top은 늘 0이라고 가정
 
 		if ( pausingTop < scrollTop ) {
 			$slide.sssPause();
