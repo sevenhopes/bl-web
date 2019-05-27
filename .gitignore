@@ -12,6 +12,7 @@ bl-media (legacy)/
 bl-media-library/
 wp-admin/
 wp-includes/
+images/
 # wp-content/ files and dirs
 index.php
 bl-responsive/
