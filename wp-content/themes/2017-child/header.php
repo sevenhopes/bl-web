@@ -53,29 +53,6 @@
 				<?php // the_custom_header_markup(); ?>
 			<!-- </div> -->
 
-			<div class="bl-header-slides">
-				<a href="<?php echo home_url(); ?>/about/why-bridge-light/">
-					<img src="<?php echo content_url(); ?>/uploads/2019/05/header-bridge-light.jpg" />
-					<span class="bl-title">왜 브릿지라잇인가</span>
-					<span class="bl-caption">영어가 어려운가요? 다리를 놓았습니다. 빛을 밝혔습니다! 따라만 오세요. 나머진 저희가 책임지겠습니다.</span>
-				</a>
-				<a href="<?php echo home_url(); ?>/about/support-and-services/">
-					<img src="<?php echo content_url(); ?>/uploads/2019/05/header-scholarship-display.jpg" />
-					<span class="bl-title">장학금을 주는 학원?!</span>
-					<span class="bl-caption">우리학원 디게 좋아요. 막 돈도 줘요. 중3까지의 영어학업을 브릿지라잇에서 끝마치면 말이지요, 후후후... you just activated my trap card...</span>
-				</a>
-				<a href="<?php echo home_url(); ?>/admission/appt-and-visit/">
-					<img src="<?php echo content_url(); ?>/uploads/2019/05/header-certificate-pics-wall.jpg" />
-					<span class="bl-title">춘천대표 우수학원</span>
-					<span class="bl-caption">저희 로비 벽에 걸린 우수학원상입니다. 저희가 좀 우수해요. 우수한 강사진! 가을 되면 난리나요. 우수수... 메롱</span>
-				</a>
-				<a href="<?php echo home_url(); ?>/about/foundation-story/">
-					<img src="<?php echo content_url(); ?>/uploads/2019/05/header-main-building-at-night.jpg" />
-					<span class="bl-title">Story of Establishment</span>
-					<span class="bl-caption">Yes, this homepage is a beta versoin. Quote: 여기저기 둘러봐준다면 유혈사태는 일어나지 않을 것입니다. by Civilization the game</span>
-				</a>
-			</div>
-
 		</div><!-- .custom-header -->
 	</header><!-- #masthead -->
 

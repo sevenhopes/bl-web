@@ -1,12 +1,11 @@
 (function( $ ) {
 
 	var	$body = $( 'body' ),
-		$header = $body.find( '#masthead' ),
-		$branding = $header.find( '#bl-branding' ),
+		$branding = $body.find( '#bl-branding' ),
 		isFrontPage = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
 		cnt = 1;	// 버튼 깜빡임 카운터
 
-	var $slide = $header.find( '.bl-header-slides' );
+	var $slide = $body.find( '.bl-header-slides' );
 
 	const transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd';
 
@@ -25,6 +24,12 @@
 			// 헤더에 슬라이드쇼
 			// $( '.bl-header-slides' ).sss();
 			$slide.sss();
+
+			var $eventBlock = $body.find( '#bl-event' );
+
+			if ( ! $eventBlock.find( '.bl-big-day.bl-holiday' ).length ) {
+				$eventBlock.find( '.bl-red-desc' ).hide();
+			}
 		}
 
 		// 페이지 로드 시 현재 페이지가 속한 서브메뉴(드롭다운 메뉴)를 미리 펼치고 있게 함
