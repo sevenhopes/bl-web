@@ -5,8 +5,6 @@
 		isFrontPage = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
 		cnt = 1;	// 버튼 깜빡임 카운터
 
-	var $slide = $body.find( '.bl-header-slides' );
-
 	const transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd';
 
 	var	dev = false;
@@ -20,17 +18,17 @@
 	// HTML 페이지 준비? 땅!
 	$( document ).ready( function() {
 
-		if ( isFrontPage ) {
-			// 헤더에 슬라이드쇼
-			// $( '.bl-header-slides' ).sss();
-			$slide.sss();
+		// if ( isFrontPage ) {
+		// 	// 헤더에 슬라이드쇼
+		// 	// $( '.bl-header-slides' ).sss();
+		// 	$slide.sss();
 
-			var $eventBlock = $body.find( '#bl-event' );
+		// 	var $eventBlock = $body.find( '#bl-event' );
 
-			if ( ! $eventBlock.find( '.bl-big-day.bl-holiday' ).length ) {
-				$eventBlock.find( '.bl-red-desc' ).hide();
-			}
-		}
+		// 	if ( ! $eventBlock.find( '.bl-big-day.bl-holiday' ).length ) {
+		// 		$eventBlock.find( '.bl-red-desc' ).hide();
+		// 	}
+		// }
 
 		// 페이지 로드 시 현재 페이지가 속한 서브메뉴(드롭다운 메뉴)를 미리 펼치고 있게 함
 		// if ( $currentMenuParent.length ) {
@@ -62,18 +60,37 @@
 		}
 	}); // End of $(document).ready()
 
-	// 스크롤다운에 의해 헤더가 35% 이상 보이면 슬라이딩(이미지 전환) 멈춤
-	// 스크롤업에 의해 35% 이상이 보이면 슬라이딩 다시 시작
-	$( window ).on( 'scroll', function() {
-		var scrollTop = $( window ).scrollTop(),
-			pausingTop = $( '#masthead' ).height() * 0.35; // 헤더의 top은 늘 0이라고 가정
+	if ( isFrontPage ) {
 
-		if ( pausingTop < scrollTop ) {
-			$slide.sssPause();
-		} else if ( scrollTop <= pausingTop ) {
-			$slide.sssResume();
+		var $slide = $body.find( '.bl-header-slides' );
+
+		// Super Simple Slide by sss.js
+		$slide.sss();
+		// $slide.sss( { speed: 1000 } ); // 테스트용 코드
+
+		var $eventBlock = $body.find( '#bl-event' );
+
+		if ( ! $eventBlock.find( '.bl-big-day.bl-holiday' ).length ) {
+			$eventBlock.find( '.bl-red-desc' ).hide();
 		}
-	});
+
+		// 스크롤다운에 의해 '헤더+슬라이더'가 35% 이하만 보이면 슬라이딩(이미지 전환) 멈춤
+		// 스크롤업에 의해 65% 이상이 보이면 슬라이딩 다시 시작
+		$( window ).on( 'scroll', function() {
+			var scrollTop = $( window ).scrollTop(),
+				pausingTop = 0.35 * ( $body.find( '#masthead' ).height() + $slide.height() );
+
+			if ( pausingTop < scrollTop ) {
+				$slide.sssPause();
+			} else if ( scrollTop <= pausingTop ) {
+				$slide.sssResume();
+			}
+		});
+	}
+
+	if ( $body.find( '#why-bl' ).length ) {
+		
+	}
 
 	/*
 	 * Test if inline SVGs are supported.
