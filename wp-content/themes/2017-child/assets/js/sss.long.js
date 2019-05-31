@@ -54,6 +54,29 @@
 		}); // End of return
 	}; // End of sss()
 
+	$.fn.sssPause = function() {
+		return this.each( function() {
+			if ( is_sliding ) {
+				clearTimeout(timer);
+				is_sliding = false;
+			}
+		});
+	};
+
+	$.fn.sssResume = function() {
+		return this.each( function() {
+			if ( !is_sliding ) {
+				slider.css({paddingBottom: get_height(target)});
+				animate_slide(target);
+				is_sliding = true;
+			}
+		});
+	};
+
+	$.fn.sssIsSliding = function() {
+		return is_sliding;
+	};
+
 	function get_height(target) {
 		return ((slides.eq(target).height() / slider.width()) * 100) + '%';
 	}
@@ -84,28 +107,5 @@
 		target = target === 0 ? slide_count - 1 : target - 1;
 		animate_slide(target);
 	}
-
-	$.fn.sssPause = function() {
-		return this.each( function() {
-			if ( is_sliding ) {
-				clearTimeout(timer);
-				is_sliding = false;
-			}
-		});
-	};
-
-	$.fn.sssResume = function() {
-		return this.each( function() {
-			if ( !is_sliding ) {
-				slider.css({paddingBottom: get_height(target)});
-				animate_slide(target);
-				is_sliding = true;
-			}
-		});
-	};
-
-	$.fn.sssIsSliding = function() {
-		return is_sliding;
-	};
 
 })(jQuery, window, document);

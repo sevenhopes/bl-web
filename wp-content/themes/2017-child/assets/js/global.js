@@ -79,29 +79,29 @@
 		$blAccord.find( 'dd' ).hide();
 
 		$blAccord.find( 'dt' ).click( function() {
-			var $dd = $( this ).next( 'dd' ),
-				$open_dd = $blAccord.find( 'dd.opened' );
+			var _this = $( this ),
+				$open_dt = $blAccord.find( 'dt.opened' );
 
-			var $accNum = $( this ).children( 'div' ),
-				$open_accNum = $open_dd.prev( 'dt ').children( 'div' );
-
-			if ( $open_dd.length ) {
-				if ( $dd.get(0) !== $open_dd.get(0) ) {
-					blOpenAccItem( $dd, $accNum );
+			if ( $open_dt.length ) {
+				if ( _this.get(0) !== $open_dt.get(0) ) {
+					blToggleAccItem( _this );
 				}
-				blCloseAccItem( $open_dd, $open_accNum );
+				blToggleAccItem( $open_dt );
 			} else {
-				blOpenAccItem( $dd, $accNum );
+				blToggleAccItem( _this );
 			}
 
-			function blOpenAccItem( fdd, fnum ) {
-				fdd.slideToggle().toggleClass( 'opened' );
-				fnum.animate( { opacity: 1, fontSize: '4rem', marginLeft: '-0.3rem', marginTop: '-0.4rem' } );
-			}
-			
-			function blCloseAccItem( fdd, fnum ) {
-				fdd.slideToggle().toggleClass( 'opened' );
-				fnum.animate( { opacity: 0.2, fontSize: '3rem', marginLeft: 0, marginTop: 0 } );
+			function blToggleAccItem( dt ) {
+				var num = dt.children( 'div' ),
+					// dd = dt.next( 'dd' ),
+					// btn = dt.find( 'button' ),
+					prop = num.css( 'opacity' ) === '1' ? { opacity: '0.2', fontSize: '3rem', marginLeft: '0', marginTop: '0' }
+						: { opacity: '1', fontSize: '4rem', marginLeft: '-0.3rem', marginTop: '-0.4rem' };
+
+				num.animate( prop );
+				dt.next( 'dd' ).slideToggle();
+				dt.toggleClass( 'opened' );
+				dt.find( 'button' ).toggleClass( 'opened' );
 			}
 		});
 	}
