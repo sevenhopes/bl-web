@@ -1089,19 +1089,11 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 #bl-front-page-ko .bl-block:nth-child(odd) {
 	background-color: #f7f7f7;
-/*	margin-top: 0;
-	padding-top: 1.5em;
-	margin-bottom: 0;
-	padding-bottom: 1em;*/
 }
-
+/*
 #bl-front-page-ko .bl-block:nth-child(even) {
-/*	margin-top: 0;
-	padding-top: 1.5em;
-	margin-bottom: 0;
-	padding-bottom: 1em;*/
 }
-
+*/
 #bl-front-page-ko .bl-block-header {
 	display: table;
 	width: 100%;
@@ -1150,27 +1142,10 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 
 #bl-news {
-	/*background: #f7f7f7;*/
 }
-
-#bl-news.bl-block {
-/*	margin-top: 0;
-	padding-top: 2em;
-	margin-bottom: 0;
-	padding-bottom: 1em;
-*/}
 
 #bl-event {
-	/*background: #fefcee;*/
-	/*background: #f7f7f7;*/
 }
-
-#bl-event.bl-block {
-/*	margin-top: 0;
-	padding-top: 1em;
-	margin-bottom: 0;
-	padding-bottom: 1.5em;
-*/}
 
 .bl-event-item {
 	display: grid;
@@ -1609,7 +1584,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	overflow: visible;
 	opacity: 0.1;
 }
-
+/*
 #why-bl h2 {
 	position: relative;
 	top: 40px;
@@ -1625,7 +1600,70 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-size: 4em;
 	font-weight: 900;
 	vertical-align: middle;
-	margin-right: -55px;
+	margin-right: -3.5rem;
+}
+*/
+#why-bl {
+}
+
+.bl-accordion {
+	width: 100%;
+}
+
+.bl-accordion .bl-block {
+	margin: 0 0 0.5rem;
+}
+
+.bl-accordion dt {
+	display: grid;
+	grid-template-columns: 2rem auto 2.5rem;
+	grid-template-areas: "number title angledown";
+	grid-column-gap: 0.2rem;
+	padding: 0.5rem 0.75rem 0.25rem;
+	/*border: solid 1px #3cf;*/
+}
+
+.bl-accordion div:first-child dt {
+	padding-top: 0;
+}
+
+.bl-accordion dt div {
+	grid-area: number;
+	color: rgb( 22, 26, 200 );
+	opacity: 0.2;
+	font-size: 3rem;
+	font-weight: 700;
+	line-height: 0.8;
+	text-align: left;
+	/*border: solid 1px #fcf;*/
+}
+
+.bl-accordion dt:after {
+	clear: both;
+}
+
+.bl-accordion dt h2 {
+	grid-area: title;
+	padding: 0;
+	margin: 0.3rem 0 0;
+	font-weight: 400;
+	/*border: solid 1px #995;*/
+}
+
+.bl-accordion dt button {
+	grid-area: angledown;
+	background: rgba( 22, 26, 100, 0.1 );
+	padding: 0.4rem;
+	text-align: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	/*margin: 0.4rem 0 0.6rem;*/
+}
+
+.bl-accordion dd p {
+	padding-left: 0.5rem;
+	margin-left: 0.4rem;
+	border-left: solid 3px #dac326;
 }
 
 #foundation-story {

@@ -13,27 +13,7 @@
 		$body.addClass( 'bl-dev' );
 	}
 
-	// $branding.css( { 'top' : '0', 'opacity' : '1' } );
-
-	// HTML 페이지 준비? 땅!
 	$( document ).ready( function() {
-
-		// if ( isFrontPage ) {
-		// 	// 헤더에 슬라이드쇼
-		// 	// $( '.bl-header-slides' ).sss();
-		// 	$slide.sss();
-
-		// 	var $eventBlock = $body.find( '#bl-event' );
-
-		// 	if ( ! $eventBlock.find( '.bl-big-day.bl-holiday' ).length ) {
-		// 		$eventBlock.find( '.bl-red-desc' ).hide();
-		// 	}
-		// }
-
-		// 페이지 로드 시 현재 페이지가 속한 서브메뉴(드롭다운 메뉴)를 미리 펼치고 있게 함
-		// if ( $currentMenuParent.length ) {
-		// 	$currentMenuParent.addClass( 'toggled-on' );
-		// }
 
 		// SVG 이미지 처리 (부모테마 Twentyseventeen에서 가져옴)
 		if ( true === supportsInlineSVG() ) {
@@ -61,6 +41,10 @@
 	}); // End of $(document).ready()
 
 	if ( isFrontPage ) {
+		// 페이지 로드 시 현재 페이지가 속한 서브메뉴(드롭다운 메뉴)를 미리 펼치고 있게 함
+		// if ( $currentMenuParent.length ) {
+		// 	$currentMenuParent.addClass( 'toggled-on' );
+		// }
 
 		var $slide = $body.find( '.bl-header-slides' );
 
@@ -88,8 +72,38 @@
 		});
 	}
 
+	// Why Bridge Light 페이지의 accordion 동작
 	if ( $body.find( '#why-bl' ).length ) {
-		
+		var $blAccord = $body.find( '.bl-accordion' );
+
+		$blAccord.find( 'dd' ).hide();
+
+		$blAccord.find( 'dt' ).click( function() {
+			var $dd = $( this ).next( 'dd' ),
+				$open_dd = $blAccord.find( 'dd.opened' );
+
+			var $accNum = $( this ).children( 'div' ),
+				$open_accNum = $open_dd.prev( 'dt ').children( 'div' );
+
+			if ( $open_dd.length ) {
+				if ( $dd.get(0) !== $open_dd.get(0) ) {
+					blOpenAccItem( $dd, $accNum );
+				}
+				blCloseAccItem( $open_dd, $open_accNum );
+			} else {
+				blOpenAccItem( $dd, $accNum );
+			}
+
+			function blOpenAccItem( fdd, fnum ) {
+				fdd.slideToggle().toggleClass( 'opened' );
+				fnum.animate( { opacity: 1, fontSize: '4rem', marginLeft: '-0.3rem', marginTop: '-0.4rem' } );
+			}
+			
+			function blCloseAccItem( fdd, fnum ) {
+				fdd.slideToggle().toggleClass( 'opened' );
+				fnum.animate( { opacity: 0.2, fontSize: '3rem', marginLeft: 0, marginTop: 0 } );
+			}
+		});
 	}
 
 	/*
@@ -103,7 +117,7 @@
 		return 'http://www.w3.org/2000/svg' === ( 'undefined' !== typeof SVGRect && div.firstChild && div.firstChild.namespaceURI );
 	}
 
-	// Add header video class after the video is loaded.
+	// Add header video class after the video is loaded. (부모테마 Twentyseventeen에서 가져옴)
 	$( document ).on( 'wp-custom-header-video-loaded', function() {
 		$body.addClass( 'has-header-video' );
 	});
