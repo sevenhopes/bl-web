@@ -1,11 +1,13 @@
 # root dir's all files
 /*.*
+
 # image files in any dir
 *.zip
 *.gif
 *.png
 *.jpg
 *.jpeg
+
 # dirs
 bl-backups/
 bl-media (legacy)/
@@ -13,9 +15,14 @@ bl-media-library/
 wp-admin/
 wp-includes/
 images/
-# wp-content/ files and dirs
+
+# wp-content/ files and dirs except my theme
 index.php
 bl-responsive/
 twenty*/
+
 # don't ignore myself :)
 !.gitignore
+
+# node-js and grunt related
+node_modules/

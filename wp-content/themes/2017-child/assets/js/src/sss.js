@@ -54,6 +54,7 @@
 		}); // End of return
 	}; // End of sss()
 
+	// jquery 객체에 의해 호출될 수 있는 함수들 (예. obj.sssPause();)
 	$.fn.sssPause = function() {
 		return this.each( function() {
 			if ( is_sliding ) {
@@ -77,6 +78,7 @@
 		return is_sliding;
 	};
 
+	// 이 파일에서만 쓰는 함수들
 	function get_height(target) {
 		return ((slides.eq(target).height() / slider.width()) * 100) + '%';
 	}
@@ -96,7 +98,7 @@
 			reset_timer();
 
 		}
-	};
+	}
 
 	function next_slide() {
 		target = target === slide_count - 1 ? 0 : target + 1;
