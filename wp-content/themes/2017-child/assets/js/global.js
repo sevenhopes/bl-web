@@ -95,10 +95,11 @@
 				var num = dt.children( 'div' ),
 					// dd = dt.next( 'dd' ),
 					// btn = dt.find( 'button' ),
-					prop = num.css( 'opacity' ) === '1' ? { opacity: '0.2', fontSize: '3rem', marginLeft: '0', marginTop: '0' }
+					numStyleToggle = num.css( 'opacity' ) === '1'
+						? { opacity: '0.2', fontSize: '3rem', marginLeft: '0', marginTop: '0' }
 						: { opacity: '1', fontSize: '4rem', marginLeft: '-0.3rem', marginTop: '-0.4rem' };
 
-				num.animate( prop );
+				num.animate( numStyleToggle );
 				dt.next( 'dd' ).slideToggle();
 				dt.toggleClass( 'opened' );
 				dt.find( 'button' ).toggleClass( 'opened' );

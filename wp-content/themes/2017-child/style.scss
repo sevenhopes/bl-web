@@ -1,6 +1,6 @@
 /*
 Theme Name: 2017 Child
-Theme URI: http://www.bridgelightels.com
+Theme URI: http://www.bridgelightels.com/m/
 Template: twentyseventeen
 Author: Bridge Light Corp.
 Author URI: http://bridgelightels.com/m/
@@ -53,120 +53,47 @@ $font-kr: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGoth
 $font-en: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGothicNeoSD", sans-serif;
 $font-mo: "Noto Sans KR", "Courier 10 Pitch", Courier, monospace;
 
-$blue-black:#05061a; // 5, 6, 26
-$blue-dark:	#080a34; // 8, 10, 52
-$blue-bl:	#2c33c8; // 44, 51, 200
-$blue-light:#007eff; // 0, 126, 255
-$white:		#fff;
-$silver:	#f0f3f6; // 240, 243, 246
-$ivory:		#fffedf; // 255, 254, 223
-$gold:		#dcd079; // 220, 208, 121
-$khaki:		#c6bc74; // 198, 188, 116
-$auburn:	#673831; // 103, 56, 49
-$maroon:	#7a3a0c; // 122, 58, 12
+$b:			#000;
+$b1:		#111;
+$b2:		#222;
+$b3:		#333;
+$b4:		#444;
+$g8:		#888;
+$g9:		#999;
+$d:			#ddd;
+$e:			#eee;
+$f2:		#f2f2f2;
+$f5:		#f5f5f5;
+$f7:		#f7f7f7;
+$fc:		#fcfcfc;
+$w:			#fff;
 
+$blue-bk:	#05061a;
+$blue-d1:	#080a34;
+$blue-d2:	#0c1055;
+$blue-d2t:	rgba( 12, 16, 85, 0.9 ); // from $blue-d2
+$blue-d3:	#0c1069;
+$blue-d4:	#111790;
+$blue-d4t1:	rgba( 17, 23, 124, 0.45 ); // from $blue-d4
+$blue-d4t2:	rgba( 17, 23, 124, 0.75 ); // from $blue-d4
+$blue-d5:	#1820aa;
+$blue-g:	#192d88;
+$blue-dp:	#161ac8;
+$blue-bl:	#2c33c8;
+$blue-l1:	#1265ff;
+$blue-l1t1:	rgba( 18, 101, 255, 0.7 );
+$blue-l1t2:	rgba( 18, 101, 255, 0.05 );
+$blue-l2:	#46a0ff;
 
-body,
-button,
-input,
-select,
-textarea {color: #222;}
-.page h3 {color: #555; }
+$gold:		#dac326;
+$red:		#a21a1a;
+$orange:	#e8a10e;
+$green:		#1aa021;
+$mint:		#1cbbb4;
 
-a:hover,
-a:hover h1,
-a:hover h2,
-a:hover h3,
-a:active,
-a:active h1,
-a:active h2,
-a:active h3 {color: #007eff;}
-#bl-front-page-ko .bl-block-content > h2:hover,
-#bl-front-page-ko .bl-block-content > h2:active {
-	color: #007eff;
-}
-
-h2 rgb( 12, 16, 95 );
-.bl-header-slides h2 rgb( 12, 16, 105 );
-.bl-page-title rgb( 44, 51, 200 );
-.navigation-top a {color: #eee;
-.navigation-top a:hover, rgb( 70, 160,255 );
-.navigation-top current-menu-item rgb( 70, 160, 255 );
-.bl-red-desc rgb( 135, 15, 15 );
-.bl-block-title rgb( 24, 32, 170 );
-.bl-ble-quote b {
-	color: rgb( 18, 101, 255 );
-	text-shadow: 2px 2px 5px rgba( 18, 101, 255, 0.7 );
-}
-.bl-accordion dt div color: rgb( 22, 26, 200 );
-.bl-accordion dt button background-color: #f0f3f6;
-.bl-accordion dd p border-left: solid 3px #dac326;
-#semester thead {color: rgb( 24, 32, 170 ); }
-#bl-front-menu span {
-	color: #fcfcfc;
-#bl-front-page-ko .bl-block-header a {
-	color: #dac326;
-
-
-.main-navigation > div > ul > li.toggled-on,
-.main-navigation > div > ul > li.toggled-on > a {
-	background: #f5f5f5;
-	color: #111; }
-.main-navigation > div > ul > li.toggled-on {
-	border-bottom: 1px solid #ddd; }
-.main-navigation ul ul a {
-	color: #222;
-
-.navigation-top rgba( 12, 16, 85, 0.9 );
-.main-navigation li border rgb( 24, 45, 136 );
-.main-navigation li li:after { /* 서브메뉴 사이 경계선 효과 */
-	background: #ddd;
-
-.dropdown-toggle rgb( 24, 43, 136, 0.5 );
-.dropdown-toggle:hover rgb( 24, 43, 136, 0.8 );
-.dropdown-toggle:focus rgb( 24, 43, 136, 0.5 );
-.dropdown-toggle .icon,
-.dropdown-toggle.toggled-on .icon {
-	color: #eee;
-body.page:not(.twentyseventeen-front-page) .entry-title {
-	color: #111777;
-.bl-heading {color: #ddd;
-
-.bl-branding rgba( 12, 16, 85, 1 );
-.bl-front-menu rgb( 7, 40, 102 );
-.bl-front-menu div rgb( 12, 16, 85 );
-.bl-big-day rgb( 25, 55, 135 );
-.bl-weekday rgb( 25, 55, 135 );
-.bl-holiday rgb( 135, 35, 35 );
-#bl-front-page-ko .bl-block:nth-child(odd) {
-	background-color: #f7f7f7;
-
-.bl-quiet-title {color: #999; }
-.bl-child-item-title {color: #555;
-.bl-block.bl-dark {background: #111777;
-
-#teachers .bl-t-profile background-color: rgba( 18, 101, 255, 0.05);
-
-$basic: #e8a10e;
-$special: #e8a10e;
-$stage: #2c33c8;
-$green: #1aa021;
-$blue: #1165ff;
-$mint: #1cbbb4;
-#course-overview .basic {background-color: #e8a10e; }
-#course-overview .special {background-color: #a21a1a; }
-#course-overview .stage {background-color: #2c33c8; }
-#course-overview .w-camp {background-color: #1aa021; }
-#course-overview .s-camp {background-color: #1aa021; }
-#course-overview .a-camp {background-color: #1165ff; }
-#course-overview .test-p {background-color: #1cbbb4; }
-#course-overview .bldg-s {background-color: #1cbbb4; }
-#course-overview .e-contest {background-color: #1cbbb4; }
-#course-overview .halloween {background-color: #1cbbb4; }
-#course-overview .christmas {background-color: #1cbbb4; } 
-.site-footer {background: rgb( 12, 16, 85); }
-.site-footer ul {color: #f0f0f0;}
-.site-footer ul a {border-bottom: dotted 1px #999; }
+$test-r:	#fc3;
+$test-g:	#3cf;
+$test-b:	#cf3;
 
 /*--------------------------------------------------------------
 1.0 Normalize
@@ -184,7 +111,7 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 	display: block;
 	z-index: 9;
 	opacity: 1;
-	color: #888;
+	color: $g8;
 	position: static;
 }
 
@@ -195,11 +122,11 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 }
 
 .bl-ue {
-	color: rgb( 18, 101, 255 );
+	color: $blue-bl;
 }
 
 .bl-navy {
-	color: rgb( 44, 51, 200 );
+	color: $blue-d5;
 }
 
 .bl-rel {
@@ -240,7 +167,7 @@ button,
 input,
 select,
 textarea {
-	color: #222;
+	color: $b2;
 	font-family: $font-kr;
 	font-weight: 300;
 	font-size: 16px;
@@ -256,7 +183,7 @@ h5,
 h6 {
 	clear: both;
 	line-height: 1.15;
-	color: #222;
+	color: $b2;
 	padding: 0;
 	/*letter-spacing: -1px;*/
 	margin: 0.5em 0 0;
@@ -280,7 +207,7 @@ h2 b {
 }
 
 h2 {
-	color: rgb( 12, 16, 95 );
+	color: $blue-d3;
 	font-weight: 500;
 }
 
@@ -318,7 +245,7 @@ p {
 }
 
 pre {
-	font-family: "Noto Sans KR", "Courier 10 Pitch", Courier, monospace;
+	font-family: $font-mo;
 }
 
 b,
@@ -357,24 +284,24 @@ html[lang="ko-KR"] h6 {
 
 /* Placeholder text color -- selectors need to be separate to work. */
 ::-webkit-input-placeholder {
-	color: #222;
+	color: $b2;
 	font-family: $font-kr;
 }
 
 :-moz-placeholder {
-	color: #222;
+	color: $b2;
 	font-family: $font-kr;
 }
 
 ::-moz-placeholder {
-	color: #222;
+	color: $b2;
 	font-family: $font-kr;
 	opacity: 1;
 	/* Since FF19 lowers the opacity of the placeholder by default */
 }
 
 :-ms-input-placeholder {
-	color: #222;
+	color: $b2;
 	font-family: $font-kr;
 }
 
@@ -424,12 +351,12 @@ dd {
 
 a,
 a:visited {
-	color: inherit;
 	text-decoration: none;
 	box-shadow: none !important;
 }
 
 a:focus {
+	color: $gold;
 }
 
 a:hover,
@@ -440,8 +367,7 @@ a:active,
 a:active h1,
 a:active h2,
 a:active h3 {
-	color: #007eff;
-	/*color: #5577ff;*/
+	color: $gold;
 	outline: 0;
 	text-decoration: none;
 }
@@ -455,9 +381,9 @@ a:active h3 {
 --------------------------------------------------------------*/
 
 .navigation-top {
-	background: rgba( 12, 16, 85, 1 );
-	border-top: 1px solid rgb( 24, 45, 136 );
-	border-bottom: 1px solid rgb( 24, 45, 136 );
+	background: $blue-d2t;
+	border-top: 1px solid $blue-g;
+	border-bottom: 1px solid $blue-g;
 	font-size: 20px;
 	font-size: 1.25rem;
 	position: absolute;
@@ -470,11 +396,11 @@ a:active h3 {
 }
 
 .home .navigation-top {
-	background: rgba( 12, 16, 85, 0.9 );
+	background: $blue-d2t;
 }
 
 .navigation-top a {
-	color: #eee;
+	color: $e;
 	font-weight: 300;
 	padding: 0.6em 1.1em; /* padding이 메뉴의 위아래 여백, 즉 메뉴 height를 결정 */
 	text-transform: uppercase;
@@ -483,7 +409,7 @@ a:active h3 {
 
 .navigation-top a:hover,
 .navigation-top a:focus {
-	color: rgb( 70, 160, 255 );
+	color: $gold;
 }
 
 .navigation-top .wrap {
@@ -499,14 +425,17 @@ a:active h3 {
 
 .navigation-top .current-menu-item > a,
 .navigation-top .current_page_item > a {
-	color: rgb( 70, 160, 255 );
+	color: $blue-l2;
 	font-weight: 400;
 }
 
-.navigation-top .current-menu-item > a:hover,
-.navigation-top .current_page_item > a:focus,
+// .navigation-top .current-menu-item > a:hover,
+// .navigation-top .current_page_item > a:focus {
+// 	color: $gold;
+// }
+
 .navigation-top .current-menu-parent > a { /* 현재 페이지에 해당하는 메뉴를 밝게 표시 */
-	color: rgb( 70, 160, 255 );
+	color: $blue-l2;
 }
 
 .navigation-top .current_page_parent.current-menu-item > a, /* 현재 페이지가 서브메뉴가 없는 부모메뉴에 해당할 때 */
@@ -526,14 +455,14 @@ a:active h3 {
 	/*background-image: none;*/
 }
 
-.main-navigation > div > ul > li.toggled-on,
-.main-navigation > div > ul > li.toggled-on > a {
-	background: #f5f5f5;
-	color: #111;
+.main-navigation li.toggled-on,
+.main-navigation li.toggled-on > a {
+	background: $f5;
+	color: $b1;
 }
 
-.main-navigation > div > ul > li.toggled-on {
-	border-bottom: 1px solid #ddd;
+.main-navigation li.toggled-on {
+	border-bottom: 1px solid $d;
 }
 
 .main-navigation ul ul {
@@ -546,7 +475,7 @@ a:active h3 {
 }
 
 .main-navigation ul ul a {
-	color: #222;
+	color: $b1;
 	letter-spacing: -1px;
 	padding: 0.6em 0;
 	position: relative;
@@ -561,7 +490,7 @@ a:active h3 {
 .main-navigation li {
 	list-style: none;
 	padding-top: 0;
-	border-bottom: 1px solid rgb( 24, 45, 136 );
+	border-bottom: 1px solid $blue-g;
 }
 
 .main-navigation li li {
@@ -570,7 +499,7 @@ a:active h3 {
 
 .main-navigation li li:after { /* 서브메뉴 사이 경계선 효과 */
 	content: "";
-	background: #ddd;
+	background: $d;
 	position: absolute;
 	left: 20%;
 	width: 60%;
@@ -588,7 +517,7 @@ a:active h3 {
 /* 서브 메뉴를 위한 Dropdown toggle */
 
 .dropdown-toggle {
-	background: rgb( 24, 43, 136, 0.5 );
+	background: $blue-d4t1;
 	top: 0;
 	right: 0;
 	margin: 0;
@@ -599,16 +528,16 @@ a:active h3 {
 }
 
 .dropdown-toggle:hover {
-	background: rgb( 24, 43, 136, 0.8 );
+	background: $gold;
 }
 
 .dropdown-toggle:focus {
-	background: rgb( 24, 43, 136, 0.5 );
+	background: $gold;
 	outline: none;
 }
 
 .dropdown-toggle .icon {
-	color: #eee;
+	color: $e;
 	width: 1.6em;
 	height: 1.6em;
 }
@@ -618,7 +547,7 @@ a:active h3 {
 }
 
 .dropdown-toggle.toggled-on .icon {
-	color: #eee;
+	color: $e;
 	-ms-transform: rotate(-180deg); /* IE 9 */
 	-webkit-transform: rotate(-180deg); /* Chrome, Safari, Opera */
 	transform: rotate(-180deg);
@@ -675,7 +604,7 @@ a:active h3 {
 --------------------------------------------------------------*/
 
 body {
-	/* background: rgb( 12, 16, 85 ); /* #0c1055; */
+	/* background: rgb( 12, 16, 105 ); */
 }
 
 #page {
@@ -703,14 +632,14 @@ body {
 	grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
 	grid-auto-rows: 1fr;
 	grid-gap: 0.5rem;
-	color: #fff;
+	color: $w;
 	text-align: center;
 	font-size: 1.2rem;
 	font-weight: 300;
 	line-height: 1;
 	padding: 0;
 	margin: 0;
-	/*background-color: #ccc;*/
+	/*background: #ccc;*/
 }
 
 .bl-grid-square::before {
@@ -742,9 +671,7 @@ a.skip-link {
 .site-header {
 	display: block;
 	position: static;
-	/*background: rgba( 8, 10, 52, 1 );*/
-	/*background: rgba( 12, 16, 85, 1 );*/
-	background: #fff;
+	background: $w;
 	min-width: 100vw;
 	height: 76px;
 	overflow: hidden;
@@ -938,7 +865,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 /* 상단 로고 컨테이너 */
 
 #bl-branding {
-	background: rgba( 12, 16, 85, 1 );
+	background: $blue-d2;
 	width: 100%;
 	height: 76px;
 	position: relative;
@@ -954,7 +881,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 /*
 .home #bl-branding {
-	background: rgba( 12, 16, 85, 0.9 );
+	background: $blue-d2t;
 	-webkit-transition: top 0.6s, opacity 0.6s;
 	transition: top 0.6s, opacity 0.6s;
 }
@@ -977,7 +904,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 /* 처음에 페이드인으로 나타나는 텍스트와 버튼 */
 
 #bl-hero-text {
-	color: #fff;
+	color: $w;
 	text-align: center;
 	font-size: 36px;
 	font-size: 2.25rem;
@@ -1067,7 +994,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 
 .bl-header-slides .bl-title > h2 {
-	color: rgb( 12, 16, 105 );
+	color: $blue-d3;
 	font-size: 1.5rem;
 	font-weight: 500;
 	line-height: 1.7;
@@ -1077,7 +1004,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-header-slides .bl-caption {
 	display: block;
-	color: #222;
+	color: $b2;
 	font-size: 1rem;
 	font-weight: 400;
 	padding: 0 0.75em;
@@ -1141,7 +1068,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 1px 1px;
-	background-color: rgb( 7, 40, 102 );
+	background: $blue-d4;
 	/*margin-top: 0.5em;*/
 }
 
@@ -1150,7 +1077,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	letter-spacing: 0;
 	padding-top: 0.6rem;
 	padding-bottom: 0.6rem;
-	background-color: rgb( 12, 16, 85 );
+	background: $blue-d2;
 }
 
 #bl-front-menu > div:nth-child(odd) {
@@ -1177,7 +1104,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 
 #bl-front-menu span {
-	color: #fcfcfc;
+	color: $e;
 }
 
 #bl-front-menu img {
@@ -1200,13 +1127,13 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 #bl-front-page-ko .bl-block {
 	/*margin-bottom: 1.5em;*/
 	margin-top: 0;
-	padding-top: 1.5em;
+	padding-top: 3em;
 	margin-bottom: 0;
 	padding-bottom: 1em;
 }
 
 #bl-front-page-ko .bl-block:nth-child(odd) {
-	background-color: #f7f7f7;
+	background: $f7;
 }
 /*
 #bl-front-page-ko .bl-block:nth-child(even) {
@@ -1224,7 +1151,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 
 #bl-front-page-ko .bl-block-header a {
-	color: #dac326;
+	color: $gold;
 	letter-spacing: 0;
 	padding-right: 0.25rem;
 }
@@ -1236,9 +1163,9 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	text-transform: uppercase;
 }
 
-#bl-front-page-ko h2.bl-block-title:first-letter {
-	font-weight: 100;
-}
+// #bl-front-page-ko h2.bl-block-title:first-letter {
+// 	font-weight: 100;
+// }
 
 #bl-front-page-ko p {
 	text-indent: 0;
@@ -1246,17 +1173,11 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 #bl-front-page-ko .bl-block-content > h2 {
 	display: block;
-	/*color: rgb( 12, 16, 105 );*/
 	font-size: 1.5rem;
 	font-weight: 500;
 	letter-spacing: 0;
 	margin-top: 0.75rem;
 	margin-bottom: 0.35rem;
-}
-
-#bl-front-page-ko .bl-block-content > h2:hover,
-#bl-front-page-ko .bl-block-content > h2:active {
-	color: #007eff;
 }
 
 #bl-news {
@@ -1274,7 +1195,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 		"bigday title"
 		"weekday date";
 	margin-bottom: 1rem;
-	background: #fff;
+	background: $w;
 	overflow: hidden;
 }
 
@@ -1284,8 +1205,8 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-event-item .bl-big-day {
 	grid-area: bigday;
-	background: rgb( 25, 55, 135 );
-	color: #fff;
+	background: $blue-d4;
+	color: $w;
 	font-size: 2.5rem;
 	line-height: 1;
 	text-align: center;
@@ -1295,8 +1216,8 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-event-item .bl-weekday {
 	grid-area: weekday;
-	background: rgb( 25, 55, 135 );
-	color: #fff;
+	background: $blue-d4;
+	color: $w;
 	/*font-size: 1rem;*/
 	line-height: 1.1;
 	text-align: center;
@@ -1306,7 +1227,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-event-item .bl-big-day.bl-holiday,
 .bl-event-item .bl-weekday.bl-holiday {
-	background: rgb( 135, 35, 35 );
+	background: $red;
 }
 
 .bl-event-item h2.bl-event-title {
@@ -1326,7 +1247,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 #bl-event .bl-red-desc {
 	display: block;
-	color: rgb( 135, 15, 15 );
+	color: $red;
 	font-size: 0.9em;
 	text-align: right;
 	line-height: 1;
@@ -1339,6 +1260,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	max-width: 91.11vw;
 	width: 91.11vw;
 	/*margin-bottom: 1em;*/
+	overflow: hidden;
 }
 
 #bl-curriculum .bl-hide-overflow {
@@ -1421,7 +1343,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 .page .panel-content .entry-title,
 .page-title,
 body.page:not(.twentyseventeen-front-page) .entry-title {
-	color: #111777;
+	color: $blue-d4;
 	font-size: 32px;
 	font-size: 2rem;
 	font-weight: 100;
@@ -1490,7 +1412,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .page h3 {
-	color: #555;
+	color: $b4;
 }
 
 .bl-link-wrapper {
@@ -1499,7 +1421,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-page-header {
 	position: static;
 	/*padding: 0;*/
-	margin-bottom: 1.5rem;
+	margin-bottom: 2rem;
 }
 
 .bl-page-header-media {
@@ -1511,9 +1433,9 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .bl-heading {
-	font-size: 1rem;
+	font-size: 1.25rem;
 	font-weight: 500;
-	color: #ddd;
+	color: $d;
 	letter-spacing: 0;
 	vertical-align: top;
 }
@@ -1521,19 +1443,19 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-page-title {
 	font-size: 32px;
 	font-size: 2rem;
+	font-weight: 700;
 	letter-spacing: -1px !important;
+	line-height: 1.4;
 	word-spacing: 5px;
-	/*padding: 0.75em 0 0;*/
-	margin-top: 0.5em;
-	/*color: rgb( 18, 101, 255 );*/
-	color: rgb( 44, 51, 200 );
+	margin-top: 0.75em;
+	color: $blue-bl;
 	text-align: center;
 	position: static;
 }
 
 .bl-page-header h1.bl-heading {
 	display: block;
-	color: #222;
+	color: $b2;
 	font-weight: 400;
 	padding: 0;
 	margin: 0;
@@ -1557,8 +1479,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .bl-block-header {
-	padding-left: 0.5rem;
-	padding-right: 0.5rem;
+	padding: 0 0.75rem;
 }
 
 .bl-block-header-media {
@@ -1573,20 +1494,21 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-block-header-media figure {
 	margin: 0 0 0.5rem;
 }
+
 .bl-block-title {
 	display: inline-block;
-	color: rgb( 24, 32, 170 );
-	font-size: 28px;
-	font-size: 1.75rem;
+	color: $blue-d5;
+	font-size: 24px;
+	font-size: 1.5rem;
 	font-weight: 500;
-	/*padding: 0 0 0 0.5rem;*/
+	padding-left: -0.25rem;
 	line-height: 1.15;
 	margin: 0.5rem 0;
 }
 
-.bl-block-title:first-letter {
-	/*font-weight: 900;*/
-}
+// .bl-block-title:first-letter {
+// 	font-weight: 900;
+// }
 
 .bl-block h2.bl-heading {
 	display: inline-block;
@@ -1595,14 +1517,14 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .bl-quiet-title {
-	color: #999;
+	color: $g9;
 	font-weight: 400;
 	margin: 0.5em 0 0.1em;
 }
 
 .bl-child-item-title {
 	display: inline-block;
-	color: #555;
+	color: $b4;
 	font-size: 20px;
 	font-size: 1.25rem;
 	font-weight: 500;
@@ -1619,13 +1541,17 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	padding: 0 0.75rem;
 }
 
+.bl-wrap p + img {
+	margin-top: 0.5rem;
+}
+
 .bl-wrap-more {
 	padding: 0 1.5rem;
 }
 
 .bl-block.bl-dark {
-	background: #111777;
-	color: #fff;
+	background: $blue-d4;
+	color: $w;
 	padding: 1em 0;
 }
 
@@ -1633,8 +1559,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	/*margin-top: 0.5em;*/
 }
 
-.bl-block.bl-dark .bl-block-title {
-	color: #fff;
+.bl-block.bl-dark h2.bl-block-title {
+	color: $w;
 }
 
 .bl-ble-quote {
@@ -1647,22 +1573,21 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	line-height: 1.4;
 	margin: 0;
 	padding: 12% 0 0 0;
-	// font-family: "KoPub Batang", "바탕", serif;
 	letter-spacing: 0;
 	text-align: center;
 	overflow: visible;
 }
 
 .bl-ble-quote b {
-	color: rgb( 18, 101, 255 );
+	color: $blue-l1;
 	font-size: larger;
-	text-shadow: 2px 2px 5px rgba( 18, 101, 255, 0.7 );
+	text-shadow: 2px 2px 5px $blue-l1t1;
 }
 
 .bl-ble-quote:before { /* 인용부의 여는 큰따옴표 */
 	/*content: "\201C";*/
 	content: "";
-	color: #eee;
+	color: $e;
 	font-size: 7rem;
 	position: absolute;
 	top: 17%;
@@ -1672,7 +1597,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-ble-quote:after { /* 인용부의 닫는 큰따옴표 */
 	/*content: "\201D";*/
 	content: "";
-	color: #000;
+	color: $b;
 	font-size: 3rem;
 	padding: 28% 0 0 48%;
 	position: absolute;
@@ -1707,7 +1632,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	grid-template-areas: "number title angledown";
 	grid-column-gap: 0.2rem;
 	padding: 0.5rem 0.75rem 0.25rem;
-	/*border: solid 1px #3cf;*/
+	/*border: solid 1px $test-r;*/
 }
 
 .bl-accordion div:first-child dt {
@@ -1716,13 +1641,13 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .bl-accordion dt div {
 	grid-area: number;
-	color: rgb( 22, 26, 200 );
+	color: $blue-dp;
 	opacity: 0.2;
 	font-size: 3rem;
 	font-weight: 700;
 	line-height: 0.8;
 	text-align: left;
-	/*border: solid 1px #fcf;*/
+	/*border: solid 1px $test-g;*/
 }
 
 .bl-accordion dt:after {
@@ -1733,19 +1658,19 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	grid-area: title;
 	padding: 0;
 	margin: 0.3rem 0 0;
+	font-size: 28px;
+	font-size: 1.75rem;
 	font-weight: 400;
-	/*border: solid 1px #995;*/
+	/*border: solid 1px $test-b;*/
 }
 
 .bl-accordion dt button {
 	grid-area: angledown;
-	/*background: rgba( 22, 26, 100, 0.1 );*/
-	background-color: #f0f3f6;
+	background: $f5;
 	padding: 0.4rem;
 	text-align: center;
 	width: 2.5rem;
 	height: 2.5rem;
-	/*margin: 0.4rem 0 0.6rem;*/
 }
 
 .bl-accordion dt button.opened {
@@ -1757,7 +1682,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-accordion dd p {
 	padding-left: 0.5rem;
 	margin-left: 0.4rem;
-	border-left: solid 3px #dac326;
+	border-left: solid 3px $gold;
 }
 
 #foundation-story {
@@ -1771,7 +1696,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 #teachers .bl-t-profile {
 	width: auto;
-	background-color: rgba( 18, 101, 255, 0.05);
+	background: $blue-l1t2;
 	margin-bottom: 1em;
 	padding: 0.5em 0 0.2em 0.5em;
 	font-size: 1.125em;
@@ -1810,55 +1735,28 @@ body:not(.twentyseventeen-front-page) .entry-header {
 #support-and-services {
 }
 
-#course-overview h5 { /* 교육 과정 페이지 */
-	color: #555;
-	font-weight: 300;
-	margin-left: 0;
-	margin-bottom: 0.25rem;
-}
-
 #course-overview .basic {
-	background-color: #e8a10e;
+	background: $orange;
 }
 
 #course-overview .special {
-	background-color: #a21a1a;
+	background: $red;
 }
 
 #course-overview .stage {
-	background-color: #2c33c8;
+	background: $blue-bl;
 }
 
-#course-overview .w-camp {
-	background-color: #1aa021;
-}
-
-#course-overview .s-camp {
-	background-color: #1aa021;
+#course-overview .camp {
+	background: $green;
 }
 
 #course-overview .a-camp {
-	background-color: #1165ff;
+	background: $blue-l1;
 }
 
-#course-overview .test-p {
-	background-color: #1cbbb4;
-}
-
-#course-overview .bldg-s {
-	background-color: #1cbbb4;
-}
-
-#course-overview .e-contest {
-	background-color: #1cbbb4;
-}
-
-#course-overview .halloween {
-	background-color: #1cbbb4;
-}
-
-#course-overview .christmas {
-	background-color: #1cbbb4;
+#course-overview .extra {
+	background: $mint;
 }
 
 #course-overview .bl-grid-square > div {
@@ -1868,7 +1766,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 #course-overview .bl-grid-square > div a,
 #course-overview .bl-grid-square > div a:hover,
 #course-overview .bl-grid-square > div a:active {
-	color: #fff;
+	color: $w;
 	display: block;
 }
 
@@ -1902,7 +1800,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 #semester thead {
-	color: rgb( 24, 32, 170 );
+	color: $blue-d5;
 }
 
 #semester thead th {
@@ -1963,28 +1861,29 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .site-footer {
 	border-top: none;
-	background: rgb( 12, 16, 85);
+	background: $blue-d2;
 	margin: 2em 0 0 0;
 	font-size: 15px;
 }
 
 .site-footer .wrap {
-	padding: 2em 0.5em 1.5em 2em;
+	padding: 2em 0.5em 2em 2em;
 }
 
 .site-footer a {
-	color: #fff;
+	color: $w;
 }
 
 .site-footer ul {
-	color: #f0f0f0;
+	color: $f2;
 	list-style: none;
 	line-height: 2.5;
 	font-size: 14px;
 }
 
 .site-footer ul a {
-	border-bottom: dotted 1px #999;
+	color: $blue-l2;
+	// border-bottom: dotted 1px #999;
 }
 
 #bl-social-links {
