@@ -212,9 +212,10 @@ h2 {
 }
 
 h3 {
-	font-size: 22px;
-	font-size: 1.375rem;
-	/*font-weight: 300;*/
+	font-size: 20px;
+	font-size: 1.25rem;
+	font-weight: 400;
+	margin: 0.7em 0 0.3em;
 }
 
 h4 {
@@ -276,6 +277,7 @@ html[lang="ko-KR"] h3,
 html[lang="ko-KR"] h4,
 html[lang="ko-KR"] h5,
 html[lang="ko-KR"] h6 {
+	font-weight: 400;
 }
 
 /*--------------------------------------------------------------
@@ -1381,7 +1383,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .site-content ul,
 .site-content ol {
 	list-style: none outside url( 'http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/ul-bullet.gif' );
-	padding-left: 1em;
+	padding-left: 2rem;
 	line-height: 1.2;
 	margin: 0.5rem 0;
 }
@@ -1412,7 +1414,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .page h3 {
-	color: $b4;
+	color: $b3;
 }
 
 .bl-link-wrapper {
@@ -1850,9 +1852,22 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 }
 
+#appt-and-visit {
+}
+
 #bl-map {
 	width: 100%;
 	height: 320px;
+}
+
+#school-regulations {
+}
+
+#faq {
+}
+
+#faq .bl-page-title {
+	letter-spacing: 0 !important;
 }
 
 /*--------------------------------------------------------------
