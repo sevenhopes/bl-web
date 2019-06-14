@@ -1573,6 +1573,10 @@ body:not(.twentyseventeen-front-page) .entry-header {
   transform: rotate(-180deg);
 }
 
+.bl-accordion dd {
+  display: none;
+}
+
 .bl-accordion dd p {
   padding-left: 0.5rem;
   margin-left: 0.4rem;
@@ -1773,6 +1777,52 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 #faq .bl-page-title {
   letter-spacing: 0 !important;
+}
+
+#faq form fieldset {
+  border: none;
+}
+
+.bl-faq-input {
+  border-color: #2c33c8;
+}
+
+dl.bl-faq-list {
+  border-top: solid 2px #1265ff;
+}
+dl.bl-faq-list dt {
+  border-bottom: solid 1px #ddd;
+  padding: 0.75rem 0;
+  line-height: 1.4;
+}
+dl.bl-faq-list dt strong {
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+dl.bl-faq-list dt.faq-admission strong {
+  color: #e8a10e;
+}
+dl.bl-faq-list dt.faq-tuition strong {
+  color: #1aa021;
+}
+dl.bl-faq-list dt.faq-absence strong {
+  color: #a21a1a;
+}
+dl.bl-faq-list dt.faq-level strong {
+  color: #2c33c8;
+}
+dl.bl-faq-list dt.faq-class strong {
+  color: #1cbbb4;
+}
+dl.bl-faq-list dt.faq-bus strong {
+  color: #dac326;
+}
+dl.bl-faq-list dd {
+  display: none;
+  border-bottom: solid 1px #ddd;
+  padding: 0.75rem 0;
 }
 
 /*--------------------------------------------------------------

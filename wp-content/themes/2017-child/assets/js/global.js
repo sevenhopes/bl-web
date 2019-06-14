@@ -70,17 +70,13 @@
 				$slide.sssResume();
 			}
 		});
-	}
+		// Why Bridge Light 페이지의 accordion 동작
+	} else if ( $body.find( '#why-bl' ).length ) {
+		var $accord = $body.find( '.bl-accordion' );
 
-	// Why Bridge Light 페이지의 accordion 동작
-	if ( $body.find( '#why-bl' ).length ) {
-		var $blAccord = $body.find( '.bl-accordion' );
-
-		$blAccord.find( 'dd' ).hide();
-
-		$blAccord.find( 'dt' ).click( function() {
+		$accord.find( 'dt' ).click( function() {
 			var _this = $( this ),
-				$open_dt = $blAccord.find( 'dt.opened' );
+				$open_dt = $accord.find( 'dt.opened' );
 
 			if ( $open_dt.length ) {
 				if ( _this.get(0) !== $open_dt.get(0) ) {
@@ -103,6 +99,31 @@
 				dt.next( 'dd' ).slideToggle();
 				dt.toggleClass( 'opened' );
 				dt.find( 'button' ).toggleClass( 'opened' );
+			}
+		});
+		// FAQ (자주 묻는 질문) 페이지의 검색과 accordion 동작
+	} else if ( $body.find( '#faq' ).length ) {
+		var $textbox = $body.find( 'input' ),
+			$accord = $body.find( 'dl' );
+			$questions = $accord.find( 'dt' ),
+			$answers = $accord.find( 'dd' ),
+			input = '';
+
+		$textbox.keyup( function() {
+			input = $textbox.val();
+			if ( input === '' ) {
+				$.each( $questions, function() {
+					$( this ).slideDown();
+				});
+			} else {
+				$.each( $questions, function() {
+					// var q = $( this ).text();
+					if ( $( this ).text().indexOf( input ) > -1 ) {
+						$( this ).show();
+					} else {
+						$( this ).hide();
+					}
+				});
 			}
 		});
 	}
