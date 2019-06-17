@@ -70,9 +70,9 @@
 				$slide.sssResume();
 			}
 		});
-		// Why Bridge Light 페이지의 accordion 동작
 	} else if ( $body.find( '#why-bl' ).length ) {
-		var $accord = $body.find( '.bl-accordion' );
+		// Why Bridge Light 페이지의 accordion 동작
+		var $accord = $body.find( '.bl-why-list' );
 
 		$accord.find( 'dt' ).click( function() {
 			var _this = $( this ),
@@ -89,8 +89,6 @@
 
 			function blToggleAccItem( dt ) {
 				var num = dt.children( 'div' ),
-					// dd = dt.next( 'dd' ),
-					// btn = dt.find( 'button' ),
 					numStyleToggle = num.css( 'opacity' ) === '1'
 						? { opacity: '0.2', fontSize: '3rem', marginLeft: '0', marginTop: '0' }
 						: { opacity: '1', fontSize: '4rem', marginLeft: '-0.3rem', marginTop: '-0.4rem' };
@@ -101,8 +99,29 @@
 				dt.find( 'button' ).toggleClass( 'opened' );
 			}
 		});
-		// FAQ (자주 묻는 질문) 페이지의 검색과 accordion 동작
 	} else if ( $body.find( '#faq' ).length ) {
+		// FAQ (자주 묻는 질문) 페이지의 검색과 accordion 동작
+		var $accord = $body.find( '.bl-faq-list' );
+
+		$accord.find( 'dt' ).click( function() {
+			var _this = $( this ),
+				$open_dt = $accord.find( 'dt.opened' );
+
+			if ( $open_dt.length ) {
+				if ( _this.get(0) !== $open_dt.get(0) ) {
+					blToggleAccItem( _this );
+				}
+				blToggleAccItem( $open_dt );
+			} else {
+				blToggleAccItem( _this );
+			}
+
+			function blToggleAccItem( dt ) {
+				dt.next( 'dd' ).slideToggle();
+				dt.toggleClass( 'opened' );
+			}
+		});
+
 		var $textbox = $body.find( 'input' ),
 			$accord = $body.find( 'dl' );
 			$questions = $accord.find( 'dt' ),

@@ -74,6 +74,10 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
   color: #1820aa;
 }
 
+.bl-red {
+  color: #a21a1a;
+}
+
 .bl-rel {
   position: relative;
 }
@@ -98,6 +102,10 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 /*--------------------------------------------------------------
 5.0 Typography
 --------------------------------------------------------------*/
+html {
+  font-size: 16px;
+}
+
 /*
  * 1rem = 16px
  * 1em  = 20px, because the following style
@@ -110,8 +118,6 @@ textarea {
   color: #222;
   font-family: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGothicNeoSD", sans-serif;
   font-weight: 300;
-  font-size: 16px;
-  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -1512,15 +1518,15 @@ body:not(.twentyseventeen-front-page) .entry-header {
   opacity: 0.1;
 }
 
-.bl-accordion {
+.bl-why-list {
   width: 100%;
 }
 
-.bl-accordion .bl-block {
+.bl-why-list .bl-block {
   margin: 0 0 0.5rem;
 }
 
-.bl-accordion dt {
+.bl-why-list dt {
   display: grid;
   grid-template-columns: 2rem auto 2.5rem;
   grid-template-areas: "number title angledown";
@@ -1529,11 +1535,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
   /*border: solid 1px $test-r;*/
 }
 
-.bl-accordion div:first-child dt {
+.bl-why-list div:first-child dt {
   padding-top: 0;
 }
 
-.bl-accordion dt div {
+.bl-why-list dt div {
   grid-area: number;
   color: #161ac8;
   opacity: 0.2;
@@ -1544,11 +1550,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
   /*border: solid 1px $test-g;*/
 }
 
-.bl-accordion dt:after {
+.bl-why-list dt:after {
   clear: both;
 }
 
-.bl-accordion dt h2 {
+.bl-why-list dt h2 {
   grid-area: title;
   padding: 0;
   margin: 0.3rem 0 0;
@@ -1558,7 +1564,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
   /*border: solid 1px $test-b;*/
 }
 
-.bl-accordion dt button {
+.bl-why-list dt button {
   grid-area: angledown;
   background: #f5f5f5;
   padding: 0.4rem;
@@ -1567,17 +1573,17 @@ body:not(.twentyseventeen-front-page) .entry-header {
   height: 2.5rem;
 }
 
-.bl-accordion dt button.opened {
+.bl-why-list dt button.opened {
   -ms-transform: rotate(-180deg);
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
 
-.bl-accordion dd {
+.bl-why-list dd {
   display: none;
 }
 
-.bl-accordion dd p {
+.bl-why-list dd p {
   padding-left: 0.5rem;
   margin-left: 0.4rem;
   border-left: solid 3px #dac326;
@@ -1823,6 +1829,10 @@ dl.bl-faq-list dd {
   display: none;
   border-bottom: solid 1px #ddd;
   padding: 0.75rem 0;
+  font-size: 1rem;
+}
+dl.bl-faq-list dd a {
+  color: #2c33c8;
 }
 
 /*--------------------------------------------------------------
