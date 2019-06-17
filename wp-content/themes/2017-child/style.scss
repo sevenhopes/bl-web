@@ -1971,7 +1971,6 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 #faq form {
-
 }
 
 #faq form fieldset {
@@ -1982,8 +1981,51 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	border-color: $blue-bl;
 }
 
-.bl-faq-list {
+.bl-faq-call-msg {
+	padding: 0 0.75rem;
 
+	a,
+	a:focus {
+		font-weight: 500;
+		color: $blue-bl;
+	}
+}
+
+.bl-faq-category {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1.15fr 0.95fr 0.95fr 0.95fr;
+	// grid-template-areas:
+	// 	"top10 admission tuition level"
+	// 	"class attendance bus .";
+	line-height: 3;
+	background-color: $g9;
+	grid-gap: 1px;
+	margin-top: 1rem;
+	border: solid 1px $g8;
+
+	div {
+		background-color: $fc;
+		color: $b2;
+		text-align: center;
+	}
+
+	div:hover {
+		cursor: pointer;
+		background-color: $blue-l2;
+	}
+
+	div.top-10 {
+		letter-spacing: 0;
+	}
+
+	div.selected {
+		background-color: $blue-d1;
+		color: $e;
+	}
+}
+
+.bl-faq-list {
 }
 
 dl.bl-faq-list {
@@ -2010,7 +2052,7 @@ dl.bl-faq-list {
 		color: $green;
 	}
 
-	dt.faq-absence strong {
+	dt.faq-attendance strong {
 		color: $red;
 	}
 
@@ -2035,6 +2077,10 @@ dl.bl-faq-list {
 		a {
 			color: $blue-bl;
 		}
+	}
+
+	div.no-result {
+		display: none;
 	}
 }
 

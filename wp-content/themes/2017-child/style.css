@@ -1793,6 +1793,42 @@ body:not(.twentyseventeen-front-page) .entry-header {
   border-color: #2c33c8;
 }
 
+.bl-faq-call-msg {
+  padding: 0 0.75rem;
+}
+.bl-faq-call-msg a,
+.bl-faq-call-msg a:focus {
+  font-weight: 500;
+  color: #2c33c8;
+}
+
+.bl-faq-category {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1.15fr 0.95fr 0.95fr 0.95fr;
+  line-height: 3;
+  background-color: #999;
+  grid-gap: 1px;
+  margin-top: 1rem;
+  border: solid 1px #888;
+}
+.bl-faq-category div {
+  background-color: #fcfcfc;
+  color: #222;
+  text-align: center;
+}
+.bl-faq-category div:hover {
+  cursor: pointer;
+  background-color: #46a0ff;
+}
+.bl-faq-category div.top-10 {
+  letter-spacing: 0;
+}
+.bl-faq-category div.selected {
+  background-color: #080a34;
+  color: #eee;
+}
+
 dl.bl-faq-list {
   border-top: solid 2px #1265ff;
 }
@@ -1813,7 +1849,7 @@ dl.bl-faq-list dt.faq-admission strong {
 dl.bl-faq-list dt.faq-tuition strong {
   color: #1aa021;
 }
-dl.bl-faq-list dt.faq-absence strong {
+dl.bl-faq-list dt.faq-attendance strong {
   color: #a21a1a;
 }
 dl.bl-faq-list dt.faq-level strong {
@@ -1833,6 +1869,9 @@ dl.bl-faq-list dd {
 }
 dl.bl-faq-list dd a {
   color: #2c33c8;
+}
+dl.bl-faq-list div.no-result {
+  display: none;
 }
 
 /*--------------------------------------------------------------

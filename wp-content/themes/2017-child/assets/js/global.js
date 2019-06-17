@@ -35,11 +35,6 @@
 	}); // End of $(document).ready()
 
 	if ( isFrontPage ) {
-		// 페이지 로드 시 현재 페이지가 속한 서브메뉴(드롭다운 메뉴)를 미리 펼치고 있게 함
-		// if ( $currentMenuParent.length ) {
-		// 	$currentMenuParent.addClass( 'toggled-on' );
-		// }
-
 		var $slide = $body.find( '.bl-header-slides' );
 
 		// Super Simple Slide by sss.js
@@ -94,7 +89,7 @@
 			}
 		});
 	} else if ( $body.find( '#faq' ).length ) {
-		// FAQ (자주 묻는 질문) 페이지의 검색과 accordion 동작
+		// FAQ 페이지 accordion 동작
 		var $accord = $body.find( '.bl-faq-list' );
 
 		$accord.find( 'dt' ).click( function() {
@@ -116,25 +111,63 @@
 			}
 		});
 
+		var $wrapper = $body.find( '.bl-faq-category' ),
+			$categories = $wrapper.children( 'div' ),
+			$chosen = $wrapper.children( '.top-10' );
+
 		var $textbox = $body.find( 'input' ),
 			$accord = $body.find( 'dl' );
 			$questions = $accord.find( 'dt' ),
 			$answers = $accord.find( 'dd' ),
+			$no_result = $accord.find( '.no-result' ),
 			input = '';
 
+		// FAQ 페이지 카테고리 모아보기
+		blShowCategory( 'top-10' );
+		$chosen.addClass( 'selected' );
+
+		$categories.click( function() {
+			// console.log( 'click: ' + $( this ).attr( 'class' ) );
+			blShowCategory( $( this ).attr( 'class' ) );
+			$( this ).addClass( 'selected' );
+		});
+
+		function blShowCategory( cat_class ) {
+			// console.log( 'cat_class:' + cat_class );
+			$accord.find( 'dt.opened' ).removeClass( 'opened' );
+			$answers.hide();
+			$categories.removeClass( 'selected' );
+			
+			$.each( $questions, function() {
+				if ( $( this ).hasClass( cat_class ) ) {
+					$( this ).show();
+				} else {
+					$( this ).hide();
+				}
+			});
+		}
+
+		// FAQ 페이지 텍스트 실시간 검색
 		$textbox.keyup( function() {
 			input = $textbox.val();
+			$answers.hide();	// 타이핑 시 열려있는 답변 닫기
 			if ( input === '' ) {
+				$no_result.hide();
 				$.each( $questions, function() {
 					$( this ).slideDown();
 				});
 			} else {
 				$.each( $questions, function() {
-					// var q = $( this ).text();
 					if ( $( this ).text().indexOf( input ) > -1 ) {
 						$( this ).show();
 					} else {
 						$( this ).hide();
+					}
+
+					if ( $questions.children( ':visible' ).length == 0 ) {
+						$no_result.show();
+					} else {
+						$no_result.hide();
 					}
 				});
 			}
