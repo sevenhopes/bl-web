@@ -28,15 +28,9 @@
 				zoom: 12
 			});
 			var marker = new naver.maps.Marker( {
-				position: location.destinationPoint(90, 15),
-				map: map,
-				icon: {
-					url: 'http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/map-marker.png',
-					size: new naver.maps.Size( 100, 100 ),
-					// origin: new naver.maps.Point( 0, 0 ),
-					anchor: new naver.maps.Point( 50, 50 )
-			    }
-			} );
+				position: new naver.maps.LatLng( 37.868873, 127.715002 ),
+				map: map
+			});
 		}
 	}); // End of $(document).ready()
 
