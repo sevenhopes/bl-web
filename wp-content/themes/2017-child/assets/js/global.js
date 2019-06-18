@@ -128,6 +128,7 @@
 
 		$categories.click( function() {
 			// console.log( 'click: ' + $( this ).attr( 'class' ) );
+			$textbox.val( '' );
 			blShowCategory( $( this ).attr( 'class' ) );
 			$( this ).addClass( 'selected' );
 		});
@@ -137,7 +138,7 @@
 			$accord.find( 'dt.opened' ).removeClass( 'opened' );
 			$answers.hide();
 			$categories.removeClass( 'selected' );
-			
+
 			$.each( $questions, function() {
 				if ( $( this ).hasClass( cat_class ) ) {
 					$( this ).show();
