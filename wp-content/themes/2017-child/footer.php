@@ -16,6 +16,10 @@
 
 		</div><!-- #content -->
 
+		<div class="bl-call">
+			<a href="tel:033-243-5757"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/call.png" alt="바로전화" /></a>
+		</div>
+
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="wrap">
 

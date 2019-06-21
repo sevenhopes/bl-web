@@ -90,6 +90,10 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
   position: fixed;
 }
 
+.bl-tp {
+  background-color: transparent;
+}
+
 /*--------------------------------------------------------------
 2.0 Accessibility
 --------------------------------------------------------------*/
@@ -117,7 +121,7 @@ select,
 textarea {
   color: #222;
   font-family: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGothicNeoSD", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
 }
 
@@ -164,19 +168,16 @@ h3 {
 h4 {
   font-size: 20px;
   font-size: 1.25rem;
-  /*font-weight: 300;*/
 }
 
 h5 {
   font-size: 16px;
   font-size: 1rem;
-  /*font-weight: 300;*/
 }
 
 h6 {
   font-size: 14px;
   font-size: 0.875rem;
-  /*font-weight: 300;*/
 }
 
 p {
@@ -184,7 +185,6 @@ p {
   padding: 0;
   /*word-break: keep-all;*/
   word-break: normal;
-  /*font-weight: 300;*/
   text-indent: 1em;
 }
 
@@ -194,7 +194,7 @@ pre {
 
 b,
 strong {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* Typography for Korean font */
@@ -224,24 +224,24 @@ html[lang=ko-KR] h6 {
 --------------------------------------------------------------*/
 /* Placeholder text color -- selectors need to be separate to work. */
 ::-webkit-input-placeholder {
-  color: #222;
+  color: #ddd;
   font-family: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGothicNeoSD", sans-serif;
 }
 
 :-moz-placeholder {
-  color: #222;
+  color: #ddd;
   font-family: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGothicNeoSD", sans-serif;
 }
 
 ::-moz-placeholder {
-  color: #222;
+  color: #ddd;
   font-family: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGothicNeoSD", sans-serif;
   opacity: 1;
   /* Since FF19 lowers the opacity of the placeholder by default */
 }
 
 :-ms-input-placeholder {
-  color: #222;
+  color: #ddd;
   font-family: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGothicNeoSD", sans-serif;
 }
 
@@ -272,7 +272,7 @@ li > ol {
 }
 
 dt {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 dd {
@@ -315,7 +315,7 @@ a:active h3 {
 12.0 Navigation
 --------------------------------------------------------------*/
 .navigation-top {
-  background: rgba(12, 16, 85, 0.9);
+  background-color: rgba(12, 16, 85, 0.9);
   border-top: 1px solid #192d88;
   border-bottom: 1px solid #192d88;
   font-size: 20px;
@@ -330,7 +330,7 @@ a:active h3 {
 }
 
 .home .navigation-top {
-  background: rgba(12, 16, 85, 0.9);
+  background-color: rgba(12, 16, 85, 0.9);
 }
 
 .navigation-top a {
@@ -376,7 +376,7 @@ a:active h3 {
 }
 
 .main-navigation > div > ul {
-  background: inherit;
+  background-color: inherit;
   border-top: none;
   padding: 0;
 }
@@ -389,7 +389,7 @@ a:active h3 {
 
 .main-navigation li.toggled-on,
 .main-navigation li.toggled-on > a {
-  background: #f5f5f5;
+  background-color: #f5f5f5;
   color: #111;
 }
 
@@ -432,7 +432,7 @@ a:active h3 {
 .main-navigation li li:after {
   /* 서브메뉴 사이 경계선 효과 */
   content: "";
-  background: #ddd;
+  background-color: #ddd;
   position: absolute;
   left: 20%;
   width: 60%;
@@ -449,7 +449,7 @@ a:active h3 {
 
 /* 서브 메뉴를 위한 Dropdown toggle */
 .dropdown-toggle {
-  background: rgba(17, 23, 124, 0.45);
+  background-color: rgba(17, 23, 124, 0.45);
   top: 0;
   right: 0;
   margin: 0;
@@ -460,11 +460,11 @@ a:active h3 {
 }
 
 .dropdown-toggle:hover {
-  background: #dac326;
+  background-color: #dac326;
 }
 
 .dropdown-toggle:focus {
-  background: #dac326;
+  background-color: #dac326;
   outline: none;
 }
 
@@ -475,7 +475,7 @@ a:active h3 {
 }
 
 .dropdown-toggle.toggled-on {
-  background: #ccccd6;
+  background-color: #ccccd6;
 }
 
 .dropdown-toggle.toggled-on .icon {
@@ -536,7 +536,7 @@ a:active h3 {
 13.0 Layout
 --------------------------------------------------------------*/
 body {
-  /* background: rgb( 12, 16, 105 ); */
+  /* background-color: rgb( 12, 16, 105 ); */
 }
 
 #page {
@@ -554,38 +554,15 @@ body {
   padding: 0;
 }
 
-.bl-mid-center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.bl-grid-square {
-  position: relative;
+.bl-grid-metro {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+  grid-template-columns: repeat(3, minmax(5rem, 1fr));
   grid-auto-rows: 1fr;
-  grid-gap: 0.5rem;
-  color: #fff;
+  grid-gap: 0.4rem;
   text-align: center;
-  font-size: 1.2rem;
-  font-weight: 300;
-  line-height: 1;
   padding: 0;
   margin: 0;
-  /*background: #ccc;*/
-}
-
-.bl-grid-square::before {
-  content: "";
-  width: 0;
-  padding-bottom: 100%;
-  grid-row: 1/1;
-  grid-column: 1/1;
-}
-
-.bl-grid-square > *:first-child {
-  grid-row: 1/1;
-  grid-column: 1/1;
+  font-size: 1rem;
 }
 
 /*--------------------------------------------------------------
@@ -602,7 +579,7 @@ a.skip-link {
 .site-header {
   display: block;
   position: static;
-  background: #fff;
+  background-color: #fff;
   min-width: 100vw;
   height: 76px;
   overflow: hidden;
@@ -625,6 +602,10 @@ a.skip-link {
 .home .custom-header {
   overflow: hidden;
   /*height: calc( 76px + 216px + 55px );*/
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   min-height: 76px;
@@ -640,6 +621,10 @@ a.skip-link {
   /*height: calc( 76px + 216px + 55px );*/
   width: 100%;
   overflow: hidden;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   min-height: 76px;
@@ -657,6 +642,8 @@ a.skip-link {
   max-width: 100vw;
   width: 100vw;
   height: auto;
+  -webkit-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 
@@ -794,7 +781,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 /* 상단 로고 컨테이너 */
 #bl-branding {
-  background: #0c1055;
+  background-color: #0c1055;
   width: 100%;
   height: 76px;
   position: relative;
@@ -812,7 +799,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 /*
 .home #bl-branding {
-	background: $blue-d2t;
+	background-color: $blue-d2t;
 	-webkit-transition: top 0.6s, opacity 0.6s;
 	transition: top 0.6s, opacity 0.6s;
 }
@@ -934,8 +921,6 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 .bl-header-slides .bl-caption {
   display: block;
   color: #222;
-  font-size: 1rem;
-  font-weight: 400;
   padding: 0 0.75em;
   margin-bottom: 0.5em;
 }
@@ -997,7 +982,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1px 1px;
-  background: #111790;
+  background-color: #111790;
   /*margin-top: 0.5em;*/
 }
 
@@ -1006,7 +991,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
   letter-spacing: 0;
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
-  background: #0c1055;
+  background-color: #0c1055;
 }
 
 #bl-front-menu > div:nth-child(odd) {
@@ -1063,7 +1048,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 
 #bl-front-page-ko .bl-block:nth-child(odd) {
-  background: #f7f7f7;
+  background-color: #f7f7f7;
 }
 
 /*
@@ -1114,7 +1099,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
   grid-column-gap: 1rem;
   grid-template-areas: "bigday title" "weekday date";
   margin-bottom: 1rem;
-  background: #fff;
+  background-color: #fff;
   overflow: hidden;
 }
 
@@ -1124,7 +1109,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-event-item .bl-big-day {
   grid-area: bigday;
-  background: #111790;
+  background-color: #111790;
   color: #fff;
   font-size: 2.5rem;
   line-height: 1;
@@ -1135,7 +1120,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-event-item .bl-weekday {
   grid-area: weekday;
-  background: #111790;
+  background-color: #111790;
   color: #fff;
   /*font-size: 1rem;*/
   line-height: 1.1;
@@ -1146,7 +1131,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-event-item .bl-big-day.bl-holiday,
 .bl-event-item .bl-weekday.bl-holiday {
-  background: #a21a1a;
+  background-color: #a21a1a;
 }
 
 .bl-event-item h2.bl-event-title {
@@ -1160,7 +1145,6 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-event-item .bl-event-date {
   grid-area: date;
-  font-weight: 400;
   line-height: 1;
 }
 
@@ -1340,7 +1324,6 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-heading {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #ddd;
   letter-spacing: 0;
   vertical-align: top;
 }
@@ -1451,7 +1434,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .bl-block.bl-dark {
-  background: #111790;
+  background-color: #111790;
   color: #fff;
   padding: 1em 0;
 }
@@ -1566,7 +1549,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .bl-why-list dt button {
   grid-area: angledown;
-  background: #f5f5f5;
+  background-color: #f5f5f5;
   padding: 0.4rem;
   text-align: center;
   width: 2.5rem;
@@ -1591,7 +1574,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 #teachers .bl-t-profile {
   width: auto;
-  background: rgba(18, 101, 255, 0.05);
+  background-color: rgba(18, 101, 255, 0.05);
   margin-bottom: 1em;
   padding: 0.5em 0 0.2em 0.5em;
   font-size: 1.125em;
@@ -1621,56 +1604,97 @@ body:not(.twentyseventeen-front-page) .entry-header {
   padding: 0.1em 0 0;
 }
 
-#course-overview .basic {
-  background: #e8a10e;
+#course-overview .bl-grid-metro .basic,
+#course-overview .bl-grid-metro .special,
+#course-overview .bl-grid-metro .stage {
+  background-color: #2c33c8;
 }
-
-#course-overview .special {
-  background: #a21a1a;
+#course-overview .bl-grid-metro .camp {
+  background-color: #1aa021;
 }
-
-#course-overview .stage {
-  background: #2c33c8;
+#course-overview .bl-grid-metro .a-camp {
+  background-color: #a21a1a;
 }
-
-#course-overview .camp {
-  background: #1aa021;
+#course-overview .bl-grid-metro .extra {
+  background-color: #e8a10e;
 }
-
-#course-overview .a-camp {
-  background: #1265ff;
-}
-
-#course-overview .extra {
-  background: #1cbbb4;
-}
-
-#course-overview .bl-grid-square > div {
-  position: relative;
-}
-
-#course-overview .bl-grid-square > div a,
-#course-overview .bl-grid-square > div a:hover,
-#course-overview .bl-grid-square > div a:active {
+#course-overview .bl-grid-metro > div {
   color: #fff;
-  display: block;
+  line-height: 1.2;
+  height: 6.5rem;
 }
-
-#course-overview .bl-grid-square > div span {
-  display: block;
-  padding: 1em 0.4em;
-  height: 50%;
-}
-
-#course-overview .bl-grid-square > div span.desc {
-  font-size: 0.75em;
-  position: absolute;
-  bottom: 0;
-  /*bottom: 0;*/
-  /*width: calc( 27.824vw - 0.8em );*/
+#course-overview .bl-grid-metro > div a {
+  color: #fff;
   width: 100%;
-  padding: 1em 0;
+  height: 100%;
+}
+#course-overview .bl-grid-metro > div a:hover, #course-overview .bl-grid-metro > div a:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.bl-program {
+  font-size: 1.25rem;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+.bl-program div {
+  width: 100%;
   text-align: center;
+}
+.bl-program div:first-child {
+  margin-top: 0.75rem;
+}
+.bl-program div:last-child {
+  font-size: 0.9rem;
+  position: absolute;
+  left: 0;
+  bottom: 1.25rem;
+}
+.bl-program div:last-child:before {
+  display: block;
+  content: "";
+  width: 80%;
+  height: 1px;
+  background-color: #fff;
+  margin: 0.5rem auto 0.5rem auto;
+}
+
+.bl-legend {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr 5fr;
+  grid-gap: 0.25rem;
+  padding: 1rem 0;
+}
+.bl-legend div {
+  float: left;
+  vertical-align: middle;
+  line-height: 1.1;
+}
+.bl-legend div:nth-child(odd) {
+  padding-right: 0.5rem;
+}
+.bl-legend div:nth-child(even) {
+  padding-right: 0.5rem;
+}
+.bl-legend .bl-symbol {
+  width: 1rem;
+  height: 1rem;
+}
+.bl-legend .regular {
+  background-color: #2c33c8;
+}
+.bl-legend .camp {
+  background-color: #1aa021;
+}
+.bl-legend .a-camp {
+  background-color: #a21a1a;
+}
+.bl-legend .extra {
+  background-color: #e8a10e;
 }
 
 #course-overview ul {
@@ -1785,7 +1809,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
   letter-spacing: 0 !important;
 }
 
-#faq form fieldset {
+#faq fieldset {
   border: none;
 }
 
@@ -1807,30 +1831,34 @@ body:not(.twentyseventeen-front-page) .entry-header {
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1.15fr 0.95fr 0.95fr 0.95fr;
   line-height: 3;
-  background-color: #999;
+  background-color: #bbb;
   grid-gap: 1px;
   margin-top: 1rem;
-  border: solid 1px #888;
+  border: solid 1px #bbb;
 }
 .bl-faq-category div {
   background-color: #fcfcfc;
   color: #222;
   text-align: center;
 }
-.bl-faq-category div:hover {
+.bl-faq-category div:hover,
+.bl-faq-category div:focus {
   cursor: pointer;
-  background-color: #46a0ff;
+  background-color: #dcd079;
 }
 .bl-faq-category div.top-10 {
   letter-spacing: 0;
 }
 .bl-faq-category div.selected {
-  background-color: #080a34;
+  background-color: #1265ff;
   color: #eee;
 }
 
 dl.bl-faq-list {
   border-top: solid 2px #1265ff;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
 }
 dl.bl-faq-list dt {
   border-bottom: solid 1px #ddd;
@@ -1861,25 +1889,41 @@ dl.bl-faq-list dt.faq-class strong {
 dl.bl-faq-list dt.faq-bus strong {
   color: #dac326;
 }
+dl.bl-faq-list dt:hover,
+dl.bl-faq-list dt:focus {
+  cursor: pointer;
+  background-color: #f7f7f7;
+}
 dl.bl-faq-list dd {
   display: none;
   border-bottom: solid 1px #ddd;
   padding: 0.75rem 0;
+  font-size: 16px;
   font-size: 1rem;
 }
-dl.bl-faq-list dd a {
-  color: #2c33c8;
-}
-dl.bl-faq-list div.no-result {
+dl.bl-faq-list .no-result {
   display: none;
+}
+dl.bl-faq-list .no-result a {
+  color: #2c33c8;
 }
 
 /*--------------------------------------------------------------
 13.6 Footer
 --------------------------------------------------------------*/
+.bl-call {
+  display: none;
+  opacity: 1;
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  width: 3rem;
+  height: 3rem;
+}
+
 .site-footer {
   border-top: none;
-  background: #0c1055;
+  background-color: #0c1055;
   margin: 2em 0 0 0;
   font-size: 15px;
 }

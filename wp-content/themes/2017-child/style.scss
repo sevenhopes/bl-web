@@ -53,27 +53,32 @@ $font-kr: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGoth
 $font-en: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGothicNeoSD", sans-serif;
 $font-mo: "Noto Sans KR", "Courier 10 Pitch", Courier, monospace;
 
-$b:			#000;
-$b1:		#111;
-$b2:		#222;
-$b3:		#333;
-$b4:		#444;
-$g8:		#888;
-$g9:		#999;
-$d:			#ddd;
-$e:			#eee;
+$k0:		#000;
+$k1:		#111;
+$k2:		#222;
+$k3:		#333;
+$k4:		#444;
+$k8:		#888;
+$k9:		#999;
+$bb:		#bbb;
+$dd:		#ddd;
+$ee:		#eee;
 $f2:		#f2f2f2;
 $f5:		#f5f5f5;
 $f7:		#f7f7f7;
 $fc:		#fcfcfc;
-$w:			#fff;
+$ff:		#fff;
+$fft:		rgba( 256, 256, 256, 0.2 );
 
-$blue-bk:	#05061a;
+$blue-k:	#05061a;
 $blue-d1:	#080a34;
 $blue-d2:	#0c1055;
+// $blue-d2t:	#0c1055e6;
 $blue-d2t:	rgba( 12, 16, 85, 0.9 ); // from $blue-d2
 $blue-d3:	#0c1069;
 $blue-d4:	#111790;
+// $blue-d4t1:	#11179050;
+// $blue-d4t2:	#111790c0;
 $blue-d4t1:	rgba( 17, 23, 124, 0.45 ); // from $blue-d4
 $blue-d4t2:	rgba( 17, 23, 124, 0.75 ); // from $blue-d4
 $blue-d5:	#1820aa;
@@ -81,11 +86,14 @@ $blue-g:	#192d88;
 $blue-dp:	#161ac8;
 $blue-bl:	#2c33c8;
 $blue-l1:	#1265ff;
+// $blue-l1t1:	#1265ffb3;
+// $blue-l1t2:	#1265ff0d;
 $blue-l1t1:	rgba( 18, 101, 255, 0.7 );
 $blue-l1t2:	rgba( 18, 101, 255, 0.05 );
 $blue-l2:	#46a0ff;
 
 $gold:		#dac326;
+$gold-l1:	#dcd079;
 $red:		#a21a1a;
 $orange:	#e8a10e;
 $green:		#1aa021;
@@ -111,7 +119,7 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 	display: block;
 	z-index: 9;
 	opacity: 1;
-	color: $g8;
+	color: $k8;
 	position: static;
 }
 
@@ -145,6 +153,18 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 	position: fixed;
 }
 
+.bl-tp {
+	background-color: transparent;
+}
+
+// ::-webkit-scrollbar { display: none; }             /* 1 */
+// ::-webkit-scrollbar-button { display: none; }      /* 2 */
+// ::-webkit-scrollbar-track { display: none; }       /* 3 */
+// ::-webkit-scrollbar-track-piece { display: none; } /* 4 */
+// ::-webkit-scrollbar-thumb { display: none; }       /* 5 */
+// ::-webkit-scrollbar-corner { display: none; }      /* 6 */
+// ::-webkit-resizer { display: none; }               /* 7 */
+
 /*--------------------------------------------------------------
 2.0 Accessibility
 --------------------------------------------------------------*/
@@ -175,9 +195,9 @@ button,
 input,
 select,
 textarea {
-	color: $b2;
+	color: $k2;
 	font-family: $font-kr;
-	font-weight: 300;
+	font-weight: 400;
 	// font-size: 16px;
 	// font-size: 1rem;
 	line-height: 1.7;
@@ -191,7 +211,7 @@ h5,
 h6 {
 	clear: both;
 	line-height: 1.15;
-	color: $b2;
+	color: $k2;
 	padding: 0;
 	/*letter-spacing: -1px;*/
 	margin: 0.5em 0 0;
@@ -229,19 +249,16 @@ h3 {
 h4 {
 	font-size: 20px;
 	font-size: 1.25rem;
-	/*font-weight: 300;*/
 }
 
 h5 {
 	font-size: 16px;
 	font-size: 1rem;
-	/*font-weight: 300;*/
 }
 
 h6 {
 	font-size: 14px;
 	font-size: 0.875rem;
-	/*font-weight: 300;*/
 }
 
 p {
@@ -249,7 +266,6 @@ p {
 	padding: 0;
 	/*word-break: keep-all;*/
 	word-break: normal;
-	/*font-weight: 300;*/
 	text-indent: 1em;
 }
 
@@ -259,7 +275,7 @@ pre {
 
 b,
 strong {
-	font-weight: 400;
+	font-weight: 500;
 }
 
 /* Typography for Korean font */
@@ -294,24 +310,24 @@ html[lang="ko-KR"] h6 {
 
 /* Placeholder text color -- selectors need to be separate to work. */
 ::-webkit-input-placeholder {
-	color: $b2;
+	color: $dd;
 	font-family: $font-kr;
 }
 
 :-moz-placeholder {
-	color: $b2;
+	color: $dd;
 	font-family: $font-kr;
 }
 
 ::-moz-placeholder {
-	color: $b2;
+	color: $dd;
 	font-family: $font-kr;
 	opacity: 1;
 	/* Since FF19 lowers the opacity of the placeholder by default */
 }
 
 :-ms-input-placeholder {
-	color: $b2;
+	color: $dd;
 	font-family: $font-kr;
 }
 
@@ -344,7 +360,7 @@ li > ol {
 }
 
 dt {
-	font-weight: 300;
+	font-weight: 400;
 }
 
 dd {
@@ -391,7 +407,7 @@ a:active h3 {
 --------------------------------------------------------------*/
 
 .navigation-top {
-	background: $blue-d2t;
+	background-color: $blue-d2t;
 	border-top: 1px solid $blue-g;
 	border-bottom: 1px solid $blue-g;
 	font-size: 20px;
@@ -406,11 +422,11 @@ a:active h3 {
 }
 
 .home .navigation-top {
-	background: $blue-d2t;
+	background-color: $blue-d2t;
 }
 
 .navigation-top a {
-	color: $e;
+	color: $ee;
 	font-weight: 300;
 	padding: 0.6em 1.1em; /* padding이 메뉴의 위아래 여백, 즉 메뉴 height를 결정 */
 	text-transform: uppercase;
@@ -454,7 +470,7 @@ a:active h3 {
 }
 
 .main-navigation > div > ul {
-	background: inherit;
+	background-color: inherit;
 	border-top: none;
 	padding: 0;
 }
@@ -467,12 +483,12 @@ a:active h3 {
 
 .main-navigation li.toggled-on,
 .main-navigation li.toggled-on > a {
-	background: $f5;
-	color: $b1;
+	background-color: $f5;
+	color: $k1;
 }
 
 .main-navigation li.toggled-on {
-	border-bottom: 1px solid $d;
+	border-bottom: 1px solid $dd;
 }
 
 .main-navigation ul ul {
@@ -485,7 +501,7 @@ a:active h3 {
 }
 
 .main-navigation ul ul a {
-	color: $b1;
+	color: $k1;
 	letter-spacing: -1px;
 	padding: 0.6em 0;
 	position: relative;
@@ -509,7 +525,7 @@ a:active h3 {
 
 .main-navigation li li:after { /* 서브메뉴 사이 경계선 효과 */
 	content: "";
-	background: $d;
+	background-color: $dd;
 	position: absolute;
 	left: 20%;
 	width: 60%;
@@ -527,7 +543,7 @@ a:active h3 {
 /* 서브 메뉴를 위한 Dropdown toggle */
 
 .dropdown-toggle {
-	background: $blue-d4t1;
+	background-color: $blue-d4t1;
 	top: 0;
 	right: 0;
 	margin: 0;
@@ -538,26 +554,26 @@ a:active h3 {
 }
 
 .dropdown-toggle:hover {
-	background: $gold;
+	background-color: $gold;
 }
 
 .dropdown-toggle:focus {
-	background: $gold;
+	background-color: $gold;
 	outline: none;
 }
 
 .dropdown-toggle .icon {
-	color: $e;
+	color: $ee;
 	width: 1.6em;
 	height: 1.6em;
 }
 
 .dropdown-toggle.toggled-on {
-	background: rgb( 204, 204, 214 );
+	background-color: rgb( 204, 204, 214 );
 }
 
 .dropdown-toggle.toggled-on .icon {
-	color: $e;
+	color: $ee;
 	-ms-transform: rotate(-180deg); /* IE 9 */
 	-webkit-transform: rotate(-180deg); /* Chrome, Safari, Opera */
 	transform: rotate(-180deg);
@@ -614,7 +630,7 @@ a:active h3 {
 --------------------------------------------------------------*/
 
 body {
-	/* background: rgb( 12, 16, 105 ); */
+	/* background-color: rgb( 12, 16, 105 ); */
 }
 
 #page {
@@ -631,38 +647,15 @@ body {
 	padding: 0;
 }
 
-.bl-mid-center {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.bl-grid-square {
-	position: relative;
+.bl-grid-metro {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+	grid-template-columns: repeat(3, minmax(5rem, 1fr));
 	grid-auto-rows: 1fr;
-	grid-gap: 0.5rem;
-	color: $w;
+	grid-gap: 0.4rem;
 	text-align: center;
-	font-size: 1.2rem;
-	font-weight: 300;
-	line-height: 1;
 	padding: 0;
 	margin: 0;
-	/*background: #ccc;*/
-}
-
-.bl-grid-square::before {
-  content: '';
-  width: 0;
-  padding-bottom: 100%;
-  grid-row: 1 / 1;
-  grid-column: 1 / 1;
-}
-
-.bl-grid-square > *:first-child {
-  grid-row: 1 / 1;
-  grid-column: 1 / 1;
+	font-size: 1rem;
 }
 
 /*--------------------------------------------------------------
@@ -681,7 +674,7 @@ a.skip-link {
 .site-header {
 	display: block;
 	position: static;
-	background: $w;
+	background-color: $ff;
 	min-width: 100vw;
 	height: 76px;
 	overflow: hidden;
@@ -705,6 +698,10 @@ a.skip-link {
 .home .custom-header {
 	overflow: hidden;
 	/*height: calc( 76px + 216px + 55px );*/
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	display: flex;
 	flex-direction: column;
 	min-height: 76px;
@@ -721,6 +718,10 @@ a.skip-link {
 	width: 100%;
 	overflow: hidden;
 
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	display: flex;
 	flex-direction: column;
 	min-height: 76px;
@@ -739,6 +740,8 @@ a.skip-link {
 	width: 100vw;
 	height: auto;
 
+	-webkit-flex: 1;
+	-ms-flex: 1;
 	flex: 1;
 }
 
@@ -875,7 +878,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 /* 상단 로고 컨테이너 */
 
 #bl-branding {
-	background: $blue-d2;
+	background-color: $blue-d2;
 	width: 100%;
 	height: 76px;
 	position: relative;
@@ -891,7 +894,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 /*
 .home #bl-branding {
-	background: $blue-d2t;
+	background-color: $blue-d2t;
 	-webkit-transition: top 0.6s, opacity 0.6s;
 	transition: top 0.6s, opacity 0.6s;
 }
@@ -914,7 +917,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 /* 처음에 페이드인으로 나타나는 텍스트와 버튼 */
 
 #bl-hero-text {
-	color: $w;
+	color: $ff;
 	text-align: center;
 	font-size: 36px;
 	font-size: 2.25rem;
@@ -1014,9 +1017,9 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-header-slides .bl-caption {
 	display: block;
-	color: $b2;
-	font-size: 1rem;
-	font-weight: 400;
+	color: $k2;
+	// font-size: 1rem;
+	// font-weight: 400;
 	padding: 0 0.75em;
 	margin-bottom: 0.5em;
 }
@@ -1078,7 +1081,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 1px 1px;
-	background: $blue-d4;
+	background-color: $blue-d4;
 	/*margin-top: 0.5em;*/
 }
 
@@ -1087,7 +1090,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	letter-spacing: 0;
 	padding-top: 0.6rem;
 	padding-bottom: 0.6rem;
-	background: $blue-d2;
+	background-color: $blue-d2;
 }
 
 #bl-front-menu > div:nth-child(odd) {
@@ -1114,7 +1117,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 
 #bl-front-menu span {
-	color: $e;
+	color: $ee;
 }
 
 #bl-front-menu img {
@@ -1143,7 +1146,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 
 #bl-front-page-ko .bl-block:nth-child(odd) {
-	background: $f7;
+	background-color: $f7;
 }
 /*
 #bl-front-page-ko .bl-block:nth-child(even) {
@@ -1205,7 +1208,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 		"bigday title"
 		"weekday date";
 	margin-bottom: 1rem;
-	background: $w;
+	background-color: $ff;
 	overflow: hidden;
 }
 
@@ -1215,8 +1218,8 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-event-item .bl-big-day {
 	grid-area: bigday;
-	background: $blue-d4;
-	color: $w;
+	background-color: $blue-d4;
+	color: $ff;
 	font-size: 2.5rem;
 	line-height: 1;
 	text-align: center;
@@ -1226,8 +1229,8 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-event-item .bl-weekday {
 	grid-area: weekday;
-	background: $blue-d4;
-	color: $w;
+	background-color: $blue-d4;
+	color: $ff;
 	/*font-size: 1rem;*/
 	line-height: 1.1;
 	text-align: center;
@@ -1237,7 +1240,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-event-item .bl-big-day.bl-holiday,
 .bl-event-item .bl-weekday.bl-holiday {
-	background: $red;
+	background-color: $red;
 }
 
 .bl-event-item h2.bl-event-title {
@@ -1251,7 +1254,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-event-item .bl-event-date {
 	grid-area: date;
-	font-weight: 400;
+	// font-weight: 400;
 	line-height: 1;
 }
 
@@ -1426,7 +1429,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .page h3 {
-	color: $b3;
+	color: $k3;
 }
 
 .bl-link-wrapper {
@@ -1449,7 +1452,6 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-heading {
 	font-size: 1.25rem;
 	font-weight: 500;
-	color: $d;
 	letter-spacing: 0;
 	vertical-align: top;
 }
@@ -1469,7 +1471,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .bl-page-header h1.bl-heading {
 	display: block;
-	color: $b2;
+	color: $k2;
 	font-weight: 400;
 	padding: 0;
 	margin: 0;
@@ -1531,14 +1533,14 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .bl-quiet-title {
-	color: $g9;
+	color: $k9;
 	font-weight: 400;
 	margin: 0.5em 0 0.1em;
 }
 
 .bl-child-item-title {
 	display: inline-block;
-	color: $b4;
+	color: $k4;
 	font-size: 20px;
 	font-size: 1.25rem;
 	font-weight: 500;
@@ -1564,8 +1566,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .bl-block.bl-dark {
-	background: $blue-d4;
-	color: $w;
+	background-color: $blue-d4;
+	color: $ff;
 	padding: 1em 0;
 }
 
@@ -1574,7 +1576,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .bl-block.bl-dark h2.bl-block-title {
-	color: $w;
+	color: $ff;
 }
 
 .bl-ble-quote {
@@ -1601,7 +1603,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-ble-quote:before { /* 인용부의 여는 큰따옴표 */
 	/*content: "\201C";*/
 	content: "";
-	color: $e;
+	color: $ee;
 	font-size: 7rem;
 	position: absolute;
 	top: 17%;
@@ -1611,7 +1613,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-ble-quote:after { /* 인용부의 닫는 큰따옴표 */
 	/*content: "\201D";*/
 	content: "";
-	color: $b;
+	color: $k0;
 	font-size: 3rem;
 	padding: 28% 0 0 48%;
 	position: absolute;
@@ -1680,7 +1682,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .bl-why-list dt button {
 	grid-area: angledown;
-	background: $f5;
+	background-color: $f5;
 	padding: 0.4rem;
 	text-align: center;
 	width: 2.5rem;
@@ -1714,7 +1716,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 #teachers .bl-t-profile {
 	width: auto;
-	background: $blue-l1t2;
+	background-color: $blue-l1t2;
 	margin-bottom: 1em;
 	padding: 0.5em 0 0.2em 0.5em;
 	font-size: 1.125em;
@@ -1753,56 +1755,119 @@ body:not(.twentyseventeen-front-page) .entry-header {
 #support-and-services {
 }
 
-#course-overview .basic {
-	background: $orange;
+#course-overview {
 }
 
-#course-overview .special {
-	background: $red;
+#course-overview .bl-grid-metro {
+	.basic,
+	.special,
+	.stage {
+		background-color: $blue-bl;
+	}
+	.camp {
+		background-color: $green;
+	}
+	.a-camp {
+		background-color: $red;
+	}
+	.extra {
+		background-color: $orange;
+	}
+
+	& > div {
+		color: $ff;
+		line-height: 1.2;
+		height: 6.5rem;
+
+		a {
+			color: $ff;
+			width: 100%;
+			height: 100%;
+
+			&:hover,
+			&:active {
+				background-color: $fft;
+			}
+		}
+	}
 }
 
-#course-overview .stage {
-	background: $blue-bl;
-}
 
-#course-overview .camp {
-	background: $green;
-}
-
-#course-overview .a-camp {
-	background: $blue-l1;
-}
-
-#course-overview .extra {
-	background: $mint;
-}
-
-#course-overview .bl-grid-square > div {
-	position: relative;
-}
-
-#course-overview .bl-grid-square > div a,
-#course-overview .bl-grid-square > div a:hover,
-#course-overview .bl-grid-square > div a:active {
-	color: $w;
-	display: block;
-}
-
-#course-overview .bl-grid-square > div span {
-	display: block;
-	padding: 1em 0.4em;
-	height: 50%;
-}
-
-#course-overview .bl-grid-square > div span.desc {
-	font-size: 0.75em;
-	position: absolute;
-	bottom: 0;
-	/*bottom: 0;*/
-	/*width: calc( 27.824vw - 0.8em );*/
+.bl-program {
+	// display: -webkit-box;
+	// display: -moz-box;
+	// display: -ms-flexbox;
+	// display: -webkit-flex;
+	// display: flex;
+	// flex-direction: column;
+	font-size: 1.25rem;
+	font-weight: 500;
 	width: 100%;
-	padding: 1em 0;
-	text-align: center;
+	height: 100%;
+	position: relative;
+	left: 0;
+	right: 0;
+
+	div {
+		width: 100%;
+		text-align: center;
+
+		&:first-child {
+			margin-top: 0.75rem;
+			// margin: auto;
+		}
+		&:last-child {
+			font-size: 0.9rem;
+			position: absolute;
+			left: 0;
+			bottom: 1.25rem;
+
+			&:before {
+				display: block;
+				content: "";
+				width: 80%;
+				height: 1px;
+				background-color: $ff;
+				margin: 0.5rem auto 0.5rem auto;
+			}
+		}
+	}
+}
+
+.bl-legend {
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr 5fr;
+	grid-gap: 0.25rem;
+	padding: 1rem 0;
+
+	div {
+		float: left;
+		vertical-align: middle;
+		line-height: 1.1;
+
+		&:nth-child(odd) {
+			padding-right: 0.5rem;
+		}
+		&:nth-child(even) {
+			padding-right: 0.5rem;
+		}
+	}
+	.bl-symbol {
+		width: 1rem;
+		height: 1rem;
+	}
+	.regular {
+		background-color: $blue-bl;
+	}
+	.camp {
+		background-color: $green;
+	}
+	.a-camp {
+		background-color: $red;
+	}
+	.extra {
+		background-color: $orange;
+	}
 }
 
 #course-overview ul {
@@ -1883,7 +1948,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-grid-refund {
 	display: grid;
 	grid-gap: 1px;
-	background-color: $e;
+	background-color: $ee;
 	overflow: hidden;
 	line-height: 1.2;
 	font-size: 14px;
@@ -1924,7 +1989,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-grid-tuition .title,
 .bl-grid-refund .title {
 	grid-area: title;
-	background-color: $w;
+	background-color: $ff;
 	border-bottom: solid 1px $blue-l1;
 	font-size: 1rem;
 	font-weight: 500;
@@ -1970,10 +2035,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	letter-spacing: 0 !important;
 }
 
-#faq form {
-}
-
-#faq form fieldset {
+#faq fieldset {
 	border: none;
 }
 
@@ -1995,24 +2057,22 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	display: grid;
 	grid-template-rows: 1fr 1fr;
 	grid-template-columns: 1.15fr 0.95fr 0.95fr 0.95fr;
-	// grid-template-areas:
-	// 	"top10 admission tuition level"
-	// 	"class attendance bus .";
 	line-height: 3;
-	background-color: $g9;
+	background-color: $bb;
 	grid-gap: 1px;
 	margin-top: 1rem;
-	border: solid 1px $g8;
+	border: solid 1px $bb;
 
 	div {
 		background-color: $fc;
-		color: $b2;
+		color: $k2;
 		text-align: center;
 	}
 
-	div:hover {
+	div:hover,
+	div:focus {
 		cursor: pointer;
-		background-color: $blue-l2;
+		background-color: $gold-l1;
 	}
 
 	div.top-10 {
@@ -2020,8 +2080,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	}
 
 	div.selected {
-		background-color: $blue-d1;
-		color: $e;
+		background-color: $blue-l1;
+		color: $ee;
 	}
 }
 
@@ -2030,9 +2090,12 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 dl.bl-faq-list {
 	border-top: solid 2px $blue-l1;
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 400;
 
 	dt {
-		border-bottom: solid 1px $d;
+		border-bottom: solid 1px $dd;
 		padding: 0.75rem 0;
 		line-height: 1.4;
 
@@ -2068,19 +2131,26 @@ dl.bl-faq-list {
 		color: $gold;
 	}
 
+	dt:hover,
+	dt:focus {
+		cursor: pointer;
+		background-color: $f7;
+	}
+
 	dd {
 		display: none;
-		border-bottom: solid 1px $d;
+		border-bottom: solid 1px $dd;
 		padding: 0.75rem 0;
+		font-size: 16px;
 		font-size: 1rem;
+	}
+
+	.no-result {
+		display: none;
 
 		a {
 			color: $blue-bl;
 		}
-	}
-
-	div.no-result {
-		display: none;
 	}
 }
 
@@ -2088,9 +2158,19 @@ dl.bl-faq-list {
 13.6 Footer
 --------------------------------------------------------------*/
 
+.bl-call {
+	display: none;
+	opacity: 1;
+	position: fixed;
+	left: 1rem;
+	bottom: 1rem;
+	width: 3rem;
+	height: 3rem;
+}
+
 .site-footer {
 	border-top: none;
-	background: $blue-d2;
+	background-color: $blue-d2;
 	margin: 2em 0 0 0;
 	font-size: 15px;
 }
@@ -2100,7 +2180,7 @@ dl.bl-faq-list {
 }
 
 .site-footer a {
-	color: $w;
+	color: $ff;
 }
 
 .site-footer ul {

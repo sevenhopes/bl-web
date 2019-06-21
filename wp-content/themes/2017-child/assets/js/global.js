@@ -173,6 +173,14 @@
 				});
 			}
 		});
+
+		// 키워드 입력 후 Enter 키로 인한 페이지 새로고침 방지
+		$textbox.keydown( function( key ) {
+			if ( key.keyCode == 13 ) {
+				console.log( 'enter key pressed' );
+				$textbox.blur();
+			}
+		})
 	}
 
 	/*
