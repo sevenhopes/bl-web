@@ -1210,7 +1210,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	padding-top: 0.5rem;
 }
 
-#bl-event {
+#bl-event.bl-block {
 }
 
 .bl-event-item {
@@ -1280,10 +1280,10 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	line-height: 1;
 }
 
-#bl-why-bl-frontpage {
+#bl-why-bl-frontpage.bl-block {
 }
 
-#bl-curriculum {
+#bl-curriculum.bl-block {
 	max-width: 91.11vw;
 	width: 91.11vw;
 	/*margin-bottom: 1em;*/
@@ -1300,6 +1300,9 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	height: 325px;
 	margin-left: 50%;
 	transform: translateX(-50%);
+}
+
+#bl-studying-with-us.bl-block {
 }
 
 #bl-fact {
