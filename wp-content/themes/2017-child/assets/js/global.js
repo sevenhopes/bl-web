@@ -35,16 +35,25 @@
 	}); // End of $(document).ready()
 
 	if ( isFrontPage ) {
-		var $slide = $body.find( '.bl-header-slides' );
+		var $slide = $body.find( '.bl-header-slides' ),
+			$eventBlock = $body.find( '#bl-event' ),
+			$downArrow = $body.find( 'svg.bl-indication' ),
+			indi_intv;
 
 		// Super Simple Slide by sss.js
 		$slide.sss();
 		// $slide.sss( { speed: 1000 } ); // 테스트용 코드
 
-		var $eventBlock = $body.find( '#bl-event' );
+		// 아래화살표 svg 이미지를 10번 깜빡임
+		indi_intv = setInterval( function() {
+			$downArrow.fadeOut().fadeIn();
+		}, 400+400+1000 );
+		setTimeout( function() {
+			clearInterval( indi_intv );
+		}, 19000 );
 
 		if ( ! $eventBlock.find( '.bl-big-day.bl-holiday' ).length ) {
-			$eventBlock.find( '.bl-red-desc' ).hide();
+			$eventBlock.find( '.bl-event-comment' ).hide();
 		}
 
 		// 스크롤다운에 의해 '헤더+슬라이더'가 35% 이하만 보이면 슬라이딩(이미지 전환) 멈춤

@@ -428,7 +428,7 @@ a:active h3 {
 .navigation-top a {
 	color: $ee;
 	font-weight: 300;
-	padding: 0.6em 1.1em; /* padding이 메뉴의 위아래 여백, 즉 메뉴 height를 결정 */
+	padding: 0.6em 1.1em; /* padding:; 메뉴의 위아래 여백, 즉 메뉴 height를 결정 */
 	text-transform: uppercase;
 	/*letter-spacing: 0;*/
 }
@@ -1137,6 +1137,19 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	margin-right: 0.5em;
 }
 
+#bl-front-page-ko .bl-indi-contain {
+	background-color: $f7;
+	text-align: center;
+	max-height: 3rem;
+}
+
+#bl-front-page-ko .bl-indication {
+	width: 4rem;
+	height: 3rem;
+	opacity: 0.1;
+	// padding-top: 0.5rem;
+}
+
 #bl-front-page-ko .bl-block {
 	/*margin-bottom: 1.5em;*/
 	margin-top: 0;
@@ -1193,7 +1206,8 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	margin-bottom: 0.35rem;
 }
 
-#bl-news {
+#bl-news.bl-block {
+	padding-top: 0.5rem;
 }
 
 #bl-event {
