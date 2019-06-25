@@ -1683,7 +1683,10 @@ body:not(.twentyseventeen-front-page) .entry-header {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr 5fr;
   grid-gap: 0.25rem;
-  padding: 1rem 0;
+  margin: 1rem 0;
+  padding-bottom: 0.5rem;
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 .bl-legend div {
   float: left;
@@ -1691,14 +1694,14 @@ body:not(.twentyseventeen-front-page) .entry-header {
   line-height: 1.1;
 }
 .bl-legend div:nth-child(odd) {
-  padding-right: 0.5rem;
+  padding-right: 0.4rem;
 }
 .bl-legend div:nth-child(even) {
-  padding-right: 0.5rem;
+  padding-right: 0;
 }
 .bl-legend .bl-symbol {
-  width: 1rem;
-  height: 1rem;
+  width: 0.75rem;
+  height: 0.75rem;
 }
 .bl-legend .regular {
   background-color: #2c33c8;
@@ -1718,24 +1721,89 @@ body:not(.twentyseventeen-front-page) .entry-header {
   /*padding-left: 1em;*/
 }
 
-#semester table {
-  line-height: 1.15;
+.bl-basic .bl-course-box,
+.bl-basic .bl-desc-box li div {
+  background-color: #e8a10e;
 }
 
-#semester thead {
-  color: #1820aa;
+.bl-special .bl-course-box,
+.bl-special .bl-desc-box li div {
+  background-color: #a21a1a;
 }
 
-#semester thead th {
-  margin-bottom: 0.3em;
+.bl-special .bl-course-title {
+  margin-bottom: 1.5rem;
 }
 
-#semester th {
+.bl-stage .bl-course-box,
+.bl-stage .bl-desc-box li div {
+  background-color: #2c33c8;
+}
+
+.bl-course-box {
+  padding: 1.2rem 0 1rem;
+}
+.bl-course-box .bl-course-title {
+  color: #fff;
+  font-size: 32px;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.4;
+}
+.bl-course-box .bl-course-icons {
+  text-align: center;
+}
+.bl-course-box .bl-course-icons:before {
+  display: block;
+  content: "";
+  width: 90%;
+  height: 2px;
+  background-color: #fff;
+  margin: 0.5rem auto 1rem auto;
+}
+.bl-course-box .bl-course-icons img {
+  width: 36px;
+  height: 36px;
+}
+
+.bl-desc-box {
+  background-color: #f5f5f5;
+  padding: 1rem 1rem 0;
+}
+.bl-desc-box:last-child {
+  padding-bottom: 1rem;
+}
+.bl-desc-box > div:first-child {
+  color: #888;
   font-weight: 500;
 }
-
-#semester .colspan {
-  text-align: center;
+.bl-desc-box .bl-course-step {
+  margin-left: 1rem;
+  letter-spacing: 0;
+}
+.bl-desc-box .bl-course-aim {
+  margin-left: 1rem;
+}
+.bl-desc-box .bl-course-feature li {
+  display: inline-block;
+}
+.bl-desc-box .bl-course-feature li div {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  vertical-align: -0.18em;
+}
+.bl-desc-box .bl-course-feature li img {
+  width: 1rem;
+  height: 1rem;
+}
+.bl-desc-box ul {
+  list-style: none;
+  font-size: 16px;
+  font-size: 1rem;
+  margin-left: -0.5rem;
 }
 
 #bl-map {

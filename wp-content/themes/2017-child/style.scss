@@ -1855,7 +1855,10 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	display: grid;
 	grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr 5fr;
 	grid-gap: 0.25rem;
-	padding: 1rem 0;
+	margin: 1rem 0;
+	padding-bottom: 0.5rem;
+	font-size: 14px;
+	font-size: 0.875rem;
 
 	div {
 		float: left;
@@ -1863,15 +1866,15 @@ body:not(.twentyseventeen-front-page) .entry-header {
 		line-height: 1.1;
 
 		&:nth-child(odd) {
-			padding-right: 0.5rem;
+			padding-right: 0.4rem;
 		}
 		&:nth-child(even) {
-			padding-right: 0.5rem;
+			padding-right: 0;
 		}
 	}
 	.bl-symbol {
-		width: 1rem;
-		height: 1rem;
+		width: 0.75rem;
+		height: 0.75rem;
 	}
 	.regular {
 		background-color: $blue-bl;
@@ -1895,36 +1898,105 @@ body:not(.twentyseventeen-front-page) .entry-header {
 #semester {
 }
 
-#semester table {
-	line-height: 1.15;
+.bl-course {
 }
 
-#semester thead {
-	color: $blue-d5;
+.bl-basic .bl-course-box,
+.bl-basic .bl-desc-box li div {
+	background-color: $orange;
+}
+.bl-special .bl-course-box,
+.bl-special .bl-desc-box li div {
+	background-color: $red;
+}
+.bl-special .bl-course-title {
+	margin-bottom: 1.5rem;
+}
+.bl-stage .bl-course-box,
+.bl-stage .bl-desc-box li div {
+	background-color: $blue-bl;
 }
 
-#semester thead th {
-	margin-bottom: 0.3em;
+.bl-course-box {
+	padding: 1.2rem 0 1rem;
+
+	.bl-course-title {
+		color: $ff;
+		font-size: 32px;
+		font-size: 2rem;
+		font-weight: 500;
+		text-align: center;
+		line-height: 1.4;
+	}
+	.bl-course-icons {
+		text-align: center;
+
+		&:before {
+			display: block;
+			content: "";
+			width: 90%;
+			height: 2px;
+			background-color: $ff;
+			margin: 0.5rem auto 1rem auto;
+		}
+		img {
+			width: 36px;
+			height: 36px;
+		}
+	}
 }
 
-#semester th {
-	font-weight: 500;
+.bl-desc-box {
+	background-color: $f5;
+	padding: 1rem 1rem 0;
+
+	&:last-child {
+		padding-bottom: 1rem;
+	}
+	& > div:first-child {
+		color: $k8;
+		font-weight: 500;
+	}
+	.bl-course-step {
+		margin-left: 1rem;
+		letter-spacing: 0;
+	}
+	.bl-course-aim {
+		margin-left: 1rem;
+	}
+	.bl-course-feature {
+		li {
+			display: inline-block;
+
+			div {
+				display: inline-block;
+				width: 1rem;
+				height: 1rem;
+				margin-right: 0.5rem;
+				vertical-align: -0.18em;
+			}
+			img {
+				width: 1rem;
+				height: 1rem;
+			}
+		}
+	}
+	ul {
+		list-style: none;
+		font-size: 16px;
+		font-size: 1rem;
+		margin-left: -0.5rem;
+	}
 }
 
-#semester td {
+
+.bl-basic {
 }
 
-#semester .colspan {
-	text-align: center;
+.bl-special {
 }
 
-#semester .basic {
-}
-
-#semester .special {
-}
-
-#semester .stage {
+.bl-stage {
 }
 
 #extracurricular {
