@@ -60,7 +60,9 @@ $k3:		#333;
 $k4:		#444;
 $k8:		#888;
 $k9:		#999;
+$aa:		#aaa;
 $bb:		#bbb;
+$cc:		#ccc;
 $dd:		#ddd;
 $ee:		#eee;
 $f2:		#f2f2f2;
@@ -2034,11 +2036,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	}
 }
 
-.bl-admission {
+.bl-procedure {
 	position: relative;
-	margin: 1rem 0;
+	margin: 0.75rem 0;
 
-	.admit-line {
+	.proc-trackline {
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -2047,7 +2049,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 		border-right: dotted 3px $dd;
 		// z-index: 0;
 	}
-	.admit-block {
+	.proc-block {
 		display: grid;
 		grid-template-columns: 70px auto;
 		// z-index: 10;
@@ -2061,12 +2063,12 @@ body:not(.twentyseventeen-front-page) .entry-header {
 		}
 	}
 
-	.admit-icon {
+	.proc-icon {
 		overflow: hidden;
-		position: relative;		// .admit-line보다 전면에 보이기 위해
+		position: relative;		// .proc-line보다 전면에 보이기 위해
 		width: 70px;
 		height: 70px;
-		border: solid 2px $k9;
+		border: solid 1px $k9;
 		border-radius: 50%;
 		text-align: center;
 		vertical-align: middle;
@@ -2087,7 +2089,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 		}
 	}
 
-	.admit-desc {
+	.proc-desc {
 		margin: 0 0 0 2rem;
 
 		div {
@@ -2111,17 +2113,86 @@ body:not(.twentyseventeen-front-page) .entry-header {
 			font-size: 1.5rem;
 			font-weight: 900;
 			line-height: 1;
-			color: $dd;
+			color: $cc;
 		}
 	}
 }
 
-#english-camp .admit-line {
+#english-camp .proc-line {
 	height: 70%;
 }
 
 .bl-camp-admission {
+}
 
+.bl-iconic {
+	display: grid;
+	grid-template-columns: repeat( 3, 1fr );
+	// grid-template-rows: 80px auto;
+	grid-auto-rows: auto;
+	grid-row-gap: 0.5rem;
+	grid-column-gap: auto;
+	justify-items: center;
+	margin: 0.75rem 0;
+
+	.circle {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		background-color: $green;
+		overflow: hidden;
+		color: $ff;
+		font-size: 2.5rem;
+		font-weight: 100;
+		text-align: center;
+
+		div {
+			margin: auto;
+		}
+		span {
+			font-size: 5rem;
+			line-height: 1.2;
+		}
+	}
+	.desc {
+		word-break: keep-all;
+		text-align: center;
+		justify-self: stretch;
+
+		div:first-child {
+			font-weight: 500;
+			color: $k4;
+		}
+		div:last-child {
+			line-height: 1.4;
+		}
+	}
+}
+
+#english-camp .bl-iconic {
+	.circle {
+		// background-color: $green;
+
+		div {
+			margin-top: -0.5rem;
+		}
+	}
+	div:nth-child(3) .circle {
+		margin-top: 0.25rem;
+		font-size: 2.5rem;
+		line-height: 0.85;
+		word-break: keep-all;
+
+		div:first-child {
+			text-align: left;
+			margin-top: 0.5rem;
+		}
+		div:last-child {
+			text-align: right;
+			margin-top: 0;
+			margin-right: 0.3rem;
+		}
+	}
 }
 
 #extracurricular {

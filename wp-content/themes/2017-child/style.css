@@ -1841,11 +1841,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
   display: list-item;
 }
 
-.bl-admission {
+.bl-procedure {
   position: relative;
-  margin: 1rem 0;
+  margin: 0.75rem 0;
 }
-.bl-admission .admit-line {
+.bl-procedure .proc-trackline {
   position: absolute;
   left: 0;
   top: 0;
@@ -1853,57 +1853,116 @@ body:not(.twentyseventeen-front-page) .entry-header {
   height: 100%;
   border-right: dotted 3px #ddd;
 }
-.bl-admission .admit-block {
+.bl-procedure .proc-block {
   display: grid;
   grid-template-columns: 70px auto;
   margin-bottom: 1rem;
 }
-.bl-admission .admit-block:last-child {
+.bl-procedure .proc-block:last-child {
   margin-bottom: 0;
 }
-.bl-admission .admit-icon {
+.bl-procedure .proc-icon {
   overflow: hidden;
   position: relative;
   width: 70px;
   height: 70px;
-  border: solid 2px #999;
+  border: solid 1px #999;
   border-radius: 50%;
   text-align: center;
   vertical-align: middle;
   background-color: #fff;
 }
-.bl-admission .admit-icon img {
+.bl-procedure .proc-icon img {
   width: 40px;
   height: 40px;
   margin-top: 12px;
 }
-.bl-admission .admit-desc {
+.bl-procedure .proc-desc {
   margin: 0 0 0 2rem;
 }
-.bl-admission .admit-desc div:first-child {
+.bl-procedure .proc-desc div:first-child {
   position: relative;
   color: #1265ff;
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.1;
 }
-.bl-admission .admit-desc div:last-child {
+.bl-procedure .proc-desc div:last-child {
   border-left: solid 1px #dac326;
   margin-left: -0.75rem;
   padding: 0.25rem 0.75rem 0;
 }
-.bl-admission .admit-desc span {
+.bl-procedure .proc-desc span {
   position: absolute;
   top: -0.1rem;
   left: -1.25rem;
   font-size: 1.5rem;
   font-weight: 900;
   line-height: 1;
-  color: #ddd;
+  color: #ccc;
 }
 
-#english-camp .admit-line {
+#english-camp .proc-line {
   height: 70%;
+}
+
+.bl-iconic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-row-gap: 0.5rem;
+  grid-column-gap: auto;
+  justify-items: center;
+  margin: 0.75rem 0;
+}
+.bl-iconic .circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #1aa021;
+  overflow: hidden;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 100;
+  text-align: center;
+}
+.bl-iconic .circle div {
+  margin: auto;
+}
+.bl-iconic .circle span {
+  font-size: 5rem;
+  line-height: 1.2;
+}
+.bl-iconic .desc {
+  word-break: keep-all;
+  text-align: center;
+  justify-self: stretch;
+}
+.bl-iconic .desc div:first-child {
+  font-weight: 500;
+  color: #444;
+}
+.bl-iconic .desc div:last-child {
+  line-height: 1.4;
+}
+
+#english-camp .bl-iconic .circle div {
+  margin-top: -0.5rem;
+}
+#english-camp .bl-iconic div:nth-child(3) .circle {
+  margin-top: 0.25rem;
+  font-size: 2.5rem;
+  line-height: 0.85;
+  word-break: keep-all;
+}
+#english-camp .bl-iconic div:nth-child(3) .circle div:first-child {
+  text-align: left;
+  margin-top: 0.5rem;
+}
+#english-camp .bl-iconic div:nth-child(3) .circle div:last-child {
+  text-align: right;
+  margin-top: 0;
+  margin-right: 0.3rem;
 }
 
 #bl-map {
