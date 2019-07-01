@@ -121,6 +121,7 @@ select,
 textarea {
   color: #222;
   font-family: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGothicNeoSD", sans-serif;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.7;
 }
@@ -1648,7 +1649,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.bl-program {
+.bl-item-wrap {
   font-size: 1.25rem;
   font-weight: 500;
   width: 100%;
@@ -1657,20 +1658,20 @@ body:not(.twentyseventeen-front-page) .entry-header {
   left: 0;
   right: 0;
 }
-.bl-program div {
+.bl-item-wrap div {
   width: 100%;
   text-align: center;
 }
-.bl-program div:first-child {
+.bl-item-wrap div:first-child {
   margin-top: 0.75rem;
 }
-.bl-program div:last-child {
+.bl-item-wrap div:last-child {
   font-size: 0.9rem;
   position: absolute;
   left: 0;
   bottom: 1.25rem;
 }
-.bl-program div:last-child:before {
+.bl-item-wrap div:last-child:before {
   display: block;
   content: "";
   width: 80%;
@@ -1721,28 +1722,27 @@ body:not(.twentyseventeen-front-page) .entry-header {
   /*padding-left: 1em;*/
 }
 
-.bl-basic .bl-course-box,
-.bl-basic .bl-desc-box li div {
+#course-basic .bl-course-box,
+#course-basic .bl-desc-box li div {
   background-color: #e8a10e;
 }
 
-.bl-special .bl-course-box,
-.bl-special .bl-desc-box li div {
+#course-special .bl-course-box,
+#course-special .bl-desc-box li div {
   background-color: #a21a1a;
 }
 
-.bl-special .bl-course-title {
+#course-special .bl-course-title {
   margin-bottom: 1.5rem;
 }
 
-.bl-stage .bl-course-box,
-.bl-stage .bl-desc-box li div {
+#course-stage .bl-course-box,
+#course-stage .bl-desc-box li div {
   background-color: #2c33c8;
 }
 
 .bl-course-box {
   padding: 1.2rem 0 1rem;
-  background: url(http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-bl-logo-watermark.png) 0 0/5rem 5rem no-repeat;
 }
 .bl-course-box .bl-course-title {
   color: #fff;
@@ -1801,10 +1801,109 @@ body:not(.twentyseventeen-front-page) .entry-header {
   height: 1rem;
 }
 .bl-desc-box ul {
-  list-style: none;
   font-size: 16px;
   font-size: 1rem;
   margin-left: -0.5rem;
+}
+
+#semester .bl-desc-box ul {
+  list-style: none;
+}
+
+#english-camp .bl-block-header-media {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.bl-camp-box {
+  display: none;
+  background-color: #1aa021;
+  padding: 1rem;
+}
+.bl-camp-box div {
+  background-color: inherit;
+  border: solid 2px #fff;
+  padding: 1rem;
+}
+.bl-camp-box .bl-course-title {
+  color: #fff;
+  font-size: 32px;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.4;
+}
+
+#english-camp .bl-desc-box {
+  background-color: rgba(20, 160, 33, 0.05);
+}
+#english-camp .bl-desc-box .bl-course-feature li {
+  display: list-item;
+}
+
+.bl-admission {
+  position: relative;
+  margin: 1rem 0;
+}
+.bl-admission .admit-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 36px;
+  height: 100%;
+  border-right: dotted 3px #ddd;
+}
+.bl-admission .admit-block {
+  display: grid;
+  grid-template-columns: 70px auto;
+  margin-bottom: 1rem;
+}
+.bl-admission .admit-block:last-child {
+  margin-bottom: 0;
+}
+.bl-admission .admit-icon {
+  overflow: hidden;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border: solid 2px #999;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #fff;
+}
+.bl-admission .admit-icon img {
+  width: 40px;
+  height: 40px;
+  margin-top: 12px;
+}
+.bl-admission .admit-desc {
+  margin: 0 0 0 2rem;
+}
+.bl-admission .admit-desc div:first-child {
+  position: relative;
+  color: #1265ff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+.bl-admission .admit-desc div:last-child {
+  border-left: solid 1px #dac326;
+  margin-left: -0.75rem;
+  padding: 0.25rem 0.75rem 0;
+}
+.bl-admission .admit-desc span {
+  position: absolute;
+  top: -0.1rem;
+  left: -1.25rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #ddd;
+}
+
+#english-camp .admit-line {
+  height: 70%;
 }
 
 #bl-map {
