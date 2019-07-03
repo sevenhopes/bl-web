@@ -23,6 +23,9 @@ index.php
 bl-responsive/
 twenty*/
 
+# Grunt temporary files
+concatenated.js
+
 # don't ignore myself :)
 !.gitignore
 
