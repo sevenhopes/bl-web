@@ -32,8 +32,6 @@
 			transition = settings.transition,
 			starting_slide = settings.startOn,
 			target = starting_slide > slide_count - 1 ? 0 : starting_slide,
-
-			// Reset Slideshow
 			reset_timer = settings.slideShow ? function() {
 				clearTimeout(timer);
 				timer = setTimeout(next_slide, settings.speed);
