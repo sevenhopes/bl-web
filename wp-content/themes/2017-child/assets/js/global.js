@@ -35,7 +35,7 @@
 	}); // End of $(document).ready()
 
 	if ( isFrontPage ) {
-		var $slide = $body.find( '.bl-header-slides' ),
+		var $slide = $body.find( '.bl-slides' ),
 			$eventBlock = $body.find( '#bl-event' ),
 			$downArrow = $body.find( 'svg.bl-indication' ),
 			indi_intv;
@@ -70,11 +70,11 @@
 		});
 	} else if ( $body.find( '#why-bl' ).length ) {
 		// Why Bridge Light 페이지의 accordion 동작
-		var $accord = $body.find( '.bl-why-list' );
+		var $why_list = $body.find( '.bl-why-list' );
 
-		$accord.find( 'dt' ).click( function() {
+		$why_list.find( 'dt' ).click( function() {
 			var _this = $( this ),
-				$open_dt = $accord.find( 'dt.opened' );
+				$open_dt = $why_list.find( 'dt.opened' );
 
 			if ( $open_dt.length ) {
 				if ( _this.get(0) !== $open_dt.get(0) ) {
@@ -87,9 +87,9 @@
 
 			function blToggleAccItem( dt ) {
 				var num = dt.children( 'div' ),
-					numStyleToggle = num.css( 'opacity' ) === '1'
-						? { opacity: '0.2', fontSize: '3rem', marginLeft: '0', marginTop: '0' }
-						: { opacity: '1', fontSize: '4rem', marginLeft: '-0.3rem', marginTop: '-0.4rem' };
+					numStyleToggle = num.css( 'opacity' ) === '1' ?
+						{ opacity: '0.2', fontSize: '3rem', marginLeft: '0', marginTop: '0' } :
+						{ opacity: '1', fontSize: '4rem', marginLeft: '-0.3rem', marginTop: '-0.4rem' };
 
 				num.animate( numStyleToggle );
 				dt.next( 'dd' ).slideToggle();
@@ -98,12 +98,21 @@
 			}
 		});
 	} else if ( $body.find( '#faq' ).length ) {
-		// FAQ 페이지 accordion 동작
-		var $accord = $body.find( '.bl-faq-list' );
+		// FAQ 페이지의 동작
+		var $cat_wrap = $body.find( '.bl-faq-category' ),
+			$categories = $cat_wrap.children( 'div' ),
+			$chosen = $cat_wrap.children( '.top-10' ),
+			$faq_list = $body.find( '.bl-faq-list' ),
+			$questions = $faq_list.find( 'dt' ),
+			$answers = $faq_list.find( 'dd' ),
+			$no_result = $faq_list.find( '.no-result' ),
+			$textbox = $body.find( 'input' ),
+			input = '';
 
-		$accord.find( 'dt' ).click( function() {
+		// 질문 터치 시 답변 보여줌 (accordion 방식)
+		$questions.click( function() {
 			var _this = $( this ),
-				$open_dt = $accord.find( 'dt.opened' );
+				$open_dt = $faq_list.find( 'dt.opened' );
 
 			if ( $open_dt.length ) {
 				if ( _this.get(0) !== $open_dt.get(0) ) {
@@ -120,42 +129,34 @@
 			}
 		});
 
-		var $wrapper = $body.find( '.bl-faq-category' ),
-			$categories = $wrapper.children( 'div' ),
-			$chosen = $wrapper.children( '.top-10' );
+		// 처음엔 top-10 카테고리를 보여줌
+		// blShowCategory( 'top-10' );
+		// $chosen.addClass( 'selected' );
+		$chosen.trigger( 'click' );
 
-		var $textbox = $body.find( 'input' ),
-			$accord = $body.find( 'dl' );
-			$questions = $accord.find( 'dt' ),
-			$answers = $accord.find( 'dd' ),
-			$no_result = $accord.find( '.no-result' ),
-			input = '';
-
-		// FAQ 페이지 카테고리 모아보기
-		blShowCategory( 'top-10' );
-		$chosen.addClass( 'selected' );
-
+		// 카테고리 터치 시 동작
 		$categories.click( function() {
 			// console.log( 'click: ' + $( this ).attr( 'class' ) );
 			$textbox.val( '' );
 			blShowCategory( $( this ).attr( 'class' ) );
 			$( this ).addClass( 'selected' );
+			$chosen = $( this );
+
+			function blShowCategory( cat_class ) {
+				// console.log( 'cat_class:' + cat_class );
+				$faq_list.find( 'dt.opened' ).removeClass( 'opened' );
+				$answers.hide();
+				$categories.removeClass( 'selected' );
+
+				$.each( $questions, function() {
+					if ( $( this ).hasClass( cat_class ) ) {
+						$( this ).show();
+					} else {
+						$( this ).hide();
+					}
+				});
+			}
 		});
-
-		function blShowCategory( cat_class ) {
-			// console.log( 'cat_class:' + cat_class );
-			$accord.find( 'dt.opened' ).removeClass( 'opened' );
-			$answers.hide();
-			$categories.removeClass( 'selected' );
-
-			$.each( $questions, function() {
-				if ( $( this ).hasClass( cat_class ) ) {
-					$( this ).show();
-				} else {
-					$( this ).hide();
-				}
-			});
-		}
 
 		// FAQ 페이지 텍스트 실시간 검색
 		$textbox.keyup( function() {
@@ -163,9 +164,10 @@
 			$answers.hide();	// 타이핑 시 열려있는 답변 닫기
 			if ( input === '' ) {
 				$no_result.hide();
-				$.each( $questions, function() {
-					$( this ).slideDown();
-				});
+				// $.each( $questions, function() {
+				// 	$( this ).slideDown();
+				// });
+				$chosen.trigger( 'click' );
 			} else {
 				$.each( $questions, function() {
 					if ( $( this ).text().indexOf( input ) > -1 ) {
@@ -189,7 +191,22 @@
 				console.log( 'enter key pressed' );
 				$textbox.blur();
 			}
-		})
+		});
+	} else if ( $body.find( '#study-in-america' ).length ) {
+		var $tabs = $body.find( '.bl-tabs .tabs button' ),
+			$media = $body.find( '.bl-tabs .media img' ),
+			$desc = $body.find( '.bl-tabs .desc div' );
+			// tab-array = { 'homestay' => 0, 'school' => 1, 'experience' => 2, 'travel' => 3 };
+
+		$tabs.click( function() {
+			// var id = $( this ).attr( 'id' );
+			var idx = $tabs.index( $(this) );
+
+			$media.fadeOut();
+			$( $media.get( idx ) ).fadeIn();
+			$desc.fadeOut();
+			$( $desc.get( idx ) ).fadeIn();
+		});
 	}
 
 	/*
