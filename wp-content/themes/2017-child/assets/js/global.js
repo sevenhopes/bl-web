@@ -78,14 +78,14 @@
 
 			if ( $open_dt.length ) {
 				if ( _this.get(0) !== $open_dt.get(0) ) {
-					blToggleAccItem( _this );
+					blToggleContent( _this );
 				}
-				blToggleAccItem( $open_dt );
+				blToggleContent( $open_dt );
 			} else {
-				blToggleAccItem( _this );
+				blToggleContent( _this );
 			}
 
-			function blToggleAccItem( dt ) {
+			function blToggleContent( dt ) {
 				var num = dt.children( 'div' ),
 					numStyleToggle = num.css( 'opacity' ) === '1' ?
 						{ opacity: '0.2', fontSize: '3rem', marginLeft: '0', marginTop: '0' } :
@@ -101,7 +101,7 @@
 		// FAQ 페이지의 동작
 		var $cat_wrap = $body.find( '.bl-faq-category' ),
 			$categories = $cat_wrap.children( 'div' ),
-			$chosen = $cat_wrap.children( '.top-10' ),
+			$chosen_cat = $cat_wrap.children( '.top-10' ),
 			$faq_list = $body.find( '.bl-faq-list' ),
 			$questions = $faq_list.find( 'dt' ),
 			$answers = $faq_list.find( 'dd' ),
@@ -116,46 +116,41 @@
 
 			if ( $open_dt.length ) {
 				if ( _this.get(0) !== $open_dt.get(0) ) {
-					blToggleAccItem( _this );
+					blToggleAnswer( _this );
 				}
-				blToggleAccItem( $open_dt );
+				blToggleAnswer( $open_dt );
 			} else {
-				blToggleAccItem( _this );
+				blToggleAnswer( _this );
 			}
 
-			function blToggleAccItem( dt ) {
+			function blToggleAnswer( dt ) {
 				dt.next( 'dd' ).slideToggle();
 				dt.toggleClass( 'opened' );
 			}
 		});
 
-		// 처음엔 top-10 카테고리를 보여줌
-		// blShowCategory( 'top-10' );
-		// $chosen.addClass( 'selected' );
-		$chosen.trigger( 'click' );
-
 		// 카테고리 터치 시 동작
 		$categories.click( function() {
-			// console.log( 'click: ' + $( this ).attr( 'class' ) );
+			var clicked_cat = $( this ).attr( 'class' );
+
 			$textbox.val( '' );
-			blShowCategory( $( this ).attr( 'class' ) );
+			$faq_list.find( 'dt.opened' ).removeClass( 'opened' );
+			$answers.hide();
+			// $categories.removeClass( 'selected' );
+			$chosen_cat.removeClass( 'selected' );
+
+			$.each( $questions, function() {
+				if ( $( this ).hasClass( clicked_cat ) ) {
+					$( this ).show();
+				} else {
+					$( this ).hide();
+				}
+			});
+
 			$( this ).addClass( 'selected' );
-			$chosen = $( this );
+			$chosen_cat = $( this );
 
-			function blShowCategory( cat_class ) {
-				// console.log( 'cat_class:' + cat_class );
-				$faq_list.find( 'dt.opened' ).removeClass( 'opened' );
-				$answers.hide();
-				$categories.removeClass( 'selected' );
-
-				$.each( $questions, function() {
-					if ( $( this ).hasClass( cat_class ) ) {
-						$( this ).show();
-					} else {
-						$( this ).hide();
-					}
-				});
-			}
+			// console.log( 'click: ' + clicked_cat );
 		});
 
 		// FAQ 페이지 텍스트 실시간 검색
@@ -164,10 +159,16 @@
 			$answers.hide();	// 타이핑 시 열려있는 답변 닫기
 			if ( input === '' ) {
 				$no_result.hide();
-				// $.each( $questions, function() {
-				// 	$( this ).slideDown();
-				// });
-				$chosen.trigger( 'click' );
+				$answers.hide();
+				$chosen_cat.removeClass( 'selected' );
+				$.each( $questions, function() {
+					if ( $( this ).hasClass( $chosen_cat.attr( 'class' ) ) ) {
+						$( this ).show();
+					} else {
+						$( this ).hide();
+					}
+				});
+				$chosen_cat.addClass( 'selected' );
 			} else {
 				$.each( $questions, function() {
 					if ( $( this ).text().indexOf( input ) > -1 ) {
@@ -183,6 +184,7 @@
 					}
 				});
 			}
+			// console.log( 'input val: ' + $textbox.val() );
 		});
 
 		// 키워드 입력 후 Enter 키로 인한 페이지 새로고침 방지
@@ -192,6 +194,11 @@
 				$textbox.blur();
 			}
 		});
+
+		// 처음엔 top-10 카테고리를 보여줌
+		// blShowCategory( 'top-10' );
+		// $chosen_cat.addClass( 'selected' );
+		$chosen_cat.trigger( 'click' );
 	} else if ( $body.find( '#study-in-america' ).length ) {
 		var $tabs = $body.find( '.bl-tabs .tabs button' ),
 			$media = $body.find( '.bl-tabs .media img' ),
