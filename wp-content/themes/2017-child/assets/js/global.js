@@ -205,14 +205,17 @@
 			$desc = $body.find( '.bl-tabs .desc div' );
 			// tab-array = { 'homestay' => 0, 'school' => 1, 'experience' => 2, 'travel' => 3 };
 
+		$media.css( 'display', 'none');
+		$body.find( '.bl-tabs .media img:first-child' ).css( 'display', 'block' );
+
 		$tabs.click( function() {
 			// var id = $( this ).attr( 'id' );
 			var idx = $tabs.index( $(this) );
 
-			$media.fadeOut();
-			$( $media.get( idx ) ).fadeIn();
-			$desc.fadeOut();
-			$( $desc.get( idx ) ).fadeIn();
+			$media.hide();
+			$( $media.get( idx ) ).show();
+			$desc.hide();
+			$( $desc.get( idx ) ).show();
 		});
 	}
 
