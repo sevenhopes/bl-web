@@ -200,22 +200,31 @@
 		// $chosen_cat.addClass( 'selected' );
 		$chosen_cat.trigger( 'click' );
 	} else if ( $body.find( '#study-in-america' ).length ) {
-		var $tabs = $body.find( '.bl-tabs .tabs button' ),
-			$media = $body.find( '.bl-tabs .media img' ),
-			$desc = $body.find( '.bl-tabs .desc div' );
-			// tab-array = { 'homestay' => 0, 'school' => 1, 'experience' => 2, 'travel' => 3 };
+		var $imgs = $body.find( '.bl-tabs .media img' ),
+			$tabs = $body.find( '.bl-tabs .tabs button' ),
+			$desc = $body.find( '.bl-tabs .desc div' ),
+			$selected = $tabs.eq( 0 );
 
-		$media.css( 'display', 'none');
-		$body.find( '.bl-tabs .media img:first-child' ).css( 'display', 'block' );
+		$selected.addClass( 'selected' );
+
+		$imgs.css( 'display', 'none');
+		$imgs.eq( 0 ).css( 'display', 'block' );
+		var img_height = $imgs.eq( 0 ).css( 'height' );
+		$body.find( '.bl-tabs .media' )
+			.css( 'min-height', img_height )
+			.css( 'height' , img_height );
 
 		$tabs.click( function() {
 			// var id = $( this ).attr( 'id' );
-			var idx = $tabs.index( $(this) );
+			var idx = $tabs.index( $( this ) );
 
-			$media.hide();
-			$( $media.get( idx ) ).show();
+			$selected.removeClass( 'selected' );
+			$selected = $( this ).addClass( 'selected' );
+
+			$imgs.fadeOut();
+			$imgs.eq( idx ).fadeIn();
 			$desc.hide();
-			$( $desc.get( idx ) ).show();
+			$desc.eq( idx ).show();
 		});
 	}
 

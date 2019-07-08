@@ -2188,13 +2188,14 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .bl-tabs {
 	.media {
-		overflow: hidden;
+		// overflow: hidden;
+		position: relative;
 
 		img {
 			display: block;
-		}
-		img:first-child {
-			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
 		}
 	}
 	.tabs {
@@ -2215,16 +2216,18 @@ body:not(.twentyseventeen-front-page) .entry-header {
 			img {
 				width: 40px;
 				height: 40px;
+				opacity: 0.5;
 			}
 		}
-		button:first-child {
+		button.selected {
 			background-color: $blue-d3;
-			color: $ff;
+
+			img {
+				opacity: 1;
+			}
 		}
 	}
 	.desc {
-		// border: solid 2px $blue-bl;
-		// border-top-width: 5px;
 		padding: 1rem;
 		background-color: $blue-d3;
 		color: $ff;
@@ -2232,6 +2235,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 		overflow: hidden;
 
 		div {
+			min-height: 105px;
 			display: none;
 		}
 		div:first-child {

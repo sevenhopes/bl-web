@@ -1947,13 +1947,13 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .bl-tabs .media {
-  overflow: hidden;
+  position: relative;
 }
 .bl-tabs .media img {
   display: block;
-}
-.bl-tabs .media img:first-child {
-  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .bl-tabs .tabs {
   display: grid;
@@ -1972,10 +1972,13 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-tabs .tabs button img {
   width: 40px;
   height: 40px;
+  opacity: 0.5;
 }
-.bl-tabs .tabs button:first-child {
+.bl-tabs .tabs button.selected {
   background-color: #0c1069;
-  color: #fff;
+}
+.bl-tabs .tabs button.selected img {
+  opacity: 1;
 }
 .bl-tabs .desc {
   padding: 1rem;
@@ -1985,6 +1988,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
   overflow: hidden;
 }
 .bl-tabs .desc div {
+  min-height: 105px;
   display: none;
 }
 .bl-tabs .desc div:first-child {
