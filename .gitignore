@@ -9,6 +9,8 @@
 *.jpeg
 tmp.*
 *.map
+desktop.ini
+folderico*.ico
 
 # dirs
 bl-backups/
