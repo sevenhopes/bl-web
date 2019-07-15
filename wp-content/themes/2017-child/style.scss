@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: 2017 Child
 Theme URI: http://www.bridgelightels.com/m/
@@ -53,59 +54,59 @@ $font-kr: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGoth
 $font-en: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGothicNeoSD", sans-serif;
 $font-mo: "Noto Sans KR", "Courier 10 Pitch", Courier, monospace;
 
-$k0:		#000;
-$k1:		#111;
-$k2:		#222;
-$k3:		#333;
-$k4:		#444;
-$k8:		#888;
-$k9:		#999;
-$aa:		#aaa;
-$bb:		#bbb;
-$cc:		#ccc;
-$dd:		#ddd;
-$ee:		#eee;
-$f2:		#f2f2f2;
-$f5:		#f5f5f5;
-$f7:		#f7f7f7;
-$fc:		#fcfcfc;
-$ff:		#fff;
-$fft:		rgba( 256, 256, 256, 0.2 );
+$k0:  #000;
+$k1:  #111;
+$k2:  #222;
+$k3:  #333;
+$k4:  #444;
+$k8:  #888;
+$k9:  #999;
+$aa:  #aaa;
+$bb:  #bbb;
+$cc:  #ccc;
+$dd:  #ddd;
+$ee:  #eee;
+$f2:  #f2f2f2;
+$f5:  #f5f5f5;
+$f7:  #f7f7f7;
+$fc:  #fcfcfc;
+$ff:  #fff;
+$fft: rgba( 256, 256, 256, 0.2 );
 
-$blue-k:	#05061a;
-$blue-d1:	#080a34;
-$blue-d2:	#0c1055;
-// $blue-d2t:	#0c1055e6;
-$blue-d2t:	rgba( 12, 16, 85, 0.9 ); // from $blue-d2
-$blue-d3:	#0c1069;
-$blue-d4:	#111790;
-// $blue-d4t1:	#11179050;
-// $blue-d4t2:	#111790c0;
-$blue-d4t1:	rgba( 17, 23, 124, 0.45 ); // from $blue-d4
-$blue-d4t2:	rgba( 17, 23, 124, 0.75 ); // from $blue-d4
-$blue-d5:	#1820aa;
-$blue-g:	#192d88;
-$blue-dp:	#161ac8;
-$blue-dpt:	rgba( 22, 26, 200, 0.2 );
-$blue-bl:	#2c33c8;
-$blue-l1:	#1265ff;
-// $blue-l1t1:	#1265ffb3;
-// $blue-l1t2:	#1265ff0d;
-$blue-l1t1:	rgba( 18, 101, 255, 0.7 );
-$blue-l1t2:	rgba( 18, 101, 255, 0.05 );
-$blue-l2:	#46a0ff;
+$blue-k:   #05061a;
+$blue-d1:  #080a34;
+$blue-d2:  #0c1055;
+// $blue-d2t: #0c1055e6;
+$blue-d2t: rgba( 12, 16, 85, 0.9 ); // from $blue-d2
+$blue-d3:  #0c1069;
+$blue-d4:  #111790;
+// $blue-d4t1: #11179050;
+// $blue-d4t2: #111790c0;
+$blue-d4t1: rgba( 17, 23, 124, 0.45 ); // from $blue-d4
+$blue-d4t2: rgba( 17, 23, 124, 0.75 ); // from $blue-d4
+$blue-d5:   #1820aa;
+$blue-g:    #192d88;
+$blue-dp:   #161ac8;
+$blue-dpt:  rgba( 22, 26, 200, 0.2 );
+$blue-bl:   #2c33c8;
+$blue-l1:   #1265ff;
+// $blue-l1t1: #1265ffb3;
+// $blue-l1t2: #1265ff0d;
+$blue-l1t1: rgba( 18, 101, 255, 0.7 );
+$blue-l1t2: rgba( 18, 101, 255, 0.05 );
+$blue-l2:   #46a0ff;
 
-$gold:		#dac326;
-$gold-l1:	#dcd079;
-$red:		#a21a1a;
-$orange:	#e8a10e;
-$green:		#1aa021;
-$green-t:	rgba( 20, 160, 33, 0.05 );
-$mint:		#1cbbb4;
+$gold:    #dac326;
+$gold-l1: #dcd079;
+$red:     #a21a1a;
+$orange:  #e8a10e;
+$green:   #1aa021;
+$green-t: rgba( 20, 160, 33, 0.05 );
+$mint:    #1cbbb4;
 
-$test-r:	#fc3;
-$test-g:	#3cf;
-$test-b:	#cf3;
+$test-r:  #fc3;
+$test-g:  #3cf;
+$test-b:  #cf3;
 
 /*--------------------------------------------------------------
 1.0 Normalize
@@ -2034,7 +2035,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 		top: 0;
 		width: 36px;
 		height: 100%;
-		border-right: dotted 3px $dd;
+		border-right: dotted 3px $gold-l1;
 		// z-index: 0;
 	}
 	.proc-block {
@@ -2073,7 +2074,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 		img {
 			width: 40px;
 			height: 40px;
-			margin-top: 12px;
+			margin-top: 14px;
 		}
 	}
 
@@ -2089,7 +2090,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 				line-height: 1.1;
 			}
 			&:last-child {
-				border-left: solid 1px $gold;
+				// border-left: solid 1px $gold;
 				margin-left: -0.75rem;
 				padding: 0.25rem 0.75rem 0;
 			}
@@ -2106,7 +2107,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	}
 }
 
-#english-camp .proc-line {
+#english-camp .proc-trackline {
 	height: 70%;
 }
 
@@ -2127,7 +2128,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 		width: 80px;
 		height: 80px;
 		border-radius: 50%;
-		background-color: $green;
+		background-color: $blue-bl;
 		overflow: hidden;
 		color: $ff;
 		font-size: 2.5rem;
@@ -2149,7 +2150,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 		div:first-child {
 			font-weight: 500;
-			color: $k4;
+			color: $blue-bl;
 		}
 		div:last-child {
 			line-height: 1.4;
@@ -2159,10 +2160,43 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 #english-camp .bl-iconic {
 	.circle {
-		// background-color: $green;
+		background-color: $green;
 
 		div {
-			margin-top: -0.5rem;
+			margin-top: -0.75rem;
+		}
+	}
+	.desc {
+		div:first-child {
+			color: $green;
+		}
+	}
+	div:nth-child(3) .circle {
+		margin-top: 0.25rem;
+		font-size: 2.5rem;
+		line-height: 0.85;
+		word-break: keep-all;
+
+		div:first-child {
+			text-align: left;
+			margin-top: 0.5rem;
+			color: $green;
+		}
+		div:last-child {
+			text-align: right;
+			margin-top: -0.1rem;
+			margin-right: 0.3rem;
+		}
+	}
+}
+
+#study-in-america {
+}
+
+#study-in-america .bl-iconic {
+	.circle {
+		div {
+			margin-top: -0.75rem;
 		}
 	}
 	div:nth-child(3) .circle {
@@ -2177,25 +2211,38 @@ body:not(.twentyseventeen-front-page) .entry-header {
 		}
 		div:last-child {
 			text-align: right;
-			margin-top: 0;
+			margin-top: -0.1rem;
 			margin-right: 0.3rem;
 		}
 	}
 }
 
-#study-in-america {
+#study-in-america .proc-trackline {
+	height: 90%;
 }
 
 .bl-tabs {
 	.media {
-		// overflow: hidden;
+		overflow: hidden;
 		position: relative;
+		min-height: 189px;
 
-		img {
-			display: block;
+		div {
+			display: none;
 			position: absolute;
 			left: 0;
 			top: 0;
+			right: 0;
+			bottom: 0;
+
+			img {
+				display: block;
+				margin: 0;
+				padding: 0;
+			}
+		}
+		div:first-child {
+			display: block;
 		}
 	}
 	.tabs {

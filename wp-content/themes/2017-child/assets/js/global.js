@@ -68,6 +68,7 @@
 				$slide.sssResume();
 			}
 		});
+
 	} else if ( $body.find( '#why-bl' ).length ) {
 		// Why Bridge Light 페이지의 accordion 동작
 		var $why_list = $body.find( '.bl-why-list' );
@@ -97,6 +98,7 @@
 				dt.find( 'button' ).toggleClass( 'opened' );
 			}
 		});
+
 	} else if ( $body.find( '#faq' ).length ) {
 		// FAQ 페이지의 동작
 		var $cat_wrap = $body.find( '.bl-faq-category' ),
@@ -199,20 +201,21 @@
 		// blShowCategory( 'top-10' );
 		// $chosen_cat.addClass( 'selected' );
 		$chosen_cat.trigger( 'click' );
+
 	} else if ( $body.find( '#study-in-america' ).length ) {
-		var $imgs = $body.find( '.bl-tabs .media img' ),
+		var $imgs = $body.find( '.bl-tabs .media div' ),
 			$tabs = $body.find( '.bl-tabs .tabs button' ),
 			$desc = $body.find( '.bl-tabs .desc div' ),
 			$selected = $tabs.eq( 0 );
 
 		$selected.addClass( 'selected' );
 
-		$imgs.css( 'display', 'none');
-		$imgs.eq( 0 ).css( 'display', 'block' );
-		var img_height = $imgs.eq( 0 ).css( 'height' );
-		$body.find( '.bl-tabs .media' )
-			.css( 'min-height', img_height )
-			.css( 'height' , img_height );
+		// $imgs.css( 'display', 'none');
+		// $imgs.eq( 0 ).css( 'display', 'block' );
+		// var img_height = $imgs.eq( 0 ).css( 'height' );
+		// $body.find( '.bl-tabs .media' )
+			// .css( 'min-height', img_height );
+			// .css( 'height' , img_height );
 
 		$tabs.click( function() {
 			// var id = $( this ).attr( 'id' );
