@@ -64,6 +64,14 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
   color: #888;
   position: static; }
 
+.bl-p a {
+  font-weight: 500;
+  color: #2c33c8; }
+
+.bl-p a:hover,
+.bl-p a:focus {
+  color: #dac326; }
+
 .bl-ue {
   color: #2c33c8; }
 
@@ -388,6 +396,19 @@ a:active h3 {
 
 .main-navigation li:last-child:after {
   display: none; }
+
+.main-navigation #menu-item-99999.bl-nav-buttons {
+  border-bottom: 1px solid #192d88;
+  display: -webkit-flex;
+  display: flex; }
+  .main-navigation #menu-item-99999.bl-nav-buttons a {
+    padding-bottom: 7px; }
+  .main-navigation #menu-item-99999.bl-nav-buttons a:nth-child(2),
+  .main-navigation #menu-item-99999.bl-nav-buttons a:nth-child(3) {
+    padding-left: 0; }
+  .main-navigation #menu-item-99999.bl-nav-buttons img {
+    width: 32px;
+    height: 32px; }
 
 /* 서브 메뉴를 위한 Dropdown toggle */
 .dropdown-toggle {
@@ -1320,7 +1341,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
   grid-template-areas: "number title angledown";
   grid-column-gap: 0.2rem;
   padding: 0.5rem 0.75rem 0.25rem;
-  /*border: solid 1px $test-r;*/ }
+  /*border: 1px solid $test-r;*/ }
 
 .bl-why-list div:first-child dt {
   padding-top: 0; }
@@ -1333,7 +1354,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
   font-weight: 700;
   line-height: 0.8;
   text-align: left;
-  /*border: solid 1px $test-g;*/ }
+  /*border: 1px solid $test-g;*/ }
 
 .bl-why-list dt:after {
   clear: both; }
@@ -1345,7 +1366,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
   font-size: 28px;
   font-size: 1.75rem;
   font-weight: 400;
-  /*border: solid 1px $test-b;*/ }
+  /*border: 1px solid $test-b;*/ }
 
 .bl-why-list dt button {
   grid-area: angledown;
@@ -1366,7 +1387,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-why-list dd p {
   padding-left: 0.5rem;
   margin-left: 0.4rem;
-  border-left: solid 3px #dac326; }
+  border-left: 3px solid #dac326; }
 
 #teachers .bl-t-profile {
   width: auto;
@@ -1553,7 +1574,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
   padding: 1rem; }
   .bl-camp-box div {
     background-color: inherit;
-    border: solid 2px #fff;
+    border: 2px solid #fff;
     padding: 1rem; }
   .bl-camp-box .bl-course-title {
     color: #fff;
@@ -1570,14 +1591,15 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .bl-procedure {
   position: relative;
-  margin: 0.75rem 0; }
+  margin: 0.75rem 0;
+  padding-left: 0.5rem; }
   .bl-procedure .proc-trackline {
     position: absolute;
     left: 0;
     top: 0;
-    width: 36px;
+    width: calc( 36px + 0.5rem );
     height: 100%;
-    border-right: dotted 3px #dcd079; }
+    border-right: 3px dotted #dcd079; }
   .bl-procedure .proc-block {
     display: grid;
     grid-template-columns: 70px auto;
@@ -1589,7 +1611,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
     position: relative;
     width: 70px;
     height: 70px;
-    border: solid 1px #999;
+    border: 1px solid #999;
     border-radius: 50%;
     text-align: center;
     vertical-align: middle;
@@ -1713,7 +1735,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: auto;
-  border-top: solid 2px #dac326; }
+  border-top: 2px solid #dac326; }
   .bl-tabs .tabs button {
     border: none;
     border-radius: 0;
@@ -1733,7 +1755,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
   padding: 1rem;
   background-color: #0c1069;
   color: #fff;
-  border-bottom: solid 2px #dac326;
+  border-bottom: 2px solid #dac326;
   overflow: hidden; }
   .bl-tabs .desc div {
     min-height: 105px;
@@ -1745,6 +1767,14 @@ body:not(.twentyseventeen-front-page) .entry-header {
     font-size: 1.2em;
     font-weight: 500;
     margin-top: 0; }
+
+#admission-process .bl-procedure .proc-trackline {
+  height: 90%; }
+
+#admission-process .bl-proc-comment {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  margin-left: 0.5rem; }
 
 #bl-map {
   width: 100%;
@@ -1786,7 +1816,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-grid-refund .title {
   grid-area: title;
   background-color: #fff;
-  border-bottom: solid 1px #1265ff;
+  border-bottom: 1px solid #1265ff;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0;
@@ -1806,8 +1836,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-grid-tuition + div,
 .bl-grid-refund + div {
   color: #a21a1a;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 13px;
+  font-size: 0.8125rem;
   margin-left: 0.5rem; }
 
 .bl-grid-refund .cspan {
@@ -1841,7 +1871,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
   background-color: #bbb;
   grid-gap: 1px;
   margin-top: 1rem;
-  border: solid 1px #bbb; }
+  border: 1px solid #bbb; }
   .bl-faq-category div {
     background-color: #fcfcfc;
     color: #222;
@@ -1857,12 +1887,12 @@ body:not(.twentyseventeen-front-page) .entry-header {
     color: #eee; }
 
 dl.bl-faq-list {
-  border-top: solid 2px #1265ff;
+  border-top: 2px solid #1265ff;
   font-size: 16px;
   font-size: 1rem;
   font-weight: 400; }
   dl.bl-faq-list dt {
-    border-bottom: solid 1px #ddd;
+    border-bottom: 1px solid #ddd;
     padding: 0.75rem 0;
     line-height: 1.4; }
     dl.bl-faq-list dt strong {
@@ -1888,7 +1918,7 @@ dl.bl-faq-list {
     background-color: #f7f7f7; }
   dl.bl-faq-list dd {
     display: none;
-    border-bottom: solid 1px #ddd;
+    border-bottom: 1px solid #ddd;
     padding: 0.75rem 0;
     font-size: 16px;
     font-size: 1rem; }

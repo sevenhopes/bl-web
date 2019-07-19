@@ -131,6 +131,15 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 .bl-p {
 }
 
+.bl-p a {
+	font-weight: 500;
+	color: $blue-bl;
+}
+.bl-p a:hover,
+.bl-p a:focus {
+	color: $gold;
+}
+
 .bl-br {
 }
 
@@ -542,6 +551,31 @@ a:active h3 {
 
 .main-navigation li:last-child:after {
 	display: none;
+}
+
+.main-navigation #menu-item-99999.bl-nav-buttons {
+	border-bottom: 1px solid $blue-g;
+	display: -webkit-flex;
+	display: flex;
+	// flex-direction: row;
+	// flex-basis: auto;
+	// flex-wrap: nowrap;
+
+	div {
+		// flex
+	}
+	a {
+		// padding-top: 8px;
+		padding-bottom: 7px;
+	}
+	a:nth-child(2),
+	a:nth-child(3) {
+		padding-left: 0;
+	}
+	img {
+		width: 32px;
+		height: 32px;
+	}
 }
 
 /* 서브 메뉴를 위한 Dropdown toggle */
@@ -1657,7 +1691,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	grid-template-areas: "number title angledown";
 	grid-column-gap: 0.2rem;
 	padding: 0.5rem 0.75rem 0.25rem;
-	/*border: solid 1px $test-r;*/
+	/*border: 1px solid $test-r;*/
 }
 
 .bl-why-list div:first-child dt {
@@ -1672,7 +1706,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-weight: 700;
 	line-height: 0.8;
 	text-align: left;
-	/*border: solid 1px $test-g;*/
+	/*border: 1px solid $test-g;*/
 }
 
 .bl-why-list dt:after {
@@ -1686,7 +1720,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-size: 28px;
 	font-size: 1.75rem;
 	font-weight: 400;
-	/*border: solid 1px $test-b;*/
+	/*border: 1px solid $test-b;*/
 }
 
 .bl-why-list dt button {
@@ -1711,7 +1745,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-why-list dd p {
 	padding-left: 0.5rem;
 	margin-left: 0.4rem;
-	border-left: solid 3px $gold;
+	border-left: 3px solid $gold;
 }
 
 #foundation-story {
@@ -2004,7 +2038,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 	div {
 		background-color: inherit;
-		border: solid 2px $ff;
+		border: 2px solid $ff;
 		padding: 1rem;
 	}
 	.bl-course-title {
@@ -2028,14 +2062,15 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-procedure {
 	position: relative;
 	margin: 0.75rem 0;
+	padding-left: 0.5rem;
 
 	.proc-trackline {
 		position: absolute;
 		left: 0;
 		top: 0;
-		width: 36px;
+		width: calc( 36px + 0.5rem );
 		height: 100%;
-		border-right: dotted 3px $gold-l1;
+		border-right: 3px dotted $gold-l1;
 		// z-index: 0;
 	}
 	.proc-block {
@@ -2057,7 +2092,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 		position: relative;		// .proc-line보다 전면에 보이기 위해
 		width: 70px;
 		height: 70px;
-		border: solid 1px $k9;
+		border: 1px solid $k9;
 		border-radius: 50%;
 		text-align: center;
 		vertical-align: middle;
@@ -2090,7 +2125,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 				line-height: 1.1;
 			}
 			&:last-child {
-				// border-left: solid 1px $gold;
+				// border-left: 1px solid $gold;
 				margin-left: -0.75rem;
 				padding: 0.25rem 0.75rem 0;
 			}
@@ -2249,7 +2284,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-auto-rows: auto;
-		border-top: solid 2px $gold;
+		border-top: 2px solid $gold;
 
 		button {
 			border: none;
@@ -2278,7 +2313,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 		padding: 1rem;
 		background-color: $blue-d3;
 		color: $ff;
-		border-bottom: solid 2px $gold;
+		border-bottom: 2px solid $gold;
 		overflow: hidden;
 
 		div {
@@ -2320,15 +2355,28 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 }
 
+#admission-process {
+}
+
+#admission-process .bl-procedure .proc-trackline {
+	height: 90%;
+}
+
+#admission-process .bl-proc-comment {
+	font-size: 13px;
+	font-size: 0.8125rem;
+	margin-left: 0.5rem;
+}
+
 #appt-and-visit {
+}
+
+#admission-rules {
 }
 
 #bl-map {
 	width: 100%;
 	height: 320px;
-}
-
-#admission-rules {
 }
 
 .bl-grid-tuition,
@@ -2377,7 +2425,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-grid-refund .title {
 	grid-area: title;
 	background-color: $ff;
-	border-bottom: solid 1px $blue-l1;
+	border-bottom: 1px solid $blue-l1;
 	font-size: 1rem;
 	font-weight: 500;
 	letter-spacing: 0;
@@ -2401,8 +2449,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .bl-grid-tuition + div,
 .bl-grid-refund + div {
 	color: $red;
-	font-size: 12px;
-	font-size: 0.75rem;
+	font-size: 13px;
+	font-size: 0.8125rem;
 	margin-left: 0.5rem;
 }
 
@@ -2448,7 +2496,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	background-color: $bb;
 	grid-gap: 1px;
 	margin-top: 1rem;
-	border: solid 1px $bb;
+	border: 1px solid $bb;
 
 	div {
 		background-color: $fc;
@@ -2476,13 +2524,13 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 dl.bl-faq-list {
-	border-top: solid 2px $blue-l1;
+	border-top: 2px solid $blue-l1;
 	font-size: 16px;
 	font-size: 1rem;
 	font-weight: 400;
 
 	dt {
-		border-bottom: solid 1px $dd;
+		border-bottom: 1px solid $dd;
 		padding: 0.75rem 0;
 		line-height: 1.4;
 
@@ -2526,7 +2574,7 @@ dl.bl-faq-list {
 
 	dd {
 		display: none;
-		border-bottom: solid 1px $dd;
+		border-bottom: 1px solid $dd;
 		padding: 0.75rem 0;
 		font-size: 16px;
 		font-size: 1rem;
@@ -2579,7 +2627,7 @@ dl.bl-faq-list {
 
 .site-footer ul a {
 	color: $blue-l2;
-	// border-bottom: dotted 1px #999;
+	// border-bottom: 1px dotted #999;
 }
 
 #bl-social-links {
