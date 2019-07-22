@@ -13,31 +13,6 @@
 		$body.addClass( 'bl-dev' );
 	}
 
-	$( document ).ready( function() {
-
-		// SVG 이미지 처리 (부모테마 Twentyseventeen에서 가져옴)
-		if ( true === supportsInlineSVG() ) {
-			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
-		}
-
-		// 지도가 있는 페이지: 네이버 지도 객체 생성
-		if ( $body.find( '#bl-map').length ) {
-			var location = new naver.maps.LatLng( 37.868873, 127.715002 );
-			var map = new naver.maps.Map( 'bl-map', {
-				center: location,
-				zoom: 12
-			});
-			var marker = new naver.maps.Marker( {
-				position: new naver.maps.LatLng( 37.868873, 127.715002 ),
-				map: map
-			});
-		}
-
-		$body.find( '#top-menu' ).html( function() {
-			$( this ).html( $( this ).html() + ' <li id="menu-item-99999" class="bl-nav-buttons menu-item menu-item-type-post_type menu-item-object-page"><div><a href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icon-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icon-map.png" alt="위치안내" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icon-share.png" alt="어학원정보공유" /></a></div></li>' );
-		});
-	}); // End of $(document).ready()
-
 	if ( isFrontPage ) {
 		var $slide = $body.find( '.bl-slides' ),
 			$eventBlock = $body.find( '#bl-event' ),
@@ -245,6 +220,27 @@
 		div.innerHTML = '<svg/>';
 		return 'http://www.w3.org/2000/svg' === ( 'undefined' !== typeof SVGRect && div.firstChild && div.firstChild.namespaceURI );
 	}
+
+	$( document ).ready( function() {
+
+		// SVG 이미지 처리 (부모테마 Twentyseventeen에서 가져옴)
+		if ( true === supportsInlineSVG() ) {
+			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
+		}
+
+		// 지도가 있는 페이지: 네이버 지도 객체 생성
+		if ( $body.find( '#bl-map').length ) {
+			var location = new naver.maps.LatLng( 37.868873, 127.715002 );
+			var map = new naver.maps.Map( 'bl-map', {
+				center: location,
+				zoom: 12
+			});
+			var marker = new naver.maps.Marker( {
+				position: new naver.maps.LatLng( 37.868873, 127.715002 ),
+				map: map
+			});
+		}
+	}); // End of $(document).ready()
 
 	// Add header video class after the video is loaded. (부모테마 Twentyseventeen에서 가져옴)
 	$( document ).on( 'wp-custom-header-video-loaded', function() {

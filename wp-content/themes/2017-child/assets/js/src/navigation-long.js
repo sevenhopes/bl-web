@@ -121,9 +121,8 @@
 			$blMenuToggle = $body.find( '#bl-menu-toggle' ),
 			$navTop = $body.find( '.navigation-top' ),
 			$mainNav = $navTop.find( '.main-navigation' ),
-			$dropdowns = $mainNav.find( '.dropdown-toggle' ), // 모든 드롭다운 버튼(화살표)
+			$dropdowns = $mainNav.find( '.dropdown-toggle' ); // 모든 드롭다운 버튼(화살표)
 			// $currentMenuParent = $mainNav.find( '.current-menu-parent' ),
-			$linksMenuParents = $mainNav.find( '.menu-item-has-children > a:first-child' );
 
 		if ( $blMenuToggle.length ) {
 			blInitMenuToggleEvents();
@@ -138,7 +137,7 @@
 			$blMenuToggle.attr( 'aria-expanded', 'false' );
 
 			// 네비게이션 메뉴가 보이는 상태에서 다른 곳을 터치하면 (포커스를 옮기면) 메뉴를 숨김
-			$( 'body' ).click( function( e ) {
+			$body.click( function( e ) {
 				if ( 'true' === $blMenuToggle.attr( 'aria-expanded' ) ) {
 					blToggleNavigation( true );
 				}
@@ -147,7 +146,7 @@
 			// 네비게이션 메뉴를 보여주거나 숨기는 버튼의 동작 (드롭다운 버튼 아님, 전체 메뉴의 버튼)
 			$blMenuToggle.click( function( e ) {
 				e.stopPropagation();
-				blToggleNavigation();
+				blToggleNavigation( false );
 			} );
 
 			$navTop.click( function( e ) {
@@ -166,7 +165,7 @@
 				}
 			});
 
-			function blToggleNavigation( hide = false ) {
+			function blToggleNavigation( hide ) {
 				if ( ! $navTop.is( ':animated' ) ) {
 					// 메뉴 숨기기
 					if ( $navTop.is( ':visible' ) || hide ) {
@@ -193,8 +192,15 @@
 			// 기존 부모 테마의 클릭 이벤트 해제
 			$dropdowns.unbind( 'click' );
 
+			// .main-navigation의 자식 html 코드의 마지막에 커스텀 메뉴를 추가
+			$mainNav.html( function() {
+				return $( this ).html() + ' <li id="menu-item-99999" class="bl-nav-buttons menu-item menu-item-type-post_type menu-item-object-page"><div><a href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icon-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icon-map.png" alt="위치안내" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icon-share.png" alt="어학원정보공유" /></a></div></li>';
+			});
+
 			// 클릭 이벤트 재등록
-			$dropdowns.click( function( e ) {
+			// 위의 $mainNav.html() 함수가 기존 자식 오브젝트에 대한 모든 jquery 변수나 이벤트 핸들러를 무효화하기에
+			// 여기서 무효화된 $dreopdowns 변수 대신 새 오브젝트를 다시 find함
+			$mainNav.find( '.dropdown-toggle' ).click( function( e ) {
 				var clickedDropdown = $( this ),
 					droppedMenu = $mainNav.find( '.dropdown-toggle.toggled-on' );
 
@@ -209,7 +215,7 @@
 			});
 
 			// 메인메뉴 아이템 자체(<a>태그)를 눌러도 드롭다운 버튼과 같은 동작 설정
-			$linksMenuParents.click( function( e ) {
+			$mainNav.find( '.menu-item-has-children > a:first-child' ).click( function( e ) {
 				e.preventDefault();
 				$( this ).next( '.dropdown-toggle' ).trigger( 'click' );
 			});
