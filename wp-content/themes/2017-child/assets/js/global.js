@@ -208,7 +208,7 @@
 			$desc.hide();
 			$desc.eq( idx ).show();
 		});
-	}
+	} // end of if ( which page )
 
 	/*
 	 * Test if inline SVGs are supported.
