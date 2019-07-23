@@ -121,8 +121,9 @@
 			$blMenuToggle = $body.find( '#bl-menu-toggle' ),
 			$navTop = $body.find( '.navigation-top' ),
 			$mainNav = $navTop.find( '.main-navigation' ),
-			$dropdowns = $mainNav.find( '.dropdown-toggle' ); // 모든 드롭다운 버튼(화살표)
+			$dropdowns = $mainNav.find( '.dropdown-toggle' ), // 모든 드롭다운 버튼(화살표)
 			// $currentMenuParent = $mainNav.find( '.current-menu-parent' ),
+			$sharelayer = $( '.bl-share-layer' );
 
 		if ( $blMenuToggle.length ) {
 			blInitMenuToggleEvents();
@@ -193,8 +194,34 @@
 			$dropdowns.unbind( 'click' );
 
 			// .main-navigation의 자식 html 코드의 마지막에 커스텀 메뉴를 추가
-			$mainNav.html( function() {
-				return $( this ).html() + ' <li id="menu-item-99999" class="bl-nav-buttons menu-item menu-item-type-post_type menu-item-object-page"><div><a href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icon-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icon-map.png" alt="위치안내" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icon-share.png" alt="어학원정보공유" /></a></div></li>';
+			$mainNav.find( '#top-menu' ).html( function() {
+				return $( this ).html() + ' <li id="menu-item-99999" class="bl-nav-buttons menu-item menu-item-type-post_type menu-item-object-page"><div><a href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-map.png" alt="위치안내" /></a></div><div><a class="bl-share-btn" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
+			});
+
+			// 공유하기 modal 레이어 뜨게 하는 버튼 동작
+			$mainNav.find( '.bl-share-btn' ).click( function( e ) {
+				e.preventDefault();
+				$body.addClass( 'no-scroll' );
+				$sharelayer.css( 'top', $( window ).scrollTop() );
+				$blMenuToggle.trigger( 'click' );
+				$sharelayer.fadeIn( 'fast' );
+			});
+			// 공유하기 modal 레이어 닫게 하는 버튼 동작
+			$sharelayer.click( function( e ) {
+				e.stopPropagation();
+				$( '.bl-share-layer' ).fadeOut( 'fast' );
+				$body.removeClass( 'no-scroll' );
+			});
+			$sharelayer.find( '.bl-share-box' ).click( function( e ) {
+				// e.preventDefault();
+				e.stopPropagation();
+			});
+			$sharelayer.find( '.close' ).click( function( e ) {
+				e.preventDefault();
+				e.stopPropagation();
+				// $( '.bl-share-layer' ).fadeOut( 'fast' );
+				// $body.removeClass( 'no-scroll' );
+				$sharelayer.trigger( 'click' );
 			});
 
 			// 클릭 이벤트 재등록

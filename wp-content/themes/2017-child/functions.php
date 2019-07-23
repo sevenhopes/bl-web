@@ -21,6 +21,7 @@ function bridgelight_theme_enqueue_scripts() {
 	wp_enqueue_style( 'bridgelight-fonts-noto-sans', bridgelight_fonts_url_noto_sans(), array(), null );
 	wp_enqueue_script( 'bridgelight-map-js', 'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=lsnb5x78u2', array(), null );
 	wp_enqueue_script( 'concatenated-js', get_stylesheet_directory_uri().'/assets/js/blweb.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'kakaolink', 'https://developers.kakao.com/sdk/js/kakao.min.js', array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'bridgelight_theme_enqueue_scripts' );
 

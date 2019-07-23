@@ -16,8 +16,25 @@
 
 		</div><!-- #content -->
 
-		<div class="bl-call">
-			<a href="tel:033-243-5757"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/call.png" alt="바로전화" /></a>
+		<div class="bl-share-layer">
+			<div class="bl-share-box">
+				<div class="title-container">
+					<span class="title">공유 하기</span>
+					<a class="close">
+						<svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg>
+					</a>
+				</div>
+				<div class="container-wrap">
+					<div class="button-container">
+						<a id="bl-share-kakao" href="javascript:;">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icon-kakaolink.png"/>
+						</a>
+						<a>
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icb-urlcopy.png"/>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
@@ -43,11 +60,52 @@
 					<li>ⓒ 브릿지라잇 2006-<?php echo date("Y"); ?></li>
 				</ul>
 
+				<div class="bl-footer-logo">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icw-bl-logo.png" />
+				</div>
+
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->
 	</div><!-- .site-content-contain -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
+
+<script type='text/javascript'>
+	// 카카오톡 링크 버튼 (네비게이션 메뉴 마지막 아이템. navigatoin-long.js 참조)
+  //<![CDATA[
+    Kakao.init('402e01df01114b3ef841e557210bc62f');
+    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+    Kakao.Link.createDefaultButton({
+      container: '#bl-share-kakao',
+      objectType: 'location',
+      address: '강원도 춘천시 스포츠타운길 534 (온의동)',
+      addressTitle: '브릿지라잇 어학원',
+      content: {
+        title: 'English-only, 브릿지라잇 어학원',
+        description: '033-243-5757 #초중영어 #방학영어캠프 #미국연수 #영어생활화 #매일수업',
+        imageUrl: 'http://www.bridgelightels.com/m/wp-content/uploads/2019/05/og-image-1200x630.jpg',
+        link: {
+          mobileWebUrl: 'http://bridgelightels.com/m',
+          webUrl: 'http://bridgelightels.com'
+        }
+      },
+      // social: {
+      //   likeCount: 286,
+      //   commentCount: 45,
+      //   sharedCount: 845
+      // },
+      buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+            mobileWebUrl: 'http://bridgelightels.com/m',
+            webUrl: 'http://bridgelightels.com'
+          }
+        }
+      ]
+    });
+  //]]>
+</script>
 
 </body>
 </html>
