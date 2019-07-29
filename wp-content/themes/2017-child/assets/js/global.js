@@ -1,9 +1,20 @@
 (function( $ ) {
 
+	$.lang = {};
+
+	$.lang.ko = {
+		'msg-0': '안녕',
+		'msg-1': '잘가'
+	};
+	$.lang.en = {
+		'msg-0': 'Hi',
+		'msg-1': 'Bye'
+	};
+
 	var	$body = $( 'body' ),
 		$branding = $body.find( '#bl-branding' ),
 		isFrontPage = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
-		cnt = 1;	// 버튼 깜빡임 카운터
+		langKor = true;	// false: English
 
 	const transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd';
 
@@ -12,6 +23,15 @@
 	if ( dev ) {
 		$body.addClass( 'bl-dev' );
 	}
+
+	function blGetLanguage() {
+		return navigator.language || navigator.userLanguage;
+	}
+	console.log( 'nav.lang: ' + navigator.language + '\n' + 'nav.ulang: ' + navigator.userLanguage );
+	if ( blGetLanguage() === 'en-US' || blGetLanguage() === 'en' ) {
+		langKor = false;
+	}
+	$body.addClass( langKor ? 'lang-ko' : 'lang-en' );
 
 	if ( isFrontPage ) {
 		var $slide = $body.find( '.bl-slides' ),
@@ -87,7 +107,7 @@
 			$questions = $faq_list.find( 'dt' ),
 			$answers = $faq_list.find( 'dd' ),
 			$no_result = $faq_list.find( '.no-result' ),
-			$textbox = $body.find( 'input' ),
+			$textbox = $body.find( 'input.bl-faq-input' ),
 			input = '';
 
 		// 질문 터치 시 답변 보여줌 (accordion 방식)
@@ -220,6 +240,7 @@
 		div.innerHTML = '<svg/>';
 		return 'http://www.w3.org/2000/svg' === ( 'undefined' !== typeof SVGRect && div.firstChild && div.firstChild.namespaceURI );
 	}
+
 
 	$( document ).ready( function() {
 

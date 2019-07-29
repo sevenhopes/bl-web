@@ -9,6 +9,18 @@
  */
 
 (function( $ ) {
+
+	$.lang = {};
+
+	$.lang.ko = {
+		'loc': '강원도 춘천시 스포츠타운길 534 (온의동)',
+		'msg-1': '잘가'
+	};
+	$.lang.en = {
+		'loc': '534, Sports town-gil, Chuncheon-si, Gangwon-do, Republic of Korea',
+		'msg-1': 'Bye'
+	};
+
 	// document.ready() 밖으로 꺼내면 .dropdown-toggle을 선택하지 못 함.
 	$( document ).ready( function() {
 
@@ -115,7 +127,7 @@
 		})();
 
 
-		///// bl
+		///// bl //////////////////////////////////////////////////////////////////
 		/////
 		var	$body = $( 'body' ),
 			$blMenuToggle = $body.find( '#bl-menu-toggle' ),
@@ -198,7 +210,7 @@
 				return $( this ).html() + ' <li id="menu-item-99999" class="bl-nav-buttons menu-item menu-item-type-post_type menu-item-object-page"><div><a href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-map.png" alt="위치안내" /></a></div><div><a class="bl-share-btn" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
 			});
 
-			// 공유하기 modal 레이어 뜨게 하는 버튼 동작
+			// 네비 메뉴의 공유하기 레이어 뜨게 하는 버튼
 			$mainNav.find( '.bl-share-btn' ).click( function( e ) {
 				e.preventDefault();
 				$body.addClass( 'no-scroll' );
@@ -206,23 +218,105 @@
 				$blMenuToggle.trigger( 'click' );
 				$sharelayer.fadeIn( 'fast' );
 			});
-			// 공유하기 modal 레이어 닫게 하는 버튼 동작
+			// 공유하기 레이어에서 (modal 상자 밖의) 아무 영역이나 누르면 닫기
 			$sharelayer.click( function( e ) {
 				e.stopPropagation();
 				$( '.bl-share-layer' ).fadeOut( 'fast' );
 				$body.removeClass( 'no-scroll' );
 			});
+			// 공유하기 레이어 내에 modal 상자를 클릭했을 때 클릭이벤트가 뒷면 페이지에 발생하는 걸 방지
 			$sharelayer.find( '.bl-share-box' ).click( function( e ) {
-				// e.preventDefault();
 				e.stopPropagation();
 			});
-			$sharelayer.find( '.close' ).click( function( e ) {
+			// 공유하기 레이어 닫기 버튼
+			$sharelayer.find( '#bl-close-sharelayer' ).click( function( e ) {
 				e.preventDefault();
 				e.stopPropagation();
-				// $( '.bl-share-layer' ).fadeOut( 'fast' );
-				// $body.removeClass( 'no-scroll' );
 				$sharelayer.trigger( 'click' );
 			});
+			// 카카오톡 공유 버튼
+			Kakao.init('402e01df01114b3ef841e557210bc62f');
+			// 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+			Kakao.Link.createDefaultButton({
+				container: '#bl-share-kakao',
+				objectType: 'location',
+				address: '강원도 춘천시 스포츠타운길 534 (온의동)',
+				addressTitle: '브릿지라잇 어학원',
+				content: {
+					title: 'English-only, 브릿지라잇 어학원',
+					description: '033-243-5757 #초중영어 #방학영어캠프 #미국연수 #영어생활화 #매일수업',
+					imageUrl: document.head.querySelector('meta[property="og:image"][content]').content,
+					link: {
+						mobileWebUrl: window.location.href,
+						webUrl: window.location.href
+					}
+				},
+				// social: {
+				//   likeCount: 286,
+				//   commentCount: 45,
+				//   sharedCount: 845
+				// },
+				buttons: [
+				{
+					title: '웹으로 보기',
+					link: {
+						mobileWebUrl: 'http://bridgelightels.com/m',
+						webUrl: 'http://bridgelightels.com'
+					}
+				}
+				]
+			});
+			// 페이스북 공유 버튼
+			$sharelayer.find( '#bl-share-facebook' ).click( function( e ) {
+				e.stopPropagation();
+				$sharelayer.trigger( 'click' );
+				FB.ui({
+					method: 'share_open_graph',
+					action_type: 'og.shares',
+					action_properties: JSON.stringify({
+						object: {
+							'og:url': document.head.querySelector('meta[property="og:url"][content]').content,
+							'og:title': document.head.querySelector('meta[property="og:title"][content]').content,
+							'og:description': document.head.querySelector('meta[property="og:description"][content]').content,
+							'og:image': document.head.querySelector('meta[property="og:image"][content]').content,
+						}
+					})
+				}, function( response ){});
+			});
+			// 현재 페이지 주소 복사 버튼
+			$sharelayer.find( '#bl-copy-page-url' ).click( function( e ) {
+				e.preventDefault();
+				e.stopPropagation();
+				copyPageURL();
+				alert( '페이지 주소가 복사 되었습니다.' );
+				$sharelayer.trigger( 'click' );
+			});
+			// 메인 페이지 주소 복사 버튼
+			$sharelayer.find( '#bl-copy-home-url' ).click( function( e ) {
+				e.preventDefault();
+				e.stopPropagation();
+				copyHomeURL();
+				alert( '웹사이트 주소가 복사 되었습니다.' );
+				$sharelayer.trigger( 'click' );
+			});
+			// 현재 페이지의 주소 복사
+			// https://stackoverflow.com/questions/22581345/click-button-copy-to-clipboard-using-jquery
+			//
+			function copyPageURL() {
+				var $temp = $( '<input>' );
+				$( 'body' ).append( $temp );
+				$temp.val( window.location.href ).select();
+				document.execCommand( 'copy' );
+				$temp.remove();
+			}
+			// 메인 페이지(첫화면)의 주소 복사
+			function copyHomeURL() {
+				var $temp = $( '<input>' );
+				$( 'body' ).append( $temp );
+				$temp.val( window.location.origin + '/m/' ).select();
+				document.execCommand( 'copy' );
+				$temp.remove();
+			}
 
 			// 클릭 이벤트 재등록
 			// 위의 $mainNav.html() 함수가 기존 자식 오브젝트에 대한 모든 jquery 변수나 이벤트 핸들러를 무효화하기에
@@ -260,8 +354,20 @@
 				});
 			}
 		} // End of blInitMenuToggleEvents()
+
+		/*
+		 * https://stackoverflow.com/questions/22581345/click-button-copy-to-clipboard-using-jquery
+		 * 현재 페이지의 주소(URL)를 클립보드로 복사
+		 */
+		function copyToClipboard( element ) {
+			var $temp = $( '<input>' );
+			$( 'body' ).append( $temp );
+			$temp.val( $(element).text() ).select();
+			document.execCommand( 'copy' );
+			$temp.remove();
+		}
 		/////
-		///// bl end
+		///// bl end //////////////////////////////////////////////////////////////////
 
 	}); // End of document.ready
 

@@ -198,38 +198,38 @@ function browser_body_class( $classes ) {
 
 	if ( wp_is_mobile() ) {
 		if ( is_kor_mutant() )  $classes[] = 'browser-kor-mutant';
-        elseif ( is_android() ) $classes[] = 'browser-android';
-    	elseif ( is_iphone() )  $classes[] = 'browser-iphone';
-        elseif ( is_ipad() )    $classes[] = 'browser-ipad';
-        elseif ( is_ipod() )    $classes[] = 'browser-ipod';
-        elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Kindle' ) !== false ) $classes[] = 'browser-kindle';
-        elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'BlackBerry' ) !== false ) $classes[] = 'browser-blackberry';
-        elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Opera Mini' ) !== false ) $classes[] = 'browser-opera-mini';
-        elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Opera Mobi' ) !== false ) $classes[] = 'browser-opera-mobi';
-        if ( is_tablet() )  $classes[] = 'device-tablet';
+		elseif ( is_android() ) $classes[] = 'browser-android';
+		elseif ( is_iphone() )  $classes[] = 'browser-iphone';
+		elseif ( is_ipad() )    $classes[] = 'browser-ipad';
+		elseif ( is_ipod() )    $classes[] = 'browser-ipod';
+		elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Kindle' ) !== false ) $classes[] = 'browser-kindle';
+		elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'BlackBerry' ) !== false ) $classes[] = 'browser-blackberry';
+		elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Opera Mini' ) !== false ) $classes[] = 'browser-opera-mini';
+		elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Opera Mobi' ) !== false ) $classes[] = 'browser-opera-mobi';
+		if ( is_tablet() )  $classes[] = 'device-tablet';
 	} else {
 		if ( $is_gecko )      $classes[] = 'browser-gecko'; // Firefox
 		elseif ( $is_opera )  $classes[] = 'browser-opera';
 		elseif ( $is_safari ) $classes[] = 'browser-safari';
 		elseif ( $is_chrome ) $classes[] = 'browser-chrome';
 		elseif ( $is_edge )   $classes[] = 'browser-edge';
-        elseif ( $is_IE) {
-            $classes[] = 'browser-ie';
-            if ( preg_match( '/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', $_SERVER['HTTP_USER_AGENT'] , $browser_version ) )
-            	$classes[] = 'ie-version-'.$browser_version[1];
-        }
-        else $classes[] = 'browser-unknown';
+				elseif ( $is_IE) {
+						$classes[] = 'browser-ie';
+						if ( preg_match( '/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', $_SERVER['HTTP_USER_AGENT'] , $browser_version ) )
+							$classes[] = 'ie-version-'.$browser_version[1];
+				}
+				else $classes[] = 'browser-unknown';
 		$classes[] = 'device-immobile';
 	}
 
 	if ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Windows' ) !== false ) $classes[] = 'os-windows';
-    elseif ( is_android() ) $classes[] = 'os-android';
-    elseif ( is_ios() )     $classes[] = 'os-ios';
-    elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Macintosh' ) !== false ) $classes[] = 'os-mac';
-    elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Linux' ) !== false )     $classes[] = 'os-linux';
-    elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Kindle' ) !== false )    $classes[] = 'os-kindle';
-    elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'BlackBerry' ) !== false ) $classes[] = 'os-blackberry';
-    else $classes[] = 'os-unknown';
+	elseif ( is_android() ) $classes[] = 'os-android';
+	elseif ( is_ios() )     $classes[] = 'os-ios';
+	elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Macintosh' ) !== false ) $classes[] = 'os-mac';
+	elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Linux' ) !== false )     $classes[] = 'os-linux';
+	elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Kindle' ) !== false )    $classes[] = 'os-kindle';
+	elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'BlackBerry' ) !== false ) $classes[] = 'os-blackberry';
+	else $classes[] = 'os-unknown';
 
 	return $classes;
 }

@@ -279,6 +279,9 @@ a:active h3 {
   outline: 0;
   text-decoration: none; }
 
+a:hover {
+  cursor: pointer; }
+
 /*--------------------------------------------------------------
 11.0 Featured Image Hover
 --------------------------------------------------------------*/
@@ -396,6 +399,9 @@ a:active h3 {
 
 .main-navigation #menu-item-99999.bl-nav-buttons {
   border-bottom: 1px solid #192d88;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex; }
   .main-navigation #menu-item-99999.bl-nav-buttons a {
@@ -1929,6 +1935,9 @@ dl.bl-faq-list {
   position: fixed;
   overflow: hidden; }
 
+.halftone {
+  opacity: 0.5; }
+
 .bl-share-layer {
   display: none;
   background-color: rgba(17, 17, 17, 0.8);
@@ -1941,42 +1950,47 @@ dl.bl-faq-list {
   .bl-share-layer .bl-share-box {
     position: absolute;
     background-color: #fcfcfc;
-    margin: 30vh 20vw;
-    width: 60vw;
-    height: 40vh;
+    margin: 20vh 15vw;
+    width: 70vw;
+    height: 45vh;
     padding: 2rem; }
-    .bl-share-layer .bl-share-box svg:hover {
-      cursor: pointer; }
-    .bl-share-layer .bl-share-box svg:hover,
-    .bl-share-layer .bl-share-box svg:focus {
-      color: #dac326; }
     .bl-share-layer .bl-share-box .title-container {
-      width: 100%; }
+      width: 100%;
+      padding-bottom: 0.5rem;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      justify-content: space-between; }
       .bl-share-layer .bl-share-box .title-container .title {
         color: #111790;
         font-size: 1.5rem;
-        font-weight: 500;
-        float: left; }
+        font-weight: 500; }
+      .bl-share-layer .bl-share-box .title-container #bl-close-sharelayer a:hover, .bl-share-layer .bl-share-box .title-container #bl-close-sharelayer a:focus {
+        color: #dac326; }
+      .bl-share-layer .bl-share-box .title-container #bl-close-sharelayer a:hover {
+        cursor: pointer; }
       .bl-share-layer .bl-share-box .title-container .icon-close {
         width: 2rem;
-        height: 2rem;
-        float: right; }
+        height: 2rem; }
     .bl-share-layer .bl-share-box .container-wrap {
       display: block;
       width: 100%;
-      height: 100%;
-      clear: both; }
+      height: 100%; }
     .bl-share-layer .bl-share-box .button-container {
-      display: block;
-      display: flex;
-      justify-content: space-around; }
-      .bl-share-layer .bl-share-box .button-container img,
-      .bl-share-layer .bl-share-box .button-container svg {
-        width: 3rem;
-        height: 3rem; }
-      .bl-share-layer .bl-share-box .button-container svg {
-        border: 1px solid #888;
-        border-radius: 10%; }
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: 1rem;
+      margin-top: 0.5rem; }
+      .bl-share-layer .bl-share-box .button-container > div {
+        text-align: center;
+        font-size: 14px; }
+        .bl-share-layer .bl-share-box .button-container > div a:hover,
+        .bl-share-layer .bl-share-box .button-container > div a:focus {
+          color: #dac326; }
+        .bl-share-layer .bl-share-box .button-container > div a:hover {
+          cursor: pointer; }
 
 .site-footer {
   border-top: none;

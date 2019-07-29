@@ -412,6 +412,10 @@ a:active h3 {
 	text-decoration: none;
 }
 
+a:hover {
+	cursor: pointer;
+}
+
 /*--------------------------------------------------------------
 11.0 Featured Image Hover
 --------------------------------------------------------------*/
@@ -556,6 +560,9 @@ a:active h3 {
 
 .main-navigation #menu-item-99999.bl-nav-buttons {
 	border-bottom: 1px solid $blue-g;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
 	// flex-direction: row;
@@ -2597,6 +2604,10 @@ dl.bl-faq-list {
 	overflow: hidden;
 }
 
+.halftone {
+	opacity: 0.5;
+}
+
 .bl-share-layer {
 	display: none;
 	background-color: $k1t;
@@ -2612,32 +2623,40 @@ dl.bl-faq-list {
 	.bl-share-box {
 		position: absolute;
 		background-color: $fc;
-		margin: 30vh 20vw;
-		width: 60vw;
-		height: 40vh;
+		margin: 20vh 15vw;
+		width: 70vw;
+		height: 45vh;
 		padding: 2rem;
-
-		svg:hover {
-			cursor: pointer;
-		}
-		svg:hover,
-		svg:focus {
-			color: $gold;
-		}
 
 		.title-container {
 			width: 100%;
+			padding-bottom: 0.5rem;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			justify-content: space-between;
 
 			.title {
 				color: $blue-d4;
 				font-size: 1.5rem;
 				font-weight: 500;
-				float: left;
+				// float: left;
+			}
+			#bl-close-sharelayer a {
+				&:hover,
+				&:focus {
+					color: $gold;
+				}
+				&:hover {
+					cursor: pointer;
+				}
 			}
 			.icon-close {
 				width: 2rem;
 				height: 2rem;
-				float: right;
+				// float: right;
 			}
 		}
 
@@ -2645,21 +2664,28 @@ dl.bl-faq-list {
 			display: block;
 			width: 100%;
 			height: 100%;
-			clear: both;
+			// clear: both;
 		}
 		.button-container {
-			display: block;
-			display: flex;
-			justify-content: space-around;
+			display: grid;
+			grid-template-columns: auto auto;
+			grid-gap: 1rem;
+			margin-top: 0.5rem;
 
+			> div {
+				text-align: center;
+				font-size: 14px;
+
+				a:hover,
+				a:focus {
+					color: $gold;
+				}
+				a:hover {
+					cursor: pointer;
+				}
+			}
 			img,
 			svg {
-				width: 3rem;
-				height: 3rem;
-			}
-			svg {
-				border: 1px solid $k8;
-				border-radius: 10%;
 			}
 		}
 	}
