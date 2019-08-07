@@ -1,37 +1,46 @@
 (function( $ ) {
 
-	$.lang = {};
-
-	$.lang.ko = {
-		'msg-0': '안녕',
-		'msg-1': '잘가'
-	};
-	$.lang.en = {
-		'msg-0': 'Hi',
-		'msg-1': 'Bye'
-	};
+	// $.blang = {}; // bl + lang
+	// $.blang.ko = {
+	// 	a: "",
+	// 	b: "",
+	// 	c: "",
+	// 	d: "",
+	// 	e: ""
+	// };
+	// $.blang.en = {
+	// 	a: "",
+	// 	b: "",
+	// 	c: "",
+	// 	d: "",
+	// 	e: ""
+	// };
 
 	var	$body = $( 'body' ),
 		$branding = $body.find( '#bl-branding' ),
 		isFrontPage = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
-		langKor = true;	// false: English
+		// lang_kor = false,	// true: Korean
+		lang_val;
 
 	const transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd';
 
-	var	dev = false;
+	// 주석 제거: header.php에 있는 개발 모드 <div>를 보여주기
+	// $body.addClass( 'bl-dev' );
 
-	if ( dev ) {
-		$body.addClass( 'bl-dev' );
-	}
+	// function blGetLanguage() {
+	// 	var nav_lang = navigator.language,
+	// 		nav_ul = navigator.userLanguage;
+	// 	// console.log( 'nav.lang: ' + navigator.language + '\n' + 'nav.ulang: ' + navigator.userLanguage );
+	// 	return nav_lang || nav_ul;
+	// }
 
-	function blGetLanguage() {
-		return navigator.language || navigator.userLanguage;
-	}
-	console.log( 'nav.lang: ' + navigator.language + '\n' + 'nav.ulang: ' + navigator.userLanguage );
-	if ( blGetLanguage() === 'en-US' || blGetLanguage() === 'en' ) {
-		langKor = false;
-	}
-	$body.addClass( langKor ? 'lang-ko' : 'lang-en' );
+	// lang_val = blGetLanguage();
+
+	// console.log( 'lang_val: ' + lang_val );
+	// lang_kor = (lang_val === 'ko-KR' || lang_val === 'ko');
+
+	$body.addClass( navigator.language || navigator.userLanguage );
+	// $body.addClass( lang_val );
 
 	if ( isFrontPage ) {
 		var $slide = $body.find( '.bl-slides' ),
