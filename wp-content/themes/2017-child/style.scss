@@ -550,15 +550,17 @@ a:hover {
 	height: 1px;
 }
 
-.main-navigation li:last-child {
-	border-bottom: 1px solid $blue-g;
+.main-navigation li:last-child,
+.main-navigation li li:last-child {
+	border-bottom: 0;
+	// border-bottom: 1px solid $blue-g;
 }
 
 // .main-navigation li:last-child:after {
 // 	display: none;
 // }
 
-.main-navigation #menu-item-99999.bl-nav-buttons {
+.main-navigation #menu-item-99999.bl-custom-menu {
 	border-bottom: 1px solid $blue-g;
 	display: -moz-box;
 	display: -ms-flexbox;
