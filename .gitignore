@@ -11,6 +11,8 @@ tmp.*
 *.map
 desktop.ini
 folderico*.ico
+*.min.js
+*.min.css
 
 # dirs
 bl-backups/
@@ -27,6 +29,7 @@ twenty*/
 
 # Grunt temporary files
 concatenated.js
+*.css.map
 
 # don't ignore myself :)
 !.gitignore
