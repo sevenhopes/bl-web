@@ -394,20 +394,21 @@ a:hover {
   width: 60%;
   height: 1px; }
 
-.main-navigation li:last-child {
-  border-bottom: 1px solid #192d88; }
+.main-navigation li:last-child,
+.main-navigation li li:last-child {
+  border-bottom: 0; }
 
-.main-navigation #menu-item-99999.bl-nav-buttons {
+.main-navigation #menu-item-99999.bl-custom-menu {
   border-bottom: 1px solid #192d88;
   display: -moz-box;
   display: -ms-flexbox;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex; }
-  .main-navigation #menu-item-99999.bl-nav-buttons a {
+  .main-navigation #menu-item-99999.bl-custom-menu a {
     line-height: 2rem;
     padding-bottom: 3px; }
-  .main-navigation #menu-item-99999.bl-nav-buttons img {
+  .main-navigation #menu-item-99999.bl-custom-menu img {
     width: 32px;
     height: 32px; }
 
