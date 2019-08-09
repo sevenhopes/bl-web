@@ -19,7 +19,6 @@ function bridgelight_theme_enqueue_scripts() {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri().'/style.min.css', array( 'parent-style' ), wp_get_theme()->get('Version') );
 	wp_enqueue_style( 'fonts-noto-sans', bridgelight_fonts_url_noto_sans(), array(), null );
-	wp_enqueue_script( 'naver-map-js', 'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=lsnb5x78u2', array(), null );
 	wp_enqueue_script( 'concatenated-js', get_stylesheet_directory_uri().'/assets/js/bl.min.js', array( 'jquery' ), '1.0', true );
 	wp_enqueue_script( 'kakaolink', 'https://developers.kakao.com/sdk/js/kakao.min.js', array(), null );
 }

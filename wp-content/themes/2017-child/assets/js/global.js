@@ -260,14 +260,40 @@
 
 		// 지도가 있는 페이지: 네이버 지도 객체 생성
 		if ( $body.find( '#bl-map').length ) {
-			var location = new naver.maps.LatLng( 37.868873, 127.715002 );
-			var map = new naver.maps.Map( 'bl-map', {
-				center: location,
-				zoom: 12
-			});
-			var marker = new naver.maps.Marker( {
-				position: new naver.maps.LatLng( 37.868873, 127.715002 ),
-				map: map
+			var map, marker, pano;
+			$.getScript( 'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=lsnb5x78u2&submodules=panorama', function() {
+				naver.maps.onJSContentLoaded = function() {
+					var location = new naver.maps.LatLng( 37.868950, 127.715030 );
+
+					map = new naver.maps.Map( 'bl-map', {
+						center: location,
+						zoom: 11,
+						minZoom: 1,
+						zoomControl: true,
+						zoomControlOptions: {
+							style: naver.maps.ZoomControlStyle.SMALL,
+							position: naver.maps.Position.TOP_RIGHT
+						},
+						mapDataControl: false,
+						logoControl: false,
+						scaleControl: false
+					});
+
+					marker = new naver.maps.Marker( {
+						position: location,
+						map: map
+					});
+
+					pano = new naver.maps.Panorama( 'bl-street', {
+						position: new naver.maps.LatLng( 37.869003, 127.714987 ),
+						// size: new naver.maps.Size('100%', '300px'),
+						pov: {
+							pan: 150,
+							tilt: 18,
+							fov: 90
+						}
+					});
+				};
 			});
 		}
 	}); // End of $(document).ready()

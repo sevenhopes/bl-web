@@ -156,6 +156,10 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 	color: $red;
 }
 
+.bl-gray {
+	color: $k9;
+}
+
 .bl-rel {
 	position: relative;
 }
@@ -1451,7 +1455,18 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	padding-left: 1.5rem;
 	line-height: 1.3;
 	margin: 0.5rem 0;
+
+	&.bl-nostyle {
+		list-style-image: none;
+		padding-left: 0;
+	}
 }
+
+// .site-content ul.bl-nostyle,
+// .site-content ol.bl-nostyle {
+// 	list-style-image: none;
+// 	padding-left: 0;
+// }
 
 .site-content ol {
 	list-style: decimal;
@@ -2384,7 +2399,12 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 #bl-map {
 	width: 100%;
-	height: 320px;
+	height: 240px;
+}
+
+#bl-street {
+	width: 100%;
+	height: 240px;
 }
 
 .bl-grid-tuition,
