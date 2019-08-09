@@ -10,6 +10,9 @@
 
 (function( $ ) {
 
+	// *
+	// * Warning!! uglify(minify) 할 때 조심! 카카오링크 관련, 런타임 때 에러나는 경우가 있음!
+	// *
 	$.blang = {}; // bl + lang
 	$.blang.ko = {
 		address: "강원도 춘천시 스포츠타운길 534 (온의동)",
