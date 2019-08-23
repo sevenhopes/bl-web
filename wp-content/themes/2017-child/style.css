@@ -1172,6 +1172,9 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .page h3 {
   color: #333; }
 
+.page .entry-header {
+  display: none; }
+
 .bl-page-header {
   position: static;
   /*padding: 0;*/
@@ -1865,6 +1868,14 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 #faq fieldset {
   border: none; }
+
+#faq dl.bl-faq-list dd a {
+  color: #dac326; }
+#faq dl.bl-faq-list dd strong {
+  color: #111790; }
+#faq dl.bl-faq-list dd .comment {
+  color: #a21a1a;
+  font-size: smaller; }
 
 .bl-faq-input {
   border-color: #2c33c8; }

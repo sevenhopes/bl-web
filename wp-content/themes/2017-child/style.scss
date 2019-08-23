@@ -1501,6 +1501,10 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	color: $k3;
 }
 
+.page .entry-header {
+	display: none;
+}
+
 .bl-page-header {
 	position: static;
 	/*padding: 0;*/
@@ -2500,6 +2504,20 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 #faq fieldset {
 	border: none;
+}
+
+#faq dl.bl-faq-list dd {
+	a {
+		color: $gold;
+	}
+	strong {
+		color: $blue-d4;
+	}
+
+	.comment {
+		color: $red;
+		font-size: smaller;
+	}
 }
 
 .bl-faq-input {
