@@ -470,7 +470,7 @@ a:hover {
 	font-weight: 300;
 	padding: 0.6em 1.1em; /* padding:; 메뉴의 위아래 여백, 즉 메뉴 height를 결정 */
 	text-transform: uppercase;
-	/*letter-spacing: 0;*/
+	// letter-spacing: 0;
 }
 
 .navigation-top a:hover,
@@ -1197,7 +1197,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 
 #bl-front-page-ko .bl-indicator-wrapper {
-	background-color: $f7;
+	// background-color: $f7;
 	text-align: center;
 	max-height: 3rem;
 }
@@ -1212,18 +1212,18 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 #bl-front-page-ko .bl-block {
 	/*margin-bottom: 1.5em;*/
 	margin-top: 0;
-	padding-top: 3em;
+	padding-top: 2em;
 	margin-bottom: 0;
 	padding-bottom: 1em;
 }
 
-#bl-front-page-ko .bl-block:nth-child(odd) {
-	background-color: $f7;
-}
-/*
-#bl-front-page-ko .bl-block:nth-child(even) {
-}
-*/
+// #bl-front-page-ko .bl-block:nth-child(odd) {
+// 	background-color: $f7;
+// }
+
+// #bl-front-page-ko .bl-block:nth-child(even) {
+// }
+
 #bl-front-page-ko .bl-block-header {
 	display: table;
 	width: 100%;
@@ -1311,6 +1311,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 		vertical-align: text-top;
 		width: 75%;
 		padding-left: 1rem;
+		min-height: 4.2rem;
 
 		h2.e-i-title {
 			color: $k0;
