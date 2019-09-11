@@ -151,6 +151,27 @@ function bridgelight_sanitize_bl_seasonlook( $input ) {
 }
 
 /**
+ * 글목록에서 글 요약(excerpt)의 단어 개수를 return 값으로 변경. (이 함수 없으면 기본값은 단어 55개)
+ *
+ * @return '더 보기' 버튼 전에 표시되는 단어 개수 (본문 첫 단어부터 시작)
+ */
+function custom_excerpt_length( $length ) {
+	return 30;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+/**
+ * 날짜 텍스트를 받아 영어 요일을 한글 요일로 바꿈. (예, '2019-09-10 Tue' -> '2019-09-10 화')
+ * 
+ * @return 요일이 한글로 바뀐 날짜 텍스트
+ */
+function bl_w2k( $str ) {
+	$search = array( "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" );
+	$replace = array( "일", "월", "화", "수", "목", "금", "토" );
+	return str_replace( $search, $replace, $str );
+}
+
+/**
  * WordPress Body Class CSS for a Variety of Devices
  * https://clicknathan.com/web-design/wordpress-body-class-css-for-a-variety-of-devices/
  */
