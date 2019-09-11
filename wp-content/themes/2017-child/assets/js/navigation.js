@@ -143,6 +143,7 @@
 			$mainNav = $navTop.find( '.main-navigation' ),
 			$dropdowns = $mainNav.find( '.dropdown-toggle' ), // 모든 드롭다운 버튼(화살표)
 			$sharelayer = $( '.bl-share-layer' ),
+			isFrontPage = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
 			langset = $body.hasClass( 'ko-KR' ) ? $.blang.ko : $.blang.en;
 
 		// console.log( 'langset.address: ' + langset.address );
@@ -218,10 +219,12 @@
 			// 기존 부모 테마의 클릭 이벤트 해제
 			$dropdowns.unbind( 'click' );
 
-			// .main-navigation의 자식 html 코드의 마지막에 커스텀 메뉴를 추가
-			$mainNav.find( '#top-menu' ).html( function() {
-				return $( this ).html() + ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-map.png" alt="위치안내" /></a></div><div><a class="bl-custom-share" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
-			});
+			// .main-navigation의 자식 html 코드의 마지막에 커스텀 메뉴를 추가 (메인페이지는 제외)
+			if ( ! isFrontPage ) {
+				$mainNav.find( '#top-menu' ).html( function() {
+					return $( this ).html() + ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-map.png" alt="위치안내" /></a></div><div><a class="bl-custom-share" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
+				});
+			}
 
 			// 전화하기 커스텀 메뉴 동작: 네비 메뉴 메뉴 닫음
 			$mainNav.find( '.bl-custom-call' ).click( function( e ) {

@@ -30,6 +30,7 @@ twenty*/
 # Grunt temporary files
 concatenated.js
 *.css.map
+*.long.css
 
 # don't ignore myself :)
 !.gitignore

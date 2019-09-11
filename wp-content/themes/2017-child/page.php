@@ -22,12 +22,14 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) :
 				the_post();
-			?>
 
+				// get_template_part( 'template-parts/page/content', 'page' );
+			?>
+			<?php // 위 파일의 코드를 직접 갖다붙임 ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="entry-header">
-					<?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-					<?php //twentyseventeen_edit_link( get_the_ID() ); ?>
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					<?php twentyseventeen_edit_link( get_the_ID() ); ?>
 				</header><!-- .entry-header -->
 				<div class="entry-content">
 					<?php
@@ -35,7 +37,7 @@ get_header(); ?>
 
 						wp_link_pages(
 							array(
-								'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+								'before' => '<div class="page-links">' . __( 'Pages:', '2017-child' ),
 								'after'  => '</div>',
 							)
 						);
@@ -44,6 +46,11 @@ get_header(); ?>
 			</article><!-- #post-## -->
 
 			<?php
+			// If comments are open or we have at least one comment, load up the comment template.
+			// if ( comments_open() || get_comments_number() ) :
+				// comments_template();
+			// endif;
+
 			endwhile; // End of the loop.
 			?>
 

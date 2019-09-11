@@ -39,26 +39,27 @@
 	// console.log( 'lang_val: ' + lang_val );
 	// lang_kor = (lang_val === 'ko-KR' || lang_val === 'ko');
 
+	// 브라우저의 언어 설정을 따라 페이지 언어 선택 (CSS 클래스로 등록)
 	$body.addClass( navigator.language || navigator.userLanguage );
 	// $body.addClass( lang_val );
 
 	if ( isFrontPage ) {
 		var $slide = $body.find( '.bl-slides' ),
 			$eventBlock = $body.find( '#bl-event' ),
-			$downArrow = $body.find( 'svg.bl-indication' ),
+			$downArrow = $body.find( 'svg.bl-indicator' ),
 			indi_intv;
 
 		// Super Simple Slide by sss.js
 		$slide.sss();
 		// $slide.sss( { speed: 1000 } ); // 테스트용 코드
 
-		// 아래화살표 svg 이미지를 10번 깜빡임
+		// 아래화살표 svg 이미지를 7번 깜빡임 (250+250+750 * 7 = 8750)
 		indi_intv = setInterval( function() {
-			$downArrow.fadeOut().fadeIn();
-		}, 400+400+1000 );
+			$downArrow.fadeOut( 'fast' ).fadeIn( 'fast' );
+		}, 250+250+750 );
 		setTimeout( function() {
 			clearInterval( indi_intv );
-		}, 19000 );
+		}, 8750+100 );
 
 		if ( ! $eventBlock.find( '.bl-big-day.bl-holiday' ).length ) {
 			$eventBlock.find( '.bl-event-comment' ).hide();

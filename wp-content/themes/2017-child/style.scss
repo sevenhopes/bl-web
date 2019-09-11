@@ -1,17 +1,18 @@
 @charset "UTF-8";
-/*
+/*!
 Theme Name: 2017 Child
 Theme URI: http://www.bridgelightels.com/m/
 Template: twentyseventeen
 Author: Bridge Light Corp.
 Author URI: http://bridgelightels.com/m/
-Description: 부모 테마는 Twenty Seventeen. A Mobile-first Responsive Theme for Bridge Light webiste, 즉 기본적오로 모든 스타일 태그가 모바일 화면 기준이며, PC나 태블릿 화면의 스타일은 미디어쿼리로 코딩. 미디어쿼리는 파일의 맨 아래에 위치.
 Tags: 브릿지라잇,춘천영어학원,BridgeLight,춘천어학원,브릿지라잇어학원
 Version: 1.2
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: 2017-child
-Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, theme-options, mobile-first
+Tags: mobile-first
+*/
+
+/*
+Description: 부모 테마는 Twenty Seventeen. A Mobile-first Responsive Theme for Bridge Light webiste, 즉 기본적오로 모든 스타일 태그가 모바일 화면 기준이며, PC나 태블릿 화면의 스타일은 미디어쿼리로 코딩. 미디어쿼리는 파일의 맨 아래에 위치.
 */
 
 /*--------------------------------------------------------------
@@ -60,6 +61,7 @@ $k1t: rgba( 17, 17, 17, 0.8 );
 $k2:  #222;
 $k3:  #333;
 $k4:  #444;
+$k6:  #666;
 $k8:  #888;
 $k9:  #999;
 $aa:  #aaa;
@@ -70,6 +72,7 @@ $ee:  #eee;
 $f2:  #f2f2f2;
 $f5:  #f5f5f5;
 $f7:  #f7f7f7;
+$fa:  #fafafa;
 $fc:  #fcfcfc;
 $ff:  #fff;
 $fft: rgba( 255, 255, 255, 0.2 );
@@ -129,6 +132,13 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 	position: static;
 }
 
+.bl-dev-div {
+	width: 100%;
+	height: 200px;
+	background-color: $blue-l1;
+	color: $ff;
+}
+
 .bl-p {
 }
 
@@ -174,6 +184,14 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 
 .bl-tp {
 	background-color: transparent;
+}
+
+.bl-mg-top {
+	margin-top: 1rem;
+}
+
+.bl-mg-btm {
+	margin-bottom: 1rem;
 }
 
 // ::-webkit-scrollbar { display: none; }             /* 1 */
@@ -1144,8 +1162,8 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	 > div {
 		font-size: 17px;
 		letter-spacing: 0;
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
+		padding-top: 0.4rem;
+		padding-bottom: 0.4rem;
 		background-color: $blue-d2;
 
 		&:nth-child(odd) {
@@ -1178,16 +1196,16 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	}
 }
 
-#bl-front-page-ko .bl-indication-wrapper {
+#bl-front-page-ko .bl-indicator-wrapper {
 	background-color: $f7;
 	text-align: center;
 	max-height: 3rem;
 }
 
-#bl-front-page-ko .bl-indication {
+#bl-front-page-ko .bl-indicator {
 	width: 4rem;
 	height: 3rem;
-	opacity: 0.1;
+	opacity: 0.2;
 	// padding-top: 0.5rem;
 }
 
@@ -1255,62 +1273,65 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 }
 
 .bl-event-item {
-	display: grid;
-	grid-template-rows: 65% 35%;
-	grid-template-columns: 25% 75%;
-	grid-column-gap: 1rem;
-	grid-template-areas:
-		"bigday title"
-		"weekday date";
-	margin-bottom: 1rem;
-	background-color: $ff;
+	margin-bottom: 1.25rem;
+	// background-color: $fc;
 	overflow: hidden;
-}
+	letter-spacing: 0;
 
-.bl-event-item:last-child {
-	margin-bottom: 0;
-}
+	&.bl-holiday .bl-tear-off {
+		background-color: $red;
+	}
 
-.bl-event-item .bl-big-day {
-	grid-area: bigday;
-	background-color: $blue-d4;
-	color: $ff;
-	font-size: 2.5rem;
-	line-height: 1;
-	text-align: center;
-	font-weight: 500;
-	padding-top: 0.5rem;
-}
+	.bl-tear-off {
+		background-color: $blue-d4;
+		color: $ff;
+		display: inline-block;
+		vertical-align: text-top;
+		width: 4em;
+		line-height: 1;
 
-.bl-event-item .bl-weekday {
-	grid-area: weekday;
-	background-color: $blue-d4;
-	color: $ff;
-	/*font-size: 1rem;*/
-	line-height: 1.1;
-	text-align: center;
-	font-weight: 500;
-	padding-bottom: 0.5rem;
-}
+		.t-o-day {
+			font-size: 1.75rem;
+			text-align: center;
+			font-weight: 400;
+			padding-top: 0.3rem;
+		}
+		.t-o-mon {
+			line-height: 1.1;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: 300;
+			letter-spacing: -2;
+			padding-bottom: 0.3rem;
+		}
+	}
 
-.bl-event-item .bl-big-day.bl-holiday,
-.bl-event-item .bl-weekday.bl-holiday {
-	background-color: $red;
-}
+	.bl-event-info {
+		display: inline-block;
+		vertical-align: text-top;
+		width: 75%;
+		padding-left: 1rem;
 
-.bl-event-item h2.bl-event-title {
-	grid-area: title;
-	font-size: 1.4rem;
-	font-weight: 500;
-	line-height: 1;
-	padding-top: 0.9rem;
-	margin-top: 0;
-}
-
-.bl-event-item .bl-event-date {
-	grid-area: date;
-	// font-weight: 400;
-	line-height: 1;
+		h2.e-i-title {
+			color: $k0;
+			font-size: 1.25rem;
+			font-weight: 500;
+			line-height: 1.1;
+			padding-top: 0.1rem;
+			padding-bottom: 0.25rem;
+			margin-top: 0;
+		}
+		.e-i-date {
+			// font-weight: 400;
+			line-height: 1.5;
+		}
+		.e-i-extra {
+			color: $k6;
+			font-style: italic;
+			line-height: 1.3;
+			padding-top: 0.1rem;
+		}
+	}
 }
 
 .bl-event-comment {
@@ -1343,7 +1364,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	transform: translateX(-50%);
 }
 
-#bl-study-with-us.bl-block {
+#bl-go-with-us.bl-block {
 }
 
 #bl-fact {
@@ -1426,11 +1447,33 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 }
 
 .entry-header .entry-title {
-	margin-bottom: 0;
+	margin-bottom: 0.5rem;
+
+	color: $blue-d5;
+
+	a {
+		color: $blue-d5;
+	}
 }
 
 .entry-title:not(:first-child) {
 	padding-top: 0;
+}
+
+.post-thumbnail {
+	margin-bottom: 0.5em;
+}
+
+.entry-content a.bl-moretag {
+	color: $blue-bl;
+
+	&:hover {
+		color: $gold;
+	}
+}
+
+.pagination {
+	padding: 1em 0 1em;
 }
 
 /* Blog landing, search, archives */
@@ -1441,8 +1484,109 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	padding-bottom: 2em;
 }
 
+.single .site-content ol {
+	padding-left: 1rem;
+
+	ul {
+		padding-left: 0.5rem;
+	}
+
+	ol {
+		list-style: lower-alpha;
+
+		ul {
+			background-image: none;
+			list-style: disc;
+		}
+		ul ul {
+			list-style: circle;
+		}
+	}
+}
+
 body:not(.twentyseventeen-front-page) .entry-header {
 	padding: 0;
+}
+
+#news-n-events {
+	article.post {
+		margin-bottom: 2rem;
+	}
+	.bl-page-header {
+		margin-bottom: 1rem;
+	}
+	h2.bl-block-title {
+		margin-top: 0;
+	}
+}
+
+#news {
+	p .link-more {
+		position: relative;
+	}
+
+	a.more-link {
+		float: right;
+		color: $blue-bl;
+
+		&::before {
+			display: none;
+		}
+		&::hover {
+			color: $gold;
+		}
+	}
+}
+
+#events {
+	.bl-block-header {
+		margin-bottom: 0.5rem;
+	}
+	.bl-event-item {
+		&:after {
+			display: block;
+			content: "";
+			width: 100%;
+			height: 1px;
+			background-color: $dd;
+			margin: 1.25rem 0 0;
+			// padding-top: 1rem;
+		}
+		&:last-child:after {
+			display: none;
+		}
+
+		.bl-tear-off {
+			.t-o-day {
+			}
+			.t-o-mon {
+			}
+		}
+
+		.bl-event-info {
+			h2.e-i-title {
+			}
+			.e-i-date {
+			}
+			.e-i-extra {
+			}
+		}
+	}
+}
+
+#bl-staff-only {
+	.bl-event-item {
+		&.staff-event {
+			.bl-tear-off {
+				background-color: $blue-l1;
+			}
+			.bl-event-info {
+				h2.e-i-title {
+					color: $blue-l1;
+				}
+			}
+		}
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1499,6 +1643,10 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .page h3 {
 	color: $k3;
+}
+
+.page .entry-header {
+	display: none;
 }
 
 .bl-page-header {
@@ -1944,7 +2092,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	/*padding-left: 1em;*/
 }
 
-#semester {
+#semesters {
 }
 
 #course-basic .bl-course-box,
@@ -2035,7 +2183,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	}
 }
 
-#semester .bl-desc-box ul {
+#semesters .bl-desc-box ul {
 	list-style: none;
 }
 
@@ -2276,7 +2424,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 #study-in-america .proc-trackline {
-	height: 90%;
+	height: 80%;
 }
 
 .bl-tabs {
@@ -2378,14 +2526,14 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 }
 
-#admission-process {
+#admissions {
 }
 
-#admission-process .bl-procedure .proc-trackline {
+#admissions .bl-procedure .proc-trackline {
 	height: 90%;
 }
 
-#admission-process .bl-proc-comment {
+#admissions .bl-proc-comment {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	margin-left: 0.5rem;
@@ -2397,14 +2545,12 @@ body:not(.twentyseventeen-front-page) .entry-header {
 #admission-rules {
 }
 
-#bl-map {
-	width: 100%;
-	height: 240px;
-}
-
+#bl-map,
 #bl-street {
 	width: 100%;
 	height: 240px;
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
 }
 
 .bl-grid-tuition,
@@ -2500,6 +2646,20 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 #faq fieldset {
 	border: none;
+}
+
+#faq dl.bl-faq-list dd {
+	a {
+		color: $gold;
+	}
+	strong {
+		color: $blue-d4;
+	}
+
+	.comment {
+		color: $red;
+		font-size: smaller;
+	}
 }
 
 .bl-faq-input {
