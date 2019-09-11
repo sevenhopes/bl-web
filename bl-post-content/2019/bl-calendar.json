@@ -207,24 +207,6 @@
 			"pending": true
 		},
 		{
-			"title": "2020 봄학기 개강",
-			"holiday": false,
-			"start": "2020-03-01",
-			"end": null,
-			"extra": "",
-			"public": true,
-			"pending": true
-		},
-		{
-			"title": "정기 TEPS 시험",
-			"holiday": false,
-			"start": "2020-03-01",
-			"end": null,
-			"extra": "",
-			"public": true,
-			"pending": true
-		},
-		{
 			"title": "학원 Association Teacher Training",
 			"holiday": false,
 			"start": "2020-03-01",
