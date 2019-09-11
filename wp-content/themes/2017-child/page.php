@@ -37,7 +37,7 @@ get_header(); ?>
 
 						wp_link_pages(
 							array(
-								'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+								'before' => '<div class="page-links">' . __( 'Pages:', '2017-child' ),
 								'after'  => '</div>',
 							)
 						);
