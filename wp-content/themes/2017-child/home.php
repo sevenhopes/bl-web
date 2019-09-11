@@ -71,7 +71,7 @@ get_header(); ?>
 
 			<div id="events" class="bl-block">
 				<div class="bl-block-header">
-					<h2 class="bl-block-title">All Events</h2>
+					<h2 class="bl-block-title">Events</h2>
 				</div>
 				<div class="bl-wrap">
 				<?php
