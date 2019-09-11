@@ -188,7 +188,7 @@ get_header(); ?>
 							<img class="wp-image-405" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/04/summer-musical-camp-2018.jpg" alt="Summer Musical Camp" width="1200" height="675" />
 						</div>
 						<div class="bl-wrap">
-							<p class="bl">많은 이들이 영어를 가르칩니다. 그치만 모든 아이들이 학원 가기를 좋아하는 건 아닙니다. 브릿지라잇의 영어수업은 지식 뿐 아니라 재미와 행복을 함께 전합니다. 신나게 가는 영어학원, 브릿지라잇은 그 방향으로 갑니다.</p>
+							<p class="bl">많은 이들이 영어를 가르칩니다. 그치만 모든 아이들이 학원 가기를 좋아하는 건 아닙니다. 브릿지라잇의 영어수업은 지식 뿐 아니라 재미와 행복을 함께 전합니다. 신나서 가는 학원, 브릿지라잇은 그 방향으로 갑니다.</p>
 						</div>
 					</div>
 				</a>
