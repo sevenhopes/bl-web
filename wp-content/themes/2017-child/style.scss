@@ -1850,73 +1850,74 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .bl-why-list {
 	width: 100%;
-}
 
-.bl-why-list .bl-block {
-	margin: 0 0 0.5rem;
-}
+	.bl-block {
+		margin: 0 0 0.5rem;
+	}
 
-.bl-why-list dt {
-	display: grid;
-	grid-template-columns: 2rem auto 2.5rem;
-	grid-template-areas: "number title angledown";
-	grid-column-gap: 0.2rem;
-	padding: 0.5rem 0.75rem 0.25rem;
-	/*border: 1px solid $test-r;*/
-}
+	dt {
+		display: grid;
+		grid-template-columns: 2.2rem auto 2.5rem;
+		grid-template-areas: "number title angledown";
+		grid-column-gap: 0.2rem;
+		padding: 0.5rem 0.75rem 0.25rem;
+		/*border: 1px solid $test-r;*/
+	}
 
-.bl-why-list div:first-child dt {
-	padding-top: 0;
-}
+	div:first-child dt {
+		padding-top: 0;
+	}
 
-.bl-why-list dt div {
-	grid-area: number;
-	color: $blue-dp;
-	opacity: 0.2;		// js로 opacity 조정 1 <-> 0.2
-	font-size: 3rem;
-	font-weight: 700;
-	line-height: 0.8;
-	text-align: left;
-	/*border: 1px solid $test-g;*/
-}
+	dt div {
+		grid-area: number;
+		color: $blue-dp;
+		opacity: 0.2;		// js로 opacity 조정 1 <-> 0.2
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 0.8;
+		text-align: left;
+		/*border: 1px solid $test-g;*/
+	}
 
-.bl-why-list dt:after {
-	clear: both;
-}
+	dt:after {
+		clear: both;
+	}
 
-.bl-why-list dt h2 {
-	grid-area: title;
-	padding: 0;
-	margin: 0.3rem 0 0;
-	font-size: 28px;
-	font-size: 1.75rem;
-	font-weight: 400;
-	/*border: 1px solid $test-b;*/
-}
+	dt h2 {
+		grid-area: title;
+		padding: 0;
+		margin: 0.3rem 0 0;
+		font-size: 28px;
+		font-size: 1.75rem;
+		font-weight: 400;
+		/*border: 1px solid $test-b;*/
+	}
 
-.bl-why-list dt button {
-	grid-area: angledown;
-	background-color: $f5;
-	padding: 0.4rem;
-	text-align: center;
-	width: 2.5rem;
-	height: 2.5rem;
-}
+	dt button {
+		grid-area: angledown;
+		background-color: $f5;
+		padding: 0.4rem;
+		text-align: center;
+		width: 2.5rem;
+		height: 2.5rem;
+	}
 
-.bl-why-list dt button.opened {
-	-ms-transform: rotate(-180deg);
-	-webkit-transform: rotate(-180deg);
-	transform: rotate(-180deg);
-}
+	dt button.opened {
+		-ms-transform: rotate(-180deg);
+		-webkit-transform: rotate(-180deg);
+		transform: rotate(-180deg);
+	}
 
-.bl-why-list dd {
-	display: none;
-}
+	dd {
+		display: none;
+	}
 
-.bl-why-list dd p {
-	padding-left: 0.5rem;
-	margin-left: 0.4rem;
-	border-left: 3px solid $gold;
+	dd p {
+		padding-left: 0.5rem;
+		margin-left: 0.4rem;
+		border-left: 3px solid $gold;
+	}
+
 }
 
 #foundation-story {
