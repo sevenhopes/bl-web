@@ -82,7 +82,6 @@
 				</ul>
 
 				<div class="bl-footer-logo">
-					<!-- <img src="http://www.bridgelightels.com/m/wp-content/uploads/2019/09/CI-2019-white.png" /> -->
 				</div>
 
 			</div><!-- .wrap -->
