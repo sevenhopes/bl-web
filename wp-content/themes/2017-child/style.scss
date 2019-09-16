@@ -2882,10 +2882,11 @@ dl.bl-faq-list {
 	font-size: 15px;
 	overflow: hidden;
 	position: relative;
+	padding: 2em 0;
 }
 
 .site-footer .wrap {
-	padding: 2em 0.5em 2em 2em;
+	padding: 0 0.5em 0 2em;
 }
 
 .site-footer a {
@@ -2925,15 +2926,9 @@ dl.bl-faq-list {
 }
 
 .bl-footer-logo {
-	// position: absolute;
-	// right: 2rem;
-	// bottom: 1rem;
 	position: absolute;
 	left: -3rem;
-	top: 8rem;
-	// overflow: hidden;
-	// width: 800px;
-	// height: 800px;
+	top: 4rem;
 	width: 600px;
 	height: 600px;
 	opacity: 0.1;
