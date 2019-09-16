@@ -82,7 +82,7 @@
 				</ul>
 
 				<div class="bl-footer-logo">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icw-bl-logo.png" />
+					<!-- <img src="http://www.bridgelightels.com/m/wp-content/uploads/2019/09/CI-2019-white.png" /> -->
 				</div>
 
 			</div><!-- .wrap -->

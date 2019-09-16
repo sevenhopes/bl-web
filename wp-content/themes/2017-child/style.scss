@@ -2880,6 +2880,8 @@ dl.bl-faq-list {
 	background-color: $blue-d2;
 	margin: 2em 0 0 0;
 	font-size: 15px;
+	overflow: hidden;
+	position: relative;
 }
 
 .site-footer .wrap {
@@ -2923,13 +2925,28 @@ dl.bl-faq-list {
 }
 
 .bl-footer-logo {
+	// position: absolute;
+	// right: 2rem;
+	// bottom: 1rem;
 	position: absolute;
-	right: 2rem;
-	bottom: 1rem;
+	left: -3rem;
+	top: 8rem;
+	// overflow: hidden;
+	// width: 800px;
+	// height: 800px;
+	width: 600px;
+	height: 600px;
+	opacity: 0.1;
+	background-image: url( 'http://www.bridgelightels.com/m/wp-content/uploads/2019/09/CI-2019-white.png' );
+	background-repeat: no-repeat;
+	background-size: 600px;
 
 	img {
-		width: 84px;
-		height: 84px;
+		// width: 84px;
+		// height: 84px;
+		width: 100%;
+		height: 100%;
+		opacity: 0.2;
 	}
 }
 
