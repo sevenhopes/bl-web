@@ -182,13 +182,10 @@
 
 			// 네비게이션 메뉴가 보이는 상태에서 스크롤다운을 많이 하면 메뉴를 숨김
 			$( window ).on( 'scroll', function() {
-				// if ( $mainNav.hasClass( 'toggled-on' ) {
-				// 	var scrollTop = $( window ).scrollTop(),
-				// 		navHeight = $mainNav.height();
+				// if ( $mainNav.hasClass( 'toggled-on' ) &&
+				// 	$( window ).scrollTop() >= ( $mainNav.height() - 100 ) ) {
 
-				// 	if ( scrollTop >= ( navHeight - 100 ) ) {
-				// 		blHideNav();
-				// 	}
+				// 	blHideNav();
 				// }
 
 				blHideNav();
