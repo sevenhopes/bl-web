@@ -73,12 +73,12 @@
 		// 스크롤다운에 의해 '헤더+슬라이더'가 35% 이하만 보이면 슬라이딩(이미지 전환) 멈춤
 		// 스크롤업에 의해 65% 이상이 보이면 슬라이딩 다시 시작
 		$( window ).on( 'scroll', function() {
-			var scrollTop = $( window ).scrollTop(),
+			var scroll_top = $( window ).scrollTop(),
 				pausingTop = 0.35 * ( $body.find( '#masthead' ).height() + $slide.height() );
 
-			if ( pausingTop < scrollTop ) {
+			if ( pausingTop < scroll_top ) {
 				$slide.sssPause();
-			} else if ( scrollTop <= pausingTop ) {
+			} else if ( scroll_top <= pausingTop ) {
 				$slide.sssResume();
 			}
 		});
@@ -304,18 +304,25 @@
 		}
 
 		$( window ).on( 'scroll', function() {
-			var scrollTop = $( window ).scrollTop();
-			if ( scrollTop > 10 && ! narrowHeader ) {
+			var scroll_top = $( window ).scrollTop();
+			// var is_single = $body.hasClass( 'single' );
+				
+			if ( scroll_top > 10 && ! narrowHeader ) {
+				var $nav_top = $body.hasClass( 'admin-bar') ? '102px' : '56px';
+
 				$header.animate({ height: '56px' }, 100 );
-				$navMenu.css( 'top', $body.hasClass( 'admin-bar') ? '102px' : '56px' );
+				$navMenu.css( 'top', $nav_top );
 				$logo.animate({ marginTop: '3px', marginBottom: '2px' }, 100 );
 				$navBtn.animate({ marginTop: '0' }, 100 );
 				narrowHeader = true;
-			} else if ( scrollTop <= 10 && narrowHeader ) {
+
+			} else if ( scroll_top <= 10 && narrowHeader ) {
+				var $nav_top = $body.hasClass( 'admin-bar') ? '122px' : '76px';
+
 				$header.animate({ height: '76px' }, 100 );
 				$navBtn.animate({ marginTop: '10px' }, 100 );
 				$logo.animate({ marginTop: '13.7167px', marginBottom: '11.4px' }, 100, function() {
-					$navMenu.css( 'top', $body.hasClass( 'admin-bar') ? '122px' : '76px' );
+					$navMenu.css( 'top', $nav_top );
 				});
 				narrowHeader = false;
 			}
