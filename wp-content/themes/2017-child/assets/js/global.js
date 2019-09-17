@@ -17,10 +17,15 @@
 	// };
 
 	var	$body = $( 'body' ),
-		$branding = $body.find( '#bl-branding' ),
+		$header = $body.find( '.site-header' ),
+		$navMenu = $body.find( '.navigation-top' ),
+		$logo = $header.find( '.custom-logo-link img' ),
+		$navBtn = $header.find( '#bl-menu-toggle' ),
+		$content = $body.find( '.site-content-contain' ),
 		isFrontPage = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
 		// lang_kor = false,	// true: Korean
-		lang_val;
+		lang_val,
+		narrowHeader = false;
 
 	const transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd';
 
@@ -201,7 +206,7 @@
 		// 키워드 입력 후 Enter 키로 인한 페이지 새로고침 방지
 		$textbox.keydown( function( key ) {
 			if ( key.keyCode == 13 ) {
-				console.log( 'enter key pressed' );
+				// console.log( 'enter key pressed' );
 				$textbox.blur();
 			}
 		});
@@ -297,6 +302,25 @@
 				};
 			});
 		}
+
+		$( window ).on( 'scroll', function() {
+			var scrollTop = $( window ).scrollTop();
+			if ( scrollTop > 10 && ! narrowHeader ) {
+				$header.animate({ height: '56px' }, 100 );
+				$navMenu.css( 'top', $body.hasClass( 'admin-bar') ? '102px' : '56px' );
+				$logo.animate({ marginTop: '3px', marginBottom: '2px' }, 100 );
+				$navBtn.animate({ marginTop: '0' }, 100 );
+				narrowHeader = true;
+			} else if ( scrollTop <= 10 && narrowHeader ) {
+				$header.animate({ height: '76px' }, 100 );
+				$navBtn.animate({ marginTop: '10px' }, 100 );
+				$logo.animate({ marginTop: '13.7167px', marginBottom: '11.4px' }, 100, function() {
+					$navMenu.css( 'top', $body.hasClass( 'admin-bar') ? '122px' : '76px' );
+				});
+				narrowHeader = false;
+			}
+		});
+
 	}); // End of $(document).ready()
 
 	// Add header video class after the video is loaded. (부모테마 Twentyseventeen에서 가져옴)

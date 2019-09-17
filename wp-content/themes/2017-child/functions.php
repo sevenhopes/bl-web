@@ -205,10 +205,10 @@ function is_tablet() { // detect ALL tablets
 	return ( is_android() && !is_android_mobile() ) || is_ipad();
 }
 function is_kor_mutant() { // 국내의 돌연변이 브라우저들 인식하기
-	return (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'Whale' )
-		|| (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'NAVER' ) // Naver 앱 인식
+	return (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'NAVER' ) // Naver 앱 인식
+		|| (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'SamsungBrowser' ) // 삼성인터넷 앱 인식
 		|| (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'DaumApps' ) // Daum 앱 인식
-		|| (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'SamsungBrowser' ); // 삼성인터넷 앱 인식
+		|| (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'Whale' );
 }
 
 // add browser name to body class
