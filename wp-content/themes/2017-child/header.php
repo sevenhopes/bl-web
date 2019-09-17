@@ -73,15 +73,19 @@
 		// 2 부모테마 template-parts/navigation/navigation-top.php 대신 여기에 코딩.
 		// 3 사용하지 않는 .menu-toggle과 .menu-scroll-down을 삭제 (대신 header-image.php 안에서 .bl-menu-toggle을 사용)
 	if ( has_nav_menu( 'top' ) ) : ?>
-		<div class="navigation-top">
-			<div class="wrap">
-				<?php // get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentyseventeen' ); ?>">
-					<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_id' => 'top-menu', ) ); ?>
-				</nav>
-			</div><!-- .wrap -->
-		</div><!-- .navigation-top -->
+	<div class="navigation-top">
+		<div class="wrap">
+			<?php // get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentyseventeen' ); ?>">
+				<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_id' => 'top-menu', ) ); ?>
+			</nav>
+		</div><!-- .wrap -->
+	</div><!-- .navigation-top -->
 	<?php endif; ?>
+
+	<div class="bl-under-header">
+		We are 춘천 영어학원, 브릿지라잇 어학원, Bridge Light, Bridge Light English Language School.
+	</div>
 
 	<?php
 	/*
@@ -97,7 +101,16 @@
 
 	<div class="bl-dev-code">
 		<?php
-		echo $_SERVER['HTTP_USER_AGENT'] . "\n\n";
+		// echo $_SERVER['HTTP_USER_AGENT'] . "<br>";
+		wp_reset_postdata();
+		if ( have_posts() ) {
+			while ( have_posts() ) {
+				the_post();
+				// if ( get_post_status() == 'public' ) {
+					echo '<p>post date: '.get_the_date().'</p>';
+				// }
+			}
+		}
 		?>
 	</div>
 
