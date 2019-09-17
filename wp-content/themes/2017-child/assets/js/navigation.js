@@ -203,7 +203,7 @@
 				if ( $navTop.is( ':animated' ) || ! $navTop.is( ':visible' ) ) {
 					return;
 				}
-				$navTop.animate( { 'right' : '-100px', 'opacity' : '0' }, function() {
+				$navTop.animate( { 'right' : '-100px', 'opacity' : '0' }, 300, function() {
 					$navTop.hide();
 					blToggleNavCSS(); // 이걸 여기서 해야 애니메이션 중 메뉴가 사라짐을 방지
 					$mainNav.find( '.dropdown-toggle.toggled-on' ).trigger( 'click' );
@@ -215,7 +215,7 @@
 					return;
 				}
 				blToggleNavCSS(); // 이걸 먼저 해야 아래 애니메이션 중 메뉴가 보임
-				$navTop.show().animate( { 'right' : '0', 'opacity' : '1' } );
+				$navTop.show().animate( { 'right' : '0', 'opacity' : '1' }, 300 );
 			}
 
 			function blToggleNavCSS() {
