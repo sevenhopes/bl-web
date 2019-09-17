@@ -166,14 +166,14 @@
 			// 네비게이션 메뉴가 보이는 상태에서 다른 곳을 터치하면 (포커스를 옮기면) 메뉴를 숨김
 			$body.click( function( e ) {
 				if ( 'true' === $blMenuToggle.attr( 'aria-expanded' ) ) {
-					blToggleNavigation( true );
+					blHideNav();
 				}
 			} );
 
 			// 네비게이션 메뉴를 보여주거나 숨기는 버튼의 동작 (드롭다운 버튼 아님, 전체 메뉴의 버튼)
 			$blMenuToggle.click( function( e ) {
 				e.stopPropagation();
-				blToggleNavigation( false );
+				blToggleNav();
 			} );
 
 			$navTop.click( function( e ) {
@@ -182,36 +182,48 @@
 
 			// 네비게이션 메뉴가 보이는 상태에서 스크롤다운을 많이 하면 메뉴를 숨김
 			$( window ).on( 'scroll', function() {
-				if ( $mainNav.hasClass( 'toggled-on' ) && ! $navTop.is( ':animated' ) ) {
-					var scrollTop = $( window ).scrollTop(),
-						navHeight = $mainNav.height();
+				// if ( $mainNav.hasClass( 'toggled-on' ) {
+				// 	var scrollTop = $( window ).scrollTop(),
+				// 		navHeight = $mainNav.height();
 
-					if ( scrollTop >= ( navHeight - 100 ) ) {
-						blToggleNavigation( true );
-					}
-				}
+				// 	if ( scrollTop >= ( navHeight - 100 ) ) {
+				// 		blHideNav();
+				// 	}
+				// }
+
+				blHideNav();
 			});
 
-			function blToggleNavigation( hide ) {
-				if ( ! $navTop.is( ':animated' ) ) {
-					// 메뉴 숨기기
-					if ( $navTop.is( ':visible' ) || hide ) {
-						$navTop.animate( { 'right' : '-100px', 'opacity' : '0' }, function() {
-							$navTop.hide();
-							blToggleNavCSS(); // 이걸 여기서 해야 애니메이션 중 메뉴가 사라짐을 방지
-							$mainNav.find( '.dropdown-toggle.toggled-on' ).trigger( 'click' );
-						} );
-					// 메뉴 보이기
-					} else {
-						blToggleNavCSS(); // 이걸 먼저 해야 아래 애니메이션 중 메뉴가 보임
-						$navTop.show().animate( { 'right' : '0', 'opacity' : '1' } );
-					}
+			function blToggleNav() {
+				if ( $navTop.is( ':visible' ) ) {
+					blHideNav();
+				} else {
+					blShowNav();
 				}
+			}
 
-				function blToggleNavCSS() {
-					$mainNav.toggleClass( 'toggled-on' );
-					$blMenuToggle.attr( 'aria-expanded', $mainNav.hasClass( 'toggled-on' ) ? 'true' : 'false' );
+			function blHideNav() {
+				if ( $navTop.is( ':animated' ) || ! $navTop.is( ':visible' ) ) {
+					return;
 				}
+				$navTop.animate( { 'right' : '-100px', 'opacity' : '0' }, function() {
+					$navTop.hide();
+					blToggleNavCSS(); // 이걸 여기서 해야 애니메이션 중 메뉴가 사라짐을 방지
+					$mainNav.find( '.dropdown-toggle.toggled-on' ).trigger( 'click' );
+				} );
+			}
+
+			function blShowNav() {
+				if ( $navTop.is( ':animated') || $navTop.is( ':visible' ) ) {
+					return;
+				}
+				blToggleNavCSS(); // 이걸 먼저 해야 아래 애니메이션 중 메뉴가 보임
+				$navTop.show().animate( { 'right' : '0', 'opacity' : '1' } );
+			}
+
+			function blToggleNavCSS() {
+				$mainNav.toggleClass( 'toggled-on' );
+				$blMenuToggle.attr( 'aria-expanded', $mainNav.hasClass( 'toggled-on' ) ? 'true' : 'false' );
 			}
 		} // End of blInitMenuToggleEvents()
 

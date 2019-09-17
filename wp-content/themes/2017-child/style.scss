@@ -452,7 +452,8 @@ a:hover {
 	border-bottom: 1px solid $blue-g;
 	font-size: 20px;
 	font-size: 1.25rem;
-	position: absolute;
+	// position: absolute;
+	position: fixed;
 	top: 76px;
 	right: -100px;
 	width: 100%;
@@ -464,6 +465,14 @@ a:hover {
 .home .navigation-top {
 	background-color: $blue-d2t;
 }
+
+.admin-bar .navigation-top {
+	top: 122px;
+}
+
+// .fix-header .navigation-top {
+// 	top: 56px;
+// }
 
 .navigation-top a {
 	color: $ee;
@@ -667,12 +676,13 @@ a:hover {
 	outline: 0;
 	padding: 0;
 	float: right;
-	width: 58px;
-	height: 76px;
+	width: 56px;
+	height: 56px;
 	position: relative;
 	overflow: hidden;
 	z-index: 9;
 	/*display: none; /* .js 자바스크립트가 작동해야 보여줌. 아래 .js #bl-menu-toggle {} 참조 */
+	margin-top: 10px;
 }
 
 #bl-menu-toggle:after {
@@ -741,14 +751,21 @@ a.skip-link {
 
 .site-header {
 	display: block;
-	position: static;
+	// position: static;
+	position: fixed;
 	background-color: $ff;
 	min-width: 100vw;
 	height: 76px;
 	overflow: hidden;
+	z-index: 99;
 }
 
+// .fix-header .site-header {
+// 	position: fixed;
+// }
+
 .custom-header {
+	position: relative;
 	display: table;
 	margin: 0;
 	padding: 0;
@@ -762,39 +779,36 @@ a.skip-link {
 
 /* front page일 때 헤더 */
 
-.home .site-header,
-.home .custom-header {
-	overflow: hidden;
-	/*height: calc( 76px + 216px + 55px );*/
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	flex-direction: column;
-	min-height: 76px;
-	height: auto;
-}
+// .home .site-header,
+// .home .custom-header {
+// 	overflow: hidden;
+// 	display: -moz-box;
+// 	display: -ms-flexbox;
+// 	display: -ms-flexbox;
+// 	display: -webkit-flex;
+// 	display: flex;
+// 	flex-direction: column;
+// 	min-height: 76px;
+// 	height: auto;
+// }
 
 /* custom-header의 width와 height는 이 스타일을 따름 */
-.has-header-image.twentyseventeen-front-page .custom-header,
-.has-header-video.twentyseventeen-front-page .custom-header,
-.has-header-image.home.blog .custom-header,
-.has-header-video.home.blog .custom-header {
-	/*display: table;*/
-	/*height: calc( 76px + 216px + 55px );*/
-	width: 100%;
-	overflow: hidden;
+// .has-header-image.twentyseventeen-front-page .custom-header,
+// .has-header-video.twentyseventeen-front-page .custom-header,
+// .has-header-image.home.blog .custom-header,
+// .has-header-video.home.blog .custom-header {
+// 	width: 100%;
+// 	overflow: hidden;
 
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	flex-direction: column;
-	min-height: 76px;
-	height: auto;
-}
+// 	display: -moz-box;
+// 	display: -ms-flexbox;
+// 	display: -ms-flexbox;
+// 	display: -webkit-flex;
+// 	display: flex;
+// 	flex-direction: column;
+// 	min-height: 76px;
+// 	height: auto;
+// }
 
 .home .custom-header-media {
 	display: block;
@@ -925,7 +939,7 @@ a.skip-link {
 	width: auto;
 	height: auto;
 	margin: auto;
-	padding: 0 58px 0 16px;
+	padding: 0 56px 0 16px;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -974,7 +988,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 /*
 .bl-custom-logo-wrap {
-	margin-right: 58px;
+	margin-right: 56px;
 	padding: 14px 0 0 18px; // 16px 0 0 18px; with h=100 logo
 	height: 100%;
 	position: relative;
@@ -1414,7 +1428,22 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 --------------------------------------------------------------*/
 
 .site-content-contain {
+	background-color: #fff;
+	position: relative;
+	margin-top: 0;
+
+	&:before {
+		display: block;
+		content: "";
+		background-color: $blue-d2;
+		width: 100%;
+		height: 76px;
+	}
 }
+
+// .fix-header .site-content-contain {
+// 	margin-top: 56px;
+// }
 
 .site-content {
 	/*margin-left: auto;*/
