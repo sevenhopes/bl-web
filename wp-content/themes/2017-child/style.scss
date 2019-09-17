@@ -75,29 +75,29 @@ $f7:  #f7f7f7;
 $fa:  #fafafa;
 $fc:  #fcfcfc;
 $ff:  #fff;
-$fft: rgba( 255, 255, 255, 0.2 );
+$fft: rgba( $ff, 0.2 );
 
 $blue-k:   #05061a;
 $blue-d1:  #080a34;
 $blue-d2:  #0c1055;
 // $blue-d2t: #0c1055e6;
-$blue-d2t: rgba( 12, 16, 85, 0.9 ); // from $blue-d2
+$blue-d2t: rgba( $blue-d2, 0.9 ); // from $blue-d2
 $blue-d3:  #0c1069;
 $blue-d4:  #111790;
 // $blue-d4t1: #11179050;
 // $blue-d4t2: #111790c0;
-$blue-d4t1: rgba( 17, 23, 124, 0.45 ); // from $blue-d4
-$blue-d4t2: rgba( 17, 23, 124, 0.75 ); // from $blue-d4
+$blue-d4t1: rgba( $blue-d4, 0.45 ); // from $blue-d4
+$blue-d4t2: rgba( $blue-d4, 0.75 ); // from $blue-d4
 $blue-d5:   #1820aa;
 $blue-g:    #192d88;
 $blue-dp:   #161ac8;
-$blue-dpt:  rgba( 22, 26, 200, 0.2 );
+$blue-dpt:  rgba( $blue-dp, 0.2 );
 $blue-bl:   #2c33c8;
 $blue-l1:   #1265ff;
 // $blue-l1t1: #1265ffb3;
 // $blue-l1t2: #1265ff0d;
-$blue-l1t1: rgba( 18, 101, 255, 0.7 );
-$blue-l1t2: rgba( 18, 101, 255, 0.05 );
+$blue-l1t1: rgba( $blue-l1, 0.7 );
+$blue-l1t2: rgba( $blue-l1, 0.05 );
 $blue-l2:   #46a0ff;
 
 $gold:    #dac326;
@@ -105,7 +105,7 @@ $gold-l1: #dcd079;
 $red:     #a21a1a;
 $orange:  #e8a10e;
 $green:   #1aa021;
-$green-t: rgba( 20, 160, 33, 0.05 );
+$green-t: rgba( $green, 0.05 );
 $mint:    #1cbbb4;
 
 $test-r:  #fc3;
@@ -126,10 +126,14 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 
 .bl-dev .bl-dev-code {
 	display: block;
-	z-index: 9;
+	z-index: 9999;
 	opacity: 1;
-	color: $k8;
-	position: static;
+	background-color: $mint;
+	color: $k3;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: auto;
 }
 
 .bl-dev-div {
@@ -470,10 +474,6 @@ a:hover {
 	top: 122px;
 }
 
-// .fix-header .navigation-top {
-// 	top: 56px;
-// }
-
 .navigation-top a {
 	color: $ee;
 	font-weight: 300;
@@ -760,10 +760,6 @@ a.skip-link {
 	z-index: 99;
 }
 
-// .fix-header .site-header {
-// 	position: fixed;
-// }
-
 .custom-header {
 	position: relative;
 	display: table;
@@ -1024,6 +1020,15 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .home #bl-hero-text.bl-fade-in {
 	opacity: 1;
+}
+
+.bl-under-header {
+	display: block;
+	color: $blue-bl;
+	background-color: $blue-d2;
+	width: 100%;
+	height: 76px;
+	min-height: 76px;
 }
 
 /*--------------------------------------------------------------
@@ -1431,19 +1436,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	background-color: #fff;
 	position: relative;
 	margin-top: 0;
-
-	&:before {
-		display: block;
-		content: "";
-		background-color: $blue-d2;
-		width: 100%;
-		height: 76px;
-	}
 }
-
-// .fix-header .site-content-contain {
-// 	margin-top: 56px;
-// }
 
 .site-content {
 	/*margin-left: auto;*/
@@ -2911,7 +2904,7 @@ dl.bl-faq-list {
 	font-size: 15px;
 	overflow: hidden;
 	position: relative;
-	padding: 2em 0;
+	padding: 3.5em 0 3em;
 }
 
 .site-footer .wrap {
@@ -2960,7 +2953,7 @@ dl.bl-faq-list {
 	top: 4rem;
 	width: 600px;
 	height: 600px;
-	opacity: 0.1;
+	opacity: 0.05;
 	background-image: url( 'http://www.bridgelightels.com/m/wp-content/uploads/2019/09/CI-2019-white.png' );
 	background-repeat: no-repeat;
 	background-size: 600px;
