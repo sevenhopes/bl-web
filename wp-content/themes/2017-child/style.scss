@@ -604,11 +604,14 @@ a:hover {
 
 	div {
 		// flex: ;
+		&:first-child {
+			padding-left: 0.3em;
+		}
 	}
 	a {
 		line-height: 2rem;
-		padding-bottom: 3px;
-		// padding: 0;
+		// padding-bottom: 3px;
+		padding: 0.6em 0.8em 3px;
 		// margin: 0;
 	}
 	img {
@@ -683,24 +686,69 @@ a:hover {
 	z-index: 9;
 	/*display: none; /* .js 자바스크립트가 작동해야 보여줌. 아래 .js #bl-menu-toggle {} 참조 */
 	margin-top: 10px;
-}
 
-#bl-menu-toggle:after {
-	clear: both;
+	&:after {
+		clear: both;
+	}
+	&:active,
+	&:hover,
+	&:focus {
+		background: transparent;
+	}
+	&:-moz-focusring {
+		outline: 0;
+	}
 }
 
 .js #bl-menu-toggle {
 	display: block;
 }
-
-#bl-menu-toggle:active,
-#bl-menu-toggle:hover,
-#bl-menu-toggle:focus {
-	background: transparent;
+////////////////////////////
+.bl-toggle-icon,
+.bl-toggle-icon::before,
+.bl-toggle-icon::after {
+	position: absolute;
+	width: 24px;
+	height: 1px;
+	background-color: $blue-l1;
+}
+.bl-toggle-icon {
+	top: calc(50%);
+	left: calc(50% - 12px);
+	transition: all 0.3s linear;
+	color: $blue-d2;
+}
+.bl-toggle-icon::before,
+.bl-toggle-icon::after {
+	content: "";
+	left: 0;
+}
+.bl-toggle-icon::before {
+	bottom: 8px;
+	transition: all 0.3s linear;
+}
+.bl-toggle-icon::after {
+	top: 8px;
+	transition: all 0.2s linear;
 }
 
-#bl-menu-toggle:-moz-focusring {
-	outline: 0;
+.toggled#bl-menu-toggle .bl-toggle-icon {
+	height: 1px;
+	width: 24px;
+	// left: calc(50% - 12px);
+	top: calc(50%);
+	transform: rotate(135deg);
+}
+
+.toggled#bl-menu-toggle .bl-toggle-icon::after {
+	width: 24px;
+	height: 1px;
+	top: -1px;
+	transform: rotate(90deg);
+}
+
+.toggled#bl-menu-toggle .bl-toggle-icon::before {
+	transform: scale(0);
 }
 
 /*--------------------------------------------------------------
@@ -1284,20 +1332,26 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	margin-bottom: 0.35rem;
 }
 
-#bl-news.bl-block {
-	padding-top: 0.5rem;
-}
-
-#bl-news .bl-news-item {
-	margin-bottom: 1rem;
-
-	&:last-child {
-		margin-bottom: 0;
+#bl-news {
+	&.bl-block {
+		padding-top: 0.5rem;
 	}
-}
 
-#bl-news p.link-more {
-	padding-bottom: 1.5rem;
+	.bl-news-item {
+		margin-bottom: 1rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		h2 {
+			margin-bottom: 0.3rem;
+		}
+	}
+
+	p.link-more {
+		padding-bottom: 1.5rem;
+	}
 }
 
 #bl-event.bl-block {
@@ -1543,19 +1597,22 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	padding: 0;
 }
 
-p.link-more {
-	position: relative;
-}
+// p.link-more {
+// 	position: relative;
+// }
 
 a.more-link {
 	float: right;
 	color: $blue-bl;
-
-	&::before {
-		display: none;
-	}
-	&::hover {
+	&:hover {
 		color: $gold;
+	}
+}
+
+.entry-content a.more-link {
+	&:before {
+		display: none;
+		margin-top: 0;
 	}
 }
 

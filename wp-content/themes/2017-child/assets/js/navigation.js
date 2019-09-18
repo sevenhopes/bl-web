@@ -203,6 +203,7 @@
 				if ( $navTop.is( ':animated' ) || ! $navTop.is( ':visible' ) ) {
 					return;
 				}
+				$blMenuToggle.toggleClass( 'toggled' );
 				$navTop.animate( { 'right' : '-100px', 'opacity' : '0' }, 300, function() {
 					$navTop.hide();
 					blToggleNavCSS(); // 이걸 여기서 해야 애니메이션 중 메뉴가 사라짐을 방지
@@ -214,6 +215,7 @@
 				if ( $navTop.is( ':animated') || $navTop.is( ':visible' ) ) {
 					return;
 				}
+				$blMenuToggle.toggleClass( 'toggled' );
 				blToggleNavCSS(); // 이걸 먼저 해야 아래 애니메이션 중 메뉴가 보임
 				$navTop.show().animate( { 'right' : '0', 'opacity' : '1' }, 300 );
 			}
@@ -229,11 +231,15 @@
 			$dropdowns.unbind( 'click' );
 
 			// .main-navigation의 자식 html 코드의 마지막에 커스텀 메뉴를 추가 (메인페이지는 제외)
-			if ( ! isFrontPage ) {
+			// if ( ! isFrontPage ) {
 				$mainNav.find( '#top-menu' ).html( function() {
-					return $( this ).html() + ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-map.png" alt="위치안내" /></a></div><div><a class="bl-custom-share" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
+					// return $( this ).html() + ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-map.png" alt="위치안내" /></a></div><div><a class="bl-custom-share" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
+
+					var $allmenubtn = ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-map.png" alt="위치안내" /></a></div><div><a class="bl-custom-share" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
+					var $shareonly =  ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-share" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
+					return $( this ).html() + ( isFrontPage ? $shareonly : $allmenubtn );
 				});
-			}
+			// }
 
 			// 전화하기 커스텀 메뉴 동작: 네비 메뉴 메뉴 닫음
 			$mainNav.find( '.bl-custom-call' ).click( function( e ) {
