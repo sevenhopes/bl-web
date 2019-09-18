@@ -61,44 +61,37 @@ get_header(); ?>
 				</div>
 
 				<?php
-				if ( have_posts() ) :
-					while ( have_posts() ) :
-						the_post();
-
-						// if ( post_date ) {
-						// 	;
-						// }
+				$query = new WP_Query( array( 'category_name' => 'news' ) );
+				if ( $query->have_posts() ) :
+					// 최근 글을 하나 이상 보여줌. 일주일 이상 지난 글은 보여주지 않음.
+					$query->the_post();
+					while ( $query->have_posts() ) :
 				?>
+
 				<a href="<?php the_permalink(); ?>">
 					<div class="bl-link-wrapper">
 						<div class="bl-block-header-media">
-							<!-- <img class="wp-image-405" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/04/summer-musical-camp-2018.jpg" alt="Summer Musical Camp" width="1200" height="675" /> -->
 							<?php the_post_thumbnail(); ?>
 						</div>
 						<div class="bl-wrap bl-block-content">
 							<h2><?php the_title(); ?></h2>
-							<p class="bl"><?php the_excerpt(); ?></p>
+							<p class="bl more-link"><?php the_excerpt(); ?></p>
 						</div>
 					</div>
 				</a>
+
 				<?php
+						if ( strtotime( get_the_date( 'Y-m-d' ) ) < time() - ( 7 * 24 * 60 * 60 ) ) {
+							break;
+						}
+						$query->the_post();
 					endwhile;
+					wp_reset_postdata();
+				else :
+					echo "<p>앗, 아무 뉴스도 없습니다. 머쓱하네요. 머쓱타드 :p</p>";
 				endif;
 				?>
 
-
-<!-- 				<a href="http://www.bridgelightels.com/m/2019-fall-semester-open/">
-					<div class="bl-link-wrapper">
-						<div class="bl-block-header-media">
-							<img class="wp-image-405" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/04/summer-musical-camp-2018.jpg" alt="Summer Musical Camp" width="1200" height="675" />
-						</div>
-						<div class="bl-wrap bl-block-content">
-							<h2>2019 가을학기 개강 일정 및 개요</h2>
-							<p class="bl">2019년도 2학기가 개강을 알립니다! 정규 학기 뿐 아니라 할로윈, 크리스마스 등 다양한 교과외 학습활동과 겨울방학 중 영어캠프, 미국현지체험연수도 체크하세요.</p>
-							<!-- <p class="bl">단기간에 영어실력을 집.중.적으로 향상시키는 프로그램을 찾고 있나요? 그럼 브릿지라잇 <b class="bl-ue">여름 영어캠프</b>를 신청하세요! 그리고 개학일 영어수업에 씨익 웃으며 들어가세요.</p> --<>
-						</div>
-					</div>
-				</a> -->
 			</div>
 
 			<div id="bl-event" class="bl-block">
