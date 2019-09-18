@@ -109,7 +109,7 @@ get_header(); ?>
 						endif;
 					endforeach;
 				else :
-					echo "앗, 아무 이벤트도 없습니다. 머쓱하네요. 머쓱타드 :p\n";
+					echo "<p>앗, 아무 이벤트도 없습니다. 머쓱하네요. 머쓱타드 :p</p>";
 				endif;
 				?>
 				</div>
