@@ -55,7 +55,8 @@
 			?>
 			<div id="bl-branding">
 				<button id="bl-menu-toggle" aria-controls="top-menu" aria-expanded="false">
-					<img src="<?php echo get_theme_mod( 'bl_menu_button_img' ); ?>" />
+					<!-- <img src="<?php echo get_theme_mod( 'bl_menu_button_img' ); ?>" /> -->
+					<span class="bl-toggle-icon">Menu</span>
 				</button>
 				<?php the_custom_logo(); ?>
 			</div>
