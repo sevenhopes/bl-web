@@ -60,15 +60,15 @@
 			"end": null,
 			"extra": null,
 			"public": true,
-			"pending": true
+			"pending": false
 		},
 		{
 			"title": "Halloween Decoration Contest",
 			"holiday": false,
 			"start": "2019-10-04",
 			"end": null,
-			"extra": "Look around & 2 votes for each",
-			"public": false,
+			"extra": "할로윈을 맞이하는 올바른 자세",
+			"public": true,
 			"pending": false
 		},
 		{
@@ -78,12 +78,12 @@
 			"end": null,
 			"extra": "",
 			"public": true,
-			"pending": true
+			"pending": false
 		},
 		{
 			"title": "Halloween Party",
 			"holiday": false,
-			"start": "2019-10-01",
+			"start": "2019-10-25",
 			"end": null,
 			"extra": "",
 			"public": true,
