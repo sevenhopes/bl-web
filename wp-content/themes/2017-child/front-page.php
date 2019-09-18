@@ -63,7 +63,7 @@ get_header(); ?>
 				<?php
 				$query = new WP_Query( array( 'category_name' => 'news' ) );
 				if ( $query->have_posts() ) :
-					// 최근 글을 하나 이상 보여줌. 일주일 이상 지난 글은 보여주지 않음.
+					// 최근 글을 하나 이상 보여줌
 					$query->the_post();
 					while ( $query->have_posts() ) :
 				?>
@@ -81,6 +81,7 @@ get_header(); ?>
 				</a>
 
 				<?php
+						// 일주일 이상 지난 글은 보여주지 않음
 						if ( strtotime( get_the_date( 'Y-m-d' ) ) < time() - ( 7 * 24 * 60 * 60 ) ) {
 							break;
 						}
