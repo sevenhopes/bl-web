@@ -1288,6 +1288,18 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	padding-top: 0.5rem;
 }
 
+#bl-news .bl-news-item {
+	margin-bottom: 1rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+#bl-news p.link-more {
+	padding-bottom: 1.5rem;
+}
+
 #bl-event.bl-block {
 }
 
@@ -1531,6 +1543,22 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	padding: 0;
 }
 
+p.link-more {
+	position: relative;
+}
+
+a.more-link {
+	float: right;
+	color: $blue-bl;
+
+	&::before {
+		display: none;
+	}
+	&::hover {
+		color: $gold;
+	}
+}
+
 #news-n-events {
 	article.post {
 		margin-bottom: 2rem;
@@ -1544,21 +1572,6 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 #news {
-	p .link-more {
-		position: relative;
-	}
-
-	a.more-link {
-		float: right;
-		color: $blue-bl;
-
-		&::before {
-			display: none;
-		}
-		&::hover {
-			color: $gold;
-		}
-	}
 }
 
 #events {

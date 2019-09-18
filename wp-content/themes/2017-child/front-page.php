@@ -69,7 +69,7 @@ get_header(); ?>
 				?>
 
 				<a href="<?php the_permalink(); ?>">
-					<div class="bl-link-wrapper">
+					<div class="bl-news-item">
 						<div class="bl-block-header-media">
 							<?php the_post_thumbnail(); ?>
 						</div>

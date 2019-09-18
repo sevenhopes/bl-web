@@ -4,7 +4,7 @@
 			"holiday": false,
 			"start": "2019-09-04",
 			"end": null,
-			"extra": "\"Let's start again!\"",
+			"extra": "Let's start again!",
 			"public": true,
 			"pending": false
 		},
@@ -49,7 +49,7 @@
 			"holiday": false,
 			"start": "2019-09-20",
 			"end": null,
-			"extra": "\"Happy Birthday! :)\"",
+			"extra": "Happy Birthday! :)",
 			"public": true,
 			"pending": false
 		},
@@ -87,7 +87,7 @@
 			"end": null,
 			"extra": "",
 			"public": true,
-			"pending": true
+			"pending": false
 		},
 		{
 			"title": "기본과정(Basic) 중간고사",
