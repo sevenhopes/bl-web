@@ -156,7 +156,7 @@ function bridgelight_sanitize_bl_seasonlook( $input ) {
  * @return '더 보기' 버튼 전에 표시되는 단어 개수 (본문 첫 단어부터 시작)
  */
 function custom_excerpt_length( $length ) {
-	return 30;
+	return 25;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
