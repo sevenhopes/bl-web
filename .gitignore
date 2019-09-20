@@ -28,7 +28,7 @@ bl-responsive/
 twenty*/
 
 # Grunt temporary files
-concatenated.js
+all.js
 *.css.map
 *.long.css
 
