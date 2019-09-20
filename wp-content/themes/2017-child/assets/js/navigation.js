@@ -16,13 +16,13 @@
 	$.blang = {}; // bl + lang
 	$.blang.ko = {
 		address: "강원도 춘천시 스포츠타운길 534 (온의동)",
-		kakaolinkdesc: "033-243-5757 #영어생활화 #매일수업 #방학영어캠프 #미국연수 #초중영어",
+		linkdesc: "033-243-5757 #영어생활화 #매일수업 #방학영어캠프 #미국연수 #초중영어",
 		pageurlmsg: "이제 현재 페이지 주소를 붙여넣기 할 수 있습니다.",
 		siteurlmsg: "이제 웹사이트 주소를 붙여넣기 할 수 있습니다."
 	};
 	$.blang.en = {
 		address: "534, Sports town-gil, Chuncheon-si, Gangwon-do, Republic of Korea",
-		kakaolinkdesc: "033-243-5757 #DailyEnglishClass #EnglishStudyCamp #MonthLongUSAStudy",
+		linkdesc: "033-243-5757 #DailyEnglishClass #EnglishStudyCamp #MonthLongUSAStudy",
 		pageurlmsg: "Now you can paste the current page's URL.",
 		siteurlmsg: "Now you can paste the website's URL."
 	};
@@ -142,7 +142,9 @@
 			$dropdowns = $mainNav.find( '.dropdown-toggle' ), // 모든 드롭다운 버튼(화살표)
 			$sharelayer = $( '.bl-share-layer' ),
 			isFrontPage = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
-			langset = $body.hasClass( 'ko-KR' ) ? $.blang.ko : $.blang.en;
+			langset = $body.hasClass( 'ko-KR' ) ? $.blang.ko : $.blang.en,
+			site_name = document.head.querySelector('meta[property="og:site_name"]').getAttribute('content'),
+			og_image = document.head.querySelector('meta[property="og:image"]').getAttribute('content');
 
 		// console.log( 'langset.address: ' + langset.address );
 		// console.log( 'typeof langset.address: ' + typeof langset.address );
@@ -275,11 +277,11 @@
 				container: '#bl-share-kakao',
 				objectType: 'location',
 				address: langset.address,
-				addressTitle: document.head.querySelector('meta[property="og:site_name"]').getAttribute('content'),
+				addressTitle: site_name,
 				content: {
 					title: document.title,
-					description: langset.kakaolinkdesc,
-					imageUrl: document.head.querySelector('meta[property="og:image"]').getAttribute('content'),
+					description: langset.linkdesc,
+					imageUrl: og_image,
 					link: {
 						mobileWebUrl: window.location.href,
 						webUrl: window.location.href
@@ -304,16 +306,14 @@
 			$sharelayer.find( '#bl-share-facebook' ).click( function( e ) {
 				e.stopPropagation();
 				$sharelayer.trigger( 'click' );
+				FB.init({
+					appId: '462886344532595'
+				});
 				FB.ui({
 					method: 'share_open_graph',
 					action_type: 'og.shares',
 					action_properties: JSON.stringify({
-						object: {
-							'og:url': document.head.querySelector('meta[property="og:url"]').getAttribute('content'),
-							'og:title': document.head.querySelector('meta[property="og:title"]').getAttribute('content'),
-							'og:description': document.head.querySelector('meta[property="og:description"]').getAttribute('content'),
-							'og:image': document.head.querySelector('meta[property="og:image"]').getAttribute('content'),
-						}
+						object: window.location.href,
 					})
 				}, function( response ){});
 			});
