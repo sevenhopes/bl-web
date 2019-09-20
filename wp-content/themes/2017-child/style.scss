@@ -68,6 +68,7 @@ $aa:  #aaa;
 $bb:  #bbb;
 $cc:  #ccc;
 $dd:  #ddd;
+$e4:  #e4e4e4;
 $ee:  #eee;
 $f2:  #f2f2f2;
 $f5:  #f5f5f5;
@@ -126,7 +127,7 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 
 .bl-dev .bl-dev-code {
 	display: block;
-	z-index: 9999;
+	z-index: 99999;
 	opacity: 1;
 	background-color: $mint;
 	color: $k3;
@@ -423,6 +424,7 @@ a:visited {
 
 a:focus {
 	color: $gold;
+	outline: 0;
 }
 
 a:hover,
@@ -434,7 +436,6 @@ a:active h1,
 a:active h2,
 a:active h3 {
 	color: $gold;
-	outline: 0;
 	text-decoration: none;
 }
 
@@ -462,16 +463,12 @@ a:hover {
 	right: -100px;
 	width: 100%;
 	opacity: 0;
-	z-index: 9;
+	z-index: 9999;
 	display: none;
 }
 
 .home .navigation-top {
 	background-color: $blue-d2t;
-}
-
-.admin-bar .navigation-top {
-	top: 122px;
 }
 
 .navigation-top a {
@@ -558,7 +555,7 @@ a:hover {
 	text-align: center;
 	font-size: 18px;
 	font-size: 1.125rem;
-	font-weight: 300;
+	font-weight: 400;
 	line-height: 1.4;
 }
 
@@ -594,7 +591,6 @@ a:hover {
 .main-navigation #menu-item-99999.bl-custom-menu {
 	border-bottom: 1px solid $blue-g;
 	display: -moz-box;
-	display: -ms-flexbox;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
@@ -676,14 +672,13 @@ a:hover {
 	background: transparent;
 	-webkit-border-radius: 0;
 	border-radius: 0;
-	outline: 0;
 	padding: 0;
 	float: right;
 	width: 56px;
 	height: 56px;
 	position: relative;
 	overflow: hidden;
-	z-index: 9;
+	z-index: 9999;
 	/*display: none; /* .js 자바스크립트가 작동해야 보여줌. 아래 .js #bl-menu-toggle {} 참조 */
 	margin-top: 10px;
 
@@ -695,6 +690,7 @@ a:hover {
 	&:focus {
 		background: transparent;
 	}
+	&:focus,
 	&:-moz-focusring {
 		outline: 0;
 	}
@@ -773,6 +769,13 @@ body {
 	padding: 0;
 }
 
+#wpadminbar {
+	position: fixed;
+	top: auto;
+	bottom: 0;
+	z-index: 99999;
+}
+
 .bl-grid-metro {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(5rem, 1fr));
@@ -805,7 +808,8 @@ a.skip-link {
 	min-width: 100vw;
 	height: 76px;
 	overflow: hidden;
-	z-index: 99;
+	z-index: 9999;
+	top: 0;
 }
 
 .custom-header {
@@ -828,7 +832,6 @@ a.skip-link {
 // 	overflow: hidden;
 // 	display: -moz-box;
 // 	display: -ms-flexbox;
-// 	display: -ms-flexbox;
 // 	display: -webkit-flex;
 // 	display: flex;
 // 	flex-direction: column;
@@ -845,7 +848,6 @@ a.skip-link {
 // 	overflow: hidden;
 
 // 	display: -moz-box;
-// 	display: -ms-flexbox;
 // 	display: -ms-flexbox;
 // 	display: -webkit-flex;
 // 	display: flex;
@@ -1010,7 +1012,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	position: relative;
 	/*top: 0;*/
 	opacity: 1;
-	z-index: 9;
+	z-index: 9999;
 	/*top: -40px;*/		/* fadeIn() 시작 위치 */
 	/*opacity: 0;*/		/* $(document).ready() 이후 fadeIn() 시작하며 1로 바뀜 */
 
@@ -1036,7 +1038,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	padding: 14px 0 0 18px; // 16px 0 0 18px; with h=100 logo
 	height: 100%;
 	position: relative;
-	z-index: 9;
+	z-index: 9999;
 }
 */
 
@@ -1060,7 +1062,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	overflow: visible;
 	width: 100%;
 	height: auto;
-	z-index: 9;
+	z-index: 9999;
 /*	opacity: 0;
 	-webkit-transition: opacity 0.6s 0.3s;
 	transition: opacity 0.6s 0.3s;*/
@@ -1133,7 +1135,6 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 		line-height: 0;
 		display: block;
 	}
-
 	.bl-link-wrapper {
 		// min-height: 160px;
 		display: none;
@@ -1336,7 +1337,6 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	&.bl-block {
 		padding-top: 0.5rem;
 	}
-
 	.bl-news-item {
 		margin-bottom: 1rem;
 
@@ -1348,7 +1348,6 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 			margin-bottom: 0.3rem;
 		}
 	}
-
 	p.link-more {
 		padding-bottom: 1.5rem;
 	}
@@ -1366,7 +1365,6 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	&.bl-holiday .bl-tear-off {
 		background-color: $red;
 	}
-
 	.bl-tear-off {
 		background-color: $blue-d4;
 		color: $ff;
@@ -1390,11 +1388,11 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 			padding-bottom: 0.3rem;
 		}
 	}
-
 	.bl-event-info {
 		display: inline-block;
 		vertical-align: text-top;
 		width: 75%;
+		max-width: 75%;
 		padding-left: 1rem;
 		min-height: 4.2rem;
 
@@ -1579,7 +1577,6 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	ul {
 		padding-left: 0.5rem;
 	}
-
 	ol {
 		list-style: lower-alpha;
 
@@ -1647,22 +1644,6 @@ a.more-link {
 		}
 		&:last-child:after {
 			display: none;
-		}
-
-		.bl-tear-off {
-			.t-o-day {
-			}
-			.t-o-mon {
-			}
-		}
-
-		.bl-event-info {
-			h2.e-i-title {
-			}
-			.e-i-date {
-			}
-			.e-i-extra {
-			}
 		}
 	}
 }
@@ -1929,7 +1910,9 @@ a.more-link {
 	bottom: 0;
 	right: 0;
 	width: 100%;
+	max-width: 100%;
 	height: 100%;
+	max-height: 100%;
 	/* 위는 따옴표(content)의 위치를 결정하고 아래는 반투명 배경(워터마크)의 위치를 결정 */
 	background: url( 'http://www.bridgelightels.com/m/wp-content/uploads/2019/02/CI-transparent-small.png' ) no-repeat;
 	background-size: 250px 200px;
@@ -1947,7 +1930,6 @@ a.more-link {
 	.bl-block {
 		margin: 0 0 0.5rem;
 	}
-
 	dt {
 		display: grid;
 		grid-template-columns: 2.2rem auto 2.5rem;
@@ -1956,11 +1938,9 @@ a.more-link {
 		padding: 0.5rem 0.75rem 0.25rem;
 		/*border: 1px solid $test-r;*/
 	}
-
 	div:first-child dt {
 		padding-top: 0;
 	}
-
 	dt div {
 		grid-area: number;
 		color: $blue-dp;
@@ -1971,11 +1951,9 @@ a.more-link {
 		text-align: left;
 		/*border: 1px solid $test-g;*/
 	}
-
 	dt:after {
 		clear: both;
 	}
-
 	dt h2 {
 		grid-area: title;
 		padding: 0;
@@ -1985,7 +1963,6 @@ a.more-link {
 		font-weight: 400;
 		/*border: 1px solid $test-b;*/
 	}
-
 	dt button {
 		grid-area: angledown;
 		background-color: $f5;
@@ -1994,23 +1971,19 @@ a.more-link {
 		width: 2.5rem;
 		height: 2.5rem;
 	}
-
 	dt button.opened {
 		-ms-transform: rotate(-180deg);
 		-webkit-transform: rotate(-180deg);
 		transform: rotate(-180deg);
 	}
-
 	dd {
 		display: none;
 	}
-
 	dd p {
 		padding-left: 0.5rem;
 		margin-left: 0.4rem;
 		border-left: 3px solid $gold;
 	}
-
 }
 
 #foundation-story {
@@ -2067,21 +2040,6 @@ a.more-link {
 }
 
 #course-overview .bl-grid-metro {
-	.basic,
-	.special,
-	.stage {
-		background-color: $blue-bl;
-	}
-	.camp {
-		background-color: $green;
-	}
-	.a-camp {
-		background-color: $red;
-	}
-	.extra {
-		background-color: $orange;
-	}
-
 	& > div {
 		color: $ff;
 		line-height: 1.2;
@@ -2097,6 +2055,20 @@ a.more-link {
 				background-color: $fft;
 			}
 		}
+	}
+	.basic,
+	.special,
+	.stage {
+		background-color: $blue-bl;
+	}
+	.camp {
+		background-color: $green;
+	}
+	.a-camp {
+		background-color: $red;
+	}
+	.extra {
+		background-color: $orange;
 	}
 }
 
@@ -2351,7 +2323,6 @@ a.more-link {
 			margin-bottom: 0;
 		}
 	}
-
 	.proc-icon {
 		overflow: hidden;
 		position: relative;		// .proc-line보다 전면에 보이기 위해
@@ -2377,7 +2348,6 @@ a.more-link {
 			margin-top: 14px;
 		}
 	}
-
 	.proc-desc {
 		margin: 0 0 0 2rem;
 
@@ -2651,16 +2621,47 @@ a.more-link {
 .bl-grid-refund {
 	display: grid;
 	grid-gap: 1px;
-	background-color: $ee;
+	background-color: $e4;
 	overflow: hidden;
 	line-height: 1.2;
 	font-size: 14px;
 	font-size: 0.875rem;
 	font-weight: 400;
 	place-items: stretch;
-	margin: 0 0 0.75rem 0.5rem;
+	margin: 1.5rem 0 0.75rem 0.5rem;
 	word-break: keep-all;
 	word-wrap: break-word;
+
+	div {
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		align-items: center;
+		background-color: $fc;
+		text-align: center;
+		justify-content: center;
+		padding: 1em 0;
+	}
+	+ div {
+		color: $red;
+		font-size: 13px;
+		font-size: 0.8125rem;
+		margin-left: 0.5rem;
+	}
+	.title {
+		grid-area: title;
+		background-color: $ff;
+		border-bottom: 1px solid $blue-l1;
+		font-size: 1rem;
+		font-weight: 500;
+		letter-spacing: 0;
+		padding-top: 0.75em;
+	}
+	.gray {
+		background-color: $f5;
+		font-weight: 500;
+	}
 }
 
 .bl-grid-tuition {
@@ -2679,57 +2680,39 @@ a.more-link {
 		"rspan . ."
 		"rspan . ."
 		"rspan . .";
-	margin-top: 1rem;
+	margin-top: 2rem;
+
+	.cspan {
+		grid-area: cspan;
+	}
+	.rspan {
+		grid-area: rspan;
+	}
 }
 
-.bl-grid-tuition div,
-.bl-grid-refund div {
-	background-color: $fc;
-	text-align: center;
-	padding: 1em 0;
-}
+// .bl-grid-tuition div,
+// .bl-grid-refund div {
+// }
 
-.bl-grid-tuition .title,
-.bl-grid-refund .title {
-	grid-area: title;
-	background-color: $ff;
-	border-bottom: 1px solid $blue-l1;
-	font-size: 1rem;
-	font-weight: 500;
-	letter-spacing: 0;
-	padding-top: 0.75em;
-}
+// .bl-grid-tuition .title,
+// .bl-grid-refund .title {
+// }
 
-.bl-grid-tuition .gray,
-.bl-grid-refund .gray {
-	background-color: $f5;
-	font-weight: 500;
-}
+// .bl-grid-tuition .gray,
+// .bl-grid-refund .gray {
+// }
 
-.bl-grid-tuition .long-line {
-	padding: 0.25em 0;
-}
+// .bl-grid-tuition + div,
+// .bl-grid-refund + div {
+// }
 
-.bl-grid-refund .long-line {
-	padding: 0.5em 0;
-}
+// .bl-grid-refund .cspan {
+// 	grid-area: cspan;
+// }
 
-.bl-grid-tuition + div,
-.bl-grid-refund + div {
-	color: $red;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	margin-left: 0.5rem;
-}
-
-.bl-grid-refund .cspan {
-	grid-area: cspan;
-}
-
-.bl-grid-refund .rspan {
-	grid-area: rspan;
-	padding-top: 4.5em;
-}
+// .bl-grid-refund .rspan {
+// 	grid-area: rspan;
+// }
 
 #faq {
 }
@@ -2749,7 +2732,6 @@ a.more-link {
 	strong {
 		color: $blue-d4;
 	}
-
 	.comment {
 		color: $red;
 		font-size: smaller;
@@ -2784,21 +2766,19 @@ a.more-link {
 		background-color: $fc;
 		color: $k2;
 		text-align: center;
-	}
 
-	div:hover,
-	div:focus {
-		cursor: pointer;
-		background-color: $gold-l1;
-	}
-
-	div.top-10 {
-		letter-spacing: 0;
-	}
-
-	div.selected {
-		background-color: $blue-l1;
-		color: $ee;
+		&:hover,
+		&:focus {
+			cursor: pointer;
+			background-color: $gold-l1;
+		}
+		&.top-10 {
+			letter-spacing: 0;
+		}
+		&.selected {
+			background-color: $blue-l1;
+			color: $ee;
+		}
 	}
 }
 
@@ -2823,37 +2803,29 @@ dl.bl-faq-list {
 			font-weight: 500;
 		}
 	}
-
 	dt.faq-admission strong {
 		color: $orange;
 	}
-
 	dt.faq-tuition strong {
 		color: $green;
 	}
-
 	dt.faq-attendance strong {
 		color: $red;
 	}
-
 	dt.faq-level strong {
 		color: $blue-bl;
 	}
-
 	dt.faq-class strong {
 		color: $mint;
 	}
-
 	dt.faq-bus strong {
 		color: $gold;
 	}
-
 	dt:hover,
 	dt:focus {
 		cursor: pointer;
 		background-color: $f7;
 	}
-
 	dd {
 		display: none;
 		border-bottom: 1px solid $dd;
@@ -2861,7 +2833,6 @@ dl.bl-faq-list {
 		font-size: 16px;
 		font-size: 1rem;
 	}
-
 	.no-result {
 		display: none;
 
@@ -2894,21 +2865,22 @@ dl.bl-faq-list {
 	min-height: 100vh;
 	// left: 0;
 	// top: 0;
-	z-index: 20;
+	z-index: 33333;
 
 	.bl-share-box {
 		position: absolute;
 		background-color: $fc;
 		margin: 20vh 15vw;
 		width: 70vw;
+		max-width: 70vw;
 		height: 45vh;
+		max-height: 45vh;
 		padding: 2rem;
 
 		.title-container {
 			width: 100%;
 			padding-bottom: 0.5rem;
 			display: -moz-box;
-			display: -ms-flexbox;
 			display: -ms-flexbox;
 			display: -webkit-flex;
 			display: flex;
@@ -2935,7 +2907,6 @@ dl.bl-faq-list {
 				// float: right;
 			}
 		}
-
 		.container-wrap {
 			display: block;
 			width: 100%;
@@ -2962,6 +2933,8 @@ dl.bl-faq-list {
 			}
 			img,
 			svg {
+				width: 44px;
+				height: 44px;
 			}
 		}
 	}
@@ -3076,7 +3049,7 @@ dl.bl-faq-list {
 @media screen and (min-width: 56.25em) {
 
 	.site-navigation-fixed.navigation-top {
-		z-index: 9;
+		z-index: 9999;
 	}
 }
 
