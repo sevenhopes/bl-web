@@ -22,12 +22,12 @@
 <?php wp_head(); ?>
 
 <meta property="og:site_name" content="브릿지라잇 어학원">
-<meta property="og:url" content="http://www.bridgelightels.com/m/">
+<meta property="og:url" content="<?php the_permalink(); ?>">
 <meta property="og:image" content="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/bridge-light-og-image.jpg">
 <meta property="og:image:height" content="630">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:type" content="image/jpeg">
-<meta property="og:description" content="033-243-5757 / 영어의 생활화 / 우수한 강사진 / 말하기, 듣기, 읽기, 쓰기 4대영역 통합교육 / TOEIC, TEPS 시험영어 / 여름/겨울방학 영어캠프 / 춘천시 전역 버스운행 / 춘천 영어학원 / 온의동 영어학원">
+<meta property="og:description" content="033-243-5757 #영어생활화 #매일수업 #방학영어캠프 #미국연수 #춘천전역버스 #초중영어 #춘천영어학원 #온의동영어학원">
 <meta property="og:title" content="<?php the_title(); ?> - 브릿지라잇 어학원">
 <meta property="og:type" content="article">
 <meta property="fb:app_id" content="462886344532595">
