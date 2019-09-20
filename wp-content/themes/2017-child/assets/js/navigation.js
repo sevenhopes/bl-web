@@ -16,17 +16,15 @@
 	$.blang = {}; // bl + lang
 	$.blang.ko = {
 		address: "강원도 춘천시 스포츠타운길 534 (온의동)",
-		kakaolinktitle: "English-only! 브릿지라잇 어학원",
 		kakaolinkdesc: "033-243-5757 #영어생활화 #매일수업 #방학영어캠프 #미국연수 #초중영어",
-		pageurlmsg: "이제 페이지 주소를 붙여넣기 할 수 있습니다.",
+		pageurlmsg: "이제 현재 페이지 주소를 붙여넣기 할 수 있습니다.",
 		siteurlmsg: "이제 웹사이트 주소를 붙여넣기 할 수 있습니다."
 	};
 	$.blang.en = {
 		address: "534, Sports town-gil, Chuncheon-si, Gangwon-do, Republic of Korea",
-		kakaolinktitle: "English-only! Bridge Light School",
-		kakaolinkdesc: "033-243-5757 #DailyClass #EnglishStudyCamp #MonthLongUSAStudy",
-		pageurlmsg: "Now you can paste the page URL.",
-		siteurlmsg: "Now you can paste the website URL."
+		kakaolinkdesc: "033-243-5757 #DailyEnglishClass #EnglishStudyCamp #MonthLongUSAStudy",
+		pageurlmsg: "Now you can paste the current page's URL.",
+		siteurlmsg: "Now you can paste the website's URL."
 	};
 
 	// document.ready() 밖으로 꺼내면 .dropdown-toggle을 선택하지 못 함.
@@ -279,7 +277,7 @@
 				address: langset.address,
 				addressTitle: document.head.querySelector('meta[property="og:site_name"]').getAttribute('content'),
 				content: {
-					title: langset.kakaolinktitle,
+					title: document.title,
 					description: langset.kakaolinkdesc,
 					imageUrl: document.head.querySelector('meta[property="og:image"]').getAttribute('content'),
 					link: {
@@ -296,8 +294,8 @@
 				{
 					title: '웹으로 보기',
 					link: {
-						mobileWebUrl: 'http://bridgelightels.com/m',
-						webUrl: 'http://bridgelightels.com'
+						mobileWebUrl: window.location.href,
+						webUrl: window.location.href
 					}
 				}
 				]
