@@ -24,8 +24,8 @@
 		$content = $body.find( '.site-content-contain' ),
 		isFrontPage = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
 		// lang_kor = false,	// true: Korean
-		lang_val,
-		narrowHeader = false;
+		narrowHeader = false,
+		lang_val;
 
 	const transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd';
 
@@ -303,27 +303,28 @@
 			});
 		}
 
+		// header의 높이를 스크롤다운 시 좀 줄였다가, top으로 스크롤업 시 다시 원래대로 만듬
+		// 변하는 header 높이에 따라, 내비게이션 메뉴($navMenu)의 높이도 변함.
 		$( window ).on( 'scroll', function() {
-			var scroll_top = $( window ).scrollTop();
-			// var is_single = $body.hasClass( 'single' );
-				
-			if ( scroll_top > 10 && ! narrowHeader ) {
-				var $nav_top = $body.hasClass( 'admin-bar') ? '102px' : '56px';
+			var scroll_top = $( window ).scrollTop(),
+				nav_top = '76px', // normal
+				dur = 200;
 
-				$header.animate({ height: '56px' }, 100 );
-				$navMenu.css( 'top', $nav_top );
-				$logo.animate({ marginTop: '3px', marginBottom: '2px' }, 100 );
-				$navBtn.animate({ marginTop: '0' }, 100 );
+			if ( scroll_top > 10 && ! narrowHeader ) {
+				nav_top = '56px'; // scrolling
+
+				$logo.animate({ marginTop: '3px', marginBottom: '2px' }, dur );
+				$navBtn.animate({ marginTop: '0' }, dur );
+				$header.animate({ height: nav_top }, dur );
+				$navMenu.css( 'top', nav_top );
 				narrowHeader = true;
 
 			} else if ( scroll_top <= 10 && narrowHeader ) {
-				var $nav_top = $body.hasClass( 'admin-bar') ? '122px' : '76px';
-
-				$header.animate({ height: '76px' }, 100 );
-				$navBtn.animate({ marginTop: '10px' }, 100 );
-				$logo.animate({ marginTop: '13.7167px', marginBottom: '11.4px' }, 100, function() {
-					$navMenu.css( 'top', $nav_top );
+				$logo.animate({ marginTop: '13.7167px', marginBottom: '11.4px' }, dur, function() {
+					$navMenu.css( 'top', nav_top );
 				});
+				$navBtn.animate({ marginTop: '10px' }, dur );
+				$header.animate({ height: nav_top }, dur );
 				narrowHeader = false;
 			}
 		});
