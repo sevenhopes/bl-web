@@ -168,7 +168,7 @@ get_header(); ?>
 				<a href="http://www.bridgelightels.com/m/curriculum/course-overview/">
 					<div class="bl-link-wrapper">
 						<div class="bl-block-header-media">
-							<img class="wp-image-423 bl-center-overflow" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/01/Graphic-Roadmap-2019-01v4.jpg" alt="Bridge Light Curriculum Map" width="1440" height="900" />
+							<img class="bl-center-overflow" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/09/Graphic-Roadmap-2019-09v1.jpg" alt="Bridge Light Curriculum Roadmap" width="1440" height="900" />
 						</div>
 						<div class="bl-wrap">
 							<p class="bl">초등 1학년부터 중학 3학년까지를 모두 아우르는 단계별 강의들이 개설 되어 있습니다. 모든 레벨에서 영어의 전 영역인 말하기, 듣기, 읽기, 쓰기를 종합적으로 학습합니다.</p>
