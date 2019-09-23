@@ -145,6 +145,7 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 }
 
 .bl-p {
+	margin-bottom: 1rem;
 }
 
 .bl-p a {
@@ -2536,7 +2537,7 @@ a.more-link {
 			img {
 				width: 40px;
 				height: 40px;
-				opacity: 0.5;
+				opacity: 0.3;
 			}
 		}
 		button.selected {
