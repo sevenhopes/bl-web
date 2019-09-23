@@ -19,10 +19,12 @@
 		<div class="bl-share-layer">
 			<div class="bl-share-box">
 				<div class="title-container">
-					<span class="title">공유 하기</span>
+					<span class="title">공유하기</span>
 					<div id="bl-close-sharelayer">
 						<a href="">
-							<svg class="icon icon-close halftone"><use xlink:href="#icon-close"></use></svg>
+							<div class="bl-x-wrapper">
+								<div class="icon-close"></div>
+							</div>
 						</a>
 					</div>
 				</div>
@@ -42,13 +44,13 @@
 						</div>
 						<div id="bl-copy-page-url">
 							<a href="">
-								<img class="halftone" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icb-urlcopy.png"/>
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icb-urlcopy.png"/>
 								<div>현재 페이지</div>
 							</a>
 						</div>
 						<div id="bl-copy-home-url">
 							<a href="">
-								<img class="halftone" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icb-urlhomecopy.png"/>
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icb-urlhomecopy.png"/>
 								<div>웹사이트 홈</div>
 							</a>
 						</div>
