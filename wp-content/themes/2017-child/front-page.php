@@ -17,6 +17,7 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
 
 		<div id="bl-front-page-ko" class="bl-wp-page">
+
 			<header id="bl-main-title" class="bl-main-title">
 				<h1>브릿지라잇 어학원</h1>
 			</header>
@@ -193,19 +194,7 @@ get_header(); ?>
 				</a>
 			</div>
 
-			<?php
-			// 페이지 중 하나인 전면 페이지(프론트 페이지)의 내용을 보여줌.
-			// if ( have_posts() ) :
-			// 	while ( have_posts() ) :
-			// 		the_post();
-			// 		the_content();
-			// 	endwhile;
-			// else :
-			// 	get_template_part( 'template-parts/post/content', 'none' );
-			// endif;
-			?>
-
-		</div>
+		</div><!-- #bl-front-page-ko ->
 
 	</main><!-- #main -->
 </div><!-- #primary -->
