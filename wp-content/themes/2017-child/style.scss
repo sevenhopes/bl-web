@@ -599,16 +599,19 @@ a:hover {
 	// flex-wrap: nowrap;
 
 	div {
-		// flex: ;
 		&:first-child {
 			padding-left: 0.3em;
 		}
 	}
 	a {
 		line-height: 2rem;
-		// padding-bottom: 3px;
 		padding: 0.6em 0.8em 3px;
-		// margin: 0;
+		opacity: 0.9;
+
+		&.disabled {
+			cursor: unset;
+			opacity: 0.2;
+		}
 	}
 	img {
 		width: 32px;
@@ -699,7 +702,10 @@ a:hover {
 .js #bl-menu-toggle {
 	display: block;
 }
-////////////////////////////
+
+/*
+ * CSS 애니메이션 토글 버튼 (햄버거 <-> X, 내비게이션 메뉴)
+ */
 .bl-toggle-icon,
 .bl-toggle-icon::before,
 .bl-toggle-icon::after {
@@ -727,7 +733,6 @@ a:hover {
 	top: 8px;
 	transition: all 0.2s linear;
 }
-
 .toggled#bl-menu-toggle .bl-toggle-icon {
 	height: 1px;
 	width: 24px;
@@ -735,14 +740,12 @@ a:hover {
 	top: calc(50%);
 	transform: rotate(135deg);
 }
-
 .toggled#bl-menu-toggle .bl-toggle-icon::after {
 	width: 24px;
 	height: 1px;
 	top: -1px;
 	transform: rotate(90deg);
 }
-
 .toggled#bl-menu-toggle .bl-toggle-icon::before {
 	transform: scale(0);
 }
@@ -2179,7 +2182,6 @@ a.more-link {
 
 .bl-course-box {
 	padding: 1.2rem 0 1rem;
-	// background: url(http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-bl-logo-watermark.png) 0 0/5rem 5rem no-repeat;
 
 	.bl-course-title {
 		color: $ff;
@@ -2227,18 +2229,19 @@ a.more-link {
 	}
 	.bl-course-feature {
 		li {
-			display: inline-block;
-
 			div {
 				display: inline-block;
 				width: 1rem;
 				height: 1rem;
 				margin-right: 0.5rem;
 				vertical-align: -0.18em;
+				border-radius: 3px;
 			}
 			img {
 				width: 1rem;
 				height: 1rem;
+				// -webkit-filter: brightness(25%);
+				// filter: brightness(25%);
 			}
 		}
 	}
@@ -2851,10 +2854,6 @@ dl.bl-faq-list {
 	overflow: hidden;
 }
 
-.halftone {
-	opacity: 0.5;
-}
-
 .bl-share-layer {
 	display: none;
 	background-color: $k1t;
@@ -2873,7 +2872,8 @@ dl.bl-faq-list {
 		margin: 20vh 15vw;
 		width: 70vw;
 		max-width: 70vw;
-		height: 45vh;
+		// height: 45vh;
+		min-height: 35vh;
 		max-height: 45vh;
 		padding: 2rem;
 
@@ -2901,11 +2901,11 @@ dl.bl-faq-list {
 					cursor: pointer;
 				}
 			}
-			.icon-close {
-				width: 2rem;
-				height: 2rem;
-				// float: right;
-			}
+			// .icon-close {
+			// 	width: 2rem;
+			// 	height: 2rem;
+			// 	// float: right;
+			// }
 		}
 		.container-wrap {
 			display: block;
@@ -2936,7 +2936,39 @@ dl.bl-faq-list {
 				width: 44px;
 				height: 44px;
 			}
+			#bl-copy-page-url,
+			#bl-copy-home-url {
+				img {
+					opacity: 0.5;
+				}
+			}
 		}
+	}
+}
+
+.bl-x-wrapper {
+	position: relative;
+	width: 24px;
+	height: 24px;
+
+	.icon-close,
+	.icon-close::after {
+		position: absolute;
+		display: block;
+		width: 24px;
+		height: 2px;
+		background-color: $cc;
+	}
+	.icon-close {
+		top: calc(50% + 6px);
+		right: 0;
+		transform: rotate(45deg);
+	}
+	.icon-close::after {
+		content: "";
+		top: 0;
+		right: 0;
+		transform: rotate(90deg);
 	}
 }
 
