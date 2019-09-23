@@ -35,7 +35,7 @@
 							</a>
 						</div>
 						<div>
-							<a id="bl-share-facebook" href="https://www.facebook.com/dialog/share?app_id=462886344532595&display=popup&href=http://www.bridgelightels.com%2Fm%2F&redirect_uri=http://www.bridgelightels.com%2Fm%2F">
+							<a id="bl-share-facebook" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>">
 								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icon-fb.png"/>
 								<div>페이스북</div>
 							</a>

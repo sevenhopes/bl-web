@@ -306,16 +306,16 @@
 			$sharelayer.find( '#bl-share-facebook' ).click( function( e ) {
 				e.stopPropagation();
 				$sharelayer.trigger( 'click' );
-				FB.init({
-					appId: '462886344532595'
-				});
-				FB.ui({
-					method: 'share_open_graph',
-					action_type: 'og.shares',
-					action_properties: JSON.stringify({
-						object: window.location.href,
-					})
-				}, function( response ){});
+				// FB.init({
+				// 	appId: '462886344532595'
+				// });
+				// FB.ui({
+				// 	method: 'share_open_graph',
+				// 	action_type: 'og.shares',
+				// 	action_properties: JSON.stringify({
+				// 		object: window.location.href,
+				// 	})
+				// }, function( response ){});
 			});
 			// 현재 페이지 주소 복사
 			$sharelayer.find( '#bl-copy-page-url' ).click( function( e ) {
