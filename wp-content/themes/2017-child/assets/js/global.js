@@ -1,3 +1,6 @@
+/*
+Version: 1.8.1
+*/
 (function( $ ) {
 
 	// $.blang = {}; // bl + lang
@@ -22,10 +25,14 @@
 		$logo = $header.find( '.custom-logo-link img' ),
 		$navBtn = $header.find( '#bl-menu-toggle' ),
 		$content = $body.find( '.site-content-contain' ),
-		isFrontPage = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
+		is_front_page = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
 		// lang_kor = false,	// true: Korean
-		narrowHeader = false,
-		lang_val;
+		narrow_header = false,
+		scrolling = false,
+		scroll_interval = 200,
+		$slide = $body.find( '.bl-slides' ),
+		scroll_to = 0;
+		// lang_val;
 
 	const transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd';
 
@@ -48,13 +55,13 @@
 	$body.addClass( navigator.language || navigator.userLanguage );
 	// $body.addClass( lang_val );
 
-	if ( isFrontPage ) {
-		var $slide = $body.find( '.bl-slides' ),
-			$eventBlock = $body.find( '#bl-event' ),
+	if ( is_front_page ) {
+		// var $slide = $body.find( '.bl-slides' ),
+		var	$eventBlock = $body.find( '#bl-event' ),
 			$downArrow = $body.find( 'svg.bl-indicator' ),
 			indi_intv;
 
-		// Super Simple Slide by sss.js
+		// 슬라이드 자동 넘김 시작 (Super Simple Slide by sss.js)
 		$slide.sss();
 		// $slide.sss( { speed: 1000 } ); // 테스트용 코드
 
@@ -66,22 +73,15 @@
 			clearInterval( indi_intv );
 		}, 8750+100 );
 
-		if ( ! $eventBlock.find( '.bl-big-day.bl-holiday' ).length ) {
+		$downArrow.click( function() {
+			$( 'html, body' ).animate({
+				scrollTop: $( '#bl-news' ).offset().top - 56
+			}, 400);
+		});
+
+		if ( ! $eventBlock.find( '.bl-event-item.bl-holiday' ).length ) {
 			$eventBlock.find( '.bl-event-comment' ).hide();
 		}
-
-		// 스크롤다운에 의해 '헤더+슬라이더'가 35% 이하만 보이면 슬라이딩(이미지 전환) 멈춤
-		// 스크롤업에 의해 65% 이상이 보이면 슬라이딩 다시 시작
-		$( window ).on( 'scroll', function() {
-			var scroll_top = $( window ).scrollTop(),
-				pausingTop = 0.35 * ( $body.find( '#masthead' ).height() + $slide.height() );
-
-			if ( pausingTop < scroll_top ) {
-				$slide.sssPause();
-			} else if ( scroll_top <= pausingTop ) {
-				$slide.sssResume();
-			}
-		});
 
 	} else if ( $body.find( '#why-bl' ).length ) {
 		// Why Bridge Light 페이지의 accordion 동작
@@ -243,7 +243,19 @@
 			$desc.hide();
 			$desc.eq( idx ).show();
 		});
+	} else if ( $body.find( '#semesters' ).length || $body.find( '#english-camp' ).length || $body.find( '#extracurricular' ).length ) {
+		var idx = window.location.href.search( '##' );	// 북마크 id로 바로 이동을 피하기 위해 URL에 #을 하나 더 붙임 (예: ##course-basic, bl-course-overview.php)
+		if ( idx != -1 ) {
+			var bookmark = window.location.href.substring( idx + 1 );
+			scroll_to = $( bookmark ).offset().top - 70;
+		}
 	} // end of if ( which page )
+
+	// 페이지를 스크롤 함. (북마크 링크 대신 사용. 스크롤 거리에 따라 속도 조절)
+	function scrollThePage( top ) {
+		var speed = scroll_to < 400 ? 400 : Math.ceil( scroll_to ) > 600 ? 600 : Math.ceil( scroll_to );
+		$( 'html, body' ).animate( { scrollTop: top }, speed );
+	}
 
 	/*
 	 * Test if inline SVGs are supported.
@@ -262,6 +274,10 @@
 		// SVG 이미지 처리 (부모테마 Twentyseventeen에서 가져옴)
 		if ( true === supportsInlineSVG() ) {
 			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
+		}
+
+		if ( scroll_to != 0 ) {
+			scrollThePage( scroll_to );
 		}
 
 		// 지도가 있는 페이지: 네이버 지도 객체 생성
@@ -306,30 +322,61 @@
 		// header의 높이를 스크롤다운 시 좀 줄였다가, top으로 스크롤업 시 다시 원래대로 만듬
 		// 변하는 header 높이에 따라, 내비게이션 메뉴($navMenu)의 높이도 변함.
 		$( window ).on( 'scroll', function() {
+			scrolling = true;
+		});
+
+		setInterval( function() {
+			if ( scrolling ) {
+				//
+				controlSlide();
+				changeHeaderSize();
+				scrolling = false;
+			}
+		}, scroll_interval );
+
+	}); // End of $(document).ready()
+
+	// 스크롤다운에 의해 '헤더+슬라이더'가 35% 이하만 보이면 슬라이딩(이미지 전환) 멈춤
+	// 스크롤업에 의해 65% 이상이 보이면 슬라이딩 다시 시작
+	function controlSlide() {
+		if ( $slide ) {
+			var scroll_top = $( window ).scrollTop(),
+				pausingTop = 0.35 * ( $body.find( '#masthead' ).height() + $slide.height() );
+
+			if ( pausingTop < scroll_top ) {
+				$slide.sssPause();
+			} else if ( scroll_top <= pausingTop ) {
+				$slide.sssResume();
+			}
+		}
+	}
+
+	// 스크롤다운 시 헤더 높이 줄임
+	// 스크롤업 시 페이지 top 근처까지 올라가면 헤더 높이 복구
+	function changeHeaderSize() {
+
 			var scroll_top = $( window ).scrollTop(),
 				nav_top = '76px', // normal
 				dur = 200;
 
-			if ( scroll_top > 10 && ! narrowHeader ) {
+			if ( scroll_top > 10 && ! narrow_header ) {
 				nav_top = '56px'; // scrolling
 
 				$logo.animate({ marginTop: '3px', marginBottom: '2px' }, dur );
 				$navBtn.animate({ marginTop: '0' }, dur );
 				$header.animate({ height: nav_top }, dur );
 				$navMenu.css( 'top', nav_top );
-				narrowHeader = true;
+				narrow_header = true;
 
-			} else if ( scroll_top <= 10 && narrowHeader ) {
+			} else if ( scroll_top <= 10 && narrow_header ) {
 				$logo.animate({ marginTop: '13.7167px', marginBottom: '11.4px' }, dur, function() {
 					$navMenu.css( 'top', nav_top );
 				});
 				$navBtn.animate({ marginTop: '10px' }, dur );
 				$header.animate({ height: nav_top }, dur );
-				narrowHeader = false;
+				narrow_header = false;
 			}
-		});
-
-	}); // End of $(document).ready()
+	}
 
 	// Add header video class after the video is loaded. (부모테마 Twentyseventeen에서 가져옴)
 	$( document ).on( 'wp-custom-header-video-loaded', function() {
