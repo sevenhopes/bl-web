@@ -7,10 +7,16 @@
  * @package BridgeLight
  * @subpackage BridgeLight_MobileFirst
  * @since 1.0
+ * @version 1.1
  */
 
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
+
+// function twentyseventeen_block_editor_styles() {
+// 	// 부모테마의 함수 오버라이딩
+// }
+// add_action( 'enqueue_block_editor_assets', 'twentyseventeen_block_editor_styles' );
 
 /**
  * Enqueue styles of the parent theme and the child theme
@@ -19,7 +25,7 @@ function bridgelight_theme_enqueue_scripts() {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri().'/style.css', array( 'parent-style' ), wp_get_theme()->get('Version') );
 	wp_enqueue_style( 'fonts-noto-sans', bridgelight_fonts_url_noto_sans(), array(), null );
-	wp_enqueue_script( 'concatenated-js', get_stylesheet_directory_uri().'/assets/js/bl.min.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'concatenated-js', get_stylesheet_directory_uri().'/assets/js/bl.min.js', array( 'jquery' ), '1.1', true );
 	wp_enqueue_script( 'kakaolink', 'https://developers.kakao.com/sdk/js/kakao.min.js', array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'bridgelight_theme_enqueue_scripts' );
@@ -169,6 +175,20 @@ function bl_w2k( $str ) {
 	$search = array( "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" );
 	$replace = array( "일", "월", "화", "수", "목", "금", "토" );
 	return str_replace( $search, $replace, $str );
+}
+
+/**
+ *
+ * @source https://wordpress.stackexchange.com/questions/159162/set-custom-post-feature-image-as-ogimage
+ *
+ */
+add_action( 'wp_head', 'dgsoft_fb' );
+function dgsoft_fb(){
+		if ( is_single() ) {
+			echo '<meta property="og:image" content="'.get_the_post_thumbnail_url( get_the_ID(), 'full' ).'">';
+		} else {
+    	echo '<meta property="og:image" content="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/bridge-light-og-image.jpg">';
+		}
 }
 
 /**
