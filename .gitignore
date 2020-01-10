@@ -13,6 +13,7 @@ desktop.ini
 folderico*.ico
 *.min.js
 *.min.css
+*.bak
 
 # dirs
 bl-backups/
