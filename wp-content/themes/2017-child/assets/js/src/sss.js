@@ -3,11 +3,10 @@
 ;(function($, window, document, undefined ) {
 
 	var timer,
-		is_sliding = false,
 		target,
 		slides,
 		slider,
-		animating =false,
+		animating = false,
 		transition,
 		slide_count,
 		reset_timer;
@@ -40,9 +39,10 @@
 			// Start Sliding
 			$(window).load(function() {
 
-				slider.css({paddingBottom: get_height(target)});
+				// slider.css({paddingBottom: get_height(target)}); // 슬라이더 div의 padding-bottom을 ccs에 명시함
+
 				animate_slide(target);
-				is_sliding = true;
+				// typeof reset_timer === undefined ? $.noop : reset_timer();
 
 				// 폰화면에서 왼쪽 오른쪽 쓸어넘기기 동작으로 이미지 전환 (jq-move-swipe.js)
 				slider.on('swipeleft', function(e) { e.stopPropagation(); next_slide(); })
@@ -55,25 +55,25 @@
 	// jquery 객체에 의해 호출될 수 있는 함수들 (예. obj.sssPause();)
 	$.fn.sssPause = function() {
 		return this.each( function() {
-			if ( is_sliding ) {
+			if ( animating ) {
 				clearTimeout(timer);
-				is_sliding = false;
+				animating = false;
 			}
 		});
 	};
 
 	$.fn.sssResume = function() {
 		return this.each( function() {
-			if ( !is_sliding ) {
+			if ( !animating ) {
 				slider.css({paddingBottom: get_height(target)});
 				animate_slide(target);
-				is_sliding = true;
+				animating = true;
 			}
 		});
 	};
 
 	$.fn.sssIsSliding = function() {
-		return is_sliding;
+		return animating;
 	};
 
 	// 이 파일에서만 쓰는 함수들
@@ -94,7 +94,6 @@
 			});
 
 			reset_timer();
-
 		}
 	}
 
