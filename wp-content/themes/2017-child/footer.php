@@ -32,25 +32,25 @@
 					<div class="button-container">
 						<div>
 							<a id="bl-share-kakao" href="javascript:;">
-								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icon-kakaolink.png"/>
+								<i class="bl-sp icon-kakaolink"></i>
 								<div>카카오톡</div>
 							</a>
 						</div>
 						<div>
 							<a id="bl-share-facebook" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>">
-								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icon-fb.png"/>
+								<i class="bl-sp icon-fb-box"></i>
 								<div>페이스북</div>
 							</a>
 						</div>
 						<div id="bl-copy-page-url">
 							<a href="">
-								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icb-urlcopy.png"/>
+								<i class="bl-sp icb-urlcopy"></i>
 								<div>현재 페이지</div>
 							</a>
 						</div>
 						<div id="bl-copy-home-url">
 							<a href="">
-								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icb-urlhomecopy.png"/>
+								<i class="bl-sp icb-urlhomecopy"></i>
 								<div>웹사이트 홈</div>
 							</a>
 						</div>
@@ -63,9 +63,9 @@
 			<div class="wrap">
 
 				<div id="bl-social-links">
-					<div><a href="http://blog.naver.com/blcorp" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icon-blog.png" alt="브릿지라잇 블로그" />블로그</a></div>
-					<div><a href="http://blog.naver.com/bomikimorr" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icon-inside.png" alt="브릿지라잇 인사이드" />인사이드</a></div>
-					<div><a href="https://www.facebook.com/bridgelightels/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icon-fb.png" alt="브릿지라잇 페이스북" />페이스북</a></div>
+					<div><a href="http://blog.naver.com/blcorp" target="_blank"><i class="bl-sp icon-blog" title="브릿지라잇 블로그"></i>블로그</a></div>
+					<div><a href="http://blog.naver.com/bomikimorr" target="_blank"><i class="bl-sp icon-inside" title="브릿지라잇 인사이드"></i>인사이드</a></div>
+					<div><a href="https://www.facebook.com/bridgelightels/" target="_blank"><i class="bl-sp icon-fb" title="브릿지라잇 페이스북"></i>페이스북</a></div>
 				</div>
 
 				<ul>
@@ -83,11 +83,11 @@
 					<li>ⓒ 브릿지라잇 2006-<?php echo date("Y"); ?></li>
 				</ul>
 
-				<div class="bl-footer-logo">
-				</div>
+				<div class="bl-footer-logo"></div>
 
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->
+
 	</div><!-- .site-content-contain -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
