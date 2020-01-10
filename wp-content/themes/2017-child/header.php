@@ -15,6 +15,15 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5GQSKZP');</script>
+<!-- End Google Tag Manager -->
+
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -23,7 +32,7 @@
 
 <meta property="og:site_name" content="브릿지라잇 어학원">
 <meta property="og:url" content="<?php the_permalink(); ?>">
-<meta property="og:image" content="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/bridge-light-og-image.jpg">
+<!-- <meta property="og:image" content="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/bridge-light-og-image.jpg"> -->
 <meta property="og:image:height" content="630">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:type" content="image/jpeg">
@@ -31,18 +40,23 @@
 <meta property="og:title" content="<?php the_title(); ?> - 브릿지라잇 어학원">
 <meta property="og:type" content="website">
 <meta property="fb:app_id" content="462886344532595">
+<link rel="canonical" href="http://www.bridgelightels.com/">
 </head>
 
 <body <?php body_class(); ?>>
 
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GQSKZP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
@@ -99,21 +113,6 @@
 		echo '</div><!-- .single-featured-image-header -->';
 	endif;
 	?>
-
-	<div class="bl-dev-code">
-		<?php
-		// echo $_SERVER['HTTP_USER_AGENT'] . "<br>";
-		wp_reset_postdata();
-		if ( have_posts() ) {
-			while ( have_posts() ) {
-				the_post();
-				// if ( get_post_status() == 'public' ) {
-					echo '<p>post date: '.get_the_date().'</p>';
-				// }
-			}
-		}
-		?>
-	</div>
 
 	<div class="site-content-contain">
 		<div id="content" class="site-content">
