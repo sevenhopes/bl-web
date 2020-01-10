@@ -28,6 +28,9 @@ index.php
 bl-responsive/
 twenty*/
 
+# wp backup plugin's backup download folder
+updraft backup files/
+
 # Grunt temporary files
 all.js
 *.css.map
