@@ -1,3 +1,6 @@
+/*
+Version: 1.7.1
+*/
 /* global twentyseventeenScreenReaderText */
 /**
  * Theme functions file.
@@ -27,6 +30,10 @@
 		siteurlmsg: "Now you can paste the website's URL."
 	};
 
+	var scrolling = false,
+		current_top = 0,
+		scroll_interval = 350;
+
 	// document.ready() 밖으로 꺼내면 .dropdown-toggle을 선택하지 못 함.
 	$( document ).ready( function() {
 
@@ -41,7 +48,7 @@
 
 			container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
 
-	/*		bl: 현재 페이지에 해당 하는 드롭다운 메뉴 펼치기를 하지 않음
+			// 아래 두 조각의 코드: 현재 페이지에 해당하는 드롭다운 메뉴(서브 메뉴)를 미리 펼치고 표시함
 			// Set the active submenu dropdown toggle button initial state.
 			container.find( '.current-menu-ancestor > button' )
 				.addClass( 'toggled-on' )
@@ -50,7 +57,9 @@
 				.text( twentyseventeenScreenReaderText.collapse );
 			// Set the active submenu initial state.
 			container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
-	*/
+			// 현재 페이지의 드롭다운 메뉴가 속한 상위 메뉴 스타일
+			container.find( '.current-menu-ancestor' ).toggleClass( 'toggled-on' );
+	
 			container.find( '.dropdown-toggle' ).click( function( e ) {
 				var _this = $( this ),
 					screenReaderSpan = _this.find( '.screen-reader-text' );
@@ -182,14 +191,20 @@
 
 			// 네비게이션 메뉴가 보이는 상태에서 스크롤다운을 많이 하면 메뉴를 숨김
 			$( window ).on( 'scroll', function() {
-				// if ( $mainNav.hasClass( 'toggled-on' ) &&
-				// 	$( window ).scrollTop() >= ( $mainNav.height() - 100 ) ) {
+				scrolling = true;
+				// current_top = $( window ).scrollTop();
 
-				// 	blHideNav();
-				// }
-
-				blHideNav();
+				// blHideNav();
 			});
+
+			setInterval( function() {
+				if ( scrolling ) {
+					// if ( Math.abs( current_top - $( window ).scrollTop() ) > 10 ) {
+						blHideNav();
+					// }
+					scrolling = false;
+				}
+			}, scroll_interval );
 
 			function blToggleNav() {
 				if ( $navTop.is( ':visible' ) ) {
@@ -207,7 +222,7 @@
 				$navTop.animate( { 'right' : '-100px', 'opacity' : '0' }, 300, function() {
 					$navTop.hide();
 					blToggleNavCSS(); // 이걸 여기서 해야 애니메이션 중 메뉴가 사라짐을 방지
-					$mainNav.find( '.dropdown-toggle.toggled-on' ).trigger( 'click' );
+					// $mainNav.find( '.dropdown-toggle.toggled-on' ).trigger( 'click' ); // 
 				} );
 			}
 
@@ -235,8 +250,8 @@
 				$mainNav.find( '#top-menu' ).html( function() {
 					// return $( this ).html() + ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-map.png" alt="위치안내" /></a></div><div><a class="bl-custom-share" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
 
-					var $allmenubtn = ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-map.png" alt="위치안내" /></a></div><div><a class="bl-custom-share" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
-					var $shareonly =  ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call disabled" href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-call.png" alt="전화상담&예약" /></a></div><div><a class="disabled" href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-map.png" alt="위치안내" /></a></div><div><a class="bl-custom-share" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
+					var $allmenubtn = ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
+					var $shareonly =  ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call disabled" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a class="disabled" href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
 					return $( this ).html() + ( isFrontPage ? $shareonly : $allmenubtn );
 				});
 			// }
