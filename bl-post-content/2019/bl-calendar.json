@@ -76,7 +76,7 @@
 			"holiday": true,
 			"start": "2019-10-09",
 			"end": null,
-			"extra": "",
+			"extra": null,
 			"public": true,
 			"pending": false
 		},
@@ -85,27 +85,27 @@
 			"holiday": false,
 			"start": "2019-10-25",
 			"end": null,
-			"extra": "",
+			"extra": "Stay scary. Stay crazy.",
 			"public": true,
 			"pending": false
 		},
 		{
 			"title": "기본과정(Basic) 중간고사",
 			"holiday": false,
-			"start": "2019-11-01",
-			"end": "2019-11-01",
-			"extra": "Basic Levels",
+			"start": "2019-11-25",
+			"end": "2019-11-29",
+			"extra": "상세 일정은 레벨마다 다르며, 기간 외에도 가능",
 			"public": true,
-			"pending": true
+			"pending": false
 		},
 		{
 			"title": "기말고사대비 중학내신 특별수업",
 			"holiday": false,
-			"start": "2019-12-01",
-			"end": "2019-12-01",
-			"extra": "Middle School 2nd & 3rd Graders",
+			"start": "2019-11-27",
+			"end": "2019-11-28",
+			"extra": "이번엔 중학교 2학년만 해당",
 			"public": true,
-			"pending": true
+			"pending": false
 		},
 		{
 			"title": "Christmas 카드만들기 컨테스트 마감",
@@ -113,50 +113,60 @@
 			"start": "2019-12-01",
 			"end": null,
 			"extra": "초등 부문 & 중등 부문",
-			"public": true,
+			"public": false,
 			"pending": true
 		},
 		{
 			"title": "Christmas Party",
 			"holiday": false,
-			"start": "2019-12-01",
+			"start": "2019-12-24",
 			"end": null,
-			"extra": "Carol Contest",
+			"extra": "With Enjoying Lip Dub",
 			"public": true,
-			"pending": true
-		},
-		{
-			"title": "정기 겨울방학",
-			"holiday": true,
-			"start": "2019-12-01",
-			"end": "2019-12-01",
-			"extra": "",
-			"public": true,
-			"pending": true
+			"pending": false
 		},
 		{
 			"title": "Christmas",
 			"holiday": true,
-			"start": "2019-12-01",
+			"start": "2019-12-25",
 			"end": null,
 			"extra": "",
 			"public": true,
-			"pending": true
+			"pending": false
+		},
+		{
+			"title": "정기 겨울방학",
+			"holiday": true,
+			"start": "2019-12-30",
+			"end": "2020-01-03",
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "설날",
+			"holiday": true,
+			"start": "2020-01-24",
+			"end": "2020-01-27",
+			"extra": "Happy New Year!",
+			"public": true,
+			"pending": false,
+			"separated": true
 		},
 		{
 			"title": "미국현지체험연수 (Study in America)",
 			"holiday": false,
 			"start": "2020-01-01",
-			"end": "2019-02-01",
+			"end": "2020-02-01",
 			"extra": "",
-			"public": true,
+			"public": false,
 			"pending": true
 		},
 		{
 			"title": "겨울방학 영어캠프",
 			"holiday": false,
-			"start": "2020-01-01",
-			"end": "2020-01-01",
+			"start": "2020-02-17",
+			"end": "2020-02-28",
 			"extra": "",
 			"public": true,
 			"pending": true
@@ -173,11 +183,11 @@
 		{
 			"title": "Staff Luncheon",
 			"holiday": false,
-			"start": "2020-02-01",
+			"start": "2020-01-13",
 			"end": null,
 			"extra": "",
 			"public": false,
-			"pending": true
+			"pending": false
 		},
 		{
 			"title": "졸업식 & 장학금 수여식",
