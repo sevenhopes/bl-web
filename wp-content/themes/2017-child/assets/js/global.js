@@ -65,6 +65,13 @@ Version: 1.8.1
 		$slide.sss();
 		// $slide.sss( { speed: 1000 } ); // 테스트용 코드
 
+		// 페이지 중간 쯤에서 새로 고침한 거면 슬라이드 중지 & 헤더 높이 조정 (작게)
+		if ( 10 <= $( window ).scrollTop() ) {
+			// $slide.sssPause();
+			controlSlide();
+			changeHeaderSize();
+		}
+
 		// 아래화살표 svg 이미지를 7번 깜빡임 (250+250+750 * 7 = 8750)
 		indi_intv = setInterval( function() {
 			$downArrow.fadeOut( 'fast' ).fadeIn( 'fast' );
@@ -187,7 +194,7 @@ Version: 1.8.1
 				$chosen_cat.addClass( 'selected' );
 			} else {
 				$.each( $questions, function() {
-					if ( $( this ).text().indexOf( input ) > -1 ) {
+					if ( -1 < $( this ).text().indexOf( input ) ) {
 						$( this ).show();
 					} else {
 						$( this ).hide();
@@ -327,7 +334,6 @@ Version: 1.8.1
 
 		setInterval( function() {
 			if ( scrolling ) {
-				//
 				controlSlide();
 				changeHeaderSize();
 				scrolling = false;
@@ -359,7 +365,7 @@ Version: 1.8.1
 				nav_top = '76px', // normal
 				dur = 200;
 
-			if ( scroll_top > 10 && ! narrow_header ) {
+			if ( 10 < scroll_top && ! narrow_header ) {
 				nav_top = '56px'; // scrolling
 
 				$logo.animate({ marginTop: '3px', marginBottom: '2px' }, dur );
