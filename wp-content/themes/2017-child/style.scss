@@ -6,7 +6,7 @@ Template: twentyseventeen
 Author: Bridge Light Corp.
 Author URI: http://bridgelightels.com/m/
 Tags: 브릿지라잇,춘천영어학원,BridgeLight,춘천어학원,브릿지라잇어학원
-Version: 1.2
+Version: 2.4.4
 Text Domain: 2017-child
 Tags: mobile-first
 */
@@ -51,10 +51,12 @@ Description: 부모 테마는 Twenty Seventeen. A Mobile-first Responsive Theme 
 0.0 SCSS 변수
 --------------------------------------------------------------*/
 
+// Fonts
 $font-kr: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGothicNeoSD", sans-serif;
 $font-en: "Noto Sans KR", "NanumGothic", "Apple SD 산돌고딕 Neo", "AppleGothicNeoSD", sans-serif;
 $font-mo: "Noto Sans KR", "Courier 10 Pitch", Courier, monospace;
 
+// Colors
 $k0:  #000;
 $k1:  #111;
 $k1t: rgba( 17, 17, 17, 0.8 );
@@ -113,6 +115,703 @@ $test-r:  #fc3;
 $test-g:  #3cf;
 $test-b:  #cf3;
 
+// Sizes
+$header-h:	76px;
+
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+// HTML
+<i class="bl-ic white-logo"></i>
+*/
+// bs = background sprites
+$bs-url: url(assets/images/sprites.png?ver=1.2);
+$bs-100: 800px;
+$ic-w: 50px;
+$ic-h: $ic-w;
+
+$ratio-088: 0.88;
+$ratio-064: 0.64;
+$ratio-072: 0.72;
+$ratio-032: 0.32;
+$ratio-080: 0.8;
+
+$ic-088: $ic-w * $ratio-088; // 44px
+$ic-064: $ic-w * $ratio-064; // 32px
+$ic-072: $ic-w * $ratio-072; // 36px
+$ic-032: $ic-w * $ratio-032; // 16px
+$ic-080: $ic-w * $ratio-080; // 40px
+
+$bs-088: $bs-100 * $ratio-088;
+$bs-064: $bs-100 * $ratio-064;
+$bs-072: $bs-100 * $ratio-072;
+$bs-032: $bs-100 * $ratio-032;
+$bs-080: $bs-100 * $ratio-080;
+
+.bl-sp {
+	display: inline-block;
+}
+//////////////////////////////////////////////////
+.white-logo {
+	background-image: $bs-url;
+	background-position: 0px 0px;
+	width: 600px;
+	height: 600px;
+}
+//////////////////////////////////////////////////
+.icb-urlcopy {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-088) 0px;
+	width: $ic-088;
+	height: $ic-088;
+	background-size: $bs-088;
+}
+.icb-urlhomecopy {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-088) (-50px * $ratio-088);
+	width: $ic-088;
+	height: $ic-088;
+	background-size: $bs-088;
+}
+.icon-fb-box {
+	background-image: $bs-url;
+	background-position: (-150px * $ratio-088) (-600px * $ratio-088);
+	width: $ic-088;
+	height: $ic-088;
+	background-size: $bs-088;
+}
+.icon-kakaolink {
+	background-image: $bs-url;
+	background-position: (-300px * $ratio-088) (-600px * $ratio-088);
+	width: $ic-088;
+	height: $ic-088;
+	background-size: $bs-088;
+}
+//////////////////////////////////////////////////
+.icon-blog {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-064) (-550px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+.icon-call {
+	background-image: $bs-url;
+	background-position: 0px (-600px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+.icon-devel {
+	background-image: $bs-url;
+	background-position: (-50px * $ratio-064) (-600px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+.icon-faq {
+	background-image: $bs-url;
+	background-position: (-100px * $ratio-064) (-600px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+.icon-fb {
+	background-image: $bs-url;
+	background-position: (-200px * $ratio-064) (-600px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+.icon-inside {
+	background-image: $bs-url;
+	background-position: (-250px * $ratio-064) (-600px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+.icon-map {
+	background-image: $bs-url;
+	background-position: (-350px * $ratio-064) (-600px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+.icon-school {
+	background-image: $bs-url;
+	background-position: (-400px * $ratio-064) (-600px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+.icon-travel {
+	background-image: $bs-url;
+	background-position: (-500px * $ratio-064) (-600px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+.icon-book {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-064) (-650px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+.icon-mortar {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-064) (-650px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+//////////////////////////////////////////////////
+.icw-phonics {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-072) (-450px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-activity {
+	background-image: $bs-url;
+	background-position: (-550px * $ratio-072) (-600px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-class {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-072) (-50px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-conversation {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-072) (-200px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-grammar {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-072) (-300px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-sentence {
+	background-image: $bs-url;
+	background-position: (-100px * $ratio-072) (-650px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-culture {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-072) (-250px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-confidence {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-072) (-150px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-science {
+	background-image: $bs-url;
+	background-position: (-50px * $ratio-072) (-650px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-brain {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-072) (-600px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-vocabulary {
+	background-image: $bs-url;
+	background-position: (-450px * $ratio-072) (-650px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-writing {
+	background-image: $bs-url;
+	background-position: (-500px * $ratio-072) (-650px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-question {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-072) (-500px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-toeic {
+	background-image: $bs-url;
+	background-position: (-350px * $ratio-072) (-650px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-teps {
+	background-image: $bs-url;
+	background-position: (-200px * $ratio-072) (-650px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-reading {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-072) (-550px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+.icw-think {
+	background-image: $bs-url;
+	background-position: (-300px * $ratio-072) (-650px * $ratio-072);
+	width: $ic-072;
+	height: $ic-072;
+	background-size: $bs-072;
+}
+//////////////////////////////////////////////////
+.icw-phonics-li {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-032) (-450px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-activity-li {
+	background-image: $bs-url;
+	background-position: (-550px * $ratio-032) (-600px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-class-li {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-032) (-50px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-conversation-li {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-032) (-200px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-grammar-li {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-032) (-300px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-sentence-li {
+	background-image: $bs-url;
+	background-position: (-100px * $ratio-032) (-650px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-culture-li {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-032) (-250px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-confidence-li {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-032) (-150px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-science-li {
+	background-image: $bs-url;
+	background-position: (-50px * $ratio-032) (-650px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-brain-li {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-032) (-600px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-vocabulary-li {
+	background-image: $bs-url;
+	background-position: (-450px * $ratio-032) (-650px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-writing-li {
+	background-image: $bs-url;
+	background-position: (-500px * $ratio-032) (-650px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-question-li {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-032) (-500px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-toeic-li {
+	background-image: $bs-url;
+	background-position: (-350px * $ratio-032) (-650px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-teps-li {
+	background-image: $bs-url;
+	background-position: (-200px * $ratio-032) (-650px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-reading-li {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-032) (-550px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+.icw-think-li {
+	background-image: $bs-url;
+	background-position: (-300px * $ratio-032) (-650px * $ratio-032);
+	width: $ic-032;
+	height: $ic-032;
+	background-size: $bs-032;
+}
+//////////////////////////////////////////////////
+.icg-bill {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-080) (-100px * $ratio-080);
+	width: $ic-080;
+	height: $ic-080;
+	background-size: $bs-080;
+}
+.icg-bus {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-080) (-150px * $ratio-080);
+	width: $ic-080;
+	height: $ic-080;
+	background-size: $bs-080;
+}
+.icg-calendar {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-080) (-200px * $ratio-080);
+	width: $ic-080;
+	height: $ic-080;
+	background-size: $bs-080;
+}
+.icg-class {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-080) (-250px * $ratio-080);
+	width: $ic-080;
+	height: $ic-080;
+	background-size: $bs-080;
+}
+.icg-enroll {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-080) (-300px * $ratio-080);
+	width: $ic-080;
+	height: $ic-080;
+	background-size: $bs-080;
+}
+.icg-interview {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-080) (-350px * $ratio-080);
+	width: $ic-080;
+	height: $ic-080;
+	background-size: $bs-080;
+}
+.icg-level {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-080) (-400px * $ratio-080);
+	width: $ic-080;
+	height: $ic-080;
+	background-size: $bs-080;
+}
+.icg-passport {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-080) (-450px * $ratio-080);
+	width: $ic-080;
+	height: $ic-080;
+	background-size: $bs-080;
+}
+.icg-travel {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-080) (-500px * $ratio-080);
+	width: $ic-080;
+	height: $ic-080;
+	background-size: $bs-080;
+}
+//////////////////////////////////////////////////
+.icw-call {
+	background-image: $bs-url;
+	background-position: (-600px * $ratio-064) (0px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+.icw-map {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-064) (-400px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+.icw-share {
+	background-image: $bs-url;
+	background-position: (-150px * $ratio-064) (-650px * $ratio-064);
+	width: $ic-064;
+	height: $ic-064;
+	background-size: $bs-064;
+}
+//////////////////////////////////////////////////
+.icw-home {
+	background-image: $bs-url;
+	background-position: (-650px * $ratio-080) (-350px * $ratio-080);
+	width: $ic-080;
+	height: $ic-080;
+	background-size: $bs-080;
+}
+.icw-school {
+	background-image: $bs-url;
+	background-position: 0px (-650px * $ratio-080);
+	width: $ic-080;
+	height: $ic-080;
+	background-size: $bs-080;
+}
+.icw-themepark {
+	background-image: $bs-url;
+	background-position: (-250px * $ratio-080) (-650px * $ratio-080);
+	width: $ic-080;
+	height: $ic-080;
+	background-size: $bs-080;
+}
+.icw-usa {
+	background-image: $bs-url;
+	background-position: (-400px * $ratio-080) (-650px * $ratio-080);
+	width: $ic-080;
+	height: $ic-080;
+	background-size: $bs-080;
+}
+//////////////////////////////////////////////////
+.ul-bullet-blue {
+	background-image: $bs-url;
+	background-position: -550px -650px;
+	width: 14px;
+	height: 14px;
+}
+.ul-bullet {
+	background-image: $bs-url;
+	background-position: -564px -650px;
+	width: 14px;
+	height: 14px;
+}
+.ul-ul-bullet {
+	background-image: $bs-url;
+	background-position: -578px -650px;
+	width: 14px;
+	height: 14px;
+}
+////////////////////////////////////////////////// 사용 않는 아이콘
+.icw-community {
+	background-image: $bs-url;
+	background-position: -650px -100px;
+	width: $ic-w;
+	height: $ic-h;
+}
+.icw-satellite {
+	background-image: $bs-url;
+	background-position: -650px -600px;
+	width: $ic-w;
+	height: $ic-h;
+}
+.icon-share {
+	background-image: $bs-url;
+	background-position: -450px -600px;
+	width: $ic-w;
+	height: $ic-h;
+}
+
+$t-bs-url: url(assets/images/sprites-teachers.png?ver=1.1);
+$t-bs-100-w: 540px;
+$t-bs-100-h: 600px;
+$t-w: 90px;
+$t-h: 120px;
+
+.t-angela {
+  background-image: $t-bs-url;
+  background-position: -90px 0px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-bomi {
+  background-image: $t-bs-url;
+  background-position: -270px -240px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-david {
+  background-image: $t-bs-url;
+  background-position: -180px 0px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-dean {
+  background-image: $t-bs-url;
+  background-position: 0px -120px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-elena {
+  background-image: $t-bs-url;
+  background-position: -90px -120px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-elly {
+  background-image: $t-bs-url;
+  background-position: -180px -120px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-ethan {
+  background-image: $t-bs-url;
+  background-position: -270px 0px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-eunji {
+  background-image: $t-bs-url;
+  background-position: -270px -120px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-finn {
+  background-image: $t-bs-url;
+  background-position: 0px -240px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-irene {
+  background-image: $t-bs-url;
+  background-position: -90px -240px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-jamie {
+  background-image: $t-bs-url;
+  background-position: -180px -240px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-jessy {
+  background-image: $t-bs-url;
+  background-position: 0px 0px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-judy {
+  background-image: $t-bs-url;
+  background-position: -360px 0px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-julia {
+  background-image: $t-bs-url;
+  background-position: -360px -120px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-karim {
+  background-image: $t-bs-url;
+  background-position: -360px -240px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-peter {
+  background-image: $t-bs-url;
+  background-position: -450px 0px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-rachel {
+  background-image: $t-bs-url;
+  background-position: -450px -120px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-scarlett {
+  background-image: $t-bs-url;
+  background-position: -450px -240px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-semie {
+  background-image: $t-bs-url;
+  background-position: 0px -360px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-sheldon {
+  background-image: $t-bs-url;
+  background-position: -90px -360px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-stella {
+  background-image: $t-bs-url;
+  background-position: -180px -360px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-yoomi {
+  background-image: $t-bs-url;
+  background-position: -270px -360px;
+  width: $t-w;
+  height: $t-h;
+}
+.t-yunah {
+  background-image: $t-bs-url;
+  background-position: -360px -360px;
+  width: $t-w;
+  height: $t-h;
+}
+
 /*--------------------------------------------------------------
 1.0 Normalize
 Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
@@ -132,7 +831,7 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 	background-color: $mint;
 	color: $k3;
 	position: absolute;
-	bottom: 0;
+	bottom: 46px;
 	width: 100%;
 	height: auto;
 }
@@ -155,6 +854,11 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 .bl-p a:hover,
 .bl-p a:focus {
 	color: $gold;
+}
+
+img + .bl-p,
+img + p {
+	margin-top: 0.5rem;
 }
 
 .bl-br {
@@ -460,7 +1164,7 @@ a:hover {
 	font-size: 1.25rem;
 	// position: absolute;
 	position: fixed;
-	top: 76px;
+	top: $header-h;
 	right: -100px;
 	width: 100%;
 	opacity: 0;
@@ -535,7 +1239,7 @@ a:hover {
 }
 
 .main-navigation li.toggled-on {
-	border-bottom: 1px solid $dd;
+	border-bottom: 1px solid $f5;
 }
 
 .main-navigation ul ul {
@@ -572,7 +1276,7 @@ a:hover {
 
 .main-navigation li li:after { /* 서브메뉴 사이 경계선 효과 */
 	content: "";
-	background-color: $dd;
+	background-color: $ee;
 	position: absolute;
 	left: 20%;
 	width: 60%;
@@ -589,6 +1293,7 @@ a:hover {
 // 	display: none;
 // }
 
+// 마지막에 js로 추가되는 커스텀 메뉴
 .main-navigation #menu-item-99999.bl-custom-menu {
 	border-bottom: 1px solid $blue-g;
 	display: -moz-box;
@@ -614,7 +1319,7 @@ a:hover {
 			opacity: 0.2;
 		}
 	}
-	img {
+	i {
 		width: 32px;
 		height: 32px;
 	}
@@ -810,7 +1515,7 @@ a.skip-link {
 	position: fixed;
 	background-color: $ff;
 	min-width: 100vw;
-	height: 76px;
+	height: $header-h;
 	overflow: hidden;
 	z-index: 9999;
 	top: 0;
@@ -839,7 +1544,7 @@ a.skip-link {
 // 	display: -webkit-flex;
 // 	display: flex;
 // 	flex-direction: column;
-// 	min-height: 76px;
+// 	min-height: $header-h;
 // 	height: auto;
 // }
 
@@ -856,7 +1561,7 @@ a.skip-link {
 // 	display: -webkit-flex;
 // 	display: flex;
 // 	flex-direction: column;
-// 	min-height: 76px;
+// 	min-height: $header-h;
 // 	height: auto;
 // }
 
@@ -1012,7 +1717,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 #bl-branding {
 	background-color: $blue-d2;
 	width: 100%;
-	height: 76px;
+	height: $header-h;
 	position: relative;
 	/*top: 0;*/
 	opacity: 1;
@@ -1081,8 +1786,8 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	color: $blue-bl;
 	background-color: $blue-d2;
 	width: 100%;
-	height: 76px;
-	min-height: 76px;
+	height: $header-h;
+	min-height: $header-h;
 }
 
 /*--------------------------------------------------------------
@@ -1141,11 +1846,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	}
 	.bl-link-wrapper {
 		// min-height: 160px;
-		display: none;
-
-		&:first-child {
-			display: block;
-		}
+		// display: none;
 	}
 	.bl-title {
 		display: block;
@@ -1175,6 +1876,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	height: 0;
 	margin: 0; 
 	padding: 0;
+	padding-bottom: 287px;
 	position: relative;
 	display: block;
 	overflow: hidden;
@@ -1189,6 +1891,10 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	left: 0;
 	display: none;
 	overflow: hidden;
+
+	&:first-child {
+		display: inline;
+	}
 }
 
 .ssslide img {
@@ -1206,7 +1912,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	margin: 0;
 	position: absolute;
 	top: 0;
-	background: url('assets/images/arr.png') no-repeat;
+	// background: url('assets/images/arr.png') no-repeat;
 	z-index: 10;
 }
 
@@ -1266,6 +1972,11 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 		margin-left: 0.5em;
 		margin-right: 0.5em;
 	}
+	i {
+		vertical-align: middle;
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+	}
 }
 
 #bl-front-page-ko .bl-indicator-wrapper {
@@ -1279,6 +1990,10 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	height: 3rem;
 	opacity: 0.2;
 	// padding-top: 0.5rem;
+
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 #bl-front-page-ko .bl-block {
@@ -1424,7 +2139,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .bl-event-comment {
 	display: block;
-	color: $red;
+	color: $aa;
 	font-size: 0.9em;
 	text-align: right;
 	line-height: 1;
@@ -1551,6 +2266,10 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	padding-top: 0;
 }
 
+.single .entry-title {
+	margin: 1.5rem 0 1rem 0;
+}
+
 .post-thumbnail {
 	margin-bottom: 0.5em;
 }
@@ -1597,6 +2316,46 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 body:not(.twentyseventeen-front-page) .entry-header {
 	padding: 0;
 }
+
+/* Post Navigation */
+
+.post-navigation {
+	font-weight: 700;
+	margin: 3em 0;
+}
+
+.post-navigation .nav-links {
+	padding: 1em 0;
+}
+
+.nav-subtitle {
+	background: transparent;
+	color: $k8;
+	display: block;
+	font-size: 12px;
+	font-size: 0.75rem;
+	letter-spacing: 0;
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+}
+
+.nav-title {
+	color: #333;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+.post-navigation .nav-next {
+	margin-top: 1.5em;
+}
+
+// .nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
+// 	margin-right: 0.5em;
+// }
+
+// .nav-links .nav-next .nav-title .nav-title-icon-wrapper {
+// 	margin-left: 0.5em;
+// }
 
 // p.link-more {
 // 	position: relative;
@@ -1671,27 +2430,30 @@ a.more-link {
 13.5 Pages
 --------------------------------------------------------------*/
 
-.site-content ul,
-.site-content ol {
-	list-style: none outside url( 'http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/ul-bullet.gif' );
-	padding-left: 1.5rem;
+.site-content ul {
+	list-style-type: none;
+	list-style-image: none;
+	list-style-position: outside;
 	line-height: 1.3;
 	margin: 0.5rem 0;
 
-	&.bl-nostyle {
-		list-style-image: none;
-		padding-left: 0;
+	// list-style: none outside url( 'http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/ul-bullet.gif' );
+	// padding-left: 1.4rem;
+	li:before {
+		background: $bs-url no-repeat -564px -650px;
+		width: 14px;
+		height: 14px;
+		display: inline-block;
+		content: " ";
+		padding-right: 1.4rem;
 	}
 }
 
-// .site-content ul.bl-nostyle,
-// .site-content ol.bl-nostyle {
-// 	list-style-image: none;
-// 	padding-left: 0;
-// }
-
 .site-content ol {
 	list-style: decimal;
+	padding-left: 1.4rem;
+	line-height: 1.3;
+	margin: 0.5rem 0;
 }
 
 .site-content ul li:not(:first-child),
@@ -1918,7 +2680,7 @@ a.more-link {
 	height: 100%;
 	max-height: 100%;
 	/* 위는 따옴표(content)의 위치를 결정하고 아래는 반투명 배경(워터마크)의 위치를 결정 */
-	background: url( 'http://www.bridgelightels.com/m/wp-content/uploads/2019/02/CI-transparent-small.png' ) no-repeat;
+	// background: url( 'http://www.bridgelightels.com/m/wp-content/uploads/2019/02/CI-transparent-small.png' ) no-repeat;
 	background-size: 250px 200px;
 	background-position: center center;
 	overflow: visible;
@@ -1997,50 +2759,61 @@ a.more-link {
 }
 
 #teachers {
-}
+	.bl-t-profile {
+		width: auto;
+		background-color: $blue-l1t2;
+		margin-bottom: 1em;
+		padding: 0.522rem 0 0 0.522rem;
+		font-size: 1.125em;
+		font-weight: 300;
+	}
 
-#teachers .bl-t-profile {
-	width: auto;
-	background-color: $blue-l1t2;
-	margin-bottom: 1em;
-	padding: 0.5em 0 0.2em 0.5em;
-	font-size: 1.125em;
-	font-weight: 300;
-}
+	.bl-t-pic {
+		display: inline-block;
+		// padding-bottom: -0.525rem;
+	}
 
-#teachers .bl-t-pic {
-	display: inline-block;
-	padding-bottom: -0.525rem;
-}
+	.bl-t-info {
+		display: inline-block;
+		vertical-align: top;
+		letter-spacing: 0;
+		padding-left: 0.5em;
+	}
 
-#teachers .bl-t-info {
-	display: inline-block;
-	vertical-align: top;
-	letter-spacing: 0;
-	padding-left: 0.5em;
-}
+	.bl-t-info span {
+		display: block;
+		/*line-height: 1.55;*/
+	}
 
-#teachers .bl-t-info span {
-	display: block;
-	/*line-height: 1.55;*/
-}
+	.bl-t-name {
+		font-size: 1.125em;
+		font-weight: 400;
+		padding: 0.1em 0 0;
+	}
 
-#teachers .bl-t-name {
-	font-size: 1.125em;
-	font-weight: 400;
-	padding: 0.1em 0 0;
-}
+	.bl-t-position {
+	}
 
-#teachers .bl-t-position {
-}
-
-#teachers .bl-t-charge {
+	.bl-t-charge {
+	}
 }
 
 #support-and-services {
 }
 
 #course-overview {
+	.regular {
+		background-color: $blue-bl;
+	}
+	.camp {
+		background-color: $green;
+	}
+	.a-camp {
+		background-color: $red;
+	}
+	.extra {
+		background-color: $orange;
+	}
 }
 
 #course-overview .bl-grid-metro {
@@ -2060,20 +2833,21 @@ a.more-link {
 			}
 		}
 	}
-	.basic,
-	.special,
-	.stage {
-		background-color: $blue-bl;
-	}
-	.camp {
-		background-color: $green;
-	}
-	.a-camp {
-		background-color: $red;
-	}
-	.extra {
-		background-color: $orange;
-	}
+	// .basic,
+	// .special,
+	// .stage {
+	// 	background-color: $blue-bl;
+	// }
+	// .camp {
+	// 	background-color: $green;
+	// }
+	// .a-camp {
+	// 	background-color: $red;
+	// 	display: none;
+	// }
+	// .extra {
+	// 	background-color: $orange;
+	// }
 }
 
 
@@ -2120,7 +2894,7 @@ a.more-link {
 
 .bl-legend {
 	display: grid;
-	grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr 5fr;
+	grid-template-columns: 1fr 5fr 1fr 5fr 1fr 6fr;
 	grid-gap: 0.25rem;
 	margin: 1rem 0;
 	padding-bottom: 0.5rem;
@@ -2142,19 +2916,20 @@ a.more-link {
 	.bl-symbol {
 		width: 0.75rem;
 		height: 0.75rem;
+		word-break: keep-all;
 	}
-	.regular {
-		background-color: $blue-bl;
-	}
-	.camp {
-		background-color: $green;
-	}
-	.a-camp {
-		background-color: $red;
-	}
-	.extra {
-		background-color: $orange;
-	}
+	// .regular {
+	// 	background-color: $blue-bl;
+	// }
+	// .camp {
+	// 	background-color: $green;
+	// }
+	// .a-camp {
+	// 	background-color: $red;
+	// }
+	// .extra {
+	// 	background-color: $orange;
+	// }
 }
 
 #course-overview ul {
@@ -2180,6 +2955,12 @@ a.more-link {
 #course-stage .bl-desc-box li div {
 	background-color: $blue-bl;
 }
+// #course-stage .bl-course-box {
+// 	background-color: $blue-bl;
+// }
+// #course-stage .bl-desc-box li div {
+	// background-color: $blue-bl;
+// }
 
 .bl-course-box {
 	padding: 1.2rem 0 1rem;
@@ -2238,23 +3019,23 @@ a.more-link {
 				vertical-align: -0.18em;
 				border-radius: 3px;
 			}
-			img {
-				width: 1rem;
-				height: 1rem;
-				// -webkit-filter: brightness(25%);
-				// filter: brightness(25%);
-			}
+			// i {
+			// 	filter: invert(100%);
+			// }
 		}
 	}
 	ul {
-		font-size: 16px;
-		font-size: 1rem;
+		// font-size: 16px;
+		// font-size: 1rem;
 		margin-left: -0.5rem;
 	}
 }
 
 #semesters .bl-desc-box ul {
-	list-style: none;
+	// list-style: none;
+	li:before {
+		background-image: none;
+	}
 }
 
 #english-camp {
@@ -2275,7 +3056,6 @@ a.more-link {
 	display: none;
 	background-color: $green;
 	padding: 1rem;
-	// background: url(http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-bl-logo-watermark.png) 0 0/5rem 5rem no-repeat;
 
 	div {
 		background-color: inherit;
@@ -2295,8 +3075,11 @@ a.more-link {
 #english-camp .bl-desc-box {
 	background-color: $green-t;
 
-	.bl-course-feature li {
-		display: list-item;
+	// .bl-course-feature li {
+	// 	display: list-item;
+	// }
+	ul li:before {
+		margin-left: 1rem;
 	}
 }
 
@@ -2346,7 +3129,7 @@ a.more-link {
 		// 	height: 0.5rem;
 		// 	background-color: $gold-l1;
 		// }
-		img {
+		i {
 			width: 40px;
 			height: 40px;
 			margin-top: 14px;
@@ -2534,7 +3317,7 @@ a.more-link {
 			padding: 0.5rem 0 0;
 			// height: 2.5rem;
 
-			img {
+			i {
 				width: 40px;
 				height: 40px;
 				opacity: 0.3;
@@ -2543,7 +3326,7 @@ a.more-link {
 		button.selected {
 			background-color: $blue-d3;
 
-			img {
+			i {
 				opacity: 1;
 			}
 		}
@@ -2605,6 +3388,7 @@ a.more-link {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	margin-left: 0.5rem;
+	margin-top: 1.5rem;
 }
 
 #appt-and-visit {
@@ -3011,15 +3795,21 @@ dl.bl-faq-list {
 }
 
 #bl-social-links > div {
+	z-index: 5;
 }
 
 #bl-social-links > div:last-child {
 }
 
-#bl-social-links img {
+// #bl-social-links img {
+// 	vertical-align: middle;
+// 	width: 2rem;
+// 	height: 2rem;
+// 	margin-right: 0.5rem;
+// }
+
+#bl-social-links i {
 	vertical-align: middle;
-	width: 2rem;
-	height: 2rem;
 	margin-right: 0.5rem;
 }
 
@@ -3030,9 +3820,10 @@ dl.bl-faq-list {
 	width: 600px;
 	height: 600px;
 	opacity: 0.05;
-	background-image: url( 'http://www.bridgelightels.com/m/wp-content/uploads/2019/09/CI-2019-white.png' );
 	background-repeat: no-repeat;
-	background-size: 600px;
+	background-image: $bs-url;
+	background-position: 0px 0px;
+	z-index: 0;
 }
 
 /*--------------------------------------------------------------
