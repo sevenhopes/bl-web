@@ -154,6 +154,15 @@
 			"separated": true
 		},
 		{
+			"title": "겨울방학 영어캠프 등록마감",
+			"holiday": false,
+			"start": "2020-02-07",
+			"end": null,
+			"extra": "2주 동안 영어실력 쑥쑥!",
+			"public": true,
+			"pending": false
+		},
+		{
 			"title": "미국현지체험연수 (Study in America)",
 			"holiday": false,
 			"start": "2020-01-01",
