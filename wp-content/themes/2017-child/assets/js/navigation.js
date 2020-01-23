@@ -32,7 +32,8 @@ Version: 1.7.1
 
 	var scrolling = false,
 		current_top = 0,
-		scroll_interval = 350;
+		scroll_interval = 350,
+		is_widescreen = $( '#content' ).width() == 960;
 
 	// document.ready() 밖으로 꺼내면 .dropdown-toggle을 선택하지 못 함.
 	$( document ).ready( function() {
@@ -389,6 +390,10 @@ Version: 1.7.1
 				e.preventDefault();
 				$( this ).next( '.dropdown-toggle' ).trigger( 'click' );
 			});
+
+			// if ( is_widescreen ) {
+			// 	blToggleDropdownMenu( all button ); // 모든 드롭다운 메뉴 펼치기
+			// }
 
 			function blToggleDropdownMenu( ddToggleButton ) {
 				var menuParent = ddToggleButton.parent( '.menu-item-has-children' ),
