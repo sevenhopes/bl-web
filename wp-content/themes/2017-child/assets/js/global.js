@@ -24,14 +24,15 @@ Version: 1.8.1
 		$navMenu = $body.find( '.navigation-top' ),
 		$logo = $header.find( '.custom-logo-link img' ),
 		$navBtn = $header.find( '#bl-menu-toggle' ),
-		$content = $body.find( '.site-content-contain' ),
+		$content = $body.find( '#content' ),
+		$slide = $body.find( '.bl-slides' ),
 		is_front_page = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
 		// lang_kor = false,	// true: Korean
 		narrow_header = false,
 		scrolling = false,
 		scroll_interval = 200,
-		$slide = $body.find( '.bl-slides' ),
-		scroll_to = 0;
+		scroll_to = 0,
+		is_widescreen = $content.width() == 960;
 		// lang_val;
 
 	const transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd';
@@ -360,28 +361,31 @@ Version: 1.8.1
 	// 스크롤다운 시 헤더 높이 줄임
 	// 스크롤업 시 페이지 top 근처까지 올라가면 헤더 높이 복구
 	function changeHeaderSize() {
+		if ( is_widescreen ) {
+			return;
+		}
 
-			var scroll_top = $( window ).scrollTop(),
-				nav_top = '76px', // normal
-				dur = 200;
+		var scroll_top = $( window ).scrollTop(),
+			nav_top = '76px', // normal
+			dur = 200;
 
-			if ( 10 < scroll_top && ! narrow_header ) {
-				nav_top = '56px'; // scrolling
+		if ( 10 < scroll_top && ! narrow_header ) {
+			nav_top = '56px'; // scrolling
 
-				$logo.animate({ marginTop: '3px', marginBottom: '2px' }, dur );
-				$navBtn.animate({ marginTop: '0' }, dur );
-				$header.animate({ height: nav_top }, dur );
+			$logo.animate({ marginTop: '3px', marginBottom: '2px' }, dur );
+			$navBtn.animate({ marginTop: '0' }, dur );
+			$header.animate({ height: nav_top }, dur );
+			$navMenu.css( 'top', nav_top );
+			narrow_header = true;
+
+		} else if ( scroll_top <= 10 && narrow_header ) {
+			$logo.animate({ marginTop: '13.7167px', marginBottom: '11.4px' }, dur, function() {
 				$navMenu.css( 'top', nav_top );
-				narrow_header = true;
-
-			} else if ( scroll_top <= 10 && narrow_header ) {
-				$logo.animate({ marginTop: '13.7167px', marginBottom: '11.4px' }, dur, function() {
-					$navMenu.css( 'top', nav_top );
-				});
-				$navBtn.animate({ marginTop: '10px' }, dur );
-				$header.animate({ height: nav_top }, dur );
-				narrow_header = false;
-			}
+			});
+			$navBtn.animate({ marginTop: '10px' }, dur );
+			$header.animate({ height: nav_top }, dur );
+			narrow_header = false;
+		}
 	}
 
 	// Add header video class after the video is loaded. (부모테마 Twentyseventeen에서 가져옴)
