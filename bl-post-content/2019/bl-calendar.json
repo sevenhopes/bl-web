@@ -176,9 +176,9 @@
 			"holiday": false,
 			"start": "2020-02-17",
 			"end": "2020-02-28",
-			"extra": "",
+			"extra": "Come and learn! Fun!",
 			"public": true,
-			"pending": true
+			"pending": false
 		},
 		{
 			"title": "정기 학기말 TOEIC 시험",
