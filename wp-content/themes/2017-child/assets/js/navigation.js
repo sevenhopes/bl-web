@@ -1,5 +1,5 @@
 /*
-Version: 1.7.1
+Version: 1.7.3
 */
 /* global twentyseventeenScreenReaderText */
 /**
@@ -246,16 +246,18 @@ Version: 1.7.1
 			// 기존 부모 테마의 클릭 이벤트 해제
 			$dropdowns.unbind( 'click' );
 
-			// .main-navigation의 자식 html 코드의 마지막에 커스텀 메뉴를 추가 (메인페이지는 제외)
-			// if ( ! isFrontPage ) {
-				$mainNav.find( '#top-menu' ).html( function() {
-					// return $( this ).html() + ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-map.png" alt="위치안내" /></a></div><div><a class="bl-custom-share" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
+			if ( is_widescreen ) {
+				return;
+			}
 
-					var $allmenubtn = ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
-					var $shareonly =  ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call disabled" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a class="disabled" href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
-					return $( this ).html() + ( isFrontPage ? $shareonly : $allmenubtn );
-				});
-			// }
+			// .main-navigation의 자식 html 코드의 마지막에 커스텀 메뉴를 추가 (메인페이지는 제외)
+			$mainNav.find( '#top-menu' ).html( function() {
+				// return $( this ).html() + ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-map.png" alt="위치안내" /></a></div><div><a class="bl-custom-share" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
+
+				var $allmenubtn = ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
+				var $shareonly =  ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call disabled" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a class="disabled" href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
+				return $( this ).html() + ( isFrontPage ? $shareonly : $allmenubtn );
+			});
 
 			// 전화하기 커스텀 메뉴 동작: 네비 메뉴 메뉴 닫음
 			$mainNav.find( '.bl-custom-call' ).click( function( e ) {
