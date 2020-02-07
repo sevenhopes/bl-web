@@ -172,6 +172,15 @@
 			"pending": true
 		},
 		{
+			"title": "정기 TOEIC 시험",
+			"holiday": false,
+			"start": "2020-02-12",
+			"end": "2020-02-13",
+			"extra": "Stage Levels, Basic 6, Special Elementary",
+			"public": true,
+			"pending": false
+		},
+		{
 			"title": "겨울방학 영어캠프",
 			"holiday": false,
 			"start": "2020-02-17",
@@ -179,15 +188,6 @@
 			"extra": "Come and learn! Fun!",
 			"public": true,
 			"pending": false
-		},
-		{
-			"title": "정기 학기말 TOEIC 시험",
-			"holiday": false,
-			"start": "2020-02-01",
-			"end": null,
-			"extra": "Stage Levels, Basic 6 ",
-			"public": true,
-			"pending": true
 		},
 		{
 			"title": "Staff Luncheon",
