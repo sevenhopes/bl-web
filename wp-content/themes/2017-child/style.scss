@@ -6,7 +6,7 @@ Template: twentyseventeen
 Author: Bridge Light Corp.
 Author URI: http://bridgelightels.com/m/
 Tags: 브릿지라잇,춘천영어학원,BridgeLight,춘천어학원,브릿지라잇어학원
-Version: 2.5.0
+Version: 2.5.4
 Text Domain: 2017-child
 Tags: mobile-first
 */
@@ -134,7 +134,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 <i class="bl-ic white-logo"></i>
 */
 // bs = background sprites
-$bs-url: url(assets/images/sprites.png?ver=1.4);
+$bs-url: url('assets/images/sprites.png?ver=1.4');
 $bs-w: 700px;	// width
 $bs-h: 700px;	// height
 $ic-s: 50px;	// icon size (width = height)
@@ -676,7 +676,7 @@ $bs-h80: $bs-h * $ratio-80;
 	height: $ic-s;
 }
 
-$t-bs-url: url(assets/images/sprites-teachers.png?ver=1.2);
+$t-bs-url: url('assets/images/sprites-teachers.png?ver=1.2');
 $t-bs-100-w: 540px;
 $t-bs-100-h: 600px;
 $t-w: 90px;
@@ -2303,14 +2303,19 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	padding-bottom: 2em;
 }
 
-.single .site-content ol {
+.single .site-content .entry-content > p {
+	margin-top: 1rem;
+}
+
+.single .site-content ol.toplist {
 	padding-left: 1rem;
 
 	ul {
-		padding-left: 0.5rem;
+		padding-left: 0;
 	}
 	ol {
 		list-style: lower-alpha;
+		padding-left: 0;
 
 		ul {
 			background-image: none;
@@ -2321,6 +2326,16 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 		}
 	}
 }
+
+// .single .site-content article.post ol.toplist,
+// .single .site-content article.post ul.toplist {
+// 	padding-left: 1rem;
+
+// 	ul,
+// 	ol {
+
+// 	}
+// }
 
 body:not(.twentyseventeen-front-page) .entry-header {
 	padding: 0;
@@ -3773,7 +3788,7 @@ dl.bl-faq-list {
 	font-size: 15px;
 	overflow: hidden;
 	position: relative;
-	padding: 3.5em 0 3em;
+	padding: 3.5em 0;
 }
 
 .site-footer .wrap {
@@ -3898,8 +3913,11 @@ dl.bl-faq-list {
 	.has-header-image.home.blog .custom-header {
 		height: $wide-header-h;
 	}
+	#bl-branding {
+		background: transparent;
+	}
 	.custom-header {
-		background-color: $blue-d2;
+		background: $blue-d2 url('assets/images/widescreen/header-bg.png') repeat-x;
 	}
 	.custom-logo-link img,
 	body.home.title-tagline-hidden.has-header-image .custom-logo-link img {
@@ -3918,6 +3936,13 @@ dl.bl-faq-list {
 			cursor: pointer;
 		}
 	}
+	.bl-toggle-icon {
+		color: $k1t;
+	}
+	.bl-under-header {
+		height: $wide-header-h;
+	}
+
 	.navigation-top .wrap {
 		width: 960px;
 		margin-left: auto;
@@ -3932,9 +3957,12 @@ dl.bl-faq-list {
 		> li {
 			width: 190px;
 
+			> a {
+				color: $blue-l2;
+			}
 			> a:hover {
 				cursor: default;
-				color: $ee;
+				color: $blue-l2;
 
 				&:last-child {
 					cursor: pointer;
@@ -3971,7 +3999,7 @@ dl.bl-faq-list {
 		background-color: transparent;
 		color: $ff;
 		border: none;
-		padding: 0.4rem 0 0;
+		padding: 0;
 		position: absolute;
 		left: 0;
 		top: 100%;
@@ -4009,9 +4037,9 @@ dl.bl-faq-list {
 			}
 		}
 	}
-	.main-navigation #menu-item-99999.bl-custom-menu {
-		// max-width: 960px;
-	}
+	// .main-navigation #menu-item-99999.bl-custom-menu {
+	// 	max-width: 960px;
+	// }
 	.main-navigation ul li.menu-item-has-children.focus:before,
 	.main-navigation ul li.menu-item-has-children:hover:before,
 	.main-navigation ul li.menu-item-has-children.focus:after,
@@ -4023,12 +4051,12 @@ dl.bl-faq-list {
 		display: none; // 서브메뉴 박스의 위에 세모난 표시 감춤
 	}
 	.main-navigation ul li.menu-item-has-children.toggled-on:after {
-		content: "";
-		background-color: $f5;
-		border: 0;
-		width: 80%;
-		height: 1px;
-		display: block;
+		// content: "";
+		// background-color: $f5;
+		// border: 0;
+		// width: 80%;
+		// height: 1px;
+		display: none;
 	}
 	.main-navigation ul li:hover > ul,
 	.main-navigation ul li.focus > ul {
