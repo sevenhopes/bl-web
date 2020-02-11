@@ -167,7 +167,7 @@ get_header(); ?>
 				<a href="http://www.bridgelightels.com/m/about/why-bridge-light/">
 					<div class="bl-link-wrapper">
 						<div class="bl-block-header-media">
-							<img class="size-medium wp-image-1091" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/04/main-building-at-night.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 1091 ) ?>" sizes="100vw" alt="브릿지라잇 본관 전경" />
+							<img class="size-medium wp-image-2020" src="http://www.bridgelightels.com/m/wp-content/uploads/2020/02/main-building-at-night.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 2020 ) ?>" sizes="100vw" alt="브릿지라잇 본관 전경 (야간)" />
 						</div>
 						<div class="bl-wrap">
 							<p class="bl">브릿지라잇 어학원의 건물은 작은 영어권 도시입니다. 선생님들, 학생들 모두가 영어로 대화하는 장면이 브릿지라잇에서는 일상입니다. 가이드가 확실한 영어권 도시로 '매일' 여행오세요.</p>
@@ -183,7 +183,7 @@ get_header(); ?>
 				<a href="http://www.bridgelightels.com/m/curriculum/course-overview/">
 					<div class="bl-link-wrapper">
 						<div class="bl-block-header-media">
-							<img class="bl-center-overflow wp-image-1765" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/09/Graphic-Roadmap-2019-09v1.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 1765 ) ?>" sizes="100vw" alt="브릿지라잇 커리큘럼 로드맵" />
+							<img class="size-medium wp-image-1765" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/09/Graphic-Roadmap-2019-09v1.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 1765 ) ?>" sizes="100vw" alt="브릿지라잇 커리큘럼 로드맵" />
 						</div>
 						<div class="bl-wrap">
 							<p class="bl">초등 1학년부터 중학 3학년까지를 모두 아우르는 단계별 강의들이 개설 되어 있습니다. 모든 레벨에서 영어의 전 영역인 말하기, 듣기, 읽기, 쓰기를 종합적으로 학습합니다.</p>
@@ -199,7 +199,7 @@ get_header(); ?>
 				<a href="http://www.bridgelightels.com/m/admission/admission-process/">
 					<div class="bl-link-wrapper">
 						<div class="bl-block-header-media">
-							<img class="size-medium wp-image-802" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/04/summer-musical-camp-2018.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 802 ) ?>" sizes="100vw" alt="Summer Musical Camp" />
+							<img class="size-medium wp-image-802" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/04/summer-musical-camp-2018.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 802 ) ?>" sizes="100vw" alt="여름방학 영어뮤지컬 캠프" />
 						</div>
 						<div class="bl-wrap">
 							<p class="bl">많은 이들이 영어를 가르칩니다. 그렇지만 모든 아이들이 학원 가기를 좋아하는 건 아닙니다. 브릿지라잇의 영어수업은 지식 뿐 아니라 재미와 행복을 함께 전합니다. 신나서 가는 학원, 브릿지라잇은 그 방향으로 갑니다.</p>
