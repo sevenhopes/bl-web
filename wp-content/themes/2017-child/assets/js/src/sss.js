@@ -2,47 +2,100 @@
 
 ;(function($, window, document, undefined ) {
 
-	var timer,
-		target,
+	var target,
 		slides,
 		slider,
-		animating = false,
+		sliding = false,
 		transition,
 		slide_count,
-		reset_timer;
+		timer;
 
 	$.fn.sss = function(options) {
 
 		var settings = $.extend({
-			slideShow : true,
+			resume : false,
+			// autostart : true,	// window.load()에서만 사용
 			startOn : 0,
 			speed : 7000,
 			transition : 600,
-			arrows : true
+			indicator : true
 		}, options);
 
 		return this.each(function() {
 
-			var wrapper = $(this);
+			var wrapper = $(this),
+				is_setup = wrapper.children().attr( 'class' ) === "sss",
+				animating = false;
 
-			slides = wrapper.children().attr( 'class' ) === "sss" ? wrapper.children() : wrapper.children().wrapAll('<div class="sss"/>').addClass('ssslide'),
-			slider = wrapper.find('.sss'),
-			slide_count = slides.length,
-			transition = settings.transition,
-			starting_slide = settings.startOn,
-			target = starting_slide > slide_count - 1 ? 0 : starting_slide,
-			reset_timer = settings.slideShow ? function() {
-				clearTimeout(timer);
-				timer = setTimeout(next_slide, settings.speed);
-			} : $.noop;
+			if ( ! is_setup ) {
+				setup_slide();
+			}
+
+			if ( settings.resume ) {
+				reset_timer();
+			} else {
+				clear_timer();
+			}
+
+			function setup_slide() {
+				slides = is_setup ? wrapper.children() : wrapper.children().wrapAll('<div class="sss"/>').addClass('ssslide'),
+				slider = wrapper.find('.sss'),
+				slide_count = slides.length,
+				transition = settings.transition,
+				starting_slide = settings.startOn,
+				target = starting_slide > slide_count - 1 ? 0 : starting_slide;
+
+				if ( settings.indicator ) {
+					// slider.append( '' );
+				}
+			}
+			function reset_timer() {
+				// if ( ! sliding ) {
+					clearTimeout(timer);
+					timer = setTimeout(next_slide, settings.speed);
+				// 	sliding = true;
+				// }
+			}
+			function clear_timer() {
+				// if ( sliding ) {
+					clearTimeout( timer );
+				// 	sliding = false;
+				// }
+			}
+
+			function get_height(target) {
+				return ((slides.eq(target).height() / slider.width()) * 100) + '%';
+			}
+			function animate_slide(target) {
+				if (!animating) {
+					animating = true;
+					var target_slide = slides.eq(target);
+
+					target_slide.fadeIn(transition);
+					slides.not(target_slide).fadeOut(transition);
+
+					slider.animate({paddingBottom: get_height(target)}, transition, function() {
+						animating = false;
+					});
+
+					reset_timer();
+				}
+			}
+			function next_slide() {
+				target = target === slide_count - 1 ? 0 : target + 1;
+				animate_slide(target);
+			}
+			function prev_slide() {
+				target = target === 0 ? slide_count - 1 : target - 1;
+				animate_slide(target);
+			}
 
 			// Start Sliding
 			$(window).load(function() {
-
-				// slider.css({paddingBottom: get_height(target)}); // 슬라이더 div의 padding-bottom을 ccs에 명시함
-
-				animate_slide(target);
-				// typeof reset_timer === undefined ? $.noop : reset_timer();
+				// if ( settings.autostart ) {
+				// 	animate_slide(target);
+				// 	sliding = true;
+				// }
 
 				// 폰화면에서 왼쪽 오른쪽 쓸어넘기기 동작으로 이미지 전환 (jq-move-swipe.js)
 				slider.on('swipeleft', function(e) { e.stopPropagation(); next_slide(); })
@@ -51,60 +104,4 @@
 
 		}); // End of return
 	}; // End of sss()
-
-	// jquery 객체에 의해 호출될 수 있는 함수들 (예. obj.sssPause();)
-	$.fn.sssPause = function() {
-		return this.each( function() {
-			if ( animating ) {
-				clearTimeout(timer);
-				animating = false;
-			}
-		});
-	};
-
-	$.fn.sssResume = function() {
-		return this.each( function() {
-			if ( !animating ) {
-				slider.css({paddingBottom: get_height(target)});
-				animate_slide(target);
-				animating = true;
-			}
-		});
-	};
-
-	$.fn.sssIsSliding = function() {
-		return animating;
-	};
-
-	// 이 파일에서만 쓰는 함수들
-	function get_height(target) {
-		return ((slides.eq(target).height() / slider.width()) * 100) + '%';
-	}
-
-	function animate_slide(target) {
-		if (!animating) {
-			animating = true;
-			var target_slide = slides.eq(target);
-
-			target_slide.fadeIn(transition);
-			slides.not(target_slide).fadeOut(transition);
-
-			slider.animate({paddingBottom: get_height(target)}, transition, function() {
-				animating = false;
-			});
-
-			reset_timer();
-		}
-	}
-
-	function next_slide() {
-		target = target === slide_count - 1 ? 0 : target + 1;
-		animate_slide(target);
-	}
-
-	function prev_slide() {
-		target = target === 0 ? slide_count - 1 : target - 1;
-		animate_slide(target);
-	}
-
 })(jQuery, window, document);

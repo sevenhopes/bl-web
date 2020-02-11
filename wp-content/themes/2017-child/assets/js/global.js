@@ -1,5 +1,5 @@
 /*
-Version: 1.8.1
+Version: 1.8.5
 */
 (function( $ ) {
 
@@ -31,8 +31,8 @@ Version: 1.8.1
 		narrow_header = false,
 		scrolling = false,
 		scroll_interval = 200,
-		scroll_to = 0,
-		is_widescreen = $content.width() == 960;
+		bookmark_top = 0,
+		is_widescreen = ( $content.width() == 960 );
 		// lang_val;
 
 	const transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd';
@@ -57,21 +57,9 @@ Version: 1.8.1
 	// $body.addClass( lang_val );
 
 	if ( is_front_page ) {
-		// var $slide = $body.find( '.bl-slides' ),
 		var	$eventBlock = $body.find( '#bl-event' ),
 			$downArrow = $body.find( 'svg.bl-indicator' ),
 			indi_intv;
-
-		// 슬라이드 자동 넘김 시작 (Super Simple Slide by sss.js)
-		$slide.sss();
-		// $slide.sss( { speed: 1000 } ); // 테스트용 코드
-
-		// 페이지 중간 쯤에서 새로 고침한 거면 슬라이드 중지 & 헤더 높이 조정 (작게)
-		if ( 10 <= $( window ).scrollTop() ) {
-			// $slide.sssPause();
-			controlSlide();
-			changeHeaderSize();
-		}
 
 		// 아래화살표 svg 이미지를 7번 깜빡임 (250+250+750 * 7 = 8750)
 		indi_intv = setInterval( function() {
@@ -155,7 +143,8 @@ Version: 1.8.1
 
 		// 카테고리 터치 시 동작
 		$categories.click( function() {
-			var clicked_cat = $( this ).attr( 'class' );
+			var _this = $( this ),
+				clicked_cat = _this.attr( 'class' );
 
 			$textbox.val( '' );
 			$faq_list.find( 'dt.opened' ).removeClass( 'opened' );
@@ -164,21 +153,22 @@ Version: 1.8.1
 			$chosen_cat.removeClass( 'selected' );
 
 			$.each( $questions, function() {
-				if ( $( this ).hasClass( clicked_cat ) ) {
-					$( this ).show();
+				if ( _this.hasClass( clicked_cat ) ) {
+					_this.show();
 				} else {
-					$( this ).hide();
+					_this.hide();
 				}
 			});
 
-			$( this ).addClass( 'selected' );
-			$chosen_cat = $( this );
+			_this.addClass( 'selected' );
+			$chosen_cat = _this;
 
 			// console.log( 'click: ' + clicked_cat );
 		});
 
 		// FAQ 페이지 텍스트 실시간 검색
 		$textbox.keyup( function() {
+			var _this = $( this );
 			input = $textbox.val();
 			$answers.hide();	// 타이핑 시 열려있는 답변 닫기
 			if ( input === '' ) {
@@ -186,19 +176,19 @@ Version: 1.8.1
 				$answers.hide();
 				$chosen_cat.removeClass( 'selected' );
 				$.each( $questions, function() {
-					if ( $( this ).hasClass( $chosen_cat.attr( 'class' ) ) ) {
-						$( this ).show();
+					if ( _this.hasClass( $chosen_cat.attr( 'class' ) ) ) {
+						_this.show();
 					} else {
-						$( this ).hide();
+						_this.hide();
 					}
 				});
 				$chosen_cat.addClass( 'selected' );
 			} else {
 				$.each( $questions, function() {
-					if ( -1 < $( this ).text().indexOf( input ) ) {
-						$( this ).show();
+					if ( -1 < _this.text().indexOf( input ) ) {
+						_this.show();
 					} else {
-						$( this ).hide();
+						_this.hide();
 					}
 
 					if ( $questions.children( ':visible' ).length == 0 ) {
@@ -240,28 +230,29 @@ Version: 1.8.1
 			// .css( 'height' , img_height );
 
 		$tabs.click( function() {
-			// var id = $( this ).attr( 'id' );
-			var idx = $tabs.index( $( this ) );
+			var _this = $( this ),
+				idx = $tabs.index( _this );
 
 			$selected.removeClass( 'selected' );
-			$selected = $( this ).addClass( 'selected' );
+			$selected = _this.addClass( 'selected' );
 
 			$imgs.fadeOut();
 			$imgs.eq( idx ).fadeIn();
 			$desc.hide();
 			$desc.eq( idx ).show();
 		});
+
 	} else if ( $body.find( '#semesters' ).length || $body.find( '#english-camp' ).length || $body.find( '#extracurricular' ).length ) {
 		var idx = window.location.href.search( '##' );	// 북마크 id로 바로 이동을 피하기 위해 URL에 #을 하나 더 붙임 (예: ##course-basic, bl-course-overview.php)
 		if ( idx != -1 ) {
 			var bookmark = window.location.href.substring( idx + 1 );
-			scroll_to = $( bookmark ).offset().top - 70;
+			bookmark_top = $( bookmark ).offset().top - 70;
 		}
-	} // end of if ( which page )
+	} // end of if ( 페이지별 처리 )
 
 	// 페이지를 스크롤 함. (북마크 링크 대신 사용. 스크롤 거리에 따라 속도 조절)
 	function scrollThePage( top ) {
-		var speed = scroll_to < 400 ? 400 : Math.ceil( scroll_to ) > 600 ? 600 : Math.ceil( scroll_to );
+		var speed = bookmark_top < 400 ? 400 : Math.ceil( bookmark_top ) > 600 ? 600 : Math.ceil( bookmark_top );
 		$( 'html, body' ).animate( { scrollTop: top }, speed );
 	}
 
@@ -284,8 +275,8 @@ Version: 1.8.1
 			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
 		}
 
-		if ( scroll_to != 0 ) {
-			scrollThePage( scroll_to );
+		if ( bookmark_top != 0 ) {
+			scrollThePage( bookmark_top );
 		}
 
 		// 지도가 있는 페이지: 네이버 지도 객체 생성
@@ -327,35 +318,41 @@ Version: 1.8.1
 			});
 		}
 
+		if ( is_front_page ) {
+			controlSlide();	// 프론트페이지이면 슬라이드 시작
+		}
+
+		var scroll_timer;
+
 		// header의 높이를 스크롤다운 시 좀 줄였다가, top으로 스크롤업 시 다시 원래대로 만듬
 		// 변하는 header 높이에 따라, 내비게이션 메뉴($navMenu)의 높이도 변함.
 		$( window ).on( 'scroll', function() {
-			scrolling = true;
+			clearTimeout( scroll_timer );
+			scroll_timer = setTimeout( scroll_stopped, 100 );
+
+			if ( ! scrolling ) {
+				scrolling = true;
+				changeHeaderSize();
+			}
 		});
 
-		setInterval( function() {
-			if ( scrolling ) {
+		function scroll_stopped() {
+			if ( is_front_page ) {
 				controlSlide();
-				changeHeaderSize();
-				scrolling = false;
 			}
-		}, scroll_interval );
-
+			changeHeaderSize();
+			scrolling = false;
+		}
 	}); // End of $(document).ready()
 
 	// 스크롤다운에 의해 '헤더+슬라이더'가 35% 이하만 보이면 슬라이딩(이미지 전환) 멈춤
 	// 스크롤업에 의해 65% 이상이 보이면 슬라이딩 다시 시작
 	function controlSlide() {
-		if ( $slide ) {
-			var scroll_top = $( window ).scrollTop(),
-				pausingTop = 0.35 * ( $body.find( '#masthead' ).height() + $slide.height() );
-
-			if ( pausingTop < scroll_top ) {
-				$slide.sssPause();
-			} else if ( scroll_top <= pausingTop ) {
-				$slide.sssResume();
-			}
+		if ( ! is_front_page || is_widescreen ) {
+			return;
 		}
+		var start_slide = ( 0 == $( window ).scrollTop() );
+		$slide.sss( { resume: start_slide } );
 	}
 
 	// 스크롤다운 시 헤더 높이 줄임
@@ -369,7 +366,7 @@ Version: 1.8.1
 			nav_top = '76px', // normal
 			dur = 200;
 
-		if ( 10 < scroll_top && ! narrow_header ) {
+		if ( 0 != scroll_top && ! narrow_header ) {
 			nav_top = '56px'; // scrolling
 
 			$logo.animate({ marginTop: '3px', marginBottom: '2px' }, dur );
@@ -378,7 +375,7 @@ Version: 1.8.1
 			$navMenu.css( 'top', nav_top );
 			narrow_header = true;
 
-		} else if ( scroll_top <= 10 && narrow_header ) {
+		} else if ( scroll_top == 0 && narrow_header ) {
 			$logo.animate({ marginTop: '13.7167px', marginBottom: '11.4px' }, dur, function() {
 				$navMenu.css( 'top', nav_top );
 			});
