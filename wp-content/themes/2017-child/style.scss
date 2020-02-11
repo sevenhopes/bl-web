@@ -118,6 +118,7 @@ $test-b:  #cf3;
 // Sizes
 $header-h:	76px;
 $wide-header-h: 90px; // 76 * 1.2
+$wide-content-w: 960px;
 
 /*
 Icon classes can be used entirely standalone. They are named after their original file names.
@@ -2163,17 +2164,17 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	overflow: hidden;
 }
 
-#bl-curriculum .bl-hide-overflow {
-	overflow: hidden;
-}
+// #bl-curriculum .bl-hide-overflow {
+// 	overflow: hidden;
+// }
 
-#bl-curriculum img.bl-center-overflow {
-	max-width: 900vw;
-	width: 520px;
-	height: 325px;
-	margin-left: 50%;
-	transform: translateX(-50%);
-}
+// #bl-curriculum img.bl-center-overflow {
+// 	max-width: 900vw;
+// 	width: 520px;
+// 	height: 325px;
+// 	margin-left: 50%;
+// 	transform: translateX(-50%);
+// }
 
 #bl-go-with-us.bl-block {
 }
@@ -3924,7 +3925,7 @@ dl.bl-faq-list {
 		max-height: 85%;
 	}
 	#bl-branding {
-		width: 960px;
+		width: $wide-content-w;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -3944,7 +3945,7 @@ dl.bl-faq-list {
 	}
 
 	.navigation-top .wrap {
-		width: 960px;
+		width: $wide-content-w;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -4038,7 +4039,7 @@ dl.bl-faq-list {
 		}
 	}
 	// .main-navigation #menu-item-99999.bl-custom-menu {
-	// 	max-width: 960px;
+	// 	max-width: $wide-content-w;
 	// }
 	.main-navigation ul li.menu-item-has-children.focus:before,
 	.main-navigation ul li.menu-item-has-children:hover:before,
@@ -4069,9 +4070,11 @@ dl.bl-faq-list {
 	}
 
 	#content {
-		width: 960px;
+		width: $wide-content-w;
 		margin-left: auto;
 		margin-right: auto;
+		padding: 35px 50px;
+		background: url('assets/images/widescreen/main-bg.png') repeat-y top center;
 	}
 	.bl-block {
 		// margin-left: auto;
@@ -4079,6 +4082,16 @@ dl.bl-faq-list {
 		min-width: 100%;
 		// padding: 0;
 		// margin: 2rem 0;
+	}
+	// #bl-curriculum img.bl-center-overflow {
+	// 	max-width: calc($wide-content-w - 100px);
+	// 	width: calc($wide-content-w - 100px);
+	// 	height: auto;
+	// 	margin-left: 0;
+	// 	transform: translateX(0);
+	// }
+	.site-footer {
+		margin-top: 0;
 	}
 }
 
