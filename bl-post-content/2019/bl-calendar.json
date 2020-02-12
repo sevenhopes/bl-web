@@ -210,20 +210,29 @@
 		{
 			"title": "가을학기 종강",
 			"holiday": false,
-			"start": "2020-02-01",
+			"start": "2020-02-28",
 			"end": null,
 			"extra": "",
 			"public": true,
-			"pending": true
+			"pending": false
 		},
 		{
-			"title": "Preparation Days",
+			"title": "학기준비기간",
+			"holiday": true,
+			"start": "2020-03-02",
+			"end": "2020-03-03",
+			"extra": "최선을 다해 준비하겠습니다.",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "봄학기 개강",
 			"holiday": false,
-			"start": "2020-02-01",
-			"end": "2020-02-01",
-			"extra": "",
-			"public": false,
-			"pending": true
+			"start": "2020-03-04",
+			"end": null,
+			"extra": "그냥 오던 교실로 오세요~",
+			"public": true,
+			"pending": false
 		},
 		{
 			"title": "학원 Association Teacher Training",
