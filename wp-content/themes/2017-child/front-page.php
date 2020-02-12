@@ -8,7 +8,7 @@
  * @package BridgeLight
  * @subpackage BridgeLight_MobileFirst
  * @since 1.0
- * @version 1.1
+ * @version 1.4
  */
 
 get_header(); ?>
@@ -183,7 +183,7 @@ get_header(); ?>
 				<a href="http://www.bridgelightels.com/m/curriculum/course-overview/">
 					<div class="bl-link-wrapper">
 						<div class="bl-block-header-media">
-							<img class="size-medium wp-image-1765" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/09/Graphic-Roadmap-2019-09v1.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 1765 ) ?>" sizes="100vw" alt="브릿지라잇 커리큘럼 로드맵" />
+							<img class="size-medium wp-image-2023" src="http://www.bridgelightels.com/m/wp-content/uploads/2020/02/Graphic-Roadmap-2019-09v2.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 2023 ) ?>" sizes="100vw" alt="브릿지라잇 커리큘럼 로드맵" />
 						</div>
 						<div class="bl-wrap">
 							<p class="bl">초등 1학년부터 중학 3학년까지를 모두 아우르는 단계별 강의들이 개설 되어 있습니다. 모든 레벨에서 영어의 전 영역인 말하기, 듣기, 읽기, 쓰기를 종합적으로 학습합니다.</p>
