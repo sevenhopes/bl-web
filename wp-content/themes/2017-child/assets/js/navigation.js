@@ -33,7 +33,7 @@ Version: 1.7.3
 	var scrolling = false,
 		current_top = 0,
 		scroll_interval = 350,
-		is_widescreen = $( '#content' ).width() == 960;
+		is_widescreen = ( $( '#content' ).width() == 860 );	// 960 - (padding-left 50 + padding-right 50)
 
 	// document.ready() 밖으로 꺼내면 .dropdown-toggle을 선택하지 못 함.
 	$( document ).ready( function() {
@@ -252,8 +252,6 @@ Version: 1.7.3
 
 			// .main-navigation 메뉴의 마지막에 커스텀 메뉴를 추가 (메인페이지는 제외)
 			$mainNav.find( '#top-menu' ).html( function() {
-				// return $( this ).html() + ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-call.png" alt="전화상담&예약" /></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-map.png" alt="위치안내" /></a></div><div><a class="bl-custom-share" href=""><img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/icw-share.png" alt="정보공유" /></a></div></li>';
-
 				var $allmenubtn = ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
 				var $shareonly =  ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call disabled" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a class="disabled" href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
 				return $( this ).html() + ( isFrontPage ? $shareonly : $allmenubtn );

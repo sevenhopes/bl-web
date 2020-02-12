@@ -32,7 +32,7 @@ Version: 1.8.5
 		scrolling = false,
 		scroll_interval = 200,
 		bookmark_top = 0,
-		is_widescreen = ( $content.width() == 960 );
+		is_widescreen = ( $content.width() == 860 );	// 960 - (padding-left 50 + padding-right 50)
 		// lang_val;
 
 	const transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd';
