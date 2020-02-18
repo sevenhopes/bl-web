@@ -49,8 +49,8 @@ get_header(); ?>
 				<div><a href="http://www.bridgelightels.com/m/admission/faq/"><i class="bl-sp icon-faq" title="자주묻는질문"></i><span>FAQ</span></a></div>
 			</div>
 
-			<div class="bl-indicator-wrapper">
-				<svg class="bl-indicator">
+			<div class="bl-down-arrow-wrapper">
+				<svg class="bl-down-arrow">
 					<use xlink:href="#icon-angle-down" />
 				</svg>
 			</div>

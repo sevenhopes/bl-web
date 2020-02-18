@@ -1395,14 +1395,14 @@ a:hover {
 	-webkit-border-radius: 0;
 	border-radius: 0;
 	padding: 0;
-	float: right;
 	width: $menu-toggle-h;
 	height: $menu-toggle-h;
+	float: right;
 	position: relative;
+	top: 10px;
 	overflow: hidden;
 	z-index: 9999;
 	display: block;
-	margin-top: 10px;
 
 	&:after {
 		clear: both;
@@ -1434,8 +1434,8 @@ a:hover {
 	background-color: $blue-l1;
 }
 .bl-toggle-icon {
-	top: calc(50%);
-	left: calc(50% - 12px);
+	top: calc( 50% );
+	left: calc( 50% - 12px );
 	transition: all 0.3s linear;
 	color: $blue-d2;
 }
@@ -1455,18 +1455,17 @@ a:hover {
 .toggled#bl-menu-toggle .bl-toggle-icon {
 	height: 1px;
 	width: 24px;
-	// left: calc(50% - 12px);
-	top: calc(50%);
-	transform: rotate(135deg);
+	top: calc( 50% );
+	transform: rotate( 135deg );
 }
 .toggled#bl-menu-toggle .bl-toggle-icon::after {
 	width: 24px;
 	height: 1px;
 	top: -1px;
-	transform: rotate(90deg);
+	transform: rotate( 90deg );
 }
 .toggled#bl-menu-toggle .bl-toggle-icon::before {
-	transform: scale(0);
+	transform: scale( 0 );
 }
 
 /*--------------------------------------------------------------
@@ -1683,10 +1682,10 @@ a.skip-link {
 
 /* img에 적용된 <a> 태그 */
 .custom-logo-link {
-	display: inline-block;
+	// display: inline-block;
 	padding: 0 -16px 0 0;
 	vertical-align: inherit;
-	width: calc( 100% - $menu-toggle-h );
+	width: calc( 100% - #{$menu-toggle-h} );
 
 	float: left;
 	margin: 0;
@@ -1697,9 +1696,9 @@ a.skip-link {
 
 /* .custom-logo 클래스와 같음 */
 .custom-logo-link img {
-	display: inline-block;
+	// display: inline-block;
 	max-height: $header-h;
-	width: 100%;
+	width: auto;
 
 	height: 43.12%;	// 넓이 100%에서 좌여백 16px + 우여백 16px + 토글버튼의 넓이 56px의 합을 뺀
 }
@@ -1987,13 +1986,13 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	}
 }
 
-#bl-front-page-ko .bl-indicator-wrapper {
+#bl-front-page-ko .bl-down-arrow-wrapper {
 	// background-color: $f7;
 	text-align: center;
 	max-height: 3rem;
 }
 
-#bl-front-page-ko .bl-indicator {
+#bl-front-page-ko .bl-down-arrow {
 	width: 4rem;
 	height: 3rem;
 	opacity: 0.2;
@@ -3095,7 +3094,7 @@ a.more-link {
 	margin: 0.75rem 0;
 	padding-left: 0.5rem;
 
-	.proc-trackline {
+	.proc-dotted-line {
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -3171,7 +3170,7 @@ a.more-link {
 	}
 }
 
-#english-camp .proc-trackline {
+#english-camp .proc-dotted-line {
 	height: 70%;
 }
 
@@ -3281,7 +3280,7 @@ a.more-link {
 	}
 }
 
-#study-in-america .proc-trackline {
+#study-in-america .proc-dotted-line {
 	height: 80%;
 }
 
@@ -3387,7 +3386,7 @@ a.more-link {
 #admissions {
 }
 
-#admissions .bl-procedure .proc-trackline {
+#admissions .bl-procedure .proc-dotted-line {
 	height: 90%;
 }
 
@@ -3752,15 +3751,15 @@ dl.bl-faq-list {
 		background-color: $cc;
 	}
 	.icon-close {
-		top: calc(50% + 6px);
+		top: calc( 50% + 6px );
 		right: 0;
-		transform: rotate(45deg);
+		transform: rotate( 45deg );
 	}
 	.icon-close::after {
 		content: "";
 		top: 0;
 		right: 0;
-		transform: rotate(90deg);
+		transform: rotate( 90deg );
 	}
 }
 
@@ -4105,7 +4104,7 @@ dl.bl-faq-list {
 		margin-left: auto;
 		margin-right: auto;
 		padding: 35px 50px;
-		background: url('assets/images/widescreen/main-bg.png') repeat-y top center;
+		background: url( 'assets/images/widescreen/main-bg.png' ) repeat-y top center;
 	}
 	.bl-block {
 		// margin-left: auto;
@@ -4115,11 +4114,11 @@ dl.bl-faq-list {
 		// margin: 2rem 0;
 	}
 	// #bl-curriculum img.bl-center-overflow {
-	// 	max-width: calc($wide-content-w - 100px);
-	// 	width: calc($wide-content-w - 100px);
+	// 	max-width: calc( $wide-content-w - 100px );
+	// 	width: calc( $wide-content-w - 100px );
 	// 	height: auto;
 	// 	margin-left: 0;
-	// 	transform: translateX(0);
+	// 	transform: translateX( 0 );
 	// }
 	.site-footer {
 		margin-top: 0;

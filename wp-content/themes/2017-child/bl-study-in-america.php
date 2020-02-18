@@ -102,7 +102,7 @@ get_header(); ?>
 
 		<div class="bl-wrap">
 			<div class="bl-procedure">
-				<div class="proc-trackline"></div>
+				<div class="proc-dotted-line"></div>
 
 				<div class="proc-block">
 					<div class="proc-icon">
