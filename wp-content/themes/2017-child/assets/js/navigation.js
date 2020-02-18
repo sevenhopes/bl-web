@@ -1,5 +1,5 @@
 /*
-Version: 1.7.3
+Version: 1.7.4
 */
 /* global twentyseventeenScreenReaderText */
 /**
@@ -161,15 +161,35 @@ Version: 1.7.3
 		// console.log( '$.blang.ko.address: ' + $.blang.ko.address );
 		// console.log( 'typeof $.blang.ko.address: ' + typeof $.blang.ko.address );
 
-		if ( $blMenuToggle.length ) {
-			blInitMenuToggleEvents();
+		if ( is_widescreen ) {
+			var $topmenu = $navTop.find( '#top-menu' ),
+				$blWideMenuToggle = $body.find( '#bl-wide-menu-toggle' ),
+				nav_showing = false;
+
+			$blWideMenuToggle.on( 'mouseover', function() {
+				if ( ! nav_showing ) {
+					$topmenu.show();
+				}
+			});
+			$blWideMenuToggle.on( 'mouseleave', function() {
+				if ( $( '#top-menu:hover' ).length == 0 && nav_showing ) {
+					$topmenu.hide();
+				}
+			});
+			$topmenu.on( 'mouseleave', function() {
+				if ( $( '#bl-wide-menu-toggle:hover' ).length == 0 && nav_showing )  {
+					$topmenu.hide();
+				}
+			});
+
+			return;	// document.ready() 탈출
 		}
 
-		if ( $dropdowns.length ) {
-			blInitDropdowns();
-		}
+		blInitMenuToggleEvents();
+		blInitDropdowns();
 
 		function blInitMenuToggleEvents() {
+
 			// 메뉴 펼침/숨김 상태 숨김으로 초기화.
 			$blMenuToggle.attr( 'aria-expanded', 'false' );
 
@@ -223,7 +243,6 @@ Version: 1.7.3
 				$navTop.animate( { 'right' : '-100px', 'opacity' : '0' }, 300, function() {
 					$navTop.hide();
 					blToggleNavCSS(); // 이걸 여기서 해야 애니메이션 중 메뉴가 사라짐을 방지
-					// $mainNav.find( '.dropdown-toggle.toggled-on' ).trigger( 'click' ); // 
 				} );
 			}
 
@@ -245,10 +264,6 @@ Version: 1.7.3
 		function blInitDropdowns() {
 			// 기존 부모 테마의 클릭 이벤트 해제
 			$dropdowns.unbind( 'click' );
-
-			if ( is_widescreen ) {
-				return;
-			}
 
 			// .main-navigation 메뉴의 마지막에 커스텀 메뉴를 추가 (메인페이지는 제외)
 			$mainNav.find( '#top-menu' ).html( function() {
@@ -391,10 +406,6 @@ Version: 1.7.3
 				$( this ).next( '.dropdown-toggle' ).trigger( 'click' );
 			});
 
-			// if ( is_widescreen ) {
-			// 	blToggleDropdownMenu( all button ); // 모든 드롭다운 메뉴 펼치기
-			// }
-
 			function blToggleDropdownMenu( ddToggleButton ) {
 				var menuParent = ddToggleButton.parent( '.menu-item-has-children' ),
 					menuChildren = ddToggleButton.next( '.sub-menu' );
@@ -407,19 +418,7 @@ Version: 1.7.3
 					menuChildren.toggleClass( 'toggled-on' );
 				});
 			}
-		} // End of blInitMenuToggleEvents()
-
-		/*
-		 * https://stackoverflow.com/questions/22581345/click-button-copy-to-clipboard-using-jquery
-		 * 현재 페이지의 주소(URL)를 클립보드로 복사
-		 */
-		function copyToClipboard( element ) {
-			var $temp = $( '<input>' );
-			$( 'body' ).append( $temp );
-			$temp.val( $(element).text() ).select();
-			document.execCommand( 'copy' );
-			$temp.remove();
-		}
+		} // End of blInitDropdowns()
 		/////
 		///// bl end //////////////////////////////////////////////////////////////////
 
