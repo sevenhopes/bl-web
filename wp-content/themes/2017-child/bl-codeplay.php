@@ -15,9 +15,11 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<h1>Naver Blog the Most Recent Post</h1>
+			
 
-			<form>
+			<!-- <h1>Naver Blog the Most Recent Post</h1> -->
+
+			<!-- <form>
 				<fieldset>
 					<legend>블로그 RSS 파싱 테스트</legend>
 					<?php
@@ -67,7 +69,7 @@ get_header(); ?>
 					endif;
 						?>
 					</ul>
-				</fieldset>
+				</fieldset> -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
