@@ -6,7 +6,7 @@ Template: twentyseventeen
 Author: Bridge Light Corp.
 Author URI: http://bridgelightels.com/m/
 Tags: 브릿지라잇,춘천영어학원,BridgeLight,춘천어학원,브릿지라잇어학원
-Version: 2.5.4
+Version: 2.5.11
 Text Domain: 2017-child
 Tags: mobile-first
 */
@@ -116,9 +116,12 @@ $test-g:  #3cf;
 $test-b:  #cf3;
 
 // Sizes
-$header-h:	76px;
-$wide-header-h: 90px; // 76 * 1.2
+$header-h:       76px;
+$menu-toggle-h:  56px;
+$wide-header-h:  90px; // 76 * 1.2
 $wide-content-w: 960px;
+$wide-nav-h:     280px;
+$wide-nav-drawer-h: 36px;
 
 /*
 Icon classes can be used entirely standalone. They are named after their original file names.
@@ -135,9 +138,9 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 <i class="bl-ic white-logo"></i>
 */
 // bs = background sprites
-$bs-url: url('assets/images/sprites.png?ver=1.4');
+$bs-url: url('assets/images/sprites.png?ver=1.5');
 $bs-w: 700px;	// width
-$bs-h: 700px;	// height
+$bs-h: 736px;	// height
 $ic-s: 50px;	// icon size (width = height)
 
 $ratio-88: 0.88;
@@ -164,7 +167,7 @@ $bs-h72: $bs-h * $ratio-72;
 $bs-h32: $bs-h * $ratio-32;
 $bs-h80: $bs-h * $ratio-80;
 
-.bl-sp {
+.bl-sp {	// 스프라이트(sprite) 이미지
 	display: inline-block;
 }
 ////////////////////////////////////////////////// 헤더 로고 header logo, 푸터 로고 footer logo
@@ -173,7 +176,7 @@ $bs-h80: $bs-h * $ratio-80;
 	background-position: 0px -700px;
 	width: 654px;
 	height: 110px;
-	background-size: 654px 110px;
+	background-size: $bs-w $bs-h;
 }
 //.bl-footer-logo를 참조
 ////////////////////////////////////////////////// 공유하기 모달 레이어 Share sharing modal layer
@@ -1182,9 +1185,9 @@ a:hover {
 	display: none;
 }
 
-.home .navigation-top {
-	background-color: $blue-d2t;
-}
+// .home .navigation-top {
+// 	background-color: $blue-d2t;
+// }
 
 .navigation-top a {
 	color: $ee;
@@ -1228,6 +1231,10 @@ a:hover {
 .navigation-top .current_page_parent.current-menu-item > a, /* 현재 페이지가 서브메뉴가 없는 부모메뉴에 해당할 때 */
 .navigation-top .current_page_parent.current_page_item > a {
 	font-weight: 300;
+}
+
+.navigation-top .wide-submenu-bg {
+	display: none;
 }
 
 .main-navigation > div > ul {
@@ -1298,10 +1305,6 @@ a:hover {
 	border-bottom: 0;
 	// border-bottom: 1px solid $blue-g;
 }
-
-// .main-navigation li:last-child:after {
-// 	display: none;
-// }
 
 // 마지막에 js로 추가되는 커스텀 메뉴
 .main-navigation #menu-item-99999.bl-custom-menu {
@@ -1393,12 +1396,12 @@ a:hover {
 	border-radius: 0;
 	padding: 0;
 	float: right;
-	width: 56px;
-	height: 56px;
+	width: $menu-toggle-h;
+	height: $menu-toggle-h;
 	position: relative;
 	overflow: hidden;
 	z-index: 9999;
-	/*display: none; /* .js 자바스크립트가 작동해야 보여줌. 아래 .js #bl-menu-toggle {} 참조 */
+	display: block;
 	margin-top: 10px;
 
 	&:after {
@@ -1520,23 +1523,17 @@ a.skip-link {
 
 .site-header {
 	display: block;
-	// position: static;
 	position: fixed;
+	top: 0;
 	background-color: $ff;
 	min-width: 100vw;
 	height: $header-h;
 	overflow: hidden;
 	z-index: 9999;
-	top: 0;
 }
 
 .custom-header {
 	position: relative;
-	display: table;
-	margin: 0;
-	padding: 0;
-	min-width: 100vw;
-	height: auto;
 }
 
 .custom-header-media {
@@ -1548,31 +1545,27 @@ a.skip-link {
 // .home .site-header,
 // .home .custom-header {
 // 	overflow: hidden;
-// 	display: -moz-box;
-// 	display: -ms-flexbox;
-// 	display: -webkit-flex;
-// 	display: flex;
-// 	flex-direction: column;
-// 	min-height: $header-h;
-// 	height: auto;
+// 	// display: -moz-box;
+// 	// display: -ms-flexbox;
+// 	// display: -webkit-flex;
+// 	// display: flex;
+// 	// flex-direction: column;
+// 	// min-height: $header-h;
+// 	height: $header-h;
 // }
 
 /* custom-header의 width와 height는 이 스타일을 따름 */
-// .has-header-image.twentyseventeen-front-page .custom-header,
-// .has-header-video.twentyseventeen-front-page .custom-header,
-// .has-header-image.home.blog .custom-header,
-// .has-header-video.home.blog .custom-header {
-// 	width: 100%;
-// 	overflow: hidden;
-
-// 	display: -moz-box;
-// 	display: -ms-flexbox;
-// 	display: -webkit-flex;
-// 	display: flex;
-// 	flex-direction: column;
-// 	min-height: $header-h;
-// 	height: auto;
-// }
+.has-header-image.twentyseventeen-front-page .custom-header,
+.has-header-video.twentyseventeen-front-page .custom-header,
+.has-header-image.home.blog .custom-header,
+.has-header-video.home.blog .custom-header {
+	display: table;
+	height: 100%;
+	width: 100vw;
+	min-width: 100%;
+	margin: 0;
+	padding: 0;
+}
 
 .home .custom-header-media {
 	display: block;
@@ -1601,8 +1594,8 @@ a.skip-link {
 	.os-android.has-header-image.home.blog .custom-header,
 	.os-android.has-header-video.home.blog .custom-header,
 	.os-android.home .custom-header-media {
-		height: calc(100vh - 56px);
-		min-height: calc(100vh - 56px);
+		height: calc(100vh - $menu-toggle-h);
+		min-height: calc(100vh - $menu-toggle-h);
 	}
 }*/
 /* 위 크롬 fix 때문에 네이버앱, 다음앱, 삼성인터넷앱에서 vh가 짧아지는 문제 다시 해결 */
@@ -1688,31 +1681,32 @@ a.skip-link {
 
 /* 상단 로고 */
 
-.custom-logo-link { /* img에 적용된 <a> 태그 */
-	padding: 0;
+/* img에 적용된 <a> 태그 */
+.custom-logo-link {
+	display: inline-block;
+	padding: 0 -16px 0 0;
+	vertical-align: inherit;
+	width: calc( 100% - $menu-toggle-h );
+
+	float: left;
 	margin: 0;
-	display: block;
-	width: 100%;
-	height: 100%;
+	position: relative;
+	top: 10px;
+	left: 16px;
 }
 
-.custom-logo-link img { /* = .custom-logo */
-	position: absolute;
-	max-width: 100%;
-	max-height: 73.684%;
-	width: auto;
-	height: auto;
-	margin: auto;
-	padding: 0 56px 0 16px;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+/* .custom-logo 클래스와 같음 */
+.custom-logo-link img {
+	display: inline-block;
+	max-height: $header-h;
+	width: 100%;
+
+	height: 43.12%;	// 넓이 100%에서 좌여백 16px + 우여백 16px + 토글버튼의 넓이 56px의 합을 뺀
 }
 
 body.home.title-tagline-hidden.has-header-image .custom-logo-link img,
 body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
-	max-height: 73.684%;
+	max-height: $header-h;
 	max-width: 100%;
 }
 
@@ -1752,7 +1746,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 /*
 .bl-custom-logo-wrap {
-	margin-right: 56px;
+	margin-right: $menu-toggle-h;
 	padding: 14px 0 0 18px; // 16px 0 0 18px; with h=100 logo
 	height: 100%;
 	position: relative;
@@ -1796,7 +1790,12 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	background-color: $blue-d2;
 	width: 100%;
 	height: $header-h;
-	min-height: $header-h;
+	max-height: $header-h;
+	vertical-align: top;
+}
+
+.nav-drawer {
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -2248,7 +2247,6 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 
 .entry-header .entry-title {
 	margin-bottom: 0.5rem;
-
 	color: $blue-d5;
 
 	a {
@@ -3883,13 +3881,6 @@ dl.bl-faq-list {
 /* 1200px, Major, Desktop, 4:3 */
 // @media screen and (min-width: 75em) {
 
-	.site-navigation-fixed.navigation-top {
-		z-index: 9999;
-	}
-
-	.navigation-top {
-		top: $wide-header-h;
-	}
 	.site-header,
 	#bl-branding,
 	// .has-header-video.twentyseventeen-front-page .custom-header,
@@ -3914,24 +3905,69 @@ dl.bl-faq-list {
 		margin-right: auto;
 	}
 	#bl-menu-toggle {
-		margin-top: 17px;
-		margin-right: 20px;
+		// margin-top: 17px;
+		// margin-right: 20px;
 
-		&:hover {
-			cursor: pointer;
-		}
+		// &:hover {
+		// 	cursor: pointer;
+		// }
+		display: none;
+	}
+	.js #bl-menu-toggle {
+		display: none;
 	}
 	.bl-toggle-icon {
 		color: $k1t;
 	}
 	.bl-under-header {
+		position: fixed;
+		top: 0;
+		left: 0;
 		height: $wide-header-h;
+		max-height: $wide-header-h;
 	}
 
+	// .site-navigation-fixed.navigation-top {
+	// 	z-index: 9999;
+	// }
+	.nav-drawer {
+		display: block;
+		width: 100vw;
+		height: $wide-nav-drawer-h;
+		text-align: center;
+		position: relative;
+		top: $wide-header-h;
+		background-color: $blue-d2;
+		z-index: 9997;
+
+		i {
+			background-image: $bs-url;
+			background-position: 0px -700px;
+			background-size: $bs-w $bs-h;
+			background-repeat: no-repeat;
+			width: 700px;
+			height: $wide-nav-drawer-h;
+			// position: relative;
+			margin: 0 auto;
+		}
+	}
+	.navigation-top {
+		display: block;
+		opacity: 1;
+		top: -($wide-nav-h - $wide-header-h);
+		height: $wide-nav-h;
+		z-index: 9995;
+	}
 	.navigation-top .wrap {
-		width: $wide-content-w;
-		margin-left: auto;
-		margin-right: auto;
+		display: block;
+		position: relative;
+		// width: $wide-content-w;
+		// margin-left: auto;
+		// margin-right: auto;
+	}
+	.main-navigation {
+		display: block;
+		width: 100vw;
 	}
 	.main-navigation > div > ul {
 		width: 820px;
@@ -3944,6 +3980,7 @@ dl.bl-faq-list {
 
 			> a {
 				color: $blue-l2;
+				line-height: 1;
 			}
 			> a:hover {
 				cursor: default;
@@ -3975,10 +4012,12 @@ dl.bl-faq-list {
 		&.focus {
 			color: $gold;
 		}
-
 	}
 	.main-navigation li.toggled-on {
 		border-bottom: 0;
+	}
+	.js .main-navigation ul ul {
+		// display: none;
 	}
 	.main-navigation ul ul {
 		background-color: transparent;
@@ -3989,7 +4028,8 @@ dl.bl-faq-list {
 		left: 0;
 		top: 100%;
 		z-index: 99999;
-		display: block;
+		// opacity: 0;
+		// display: none;
 		width: 190px;
 
 		a {
@@ -4053,6 +4093,13 @@ dl.bl-faq-list {
 		display: none;
 	}
 
+	.site-content-contain:before {
+		content: "";
+		position: static;
+		width: 100vw;
+		height: $wide-header-h;
+		display: block;
+	}
 	#content {
 		width: $wide-content-w;
 		margin-left: auto;

@@ -1,5 +1,5 @@
 /*
-Version: 1.8.5
+Version: 1.8.8
 */
 (function( $ ) {
 
@@ -22,15 +22,13 @@ Version: 1.8.5
 	var	$body = $( 'body' ),
 		$header = $body.find( '.site-header' ),
 		$navMenu = $body.find( '.navigation-top' ),
-		$logo = $header.find( '.custom-logo-link img' ),
+		$logo_link = $header.find( '.custom-logo-link' ),
 		$navBtn = $header.find( '#bl-menu-toggle' ),
 		$content = $body.find( '#content' ),
 		$slide = $body.find( '.bl-slides' ),
 		is_front_page = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
 		// lang_kor = false,	// true: Korean
-		narrow_header = false,
-		scrolling = false,
-		scroll_interval = 200,
+		short_header = false,
 		bookmark_top = 0,
 		is_widescreen = ( $content.width() == 860 );	// 960 - (padding-left 50 + padding-right 50)
 		// lang_val;
@@ -322,7 +320,8 @@ Version: 1.8.5
 			controlSlide();	// 프론트페이지이면 슬라이드 시작
 		}
 
-		var scroll_timer;
+		var scroll_timer,
+			scrolling = false;
 
 		// header의 높이를 스크롤다운 시 좀 줄였다가, top으로 스크롤업 시 다시 원래대로 만듬
 		// 변하는 header 높이에 따라, 내비게이션 메뉴($navMenu)의 높이도 변함.
@@ -332,7 +331,7 @@ Version: 1.8.5
 
 			if ( ! scrolling ) {
 				scrolling = true;
-				changeHeaderSize();
+				// changeHeaderSize();
 			}
 		});
 
@@ -340,7 +339,7 @@ Version: 1.8.5
 			if ( is_front_page ) {
 				controlSlide();
 			}
-			changeHeaderSize();
+			// changeHeaderSize();
 			scrolling = false;
 		}
 	}); // End of $(document).ready()
@@ -366,22 +365,23 @@ Version: 1.8.5
 			nav_top = '76px', // normal
 			dur = 200;
 
-		if ( 0 != scroll_top && ! narrow_header ) {
+		if ( ! short_header && 0 != scroll_top ) {
 			nav_top = '56px'; // scrolling
+			short_header = true;
 
-			$logo.animate({ marginTop: '3px', marginBottom: '2px' }, dur );
+			$logo_link.animate({ top: '0px' }, dur );
 			$navBtn.animate({ marginTop: '0' }, dur );
 			$header.animate({ height: nav_top }, dur );
 			$navMenu.css( 'top', nav_top );
-			narrow_header = true;
 
-		} else if ( scroll_top == 0 && narrow_header ) {
-			$logo.animate({ marginTop: '13.7167px', marginBottom: '11.4px' }, dur, function() {
+		} else if ( short_header && scroll_top == 0 ) {
+			short_header = false;
+
+			$logo_link.animate({ top: '10px' }, dur, function() {
 				$navMenu.css( 'top', nav_top );
 			});
 			$navBtn.animate({ marginTop: '10px' }, dur );
 			$header.animate({ height: nav_top }, dur );
-			narrow_header = false;
 		}
 	}
 

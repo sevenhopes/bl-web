@@ -68,11 +68,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				// get_template_part( 'template-parts/header/site', 'branding' );
 			?>
 			<div id="bl-branding">
+				<?php the_custom_logo(); ?>
 				<button id="bl-menu-toggle" aria-controls="top-menu" aria-expanded="false">
 					<!-- <img src="<?php echo get_theme_mod( 'bl_menu_button_img' ); ?>" /> -->
 					<span class="bl-toggle-icon">Menu</span>
 				</button>
-				<?php the_custom_logo(); ?>
 			</div>
 
 			<!-- <div class="custom-header-media"> -->
@@ -88,6 +88,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		// 2 부모테마 template-parts/navigation/navigation-top.php 대신 여기에 코딩.
 		// 3 사용하지 않는 .menu-toggle과 .menu-scroll-down을 삭제 (대신 header-image.php 안에서 .bl-menu-toggle을 사용)
 	if ( has_nav_menu( 'top' ) ) : ?>
+	<div class="nav-drawer"><i id="bl-wide-menu-toggle" class="bl-sp"></i></div>
 	<div class="navigation-top">
 		<div class="wrap">
 			<?php // get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
