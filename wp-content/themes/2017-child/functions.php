@@ -7,16 +7,30 @@
  * @package BridgeLight
  * @subpackage BridgeLight_MobileFirst
  * @since 1.0
- * @version 1.1
+ * @version 1.3
  */
 
-remove_filter( 'the_content', 'wpautop' );
-remove_filter( 'the_excerpt', 'wpautop' );
+//
+// 부모테마의 함수 삭제
+//
+function bridgelight_remove_parent_actions() {
+	remove_action( 'wp_footer', 'twentyseventeen_include_svg_icons', 9999 );
+}
+add_action( 'init', 'bridgelight_remove_parent_actions' );
 
-// function twentyseventeen_block_editor_styles() {
-// 	// 부모테마의 함수 오버라이딩
-// }
-// add_action( 'enqueue_block_editor_assets', 'twentyseventeen_block_editor_styles' );
+// svg 스프라이트 이미지 로드
+function bridgelight_include_svg_icons() {
+	// get_stylesheet_directory_uri() 함수는 자식테마의 경로를 리턴
+	$svg_icons = get_stylesheet_directory().'/assets/images/bl-svg-icons.svg';
+
+	// If it exists, include it.
+	if ( file_exists( $svg_icons ) ) {
+		require_once( $svg_icons );
+	}
+}
+add_action( 'wp_footer', 'bridgelight_include_svg_icons', 9999 );
+
+// require get_stylesheet_directory().'/inc/icon-functions.php';
 
 /**
  * Enqueue styles of the parent theme and the child theme
@@ -161,6 +175,9 @@ function bridgelight_sanitize_bl_seasonlook( $input ) {
  *
  * @return '더 보기' 버튼 전에 표시되는 단어 개수 (본문 첫 단어부터 시작)
  */
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+
 function custom_excerpt_length( $length ) {
 	return 25;
 }
@@ -182,8 +199,8 @@ function bl_w2k( $str ) {
  * @source https://wordpress.stackexchange.com/questions/159162/set-custom-post-feature-image-as-ogimage
  *
  */
-add_action( 'wp_head', 'dgsoft_fb' );
-function dgsoft_fb(){
+add_action( 'wp_head', 'bridgelight_include_opengraph_facebook' );
+function bridgelight_include_opengraph_facebook(){
 		if ( is_single() ) {
 			echo '<meta property="og:image" content="'.get_the_post_thumbnail_url( get_the_ID(), 'full' ).'">';
 		} else {

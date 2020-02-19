@@ -83,7 +83,26 @@
 					<li>ⓒ 브릿지라잇 2006-<?php echo date("Y"); ?></li>
 				</ul>
 
-				<div class="bl-footer-logo"></div>
+				<!-- <div class="bl-footer-logo"></div> -->
+				<svg class="bl-footer-logo" role="img">
+					<use href="#svg-bl-logo" xlink:href="#svg-bl-logo"></use>
+				</svg>
+				<!-- <svg class="icon" style="width:50px;height:50px;" role="img"> -->
+					<!-- <use href="#icon-search" xlink:href="#icon-search"></use> -->
+					<!-- <use href="#bl-icon-close" xlink:href="#bl-icon-close"></use> -->
+				<!-- </svg> -->
+
+				<div class="bl-dev-code">
+					<?php
+						// echo $_SERVER['HTTP_USER_AGENT'] . "<br>";
+						// echo '<p>c-raw: '.$current_raw.'</p>';
+						// echo '<p>w-raw: '.$weekago_raw.'</p>';
+						// echo '<p>c-ymd: '.$current_ymd.'</p>';
+						// echo '<p>w-ymd: '.$weekago_ymd.'</p>';
+					echo '<p>'.get_stylesheet_directory().'/inc/icon-functions.php'.'</p>';
+					echo '<p>'.get_stylesheet_directory_uri().'/assets/images/bl-svg-icons.svg'.'</p>';
+					?>
+				</div>
 
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->
