@@ -45,22 +45,23 @@
 				starting_slide = settings.startOn,
 				target = starting_slide > slide_count - 1 ? 0 : starting_slide;
 
+				slider.css({paddingBottom: get_height(target)});
 				if ( settings.indicator ) {
 					// slider.append( '' );
 				}
 			}
 			function reset_timer() {
-				// if ( ! sliding ) {
+				if ( ! sliding ) {
 					clearTimeout(timer);
 					timer = setTimeout(next_slide, settings.speed);
-				// 	sliding = true;
-				// }
+					sliding = true;
+				}
 			}
 			function clear_timer() {
-				// if ( sliding ) {
+				if ( sliding ) {
 					clearTimeout( timer );
-				// 	sliding = false;
-				// }
+					sliding = false;
+				}
 			}
 
 			function get_height(target) {
