@@ -1,5 +1,5 @@
 /*
-Version: 1.8.8
+Version: 1.9.4
 */
 (function( $ ) {
 
@@ -21,16 +21,11 @@ Version: 1.8.8
 
 	var	$body = $( 'body' ),
 		$header = $body.find( '.site-header' ),
-		$navMenu = $body.find( '.navigation-top' ),
-		$logo_link = $header.find( '.custom-logo-link' ),
-		$navBtn = $header.find( '#bl-menu-toggle' ),
-		$content = $body.find( '#content' ),
-		$slide = $body.find( '.bl-slides' ),
+		header_h = $header.height(),
 		is_front_page = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
 		// lang_kor = false,	// true: Korean
-		short_header = false,
 		bookmark_top = 0,
-		is_widescreen = ( $content.width() == 860 );	// 960 - (padding-left 50 + padding-right 50)
+		is_widescreen = ( $body.find( '#content' ).width() == 860 );	// 960 - (padding-left 50 + padding-right 50)
 		// lang_val;
 
 	const transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd';
@@ -56,7 +51,7 @@ Version: 1.8.8
 
 	if ( is_front_page ) {
 		var	$eventBlock = $body.find( '#bl-event' ),
-			$downArrow = $body.find( 'svg.bl-indicator' ),
+			$downArrow = $body.find( '.bl-down-arrow' ),
 			indi_intv;
 
 		// 아래화살표 svg 이미지를 7번 깜빡임 (250+250+750 * 7 = 8750)
@@ -67,9 +62,9 @@ Version: 1.8.8
 			clearInterval( indi_intv );
 		}, 8750+100 );
 
-		$downArrow.click( function() {
-			$( 'html, body' ).animate({
-				scrollTop: $( '#bl-news' ).offset().top - 56
+		$downArrow.on( 'click', function() {
+			$( 'html, body' ).animate( {
+				scrollTop: $( '#bl-news' ).offset().top - header_h - 5
 			}, 400);
 		});
 
@@ -81,7 +76,7 @@ Version: 1.8.8
 		// Why Bridge Light 페이지의 accordion 동작
 		var $why_list = $body.find( '.bl-why-list' );
 
-		$why_list.find( 'dt' ).click( function() {
+		$why_list.find( 'dt' ).on( 'click', function() {
 			var _this = $( this ),
 				$open_dt = $why_list.find( 'dt.opened' );
 
@@ -120,7 +115,7 @@ Version: 1.8.8
 			input = '';
 
 		// 질문 터치 시 답변 보여줌 (accordion 방식)
-		$questions.click( function() {
+		$questions.on( 'click', function() {
 			var _this = $( this ),
 				$open_dt = $faq_list.find( 'dt.opened' );
 
@@ -140,7 +135,7 @@ Version: 1.8.8
 		});
 
 		// 카테고리 터치 시 동작
-		$categories.click( function() {
+		$categories.on( 'click', function() {
 			var _this = $( this ),
 				clicked_cat = _this.attr( 'class' );
 
@@ -227,7 +222,7 @@ Version: 1.8.8
 			// .css( 'min-height', img_height );
 			// .css( 'height' , img_height );
 
-		$tabs.click( function() {
+		$tabs.on( 'click', function() {
 			var _this = $( this ),
 				idx = $tabs.index( _this );
 
@@ -244,7 +239,7 @@ Version: 1.8.8
 		var idx = window.location.href.search( '##' );	// 북마크 id로 바로 이동을 피하기 위해 URL에 #을 하나 더 붙임 (예: ##course-basic, bl-course-overview.php)
 		if ( idx != -1 ) {
 			var bookmark = window.location.href.substring( idx + 1 );
-			bookmark_top = $( bookmark ).offset().top - 70;
+			bookmark_top = $( bookmark ).offset().top - header_h - 5;
 		}
 	} // end of if ( 페이지별 처리 )
 
@@ -351,17 +346,21 @@ Version: 1.8.8
 			return;
 		}
 		var start_slide = ( 0 == $( window ).scrollTop() );
-		$slide.sss( { resume: start_slide } );
+		$body.find( '.bl-slides' ).sss( { resume: start_slide } );
 	}
 
 	// 스크롤다운 시 헤더 높이 줄임
 	// 스크롤업 시 페이지 top 근처까지 올라가면 헤더 높이 복구
-	function changeHeaderSize() {
+/*	function changeHeaderSize() {
 		if ( is_widescreen ) {
 			return;
 		}
 
-		var scroll_top = $( window ).scrollTop(),
+		var $navMenu = $body.find( '.navigation-top' ),
+			$logo_link = $header.find( '.custom-logo-link' ),
+			$navBtn = $header.find( '#bl-menu-toggle' ),
+			scroll_top = $( window ).scrollTop(),
+			short_header = false,
 			nav_top = '76px', // normal
 			dur = 200;
 
@@ -384,7 +383,7 @@ Version: 1.8.8
 			$header.animate({ height: nav_top }, dur );
 		}
 	}
-
+*/
 	// Add header video class after the video is loaded. (부모테마 Twentyseventeen에서 가져옴)
 	$( document ).on( 'wp-custom-header-video-loaded', function() {
 		$body.addClass( 'has-header-video' );
