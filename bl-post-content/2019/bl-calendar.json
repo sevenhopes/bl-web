@@ -204,7 +204,7 @@
 			"start": "2020-02-01",
 			"end": null,
 			"extra": "",
-			"public": true,
+			"public": false,
 			"pending": true
 		},
 		{
