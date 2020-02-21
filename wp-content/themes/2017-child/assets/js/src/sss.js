@@ -45,7 +45,7 @@
 				starting_slide = settings.startOn,
 				target = starting_slide > slide_count - 1 ? 0 : starting_slide;
 
-				slider.css({paddingBottom: get_height(target)});
+				// slider.css({paddingBottom: get_height(target)});
 				if ( settings.indicator ) {
 					// slider.append( '' );
 				}
@@ -97,6 +97,7 @@
 				// 	animate_slide(target);
 				// 	sliding = true;
 				// }
+				slider.css({paddingBottom: get_height(target)});
 
 				// 폰화면에서 왼쪽 오른쪽 쓸어넘기기 동작으로 이미지 전환 (jq-move-swipe.js)
 				slider.on('swipeleft', function(e) { e.stopPropagation(); next_slide(); })
