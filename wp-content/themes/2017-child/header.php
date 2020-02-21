@@ -9,7 +9,7 @@
  * @package BridgeLight
  * @subpackage BridgeLight_MobileFirst
  * @since 1.0
- * @version 1.1
+ * @version 1.7.7
  */
 
 ?><!DOCTYPE html>
@@ -41,6 +41,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:type" content="website">
 <meta property="fb:app_id" content="462886344532595">
 <link rel="canonical" href="http://www.bridgelightels.com/">
+
+<!-- <meta name="theme-color" content="#ffffff"> -->
+<!-- <meta name="msapplication-navbutton-color" content="#ffffff"> -->
+<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
+<!-- <link rel="icon" type="image/png" sizes="192x192" href="<?php echo get_stylesheet_directory_uri().'/assets/images/favi.png?ver=1.1' ?>"> -->
 </head>
 
 <body <?php body_class(); ?>>
