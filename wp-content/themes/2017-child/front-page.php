@@ -40,7 +40,7 @@ get_header(); ?>
 			?>
 			</div>
 
-			<div id="bl-front-menu">
+			<div id="bl-quick-menu">
 				<div><a href="tel:033-243-5757"><i class="bl-sp icon-call" title="전화상담&예약"></i><span>문의전화</span></a></div>
 				<div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><i class="bl-sp icon-map" title="위치안내"></i><span>위치안내</span></a></div>
 				<div><a href="http://www.bridgelightels.com/m/curriculum/course-overview/"><i class="bl-sp icon-book" title="커리큘럼"></i><span>커리큘럼</span></a></div>
