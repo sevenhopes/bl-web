@@ -6,7 +6,7 @@ Template: twentyseventeen
 Author: Bridge Light Corp.
 Author URI: http://bridgelightels.com/m/
 Tags: 브릿지라잇,춘천영어학원,BridgeLight,춘천어학원,브릿지라잇어학원
-Version: 2.6.6
+Version: 2.6.11
 Text Domain: 2017-child
 Tags: mobile-first
 */
@@ -943,7 +943,7 @@ select,
 textarea {
 	color: $k2;
 	font-family: $font-kr;
-	font-size: 15px;
+	font-size: 17px;
 	font-weight: 400;
 	line-height: 1.7;
 }
@@ -1391,7 +1391,7 @@ $menu-toggle-w: 56px;
 	// position: relative;
 	position: absolute;
 	right: 0;
-	top: calc( ( #{ $header-h } - #{ $menu-toggle-h } ) / 2 );
+	top: calc( ( #{ $header-h - $menu-toggle-h } ) / 2 );
 	overflow: hidden;
 	z-index: 9999;
 	display: block;
@@ -1674,13 +1674,10 @@ a.skip-link {
 
 /* img에 적용된 <a> 태그 */
 .custom-logo-link {
-	// display: inline-block;
-	// padding: 8px -16px 8px 16px;
-	padding: 0;
-	vertical-align: middle;
+	display: block;
+	padding: 0 0 0 16px;
+	vertical-align: initial;
 	width: calc( 100% - #{ $menu-toggle-w } );
-
-	// float: right;
 	box-sizing: border-box;
 	margin: 0;
 	position: absolute;
@@ -1689,25 +1686,21 @@ a.skip-link {
 	left: 0;
 	bottom: 0;
 	height: $header-h;
-	padding-left: 16px;
+	line-height: $header-h;
+	font-size: 1rem;
 }
-
-$logo-pos-top: ( $header-h - $logo-h ) / 2;
 
 /* .custom-logo 클래스와 같음 */
 .custom-logo-link img {
-	// display: inline-block;
+	display: inline-block;
 	max-height: $header-h;
-	// width: calc( #{ $logo-h } * 6 );
 	width: 100%;
-
-	display: block;
-	// height: $logo-h;
 	height: auto;
 	max-width: $header-h * 6;
 	position: relative;
-	top: $logo-pos-top;
+	top: -2px;
 	margin: 0 auto;
+	vertical-align: middle;
 }
 
 body.home.title-tagline-hidden.has-header-image .custom-logo-link img,
