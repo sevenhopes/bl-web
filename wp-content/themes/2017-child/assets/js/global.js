@@ -245,8 +245,8 @@ Version: 1.9.4
 
 	// 페이지를 스크롤 함. (북마크 링크 대신 사용. 스크롤 거리에 따라 속도 조절)
 	function scrollThePage( top ) {
-		var speed = bookmark_top < 400 ? 400 : Math.ceil( bookmark_top ) > 600 ? 600 : Math.ceil( bookmark_top );
-		$( 'html, body' ).animate( { scrollTop: top }, speed );
+		var scroll_speed = bookmark_top < 400 ? 400 : Math.ceil( bookmark_top ) > 600 ? 600 : Math.ceil( bookmark_top );
+		$( 'html, body' ).animate( { scrollTop: top }, scroll_speed );
 	}
 
 	/*
