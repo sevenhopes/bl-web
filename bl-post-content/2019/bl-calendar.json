@@ -184,8 +184,8 @@
 			"title": "겨울방학 영어캠프",
 			"holiday": false,
 			"start": "2020-02-17",
-			"end": "2020-02-28",
-			"extra": "Come and learn! Fun!",
+			"end": "2020-03-04",
+			"extra": "2월 24, 25, 26일은 휴원입니다",
 			"public": true,
 			"pending": false
 		},
@@ -210,9 +210,9 @@
 		{
 			"title": "가을학기 종강",
 			"holiday": false,
-			"start": "2020-02-28",
+			"start": "2020-03-03",
 			"end": null,
-			"extra": "",
+			"extra": "변경된 일정에 유의!",
 			"public": true,
 			"pending": false
 		},
@@ -222,15 +222,15 @@
 			"start": "2020-03-02",
 			"end": "2020-03-03",
 			"extra": "최선을 다해 준비하겠습니다.",
-			"public": true,
+			"public": false,
 			"pending": false
 		},
 		{
 			"title": "봄학기 개강",
 			"holiday": false,
-			"start": "2020-03-04",
+			"start": "2020-03-09",
 			"end": null,
-			"extra": "그냥 오던 교실로 오세요~",
+			"extra": "변경된 일정에 유의! 재학생은 원래 교실로, 신입생은 지하1층 로비로 오세요.",
 			"public": true,
 			"pending": false
 		},
