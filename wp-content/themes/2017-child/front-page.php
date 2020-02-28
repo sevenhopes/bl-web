@@ -11,7 +11,10 @@
  * @version 1.4
  */
 
-get_header(); ?>
+get_header();
+
+// $dev_code = array();
+?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
@@ -63,9 +66,9 @@ get_header(); ?>
 
 				<?php
 				$current_raw = 0;
-				$current_ymd = '';
+				$current_ymd = '0000-00-00';
 				$weekago_raw = 0;
-				$weekago_ymd = '';
+				$weekago_ymd = '0000-00-00';
 
 				$query = new WP_Query( array( 'category_name' => 'news' ) );
 				if ( ! $query->have_posts() ) :
@@ -119,17 +122,23 @@ get_header(); ?>
 				$events = json_decode( get_post_field( 'post_content', 1697 ) );
 
 				foreach ( (array) $events as $ev ) :
+					$count = 0;
 					$starttime = strtotime( $ev->{"start"} );
 
 					if ( $starttime >= strtotime( "+30 days", time() ) ) {
+						// 현재부터 앞으로 한 달 내의 일정만 보여줌, 너무 먼 미래의 이벤트 보여주는 걸 방지
 						break;
 					}
 
-					// 프론트페이지에 표시될 이벤트이면, 시작일만, 또는 시작일과 종료일을 표시 (연속되지 않는 시작일과 종료일의 경우, 예로 17일, 19일 같은 경우 그 사이에 ' ~ ' 대신에 ', '를 사용)
-					if ( is_frontpage_event( $ev ) ) :
-					// echo date( "Y-m-d H:i:s", strtotime($ev->{"start"}) )." / ".date( "Y-m-d H:i:s", strtotime($ev->{"end"}) )."<br>";
+					// 표시되어야 할 이벤트인 경우만 화면 출력,
+					// 하루 이벤트이면 (시작일과 종료일이 같음) 시작일만 표시, 기간을 가진 이벤트이면 시작일과 종료일을 함께 표시
+					// 연속된 기간이 아닌 경우, 예로 시작일은 17일, 종료일은 19일, 18일은 해당 없음 같은 경우 그 사이에 ' ~ ' 대신에 ', '를 사용)
+					if ( is_displayable( $ev ) ) :
+						$count++;
+						$one_day = $ev->{"start"} == $ev->{"end"};
+						// echo date( "Y-m-d H:i:s", strtotime($ev->{"start"}) )." / ".date( "Y-m-d H:i:s", strtotime($ev->{"end"}) )."<br>";
 				?>
-					<div class="bl-event-item<?php echo $ev->{"holiday"} ? ' bl-holiday' : ( $ev->{"public"} ? '' : ' staff-event'); ?>" data-date="<?php echo $ev->{"start"} ?>">
+					<div class="bl-event-item<?php echo $ev->{"holiday"} ? ' bl-holiday' : ''; ?>" data-date="<?php echo $ev->{"start"} ?>">
 						<div class="bl-tear-off">
 							<div class="t-o-day"><?php echo date( "j", $starttime ) ?></div>
 							<div class="t-o-mon"><?php echo date( "M", $starttime ) ?></div>
@@ -137,7 +146,7 @@ get_header(); ?>
 						<div class="bl-event-info">
 							<h2 class="e-i-title"><?php echo $ev->{"title"} ?></h2>
 							<div class="e-i-date">
-								<time itemprop="startDate" datetime="<?php echo $ev->{"start"} ?>"><?php echo bl_w2k( date( "n\월 j\일 D", $starttime ) ) ?></time><?php if ( $ev->{"end"} ) : $endtime = strtotime( $ev->{"end"} ); ?><time itemprop="endDate" datetime="<?php echo $ev->{"end"} ?>"><?php echo $starttime == strtotime( "-1 day", $endtime ) || isset( $ev->{"separated"} ) ? ', ': ' ~ ' ?><?php echo bl_w2k( date( substr_compare( $ev->{"start"}, substr( $ev->{"end"}, 5, 2 ), 5, 2) == 0 ? "j\일 D" : "n\월 j\일 D", $endtime ) ) ?></time><?php endif; ?>
+								<time itemprop="startDate" datetime="<?php echo $ev->{"start"} ?>"><?php echo bl_w2k( date( "n\월 j\일 D", $starttime ) ) ?></time><?php if ( ! $one_day ) : $endtime = strtotime( $ev->{"end"} ); ?><time itemprop="endDate" datetime="<?php echo $ev->{"end"} ?>"><?php echo $starttime == strtotime( "-1 day", $endtime ) || isset( $ev->{"separated"} ) ? ', ': ' ~ ' ?><?php echo bl_w2k( date( substr_compare( $ev->{"start"}, substr( $ev->{"end"}, 5, 2 ), 5, 2) == 0 ? "j\일 D" : "n\월 j\일 D", $endtime ) ) ?></time><?php endif; ?>
 							</div>
 							<div class="e-i-extra"><?php echo $ev->{"extra"} ?></div>
 						</div>
@@ -146,14 +155,22 @@ get_header(); ?>
 					endif;
 				endforeach;
 
+				if ( count == 0 ) {
+					;
+				}
+
 				// public(공개형) 이벤트 중 pending(확정되지 않은) 이벤트를 제외하고,
 				// 날짜가 한 달 이내인 이벤트는 true
-				function is_frontpage_event( $ev ) {
-					$public = $ev->{"public"} && ! $ev->{"pending"};
-					$recent_start = strtotime( "+2 day", strtotime( $ev->{"start"} ) ) >= time();
-					$recent_end = strtotime( $ev->{"start"} ) <= strtotime( "+30 days", time() );
+				function is_displayable( $ev ) {
+					$endtime = strtotime( $ev->{"end"} );
 
-					return $public && $recent_start && $recent_end;
+					$public = $ev->{"public"} && ! $ev->{"pending"};
+					$nearfuture = ( time() < $endtime ) && ( $endtime <= strtotime( "+30 days", time() ) ) ;
+					// $recent_start = strtotime( "+2 day", strtotime( $ev->{"start"} ) ) >= time();
+					// $recent_end = strtotime( $ev->{"end"} ) <= strtotime( "+30 days", time() );
+
+					// return $public && ! ( ! $recent_start && ! $recent_end );
+					return $public && $nearfuture;
 				}
 				?>
 					<div class="bl-event-comment">* 빨강색 일정은 휴원</div>
@@ -215,11 +232,13 @@ get_header(); ?>
 
 <div class="bl-dev-code">
 	<?php
-		// echo $_SERVER['HTTP_USER_AGENT'] . "<br>";
-		echo '<p>c-raw: '.$current_raw.'</p>';
-		echo '<p>w-raw: '.$weekago_raw.'</p>';
-		echo '<p>c-ymd: '.$current_ymd.'</p>';
-		echo '<p>w-ymd: '.$weekago_ymd.'</p>';
+		// $dev_code = '<p>'.$_SERVER['HTTP_USER_AGENT']."</p>";
+		// $dev_code = '<p>c-raw: '.$current_raw.'</p>';
+		// $dev_code = '<p>w-raw: '.$weekago_raw.'</p>';
+		// $dev_code = '<p>c-ymd: '.$current_ymd.'</p>';
+		// $dev_code = '<p>w-ymd: '.$weekago_ymd.'</p>';
+
+		// echo $dev_code;
 	?>
 </div>
 

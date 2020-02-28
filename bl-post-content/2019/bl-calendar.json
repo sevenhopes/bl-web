@@ -3,7 +3,7 @@
 			"title": "가을학기 개강",
 			"holiday": false,
 			"start": "2019-09-04",
-			"end": null,
+			"end": "2019-09-04",
 			"extra": "Let's start again!",
 			"public": true,
 			"pending": false
@@ -48,7 +48,7 @@
 			"title": "이 달의 생일축하",
 			"holiday": false,
 			"start": "2019-09-20",
-			"end": null,
+			"end": "2019-09-20",
 			"extra": "Happy Birthday! :)",
 			"public": true,
 			"pending": false
@@ -57,7 +57,7 @@
 			"title": "개천절",
 			"holiday": true,
 			"start": "2019-10-03",
-			"end": null,
+			"end": "2019-10-03",
 			"extra": null,
 			"public": true,
 			"pending": false
@@ -66,7 +66,7 @@
 			"title": "Halloween Decoration Contest",
 			"holiday": false,
 			"start": "2019-10-04",
-			"end": null,
+			"end": "2019-10-04",
 			"extra": "할로윈을 맞이하는 올바른 자세",
 			"public": true,
 			"pending": false
@@ -75,7 +75,7 @@
 			"title": "한글날",
 			"holiday": true,
 			"start": "2019-10-09",
-			"end": null,
+			"end": "2019-10-09",
 			"extra": null,
 			"public": true,
 			"pending": false
@@ -84,7 +84,7 @@
 			"title": "Halloween Party",
 			"holiday": false,
 			"start": "2019-10-25",
-			"end": null,
+			"end": "2019-10-25",
 			"extra": "Stay scary. Stay crazy.",
 			"public": true,
 			"pending": false
@@ -111,7 +111,7 @@
 			"title": "Christmas 카드만들기 컨테스트 마감",
 			"holiday": false,
 			"start": "2019-12-01",
-			"end": null,
+			"end": "2019-12-01",
 			"extra": "초등 부문 & 중등 부문",
 			"public": false,
 			"pending": true
@@ -120,7 +120,7 @@
 			"title": "Christmas Party",
 			"holiday": false,
 			"start": "2019-12-24",
-			"end": null,
+			"end": "2019-12-24",
 			"extra": "With Enjoying Lip Dub",
 			"public": true,
 			"pending": false
@@ -129,7 +129,7 @@
 			"title": "Christmas",
 			"holiday": true,
 			"start": "2019-12-25",
-			"end": null,
+			"end": "2019-12-25",
 			"extra": "",
 			"public": true,
 			"pending": false
@@ -157,7 +157,7 @@
 			"title": "겨울방학 영어캠프 등록마감",
 			"holiday": false,
 			"start": "2020-02-07",
-			"end": null,
+			"end": "2020-02-07",
 			"extra": "2주 동안 영어실력 쑥쑥!",
 			"public": true,
 			"pending": false
@@ -181,6 +181,24 @@
 			"pending": false
 		},
 		{
+			"title": "Staff Luncheon",
+			"holiday": false,
+			"start": "2020-01-13",
+			"end": "2020-01-13",
+			"extra": "",
+			"public": false,
+			"pending": false
+		},
+		{
+			"title": "졸업식 & 장학금 수여식",
+			"holiday": false,
+			"start": "2020-02-01",
+			"end": "2020-02-01",
+			"extra": "",
+			"public": false,
+			"pending": true
+		},
+		{
 			"title": "겨울방학 영어캠프",
 			"holiday": false,
 			"start": "2020-02-17",
@@ -190,28 +208,10 @@
 			"pending": false
 		},
 		{
-			"title": "Staff Luncheon",
-			"holiday": false,
-			"start": "2020-01-13",
-			"end": null,
-			"extra": "",
-			"public": false,
-			"pending": false
-		},
-		{
-			"title": "졸업식 & 장학금 수여식",
-			"holiday": false,
-			"start": "2020-02-01",
-			"end": null,
-			"extra": "",
-			"public": false,
-			"pending": true
-		},
-		{
 			"title": "가을학기 종강",
 			"holiday": false,
 			"start": "2020-03-03",
-			"end": null,
+			"end": "2020-03-03",
 			"extra": "변경된 일정에 유의!",
 			"public": true,
 			"pending": false
@@ -219,8 +219,8 @@
 		{
 			"title": "학기준비기간",
 			"holiday": true,
-			"start": "2020-03-02",
-			"end": "2020-03-03",
+			"start": "2020-03-04",
+			"end": "2020-03-06",
 			"extra": "최선을 다해 준비하겠습니다.",
 			"public": false,
 			"pending": false
@@ -229,7 +229,7 @@
 			"title": "봄학기 개강",
 			"holiday": false,
 			"start": "2020-03-09",
-			"end": null,
+			"end": "2020-03-09",
 			"extra": "변경된 일정에 유의! 재학생은 원래 교실로, 신입생은 지하1층 로비로 오세요.",
 			"public": true,
 			"pending": false
@@ -238,7 +238,7 @@
 			"title": "학원 Association Teacher Training",
 			"holiday": false,
 			"start": "2020-03-01",
-			"end": null,
+			"end": "2020-03-01",
 			"extra": "",
 			"public": false,
 			"pending": true
