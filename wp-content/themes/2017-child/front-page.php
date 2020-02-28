@@ -163,13 +163,9 @@ get_header();
 				// 날짜가 한 달 이내인 이벤트는 true
 				function is_displayable( $ev ) {
 					$endtime = strtotime( $ev->{"end"} );
-
 					$public = $ev->{"public"} && ! $ev->{"pending"};
 					$nearfuture = ( time() < $endtime ) && ( $endtime <= strtotime( "+30 days", time() ) ) ;
-					// $recent_start = strtotime( "+2 day", strtotime( $ev->{"start"} ) ) >= time();
-					// $recent_end = strtotime( $ev->{"end"} ) <= strtotime( "+30 days", time() );
 
-					// return $public && ! ( ! $recent_start && ! $recent_end );
 					return $public && $nearfuture;
 				}
 				?>
