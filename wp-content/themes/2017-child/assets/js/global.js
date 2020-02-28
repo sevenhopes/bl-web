@@ -235,13 +235,15 @@ Version: 1.9.4
 			$desc.eq( idx ).show();
 		});
 
-	} else if ( $body.find( '#semesters' ).length || $body.find( '#english-camp' ).length || $body.find( '#extracurricular' ).length ) {
-		var idx = window.location.href.search( '##' );	// 북마크 id로 바로 이동을 피하기 위해 URL에 #을 하나 더 붙임 (예: ##course-basic, bl-course-overview.php)
-		if ( idx != -1 ) {
-			var bookmark = window.location.href.substring( idx + 1 );
-			bookmark_top = $( bookmark ).offset().top - header_h - 5;
-		}
 	} // end of if ( 페이지별 처리 )
+
+	// 북마크 id로 바로 이동을 피하기 위해 URL 내의 북마크 id에 #을 하나 더 붙여서 넘어옴
+	// 예: bl-course-overview.php의 ##course-basic 또는 front-page.php의 ##events
+	var idx = window.location.href.search( '##' );
+	if ( idx != -1 ) {
+		var bookmark = window.location.href.substring( idx + 1 );
+		bookmark_top = $( bookmark ).offset().top - header_h - 10;
+	}
 
 	// 페이지를 스크롤 함. (북마크 링크 대신 사용. 스크롤 거리에 따라 속도 조절)
 	function scrollThePage( top ) {
