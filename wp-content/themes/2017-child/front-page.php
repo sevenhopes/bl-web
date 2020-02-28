@@ -61,7 +61,7 @@ get_header();
 			<div id="bl-news" class="bl-block">
 				<div class="bl-block-header">
 					<h2 class="bl-block-title">News</h2>
-					<div class="bl-inline-link"><a href="http://www.bridgelightels.com/m/news-n-events/#news">All News</a></div>
+					<div class="bl-inline-link"><a href="http://www.bridgelightels.com/m/news-n-events##news">All News</a></div>
 				</div>
 
 				<?php
@@ -113,7 +113,7 @@ get_header();
 			<div id="bl-event" class="bl-block">
 				<div class="bl-block-header">
 					<h2 class="bl-block-title">Events</h2>
-					<div class="bl-inline-link"><a href="http://www.bridgelightels.com/m/news-n-events/#events">All Events</a></div>
+					<div class="bl-inline-link"><a href="http://www.bridgelightels.com/m/news-n-events##events">All Events</a></div>
 				</div>
 				<div class="bl-wrap">
 
