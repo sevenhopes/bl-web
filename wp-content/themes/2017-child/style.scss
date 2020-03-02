@@ -3928,14 +3928,14 @@ $wide-nav-drawer-h: 36px;
 		height: $wide-header-h;
 		line-height: $wide-header-h;
 
-		display: block;
-		box-sizing: border-box;
-		margin: 0;
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		font-size: 1rem;
+		// display: block;
+		// box-sizing: border-box;
+		// margin: 0;
+		// position: absolute;
+		// top: 0;
+		// left: 0;
+		// bottom: 0;
+		// font-size: 1rem;
 	}
 	.custom-logo-link img,
 	body.home.title-tagline-hidden.has-header-image .custom-logo-link img {
@@ -3944,12 +3944,12 @@ $wide-nav-drawer-h: 36px;
 		width: auto;
 		max-width: 100%;
 		top: -2px;
-		right: 20px;	// 로고에 BRIDGE가 LIGHT보다 더 긴 부분 보정
+		right: 10px;	// 로고에 'BRIDGE'가 'LIGHT'보다 더 긴 부분 보정
 
-		display: inline-block;
-		position: relative;
-		margin: 0 auto;
-		vertical-align: middle;
+		// display: inline-block;
+		// position: relative;
+		// margin: 0 auto;
+		// vertical-align: middle;
 	}
 	#bl-branding {
 		background: transparent;
