@@ -76,7 +76,7 @@ get_header(); ?>
 				<div class="bl-wrap">
 				<?php
 				// Events 글의 아이디로 그 글의 내용인 JSON 코드 파싱
-				$events = json_decode( get_post_field( 'post_content', 1697 ) );
+				$events = json_decode( get_post_field( 'post_content', 2071 ) );
 
 				if ( $events ) :
 					foreach ( $events as $ev ) :
