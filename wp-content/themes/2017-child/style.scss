@@ -121,11 +121,6 @@ $test-b:  #cf3;
 0.1 이미지 스프라이트
 	HTML 예시 코드: <i id="elem-id" class="bl-sp"></i>
 --------------------------------------------------------------*/
-// sp: sprites
-.bl-sp {
-	display: inline-block;
-}
-
 $sp-url: url('assets/images/sprites.png?ver=1.5');
 $sp-w: 700px;	// width
 $sp-h: 200px;	// height
@@ -155,6 +150,12 @@ $sp-h72: $sp-h * $ratio-72;
 $sp-h32: $sp-h * $ratio-32;
 $sp-h80: $sp-h * $ratio-80;
 
+// sp: sprites
+.bl-sp {
+	display: inline-block;
+	background-image: $sp-url;
+}
+
 ////////////////////////////////////////////////// 헤더 로고 header logo, 푸터 로고 footer logo
 // .header-logo {
 // 	background-image: $sp-url;
@@ -166,28 +167,24 @@ $sp-h80: $sp-h * $ratio-80;
 //.bl-footer-logo를 참조
 ////////////////////////////////////////////////// 공유하기 모달 레이어 Share sharing modal layer
 .icb-urlcopy {
-	background-image: $sp-url;
 	background-position: 0px 0px;
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icb-urlhomecopy {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -1) 0px;
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icon-fb-box {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -2) 0px;
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icon-kakaolink {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -3) 0px;
 	width: $ic-64;
 	height: $ic-64;
@@ -195,77 +192,66 @@ $sp-h80: $sp-h * $ratio-80;
 }
 ////////////////////////////////////////////////// 프론트 페이지 Front page 푸터 Footer
 .icon-blog {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -4) 0px;
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icon-call {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -5) 0px;
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icon-devel {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -6) 0px;
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icon-faq {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -7) 0px;
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icon-fb {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -8) 0px;
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icon-inside {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -9) 0px;
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icon-map {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -10) 0px;
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icon-school {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -11) 0px;
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icon-travel {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -12) 0px;
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icon-book {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -13) 0px;
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icon-mortar {
-	background-image: $sp-url;
 	background-position: 0px ($ic-64 * -1);
 	width: $ic-64;
 	height: $ic-64;
@@ -273,119 +259,102 @@ $sp-h80: $sp-h * $ratio-80;
 }
 ////////////////////////////////////////////////// 정규학기 Spring/Fall Semester 
 .icw-phonics {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -1) ($ic-72 * -1);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-activity {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -2) ($ic-72 * -1);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-class {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -3) ($ic-72 * -1);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-conversation {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -4) ($ic-72 * -1);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-grammar {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -5) ($ic-72 * -1);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-sentence {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -6) ($ic-72 * -1);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-culture {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -7) ($ic-72 * -1);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-confidence {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -8) ($ic-72 * -1);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-science {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -9) ($ic-72 * -1);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-brain {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -10) ($ic-72 * -1);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-vocabulary {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -11) ($ic-72 * -1);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-writing {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -12) ($ic-72 * -1);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-question {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -13) ($ic-72 * -1);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-toeic {
-	background-image: $sp-url;
 	background-position: 0px ($ic-72 * -2);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-teps {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -1) ($ic-72 * -2);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-reading {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -2) ($ic-72 * -2);
 	width: $ic-72;
 	height: $ic-72;
 	background-size: $sp-w72 $sp-h72;
 }
 .icw-think {
-	background-image: $sp-url;
 	background-position: ($ic-72 * -3) ($ic-72 * -2);
 	width: $ic-72;
 	height: $ic-72;
@@ -393,119 +362,102 @@ $sp-h80: $sp-h * $ratio-80;
 }
 ////////////////////////////////////////////////// 정규학기 Spring/Fall Semester 페이지의 목록 표시
 .icw-phonics-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -1) ($ic-32 * -1);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-activity-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -2) ($ic-32 * -1);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-class-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -3) ($ic-32 * -1);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-conversation-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -4) ($ic-32 * -1);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-grammar-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -5) ($ic-32 * -1);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-sentence-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -6) ($ic-32 * -1);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-culture-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -7) ($ic-32 * -1);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-confidence-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -8) ($ic-32 * -1);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-science-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -9) ($ic-32 * -1);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-brain-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -10) ($ic-32 * -1);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-vocabulary-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -11) ($ic-32 * -1);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-writing-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -12) ($ic-32 * -1);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-question-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -13) ($ic-32 * -1);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-toeic-li {
-	background-image: $sp-url;
 	background-position: 0px ($ic-32 * -2);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-teps-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -1) ($ic-32 * -2);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-reading-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -2) ($ic-32 * -2);
 	width: $ic-32;
 	height: $ic-32;
 	background-size: $sp-w32 $sp-h32;
 }
 .icw-think-li {
-	background-image: $sp-url;
 	background-position: ($ic-32 * -3) ($ic-32 * -2);
 	width: $ic-32;
 	height: $ic-32;
@@ -513,63 +465,54 @@ $sp-h80: $sp-h * $ratio-80;
 }
 ////////////////////////////////////////////////// 여름겨울 영어캠프 English Camps 입학 과정 Admissions
 .icg-bill {
-	background-image: $sp-url;
 	background-position: ($ic-80 * -4) ($ic-80 * -2);
 	width: $ic-80;
 	height: $ic-80;
 	background-size: $sp-w80 $sp-h80;
 }
 .icg-bus {
-	background-image: $sp-url;
 	background-position: ($ic-80 * -5) ($ic-80 * -2);
 	width: $ic-80;
 	height: $ic-80;
 	background-size: $sp-w80 $sp-h80;
 }
 .icg-calendar {
-	background-image: $sp-url;
 	background-position: ($ic-80 * -6) ($ic-80 * -2);
 	width: $ic-80;
 	height: $ic-80;
 	background-size: $sp-w80 $sp-h80;
 }
 .icg-class {
-	background-image: $sp-url;
 	background-position: ($ic-80 * -7) ($ic-80 * -2);
 	width: $ic-80;
 	height: $ic-80;
 	background-size: $sp-w80 $sp-h80;
 }
 .icg-enroll {
-	background-image: $sp-url;
 	background-position: ($ic-80 * -8) ($ic-80 * -2);
 	width: $ic-80;
 	height: $ic-80;
 	background-size: $sp-w80 $sp-h80;
 }
 .icg-interview {
-	background-image: $sp-url;
 	background-position: ($ic-80 * -9) ($ic-80 * -2);
 	width: $ic-80;
 	height: $ic-80;
 	background-size: $sp-w80 $sp-h80;
 }
 .icg-level {
-	background-image: $sp-url;
 	background-position: ($ic-80 * -10) ($ic-80 * -2);
 	width: $ic-80;
 	height: $ic-80;
 	background-size: $sp-w80 $sp-h80;
 }
 .icg-passport {
-	background-image: $sp-url;
 	background-position: ($ic-80 * -11) ($ic-80 * -2);
 	width: $ic-80;
 	height: $ic-80;
 	background-size: $sp-w80 $sp-h80;
 }
 .icg-travel {
-	background-image: $sp-url;
 	background-position: ($ic-80 * -12) ($ic-80 * -2);
 	width: $ic-80;
 	height: $ic-80;
@@ -577,21 +520,18 @@ $sp-h80: $sp-h * $ratio-80;
 }
 ////////////////////////////////////////////////// 내비 메뉴 Navigaiton menu
 .icw-call {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -13) ($ic-64 * -2);
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icw-map {
-	background-image: $sp-url;
 	background-position: 0px ($ic-64 * -3);
 	width: $ic-64;
 	height: $ic-64;
 	background-size: $sp-w64 $sp-h64;
 }
 .icw-share {
-	background-image: $sp-url;
 	background-position: ($ic-64 * -1) ($ic-64 * -3);
 	width: $ic-64;
 	height: $ic-64;
@@ -599,28 +539,24 @@ $sp-h80: $sp-h * $ratio-80;
 }
 ////////////////////////////////////////////////// 미국현지 체험연수 Study in America
 .icw-home {
-	background-image: $sp-url;
 	background-position: ($ic-80 * -2) ($ic-80 * -3);
 	width: $ic-80;
 	height: $ic-80;
 	background-size: $sp-w80 $sp-h80;
 }
 .icw-school {
-	background-image: $sp-url;
 	background-position: ($ic-80 * -3) ($ic-80 * -3);
 	width: $ic-80;
 	height: $ic-80;
 	background-size: $sp-w80 $sp-h80;
 }
 .icw-themepark {
-	background-image: $sp-url;
 	background-position: ($ic-80 * -4) ($ic-80 * -3);
 	width: $ic-80;
 	height: $ic-80;
 	background-size: $sp-w80 $sp-h80;
 }
 .icw-usa {
-	background-image: $sp-url;
 	background-position: ($ic-80 * -5) ($ic-80 * -3);
 	width: $ic-80;
 	height: $ic-80;
@@ -628,38 +564,32 @@ $sp-h80: $sp-h * $ratio-80;
 }
 ////////////////////////////////////////////////// 목록 표시 List Bullet style
 .ul-bullet-blue {
-	background-image: $sp-url;
 	background-position: ($ic-s * -5) ($ic-s * -3);
 	width: 14px;
 	height: 14px;
 }
 .ul-bullet {
-	background-image: $sp-url;
 	background-position: (($ic-s * -5) - 14) ($ic-s * -3);
 	width: 14px;
 	height: 14px;
 }
 .ul-ul-bullet {
-	background-image: $sp-url;
 	background-position: (($ic-s * -5) - 28) ($ic-s * -3);
 	width: 14px;
 	height: 14px;
 }
 ////////////////////////////////////////////////// 사용 않는 아이콘
 .icw-community {
-	background-image: $sp-url;
 	background-position: ($ic-s * -6) ($ic-s * -3);
 	width: $ic-s;
 	height: $ic-s;
 }
 .icw-satellite {
-	background-image: $sp-url;
 	background-position: ($ic-s * -7) ($ic-s * -3);
 	width: $ic-s;
 	height: $ic-s;
 }
 .icon-share {
-	background-image: $sp-url;
 	background-position: ($ic-s * -8) ($ic-s * -3);
 	width: $ic-s;
 	height: $ic-s;
@@ -672,143 +602,81 @@ $t-sp-100-h: 600px;
 $t-w: 90px;
 $t-h: 120px;
 
+.t-bl-sp {
+	display: inline-block;
+	background-image: $t-sp-url;
+	width: $t-w;
+	height: $t-h;
+}
+
 .t-jessy {
-  background-image: $t-sp-url;
-  background-position: 0px 0px;
-  width: $t-w;
-  height: $t-h;
+	background-position: 0px 0px;
 }
 .t-angela {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -1) 0px;
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -1) 0px;
 }
 .t-david {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -2) 0px;
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -2) 0px;
 }
 .t-ethan {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -3) 0px;
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -3) 0px;
 }
 .t-judy {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -4) 0px;
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -4) 0px;
 }
 .t-peter {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -5) 0px;
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -5) 0px;
 }
 .t-dean {
-  background-image: $t-sp-url;
-  background-position: 0px ($t-h * -1);
-  width: $t-w;
-  height: $t-h;
+	background-position: 0px ($t-h * -1);
 }
 .t-elena {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -1) ($t-h * -1);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -1) ($t-h * -1);
 }
 .t-elly {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -2) ($t-h * -1);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -2) ($t-h * -1);
 }
 .t-eunji {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -3) ($t-h * -1);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -3) ($t-h * -1);
 }
 .t-julia {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -4) ($t-h * -1);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -4) ($t-h * -1);
 }
 .t-rachel {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -5) ($t-h * -1);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -5) ($t-h * -1);
 }
 .t-finn {
-  background-image: $t-sp-url;
-  background-position: 0px ($t-h * -2);
-  width: $t-w;
-  height: $t-h;
+	background-position: 0px ($t-h * -2);
 }
 .t-irene {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -1) ($t-h * -2);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -1) ($t-h * -2);
 }
 .t-jamie {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -2) ($t-h * -2);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -2) ($t-h * -2);
 }
 .t-bomi {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -3) ($t-h * -2);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -3) ($t-h * -2);
 }
 .t-karim {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -4) ($t-h * -2);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -4) ($t-h * -2);
 }
 .t-scarlett {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -5) ($t-h * -2);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -5) ($t-h * -2);
 }
 .t-semie {
-  background-image: $t-sp-url;
-  background-position: 0px ($t-h * -3);
-  width: $t-w;
-  height: $t-h;
+	background-position: 0px ($t-h * -3);
 }
 .t-sheldon {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -1) ($t-h * -3);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -1) ($t-h * -3);
 }
 .t-stella {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -2) ($t-h * -3);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -2) ($t-h * -3);
 }
 .t-yoomi {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -3) ($t-h * -3);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -3) ($t-h * -3);
 }
 .t-yunah {
-  background-image: $t-sp-url;
-  background-position: ($t-w * -4) ($t-h * -3);
-  width: $t-w;
-  height: $t-h;
+	background-position: ($t-w * -4) ($t-h * -3);
 }
 
 /*--------------------------------------------------------------
@@ -3895,11 +3763,6 @@ dl.bl-faq-list {
 19.0 Media Queries
 --------------------------------------------------------------*/
 
-$wide-header-h:  90px; // 76 * 1.2
-$wide-content-w: 960px;
-$wide-nav-h:     280px;
-$wide-nav-drawer-h: 36px;
-
 /* 600px, Major, Tablets, portrait */
 @media screen and (min-width: 37.5em) {
 
@@ -3910,6 +3773,11 @@ $wide-nav-drawer-h: 36px;
 /* 1200px, Major, Desktop, 4:3 */
 // @media screen and (min-width: 75em) {
 
+	$wide-header-h:  90px;
+	$wide-content-w: 960px;
+	$wide-nav-h:     280px;
+	$wide-nav-drawer-h: 36px;
+
 	.site-header,
 	#bl-branding,
 	// .has-header-video.twentyseventeen-front-page .custom-header,
@@ -3919,7 +3787,9 @@ $wide-nav-drawer-h: 36px;
 		height: $wide-header-h;
 	}
 	.custom-header {
-		background: $blue-d2 url('assets/images/widescreen/header-bg.png') repeat-x;
+		background-color: $blue-d2;
+		background-image: url('assets/images/widescreen/header-bg.png');
+		background-repeat: repeat-x;
 	}
 	.custom-logo-link {
 		padding: 0;
@@ -3991,19 +3861,8 @@ $wide-nav-drawer-h: 36px;
 		text-align: center;
 		position: relative;
 		top: $wide-header-h;
-		background-color: $blue-d2;
+		background: $blue-d2 url( 'assets/images/widescreen/nav-drawer.png' ) no-repeat top center;
 		z-index: 9997;
-
-		i {
-			background-image: $sp-url;
-			background-position: 0px -700px;
-			background-size: $sp-w $sp-h;
-			background-repeat: no-repeat;
-			width: 700px;
-			height: $wide-nav-drawer-h;
-			// position: relative;
-			margin: 0 auto;
-		}
 	}
 	.navigation-top {
 		display: block;
@@ -4147,6 +4006,10 @@ $wide-nav-drawer-h: 36px;
 		display: none;
 	}
 
+	.site-content-contain {
+		background-attachment: fixed;
+		background: $blue-d1 url( 'assets/images/widescreen/bg.png' ) repeat top left;
+	}
 	.site-content-contain:before {
 		content: "";
 		position: static;
@@ -4159,7 +4022,7 @@ $wide-nav-drawer-h: 36px;
 		margin-left: auto;
 		margin-right: auto;
 		padding: 35px 50px;
-		background: url( 'assets/images/widescreen/main-bg.png' ) repeat-y top center;
+		background: transparent url( 'assets/images/widescreen/main-bg.png' ) repeat-y top center;
 	}
 	.bl-block {
 		// margin-left: auto;
