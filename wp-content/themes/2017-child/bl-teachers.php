@@ -44,7 +44,6 @@ get_header(); ?>
 		new Teacher( "t-semie",		"강사 김승미 (Semie)",	"김 승 미 'Semie'" ),
 		new Teacher( "t-angela",	"강사 김윤희 (Angela)","김 윤 희 'Angela'",			array("Stage Program") ),
 		new Teacher( "t-jamie",		"강사 박진희 (Jamie)",	"박 진 희 'Jamie'" ),
-		new Teacher( "t-karim",		"강사 커림 (Karim)",		"파크리 커림 'Karim'",		array("Stage Program","Special Program") ),
 		new Teacher( "t-elena",		"강사 정해린 (Elena)",	"정 해 린 'Elena'" ),
 		new Teacher( "t-sheldon",	"강사 쉘든 와인거스트",	"와인거스트 쉘든",				array("Basic Program"), "강사 / 교육연구부", "style=\"letter-spacing: -2px;\"" ),
 		new Teacher( "t-finn",		"강사 핀 스킬톤",				"스킬톤 핀 'Finn'",			array("Stage Program","Basic Program") ),
@@ -66,7 +65,7 @@ get_header(); ?>
 
 			<div class="bl-t-profile">
 				<div class="bl-t-pic">
-					<i class="bl-sp <?php echo $t->cssname ?>" title="<?php echo $t->title ?>"></i>
+					<i class="t-bl-sp <?php echo $t->cssname ?>" title="<?php echo $t->title ?>"></i>
 				</div>
 				<div class="bl-t-info">
 					<span class="bl-t-name" <?php echo $t->ext ?>><?php echo $t->name ?></span>
