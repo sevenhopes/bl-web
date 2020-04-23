@@ -1,0 +1,56 @@
+[
+		{
+			"title": "봄학기 개강",
+			"start": "2021-04-06",
+			"end": "2021-04-06",
+			"holiday": false,
+			"extra": "새 기분, 새 학기",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "TEPS: Mastery",
+			"start": "2020-04-09",
+			"end": "2020-04-10",
+			"holiday": false,
+			"extra": null,
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "총선거일",
+			"start": "2020-04-15",
+			"end": "2020-04-15",
+			"holiday": true,
+			"extra": null,
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "부처님오신날",
+			"start": "2020-04-30",
+			"end": "2020-04-30",
+			"holiday": true,
+			"extra": null,
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "근로자의 날 ~ 어린이날",
+			"start": "2020-05-01",
+			"end": "2020-05-01",
+			"holiday": true,
+			"extra": null,
+			"public": false,
+			"pending": false
+		},
+		{
+			"title": "학원 Association Teacher Training",
+			"start": "2021-03-01",
+			"end": "2021-03-01",
+			"holiday": false,
+			"extra": "",
+			"public": false,
+			"pending": true
+		}
+]
