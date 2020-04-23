@@ -119,16 +119,40 @@ get_header();
 
 				<?php
 				// Events 글의 아이디로 그 글의 내용인 JSON 코드 파싱
-				$events = json_decode( get_post_field( 'post_content', 1697 ) );
+				$events = json_decode( get_post_field( 'post_content', 2071 ) );
+
+				// public(공개형) 이벤트 중 pending(확정되지 않은) 이벤트를 제외하고,
+				// 날짜가 한 달 이내인 이벤트는 true를 return
+				function is_displayable( $event ) {
+					$starttime = strtotime( $event->{"start"} );
+					$endtime = strtotime( $event->{"end"} );
+					$public = $event->{"public"} && ! $event->{"pending"};
+					$nearfuture = time() < $endtime && $endtime <= strtotime( "+30 days", time() );
+
+					return $public && $nearfuture;
+				}
+
+				// $tt = array();
+				// $st = array();
+				// $et = array();
+				// $pb = array();
+				// $nf = array();
 
 				foreach ( (array) $events as $ev ) :
 					$count = 0;
-					$starttime = strtotime( $ev->{"start"} );
+					// $starttime = strtotime( $ev->{"start"} );
 
-					if ( $starttime >= strtotime( "+30 days", time() ) ) {
-						// 현재부터 앞으로 한 달 내의 일정만 보여줌, 너무 먼 미래의 이벤트 보여주는 걸 방지
-						break;
-					}
+					// if ( $starttime >= strtotime( "+30 days", time() ) ) {
+					// 	// 현재부터 앞으로 한 달 내의 일정만 보여줌, 너무 먼 미래의 이벤트 보여주는 걸 방지
+					// 	break;
+					// }
+
+					// debug line
+					// $tt[] = $ev->{"title"};
+					// $st[] = strtotime( $ev->{"start"} );
+					// $et[] = strtotime( $ev->{"end"} );
+					// $pb[] = $ev->{"public"} && ! $ev->{"pending"};
+					// $nf[] = time() < strtotime( $ev->{"end"} ) && strtotime( $ev->{"end"} ) <= strtotime( "+30 days", time() );
 
 					// 표시되어야 할 이벤트인 경우만 화면 출력,
 					// 하루 이벤트이면 (시작일과 종료일이 같음) 시작일만 표시, 기간을 가진 이벤트이면 시작일과 종료일을 함께 표시
@@ -136,6 +160,8 @@ get_header();
 					if ( is_displayable( $ev ) ) :
 						$count++;
 						$one_day = $ev->{"start"} == $ev->{"end"};
+						$starttime = strtotime( $ev->{"start"} );
+						$endtime = strtotime( $ev->{"end"} );
 						// echo date( "Y-m-d H:i:s", strtotime($ev->{"start"}) )." / ".date( "Y-m-d H:i:s", strtotime($ev->{"end"}) )."<br>";
 				?>
 					<div class="bl-event-item<?php echo $ev->{"holiday"} ? ' bl-holiday' : ''; ?>" data-date="<?php echo $ev->{"start"} ?>">
@@ -155,19 +181,9 @@ get_header();
 					endif;
 				endforeach;
 
-				if ( count == 0 ) {
-					;
-				}
-
-				// public(공개형) 이벤트 중 pending(확정되지 않은) 이벤트를 제외하고,
-				// 날짜가 한 달 이내인 이벤트는 true
-				function is_displayable( $ev ) {
-					$endtime = strtotime( $ev->{"end"} );
-					$public = $ev->{"public"} && ! $ev->{"pending"};
-					$nearfuture = ( time() < $endtime ) && ( $endtime <= strtotime( "+30 days", time() ) ) ;
-
-					return $public && $nearfuture;
-				}
+				// if ( count == 0 ) {
+				// 	;
+				// }
 				?>
 					<div class="bl-event-comment">* 빨강색 일정은 휴원</div>
 				</div>
@@ -228,12 +244,17 @@ get_header();
 
 <div class="bl-dev-code">
 	<?php
-		// $dev_code = '<p>'.$_SERVER['HTTP_USER_AGENT']."</p>";
-		// $dev_code = '<p>c-raw: '.$current_raw.'</p>';
-		// $dev_code = '<p>w-raw: '.$weekago_raw.'</p>';
-		// $dev_code = '<p>c-ymd: '.$current_ymd.'</p>';
-		// $dev_code = '<p>w-ymd: '.$weekago_ymd.'</p>';
-
+		// $dev_code = '<p>st: '.$st."</p>";
+		// $dev_code = '<p>et: '.$et.'</p>';
+		// $dev_code = '<p>pb: '.$pb.'</p>';
+		// $dev_code = '<p>nf: '.$nf.'</p>';
+		var_dump( $tt ); echo '<p></p>';
+		var_dump( $st ); echo '<p></p>';
+		var_dump( $et ); echo '<p></p>';
+		var_dump( $pb ); echo '<p></p>';
+		var_dump( $nf ); echo '<p></p>';
+		echo '<p>t:'.time().'</p>';
+		echo '<p>t30:'.strtotime( "+30 days", time() ).'</p>';
 		// echo $dev_code;
 	?>
 </div>
