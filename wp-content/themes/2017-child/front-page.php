@@ -12,8 +12,6 @@
  */
 
 get_header();
-
-// $dev_code = array();
 ?>
 
 <div id="primary" class="content-area">
@@ -120,6 +118,7 @@ get_header();
 				<?php
 				// Events 글의 아이디로 그 글의 내용인 JSON 코드 파싱
 				$events = json_decode( get_post_field( 'post_content', 2071 ) );
+				$count = 0;
 
 				// public(공개형) 이벤트 중 pending(확정되지 않은) 이벤트를 제외하고,
 				// 날짜가 한 달 이내인 이벤트는 true를 return
@@ -127,33 +126,12 @@ get_header();
 					$starttime = strtotime( $event->{"start"} );
 					$endtime = strtotime( $event->{"end"} );
 					$public = $event->{"public"} && ! $event->{"pending"};
-					$nearfuture = time() < $endtime && $endtime <= strtotime( "+30 days", time() );
+					$nearfuture = strtotime( "today -2 days" ) < $endtime && $endtime <= strtotime( "+30 days", time() );
 
 					return $public && $nearfuture;
 				}
 
-				// $tt = array();
-				// $st = array();
-				// $et = array();
-				// $pb = array();
-				// $nf = array();
-
 				foreach ( (array) $events as $ev ) :
-					$count = 0;
-					// $starttime = strtotime( $ev->{"start"} );
-
-					// if ( $starttime >= strtotime( "+30 days", time() ) ) {
-					// 	// 현재부터 앞으로 한 달 내의 일정만 보여줌, 너무 먼 미래의 이벤트 보여주는 걸 방지
-					// 	break;
-					// }
-
-					// debug line
-					// $tt[] = $ev->{"title"};
-					// $st[] = strtotime( $ev->{"start"} );
-					// $et[] = strtotime( $ev->{"end"} );
-					// $pb[] = $ev->{"public"} && ! $ev->{"pending"};
-					// $nf[] = time() < strtotime( $ev->{"end"} ) && strtotime( $ev->{"end"} ) <= strtotime( "+30 days", time() );
-
 					// 표시되어야 할 이벤트인 경우만 화면 출력,
 					// 하루 이벤트이면 (시작일과 종료일이 같음) 시작일만 표시, 기간을 가진 이벤트이면 시작일과 종료일을 함께 표시
 					// 연속된 기간이 아닌 경우, 예로 시작일은 17일, 종료일은 19일, 18일은 해당 없음 같은 경우 그 사이에 ' ~ ' 대신에 ', '를 사용)
@@ -181,9 +159,9 @@ get_header();
 					endif;
 				endforeach;
 
-				// if ( count == 0 ) {
-				// 	;
-				// }
+				if ( $count == 0 ) {
+					echo "<p>앗, 아무 이벤트도 없습니다. 머쓱하네요. 머쓱타드 :p</p>";
+				}
 				?>
 					<div class="bl-event-comment">* 빨강색 일정은 휴원</div>
 				</div>
@@ -244,10 +222,6 @@ get_header();
 
 <div class="bl-dev-code">
 	<?php
-		// $dev_code = '<p>st: '.$st."</p>";
-		// $dev_code = '<p>et: '.$et.'</p>';
-		// $dev_code = '<p>pb: '.$pb.'</p>';
-		// $dev_code = '<p>nf: '.$nf.'</p>';
 		var_dump( $tt ); echo '<p></p>';
 		var_dump( $st ); echo '<p></p>';
 		var_dump( $et ); echo '<p></p>';
@@ -255,7 +229,6 @@ get_header();
 		var_dump( $nf ); echo '<p></p>';
 		echo '<p>t:'.time().'</p>';
 		echo '<p>t30:'.strtotime( "+30 days", time() ).'</p>';
-		// echo $dev_code;
 	?>
 </div>
 
