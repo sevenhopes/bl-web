@@ -27,21 +27,21 @@
 			"pending": false
 		},
 		{
-			"title": "부처님오신날",
-			"start": "2020-04-30",
-			"end": "2020-04-30",
-			"holiday": true,
-			"extra": null,
+			"title": "봄맞이 교실 데코레이션",
+			"start": "2020-04-24",
+			"end": "2020-04-24",
+			"holiday": false,
+			"extra": "교실에서 봄내음 느끼며 같이 공부해요.",
 			"public": true,
 			"pending": false
 		},
 		{
-			"title": "근로자의 날 ~ 어린이날",
-			"start": "2020-05-01",
-			"end": "2020-05-01",
+			"title": "5월 연휴",
+			"start": "2020-04-30",
+			"end": "2020-05-05",
 			"holiday": true,
-			"extra": null,
-			"public": false,
+			"extra": "부처님오신날, 근로자의날, 어린이날, 징검다리휴원(5.4)",
+			"public": true,
 			"pending": false
 		},
 		{
