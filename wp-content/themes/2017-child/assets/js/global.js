@@ -313,8 +313,9 @@ Version: 1.9.4
 			});
 		}
 
-		if ( is_front_page ) {
-			controlSlide();	// 프론트페이지이면 슬라이드 시작
+		// controlSlide();	// 프론트페이지이면 슬라이드 시작
+		if ( is_front_page && 0 == $( window ).scrollTop() ) {
+			$body.find( '.bl-slides' ).sss();
 		}
 
 		var scroll_timer,
@@ -333,22 +334,22 @@ Version: 1.9.4
 		});
 
 		function scroll_stopped() {
-			if ( is_front_page ) {
-				controlSlide();
-			}
+			controlSlide();
 			// changeHeaderSize();
 			scrolling = false;
 		}
 	}); // End of $(document).ready()
 
-	// 스크롤다운에 의해 '헤더+슬라이더'가 35% 이하만 보이면 슬라이딩(이미지 전환) 멈춤
-	// 스크롤업에 의해 65% 이상이 보이면 슬라이딩 다시 시작
+	// 스크롤다운에 의해 페이지가 조금이라도 내려가면 슬라이드 멈춤, 맨 꼭대기일 때만 재생
 	function controlSlide() {
-		if ( ! is_front_page || is_widescreen ) {
+		if ( ! is_front_page ) {
 			return;
 		}
-		var start_slide = ( 0 == $( window ).scrollTop() );
-		$body.find( '.bl-slides' ).sss( { resume: start_slide } );
+		if ( 0 == $( window ).scrollTop() ) {
+			$body.find( '.bl-slides' ).sss( { playback: true } );
+		} else {
+			$body.find( '.bl-slides' ).sss( { playback: false } );
+		}
 	}
 
 	// 스크롤다운 시 헤더 높이 줄임
