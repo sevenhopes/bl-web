@@ -5,7 +5,6 @@
 	var target,
 		slides,
 		slider,
-		sliding = false,
 		transition,
 		slide_count,
 		timer;
@@ -13,8 +12,8 @@
 	$.fn.sss = function(options) {
 
 		var settings = $.extend({
-			resume : false,
-			// autostart : true,	// window.load()에서만 사용
+			playback : true,
+			autostart : true,	// window.load()에서만 사용
 			startOn : 0,
 			speed : 7000,
 			transition : 600,
@@ -29,12 +28,12 @@
 
 			if ( ! is_setup ) {
 				setup_slide();
-			}
-
-			if ( settings.resume ) {
-				reset_timer();
 			} else {
-				clear_timer();
+				if ( settings.playback ) {
+					reset_timer();
+				} else {
+					clear_timer();
+				}
 			}
 
 			function setup_slide() {
@@ -51,17 +50,11 @@
 				}
 			}
 			function reset_timer() {
-				if ( ! sliding ) {
-					clearTimeout(timer);
-					timer = setTimeout(next_slide, settings.speed);
-					sliding = true;
-				}
+				clearTimeout(timer);
+				timer = setTimeout(next_slide, settings.speed);
 			}
 			function clear_timer() {
-				if ( sliding ) {
-					clearTimeout( timer );
-					sliding = false;
-				}
+				clearTimeout( timer );
 			}
 
 			function get_height(target) {
@@ -93,10 +86,9 @@
 
 			// Start Sliding
 			$(window).load(function() {
-				// if ( settings.autostart ) {
-				// 	animate_slide(target);
-				// 	sliding = true;
-				// }
+				if ( settings.autostart ) {
+					animate_slide(target);
+				}
 				slider.css({paddingBottom: get_height(target)});
 
 				// 폰화면에서 왼쪽 오른쪽 쓸어넘기기 동작으로 이미지 전환 (jq-move-swipe.js)
@@ -106,4 +98,5 @@
 
 		}); // End of return
 	}; // End of sss()
+
 })(jQuery, window, document);
