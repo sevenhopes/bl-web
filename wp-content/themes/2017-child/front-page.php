@@ -70,7 +70,7 @@ get_header();
 
 				$query = new WP_Query( array( 'category_name' => 'news' ) );
 				if ( ! $query->have_posts() ) :
-					echo "<p>앗, 아무 뉴스도 없습니다. 머쓱하네요. 머쓱타드 :p</p>";
+					echo "<p>앗, 아무 뉴스도 없습니다. 하지만 우리는 열심히 공부하고 있어요!^^</p>";
 				else :
 					// 최근 글을 하나 이상 보여줌
 					$query->the_post();
@@ -155,17 +155,33 @@ get_header();
 							<div class="e-i-extra"><?php echo $ev->{"extra"} ?></div>
 						</div>
 					</div>
+					<div class="bl-event-comment">* 빨강색 일정은 휴원</div>
 				<?php
 					endif;
 				endforeach;
 
-				if ( $count == 0 ) {
-					echo "<p>앗, 아무 이벤트도 없습니다. 머쓱하네요. 머쓱타드 :p</p>";
-				}
+				if ( $count == 0 ) :
+					$today = date( "Y-m-d" );
+					$now = time();
 				?>
-					<div class="bl-event-comment">* 빨강색 일정은 휴원</div>
+					<div class="bl-event-item" data-date="<?php echo $today ?>">
+						<div class="bl-tear-off">
+							<div class="t-o-day"><?php echo date( "j" ) ?></div>
+							<div class="t-o-mon"><?php echo date( "M" ) ?></div>
+						</div>
+						<div class="bl-event-info">
+							<h2 class="e-i-title">오늘도 영어열공 중</h2>
+							<div class="e-i-date">
+								<time itemprop="startDate" datetime="<?php echo $today ?>"><?php echo bl_w2k( date( "n\월 j\일 D", $now ) ) ?></time>
+							</div>
+							<div class="e-i-extra"></div>
+						</div>
+					</div>
+				<?php
+				endif;
+				?>
 				</div>
-			</div>
+			</div><!-- #bl-event -->
 
 			<div id="bl-why-bl-frontpage" class="bl-block">
 				<div class="bl-block-header">
