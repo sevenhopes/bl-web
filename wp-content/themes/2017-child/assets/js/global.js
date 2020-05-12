@@ -1,5 +1,5 @@
 /*
-Version: 1.9.4
+Version: 1.9.5
 */
 (function( $ ) {
 
@@ -314,8 +314,12 @@ Version: 1.9.4
 		}
 
 		// controlSlide();	// 프론트페이지이면 슬라이드 시작
-		if ( is_front_page && 0 == $( window ).scrollTop() ) {
-			$body.find( '.bl-slides' ).sss();
+		if ( is_front_page ) {
+			if ( 0 == $( window ).scrollTop() ) {
+				$body.find( '.bl-slides' ).sss();
+			} else {
+				$body.find( '.bl-slides' ).sss( { autostart: false } );
+			}
 		}
 
 		var scroll_timer,
