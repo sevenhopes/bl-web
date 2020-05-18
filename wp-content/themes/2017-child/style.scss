@@ -3775,7 +3775,7 @@ dl.bl-faq-list {
 
 	$wide-header-h:  90px;
 	$wide-content-w: 960px;
-	$wide-nav-h:     280px;
+	$wide-nav-h:     240px;
 	$wide-nav-drawer-h: 36px;
 
 	.site-header,
@@ -3844,8 +3844,8 @@ dl.bl-faq-list {
 		color: $k1t;
 	}
 	.bl-under-header {
-		position: fixed;
-		top: 0;
+		// position: fixed;
+		top: ($wide-header-h + $wide-nav-drawer-h);
 		left: 0;
 		height: $wide-header-h;
 		max-height: $wide-header-h;
@@ -3865,10 +3865,12 @@ dl.bl-faq-list {
 		z-index: 9995;
 	}
 	.navigation-top {
-		display: block;
+		display: none;
 		opacity: 1;
+		// background-color: transparent;
+		border-top: none;
 		// top: -($wide-nav-h - $wide-header-h);
-		top: $wide-header-h;
+		top: ($wide-header-h + $wide-nav-drawer-h);
 		height: $wide-nav-h;
 		z-index: 9997;
 	}
@@ -3882,6 +3884,8 @@ dl.bl-faq-list {
 	.main-navigation {
 		display: block;
 		width: 100vw;
+		position: relative;
+		top: -($wide-nav-drawer-h);
 	}
 	.main-navigation > div > ul {
 		width: 820px;
@@ -3891,10 +3895,13 @@ dl.bl-faq-list {
 
 		> li {
 			width: 190px;
+			background-color: transparent;
 
 			> a {
 				color: $blue-l2;
 				line-height: 1;
+				padding-top: 0.5em;
+				padding-bottom: 0.8em;
 			}
 			> a:hover {
 				cursor: default;
@@ -4006,18 +4013,31 @@ dl.bl-faq-list {
 	.main-navigation .page_item_has_children > a > .icon {
 		display: none;
 	}
+	.single-featured-image-header {
+		position: relative;
+		top: $wide-nav-drawer-h;
+		overflow: hidden;
+		min-height: 370px;
+		height: 370px;			// 원래 이미지 높이(430px)에서 60px 줄여서 보여줌. (큰 화면에서는 높이가 너무 커서)
+		margin-bottom: 4rem;
+
+		img {
+			position: absolute;
+			top: -30px;			// 60의 반인 30px를 상하에 배분해서 세로로 가운데 정렬시킴.
+		}
+	}
 
 	.site-content-contain {
 		background-attachment: fixed;
 		background: $blue-d1 url( 'assets/images/widescreen/bg.png' ) repeat top left;
 	}
-	.site-content-contain:before {
-		content: "";
-		position: static;
-		width: 100vw;
-		height: calc( #{ $wide-header-h + $wide-nav-drawer-h } );
-		display: block;
-	}
+	// .site-content-contain:before {
+	// 	content: "";
+	// 	position: static;
+	// 	width: 100vw;
+	// 	height: calc( #{ $wide-header-h + $wide-nav-drawer-h } );
+	// 	display: block;
+	// }
 	#content {
 		width: $wide-content-w;
 		margin-left: auto;
