@@ -20,7 +20,7 @@ get_header(); ?>
 
 	<div class="bl-block">
 		<div class="bl-wrap">
-			<p class="bl-p">브릿지라잇 어학원은 문화체험과 영어연계학습을 위한 여러 특별활동 및 영어발표회를 매년 기획합니다.</p>
+			<p class="bl-p">브릿지라잇 어학원은 영어권 문화체험과 연계학습을 위한 여러 특별활동 및 영어발표회를 매년 기획합니다.</p>
 		</div>
 	</div>
 
