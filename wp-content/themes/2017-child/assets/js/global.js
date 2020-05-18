@@ -72,6 +72,7 @@ Version: 1.9.5
 			$eventBlock.find( '.bl-event-comment' ).hide();
 		}
 
+	// '왜 브릿지라잇인가' 페이지
 	} else if ( $body.find( '#why-bl' ).length ) {
 		// Why Bridge Light 페이지의 accordion 동작
 		var $why_list = $body.find( '.bl-why-list' );
@@ -102,6 +103,7 @@ Version: 1.9.5
 			}
 		});
 
+	// '자주 묻는 질문' 페이지
 	} else if ( $body.find( '#faq' ).length ) {
 		// FAQ 페이지의 동작
 		var $cat_wrap = $body.find( '.bl-faq-category' ),
@@ -207,6 +209,7 @@ Version: 1.9.5
 		// $chosen_cat.addClass( 'selected' );
 		$chosen_cat.trigger( 'click' );
 
+	// '미국현지체험연수' 페이지
 	} else if ( $body.find( '#study-in-america' ).length ) {
 		var $imgs = $body.find( '.bl-tabs .media div' ),
 			$tabs = $body.find( '.bl-tabs .tabs button' ),
@@ -248,6 +251,7 @@ Version: 1.9.5
 	// 페이지를 스크롤 함. (북마크 링크 대신 사용. 스크롤 거리에 따라 속도 조절)
 	function scrollThePage( top ) {
 		var scroll_speed = bookmark_top < 400 ? 400 : Math.ceil( bookmark_top ) > 600 ? 600 : Math.ceil( bookmark_top );
+		if ( is_widescreen ) { top -= 40; }
 		$( 'html, body' ).animate( { scrollTop: top }, scroll_speed );
 	}
 
@@ -313,7 +317,6 @@ Version: 1.9.5
 			});
 		}
 
-		// controlSlide();	// 프론트페이지이면 슬라이드 시작
 		if ( is_front_page ) {
 			if ( 0 == $( window ).scrollTop() ) {
 				$body.find( '.bl-slides' ).sss();
@@ -329,18 +332,45 @@ Version: 1.9.5
 		// 변하는 header 높이에 따라, 내비게이션 메뉴($navMenu)의 높이도 변함.
 		$( window ).on( 'scroll', function() {
 			clearTimeout( scroll_timer );
-			scroll_timer = setTimeout( scroll_stopped, 100 );
+			scroll_timer = setTimeout( function() {
+				controlSlide();
+				// changeHeaderSize();
+				if ( is_widescreen ) {
+					hideWideNav();
+				}
+				scrolling = false;
+			}, 100 );
 
 			if ( ! scrolling ) {
 				scrolling = true;
 				// changeHeaderSize();
 			}
 		});
-
-		function scroll_stopped() {
+		/*function scroll_delay() {
 			controlSlide();
 			// changeHeaderSize();
+			if ( is_widescreen ) {
+				hideWideNav();
+			}
 			scrolling = false;
+		}*/
+
+		if ( is_widescreen ) {
+			var cursor_over = false;
+			$body.find( '.nav-drawer' ).on( 'mouseenter', function() {
+				// console.log( 'mouseenter' );
+				if ( ! cursor_over ) {
+					showWideNav();
+					cursor_over = true;
+				}
+			});
+			$body.find( '.navigation-top' ).on( 'mouseleave', function() {
+				// console.log( 'mouseleave' );
+				if ( cursor_over ) {
+					hideWideNav();
+					cursor_over = false;
+				}
+			});
 		}
 	}); // End of $(document).ready()
 
@@ -354,6 +384,15 @@ Version: 1.9.5
 		} else {
 			$body.find( '.bl-slides' ).sss( { playback: false } );
 		}
+	}
+	// 내비게이션 숨김/보임 (넓은 화면)
+	function hideWideNav() {
+		var $navTop = $body.find( '.navigation-top' );
+		$navTop.fadeOut( 200 );
+	}
+	function showWideNav() {
+		var $navTop = $body.find( '.navigation-top' );
+		$navTop.fadeIn( 200 );
 	}
 
 	// 스크롤다운 시 헤더 높이 줄임
