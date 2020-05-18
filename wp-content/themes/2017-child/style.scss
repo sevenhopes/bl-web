@@ -4057,7 +4057,11 @@ dl.bl-faq-list {
 	}
 	.bl-footer-logo {
 		left: auto;
-		right: 0;
+		top: -150px;
+		right: -100px;
+		width: 1620px;
+		height: 1350px;
+		transform: rotate( -14deg );
 	}
 }
 
