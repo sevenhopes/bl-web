@@ -2318,8 +2318,6 @@ a.more-link {
 	line-height: 1.3;
 	margin: 0.5rem 0;
 
-	// list-style: none outside url( 'http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/ul-bullet.gif' );
-	// padding-left: 1.4rem;
 	li:before {
 		background: $sp-url no-repeat;
 		width: 14px;
@@ -2914,7 +2912,6 @@ a.more-link {
 }
 
 #semesters .bl-desc-box ul {
-	// list-style: none;
 	li:before {
 		background-image: none;
 	}
@@ -2957,9 +2954,6 @@ a.more-link {
 #english-camp .bl-desc-box {
 	background-color: $green-t;
 
-	// .bl-course-feature ul {
-	// 	list-style: square inside none;
-	// }
 	.bl-course-feature li {
 		display: list-item;
 	}
