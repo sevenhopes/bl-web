@@ -34,6 +34,7 @@ updraft backup files/
 all.js
 *.css.map
 *.long.css
+style.css
 
 # don't ignore myself :)
 !.gitignore
