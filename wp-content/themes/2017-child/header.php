@@ -93,7 +93,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		// 2 부모테마 template-parts/navigation/navigation-top.php 대신 여기에 코딩.
 		// 3 사용하지 않는 .menu-toggle과 .menu-scroll-down을 삭제 (대신 header-image.php 안에서 .bl-menu-toggle을 사용)
 	if ( has_nav_menu( 'top' ) ) : ?>
-	<div class="nav-drawer"><i id="bl-wide-menu-toggle" class="bl-sp"></i></div>
+	<div class="nav-drawer" aria-label="widescreen">
+		<ul>
+			<li><a>HOME</a></li>
+			<li><a>ABOUT</a></li>
+			<li><a>CURRICULUM</a></li>
+			<li><a>ADMISSIONS</a></li>
+			<li><a>NEWS & EVENTS</a></li>
+		</ul>
+	</div>
 	<div class="navigation-top">
 		<div class="wrap">
 			<?php // get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
@@ -125,7 +133,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 		<?php
 		if ( ! wp_is_mobile() && ( is_single() || ( is_page() && ! twentyseventeen_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
-			echo '<div class="single-featured-image-header">';
+			echo '<div class="single-featured-image-header" aria-label="widescreen">';
 			echo get_the_post_thumbnail( get_queried_object_id(), 'twentyseventeen-featured-image' );
 			echo '</div><!-- .single-featured-image-header -->';
 		endif;

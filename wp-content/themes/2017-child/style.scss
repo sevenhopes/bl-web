@@ -6,7 +6,7 @@ Template: twentyseventeen
 Author: Bridge Light Corp.
 Author URI: http://bridgelightels.com/m/
 Tags: 브릿지라잇,춘천영어학원,BridgeLight,춘천어학원,브릿지라잇어학원
-Version: 2.6.13
+Version: 2.7.1
 Text Domain: 2017-child
 Tags: mobile-first
 */
@@ -87,6 +87,7 @@ $blue-d1:  #080a34;
 $blue-d2:  #0c1055;
 // $blue-d2t: #0c1055e6;
 $blue-d2t: rgba( $blue-d2, 0.9 ); // from $blue-d2
+$blue-d2td:rgba( $blue-d2, 0.95);
 $blue-d3:  #0c1069;
 $blue-d4:  #111790;
 // $blue-d4t1: #11179050;
@@ -1025,7 +1026,7 @@ $menu-toggle-h: 56px;
 $menu-toggle-w: 56px;
 
 .navigation-top {
-	background-color: $blue-d2t;
+	background-color: $blue-d2td;
 	border-top: 1px solid $blue-g;
 	border-bottom: 1px solid $blue-g;
 	font-size: 20px;
@@ -1095,6 +1096,10 @@ $menu-toggle-w: 56px;
 	background-color: inherit;
 	border-top: none;
 	padding: 0;
+
+	> li.menu-item-home {
+		display: none;
+	}
 }
 
 .main-navigation ul {
@@ -1550,7 +1555,7 @@ a.skip-link {
 	left: 0;
 	bottom: 0;
 	height: $header-h;
-	line-height: $header-h;
+	line-height: $header-h;	// 세로로 가운데 정렬하기 위해 줄높이를 컨테이너 높이와 같게 함
 	font-size: 1rem;
 }
 
@@ -3768,8 +3773,10 @@ dl.bl-faq-list {
 
 	$wide-header-h:  90px;
 	$wide-content-w: 960px;
+	$wide-nav-w:	 820px;
 	$wide-nav-h:     240px;
 	$wide-nav-drawer-h: 36px;
+	$wide-nav-menu-w: 164px;
 
 	.site-header,
 	#bl-branding,
@@ -3781,7 +3788,7 @@ dl.bl-faq-list {
 	}
 	.custom-header {
 		background-color: $blue-d2;
-		background-image: url('assets/images/widescreen/header-bg.png');
+		background-image: url('assets/images/widescreen/header-bg.png?ver=1.1');
 		background-repeat: repeat-x;
 	}
 	.custom-logo-link {
@@ -3854,47 +3861,80 @@ dl.bl-faq-list {
 		text-align: center;
 		position: fixed;
 		top: $wide-header-h;
-		background: $blue-d2 url( 'assets/images/widescreen/nav-drawer.png' ) no-repeat top center;
+		background: $blue-d2 url( 'assets/images/widescreen/nav-drawer.png?ver=1.2' ) no-repeat top center;
 		z-index: 9995;
+
+		> ul {
+			display: block;
+			width: $wide-nav-w;
+			height: $wide-nav-drawer-h;
+			margin: 0 auto;
+			text-align: center;
+			list-style: none;
+
+			> li {
+				display: inline-block;
+				width: $wide-nav-menu-w;
+				margin-left: -2px;	// inline-block으로 display 되는 li 사이의 간격을 삭제
+				margin-right: -2px;
+
+				> a {
+					height: $wide-nav-drawer-h;
+					background-color: transparent;
+					color: $blue-l2;
+					opacity: 0.5;
+					line-height: 1;
+					font-weight: 300;
+					letter-spacing: -1px;
+					padding: 10px 25px 9px;	// top 10px, bottom 9px, font 17px = 36px (nav-drawer-h)
+					box-sizing: padding-box;
+					display: block;
+				}
+			}
+		}
 	}
 	.navigation-top {
 		display: none;
 		opacity: 1;
-		// background-color: transparent;
+		background-color: $blue-d2t;
 		border-top: none;
-		// top: -($wide-nav-h - $wide-header-h);
-		top: ($wide-header-h + $wide-nav-drawer-h);
+		top: $wide-header-h;
+		// top: ($wide-header-h + $wide-nav-drawer-h);
 		height: $wide-nav-h;
+		font-size: 17px;
+		font-size: 1.0625rem;
 		z-index: 9997;
-	}
-	.navigation-top .wrap {
-		display: block;
-		position: relative;
-		// width: $wide-content-w;
-		// margin-left: auto;
-		// margin-right: auto;
+
+		.wrap {
+			display: block;
+			position: relative;
+			// width: $wide-content-w;
+			// margin-left: auto;
+			// margin-right: auto;
+		}
 	}
 	.main-navigation {
 		display: block;
 		width: 100vw;
 		position: relative;
-		top: -($wide-nav-drawer-h);
+		// top: -($wide-nav-drawer-h);
 	}
 	.main-navigation > div > ul {
-		width: 820px;
+		width: $wide-nav-w;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
 
 		> li {
-			width: 190px;
-			background-color: transparent;
+			width: $wide-nav-menu-w;
+			margin-left: -2px;	// inline-block으로 display 되는 li 사이의 간격을 삭제
+			margin-right: -2px;
 
 			> a {
 				color: $blue-l2;
 				line-height: 1;
-				padding-top: 0.5em;
-				padding-bottom: 0.8em;
+				padding: 10px 25px 9px;	// top 10px, bottom 9px, font 17px = 36px (nav-drawer-h)
+				background: $blue-d2t url( 'assets/images/widescreen/nav-hover-light.png?ver=1.2' ) no-repeat top center;
 			}
 			> a:hover {
 				cursor: default;
@@ -3904,6 +3944,13 @@ dl.bl-faq-list {
 					cursor: pointer;
 					color: $gold;
 				}
+			}
+		}
+		> li.menu-item-home {
+			display: inline-block;
+
+			> a {
+				font-weight: 300;
 			}
 		}
 	}
@@ -3944,12 +3991,15 @@ dl.bl-faq-list {
 		z-index: 99999;
 		// opacity: 0;
 		// display: none;
-		width: 190px;
+		width: $wide-nav-menu-w;
 
 		a {
-			width: 190px;
+			width: $wide-nav-menu-w;
 			color: $ff;
 			padding: 0.4em 0;
+			font-size: 17px;
+			font-size: 1.0625rem;
+			font-weight: 300;
 		}
 	}
 	.main-navigation li li {
@@ -4022,7 +4072,7 @@ dl.bl-faq-list {
 
 	.site-content-contain {
 		background-attachment: fixed;
-		background: $blue-d1 url( 'assets/images/widescreen/bg.png' ) repeat top left;
+		background: $blue-d1 url( 'assets/images/widescreen/bg.png?ver=1.0' ) repeat top left;
 	}
 	// .site-content-contain:before {
 	// 	content: "";
@@ -4036,7 +4086,7 @@ dl.bl-faq-list {
 		margin-left: auto;
 		margin-right: auto;
 		padding: 35px 50px;
-		background: transparent url( 'assets/images/widescreen/main-bg.png' ) repeat-y top center;
+		background: transparent url( 'assets/images/widescreen/main-bg.png?ver=1.0' ) repeat-y top center;
 	}
 	.bl-block {
 		// margin-left: auto;
