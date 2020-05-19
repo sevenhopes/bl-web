@@ -383,9 +383,14 @@ Version: 1.7.4
 				$temp.remove();
 			}
 
-			// 클릭 이벤트 재등록
+			// PC 등 넓은화면인 경우, 부모 메뉴의 하이퍼링크를 비활성 하지 않고 유지함.
+			if ( is_widescreen ) {
+				return;
+			}
+
+			// (모바일) 클릭 이벤트 재등록
 			// 위의 $mainNav.html() 함수가 기존 자식 오브젝트에 대한 모든 jquery 변수나 이벤트 핸들러를 무효화하기에
-			// 여기서 무효화된 $dreopdowns 변수 대신 새 오브젝트를 다시 find함
+			// 여기서 무효화된 $dropdowns 변수 대신 새 오브젝트를 다시 find함
 			$mainNav.find( '.dropdown-toggle' ).click( function( e ) {
 				var clickedDropdown = $( this ),
 					droppedMenu = $mainNav.find( '.dropdown-toggle.toggled-on' );
@@ -400,7 +405,7 @@ Version: 1.7.4
 				}
 			});
 
-			// 메인메뉴 아이템 자체(<a>태그)를 눌러도 드롭다운 버튼과 같은 동작 설정
+			// (모바일) 메인메뉴 아이템 자체(<a>태그)를 눌러도 드롭다운 버튼과 같은 동작 설정
 			$mainNav.find( '.menu-item-has-children > a:first-child' ).click( function( e ) {
 				e.preventDefault();
 				$( this ).next( '.dropdown-toggle' ).trigger( 'click' );

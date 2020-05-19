@@ -3829,12 +3829,6 @@ dl.bl-faq-list {
 		text-align: center;
 	}
 	#bl-menu-toggle {
-		// margin-top: 17px;
-		// margin-right: 20px;
-
-		// &:hover {
-		// 	cursor: pointer;
-		// }
 		display: none;
 	}
 	.js #bl-menu-toggle {
@@ -3899,7 +3893,6 @@ dl.bl-faq-list {
 		background-color: $blue-d2t;
 		border-top: none;
 		top: $wide-header-h;
-		// top: ($wide-header-h + $wide-nav-drawer-h);
 		height: $wide-nav-h;
 		font-size: 17px;
 		font-size: 1.0625rem;
@@ -3908,16 +3901,12 @@ dl.bl-faq-list {
 		.wrap {
 			display: block;
 			position: relative;
-			// width: $wide-content-w;
-			// margin-left: auto;
-			// margin-right: auto;
 		}
 	}
 	.main-navigation {
 		display: block;
 		width: 100vw;
 		position: relative;
-		// top: -($wide-nav-drawer-h);
 	}
 	.main-navigation > div > ul {
 		width: $wide-nav-w;
@@ -3937,8 +3926,8 @@ dl.bl-faq-list {
 				background: $blue-d2t url( 'assets/images/widescreen/nav-hover-light.png?ver=1.2' ) no-repeat top center;
 			}
 			> a:hover {
-				cursor: default;
-				color: $blue-l2;
+				// cursor: default;
+				// color: $blue-l2;
 
 				&:last-child {
 					cursor: pointer;
@@ -3989,8 +3978,6 @@ dl.bl-faq-list {
 		left: 0;
 		top: 100%;
 		z-index: 99999;
-		// opacity: 0;
-		// display: none;
 		width: $wide-nav-menu-w;
 
 		a {
