@@ -2588,6 +2588,10 @@ a.more-link {
 		grid-column-gap: 0.2rem;
 		padding: 0.5rem 0.75rem 0.25rem;
 		/*border: 1px solid $test-r;*/
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 	div:first-child dt {
 		padding-top: 0;
@@ -3923,7 +3927,7 @@ dl.bl-faq-list {
 				color: $blue-l2;
 				line-height: 1;
 				padding: 10px 25px 9px;	// top 10px, bottom 9px, font 17px = 36px (nav-drawer-h)
-				background: $blue-d2t url( 'assets/images/widescreen/nav-hover-light.png?ver=1.2' ) no-repeat top center;
+				background: $blue-d2t url( 'assets/images/widescreen/nav-hover-bg.png?ver=1.2' ) no-repeat top center;
 			}
 			> a:hover {
 				// cursor: default;
