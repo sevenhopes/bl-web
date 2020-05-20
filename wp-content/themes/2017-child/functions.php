@@ -38,7 +38,7 @@ add_action( 'wp_footer', 'bridgelight_include_svg_icons', 9999 );
 function bridgelight_theme_enqueue_scripts() {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri().'/style.css', array( 'parent-style' ), wp_get_theme()->get('Version') );
-	wp_enqueue_style( 'fonts-noto-sans', bridgelight_fonts_url_noto_sans(), array(), null );
+	wp_enqueue_style( 'fonts-noto-sans', bridgelight_fonts_url(), array(), null );
 	wp_enqueue_script( 'minified-js', get_stylesheet_directory_uri().'/assets/js/bl.min.js', array( 'jquery' ), '1.1', true );
 	// wp_enqueue_script( 'all-js', get_stylesheet_directory_uri().'/assets/js/src/all.js', array( 'jquery' ), '1.1', true );
 	wp_enqueue_script( 'kakaolink', 'https://developers.kakao.com/sdk/js/kakao.min.js', array(), null );
@@ -48,7 +48,7 @@ add_action( 'wp_enqueue_scripts', 'bridgelight_theme_enqueue_scripts' );
 /**
  * Register custom fonts.
  */
-function bridgelight_fonts_url_noto_sans() {
+function bridgelight_fonts_url() {
 	$fonts_url = '';
 
 	/**
