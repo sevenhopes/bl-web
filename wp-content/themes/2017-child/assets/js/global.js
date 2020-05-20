@@ -1,5 +1,5 @@
 /*
-Version: 1.9.5
+Version: 2.0.0
 */
 (function( $ ) {
 
@@ -335,9 +335,9 @@ Version: 1.9.5
 			scroll_timer = setTimeout( function() {
 				controlSlide();
 				// changeHeaderSize();
-				if ( is_widescreen ) {
-					hideWideNav();
-				}
+				// if ( is_widescreen ) {
+				// 	$body.find( '.navigation-top' ).fadeOut( 200 );
+				// }
 				scrolling = false;
 			}, 100 );
 
@@ -354,24 +354,6 @@ Version: 1.9.5
 			}
 			scrolling = false;
 		}*/
-
-		if ( is_widescreen ) {
-			var cursor_over = false;
-			$body.find( '.nav-drawer' ).on( 'mouseenter', function() {
-				// console.log( 'mouseenter' );
-				if ( ! cursor_over ) {
-					showWideNav();
-					cursor_over = true;
-				}
-			});
-			$body.find( '.navigation-top' ).on( 'mouseleave', function() {
-				// console.log( 'mouseleave' );
-				if ( cursor_over ) {
-					hideWideNav();
-					cursor_over = false;
-				}
-			});
-		}
 	}); // End of $(document).ready()
 
 	// 스크롤다운에 의해 페이지가 조금이라도 내려가면 슬라이드 멈춤, 맨 꼭대기일 때만 재생
@@ -384,15 +366,6 @@ Version: 1.9.5
 		} else {
 			$body.find( '.bl-slides' ).sss( { playback: false } );
 		}
-	}
-	// 내비게이션 숨김/보임 (넓은 화면)
-	function hideWideNav() {
-		var $navTop = $body.find( '.navigation-top' );
-		$navTop.fadeOut( 200 );
-	}
-	function showWideNav() {
-		var $navTop = $body.find( '.navigation-top' );
-		$navTop.fadeIn( 200 );
 	}
 
 	// 스크롤다운 시 헤더 높이 줄임

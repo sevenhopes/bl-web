@@ -1,5 +1,5 @@
 /*
-Version: 1.7.4
+Version: 1.8.0
 */
 /* global twentyseventeenScreenReaderText */
 /**
@@ -162,31 +162,40 @@ Version: 1.7.4
 		// console.log( 'typeof $.blang.ko.address: ' + typeof $.blang.ko.address );
 
 		if ( is_widescreen ) {
-			var $topmenu = $navTop.find( '#top-menu' ),
-				$blWideMenuToggle = $body.find( '#bl-wide-menu-toggle' ),
-				nav_showing = false;
-
-			$blWideMenuToggle.on( 'mouseover', function() {
-				if ( ! nav_showing ) {
-					$topmenu.show();
-				}
-			});
-			$blWideMenuToggle.on( 'mouseleave', function() {
-				if ( $( '#top-menu:hover' ).length == 0 && nav_showing ) {
-					$topmenu.hide();
-				}
-			});
-			$topmenu.on( 'mouseleave', function() {
-				if ( $( '#bl-wide-menu-toggle:hover' ).length == 0 && nav_showing )  {
-					$topmenu.hide();
-				}
-			});
-
-			return;	// document.ready() 탈출
+			blInitWideNavigation();
+			return;	// document.ready() 탈출. blInitMenuToggleEvents()와 blInitDropdowns()을 호출하지 않음.
 		}
 
 		blInitMenuToggleEvents();
 		blInitDropdowns();
+
+		function blInitWideNavigation() {
+			var cursor_over = false;
+			$body.find( '.nav-drawer > ul' ).on( 'mouseenter', function() {
+				// console.log( 'mouseenter' );
+				if ( ! cursor_over ) {
+					blShowWideNav();
+					cursor_over = true;
+				}
+			});
+			$body.find( '.navigation-top' ).on( 'mouseleave', function() {
+				// console.log( 'mouseleave' );
+				if ( cursor_over ) {
+					blHideWideNav();
+					cursor_over = false;
+				}
+			});
+
+			// 내비게이션 숨김/보임 (넓은 화면)
+			function blHideWideNav() {
+				var $navTop = $body.find( '.navigation-top' );
+				$navTop.fadeOut( 200 );
+			}
+			function blShowWideNav() {
+				var $navTop = $body.find( '.navigation-top' );
+				$navTop.fadeIn( 200 );
+			}
+		}
 
 		function blInitMenuToggleEvents() {
 
