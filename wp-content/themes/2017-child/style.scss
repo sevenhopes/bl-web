@@ -3783,7 +3783,7 @@ dl.bl-faq-list {
 	$wide-header-h:  90px;
 	$wide-content-w: 960px;
 	$wide-nav-w:	 820px;
-	$wide-nav-h:     240px;
+	$wide-nav-h:     274px;
 	$wide-nav-drawer-h: 36px;
 	$wide-nav-menu-w: 164px;
 
@@ -3902,6 +3902,8 @@ dl.bl-faq-list {
 		border-top: none;
 		top: $wide-header-h;
 		height: $wide-nav-h;
+		min-height: $wide-nav-h;
+		max-height: $wide-nav-h;
 		font-size: 17px;
 		font-size: 1.0625rem;
 		z-index: 9997;
@@ -4133,6 +4135,15 @@ dl.bl-faq-list {
 	// }
 	.site-footer {
 		margin-top: 0;
+		letter-spacing: 0;
+
+		> .wrap {
+			width: $wide-content-w;
+			margin-right: auto;
+			margin-left: auto;
+			padding-right: 60px;
+			padding-left: 60px;
+		}
 	}
 	.bl-footer-logo {
 		left: auto;
