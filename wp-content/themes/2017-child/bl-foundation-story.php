@@ -46,7 +46,11 @@ get_header(); ?>
 		</div>
 
 		<div class="bl-wrap">
+			<?php if ( wp_is_mobile() ) : ?>
 			<img class="size-large wp-image-1873 aligncenter" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/09/ig-history-329x800.png" srcset="<?php echo wp_get_attachment_image_srcset( 1873 ) ?>" alt="브릿지라잇 연혁" />
+			<?php else : ?>
+			<img class="size-large wp-image-1873 aligncenter" style="display: block;" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/09/ig-history.png" alt="브릿지라잇 연혁" width="600" height="1460" />
+			<?php endif ?>
 		</div>
 
 		<div class="bl-wrap">
