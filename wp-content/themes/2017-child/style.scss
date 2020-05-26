@@ -2788,7 +2788,7 @@ a.more-link {
 
 .bl-legend {
 	display: grid;
-	grid-template-columns: 1fr 5fr 1fr 5fr 1fr 6fr;
+	grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr;
 	grid-gap: 0.25rem;
 	margin: 1rem 0;
 	padding-bottom: 0.5rem;
@@ -2812,18 +2812,6 @@ a.more-link {
 		height: 0.75rem;
 		word-break: keep-all;
 	}
-	// .regular {
-	// 	background-color: $blue-bl;
-	// }
-	// .camp {
-	// 	background-color: $green;
-	// }
-	// .a-camp {
-	// 	background-color: $red;
-	// }
-	// .extra {
-	// 	background-color: $orange;
-	// }
 }
 
 #course-overview ul {
@@ -4165,6 +4153,21 @@ dl.bl-faq-list {
 		}
 		.bl-t-charge {
 			font-size: 1rem;
+		}
+	}
+
+	#course-overview {
+		img {
+			padding-right: 60px;
+			padding-left: 60px;
+		}
+		.bl-grid-metro {
+			margin-right: 60px;
+			margin-left: 60px;
+		}
+		.bl-legend {
+			margin-right: 60px;
+			margin-left: 60px;
 		}
 	}
 }
