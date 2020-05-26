@@ -6,7 +6,7 @@ Template: twentyseventeen
 Author: Bridge Light Corp.
 Author URI: http://bridgelightels.com/m/
 Tags: 브릿지라잇,춘천영어학원,BridgeLight,춘천어학원,브릿지라잇어학원
-Version: 2.7.1
+Version: 2.7.2
 Text Domain: 2017-child
 Tags: mobile-first
 */
@@ -1724,7 +1724,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 		// min-height: 160px;
 		// display: none;
 	}
-	.bl-title {
+	.bl-slide-title {
 		display: block;
 		margin-top: 0.5rem;
 		padding-left: 0.75rem;
@@ -1738,7 +1738,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 			padding: 0;
 		}
 	}
-	.bl-caption {
+	.bl-slide-caption {
 		display: block;
 		color: $k2;
 		// font-size: 1rem;
@@ -1804,6 +1804,10 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 .sssprev:hover, .sssnext:hover {
 	cursor: pointer;
+}
+
+.creed {
+	display: none;
 }
 
 #bl-quick-menu {
@@ -3842,11 +3846,10 @@ dl.bl-faq-list {
 		color: $k1t;
 	}
 	.bl-under-header {
-		// position: fixed;
-		top: ($wide-header-h + $wide-nav-drawer-h);
+		// top: ($wide-header-h + $wide-nav-drawer-h);
 		left: 0;
-		height: $wide-header-h;
-		max-height: $wide-header-h;
+		height: ($wide-header-h + $wide-nav-drawer-h);
+		max-height: ($wide-header-h + $wide-nav-drawer-h);
 	}
 
 	// .site-navigation-fixed.navigation-top {
@@ -4049,7 +4052,7 @@ dl.bl-faq-list {
 	}
 	.single-featured-image-header {
 		position: relative;
-		top: $wide-nav-drawer-h;
+		// top: $wide-nav-drawer-h;
 		overflow: hidden;
 		min-height: 370px;
 		height: 370px;			// 원래 이미지 높이(430px)에서 60px 줄여서 보여줌. (큰 화면에서는 높이가 너무 커서)
@@ -4065,26 +4068,60 @@ dl.bl-faq-list {
 		background-attachment: fixed;
 		background: $blue-d1 url( 'assets/images/widescreen/bg.png?ver=1.0' ) repeat top left;
 	}
-	// .site-content-contain:before {
-	// 	content: "";
-	// 	position: static;
-	// 	width: 100vw;
-	// 	height: calc( #{ $wide-header-h + $wide-nav-drawer-h } );
-	// 	display: block;
-	// }
 	#content {
 		width: $wide-content-w;
 		margin-left: auto;
 		margin-right: auto;
-		padding: 35px 50px;
+		padding: 30px 50px 35px;
 		background: transparent url( 'assets/images/widescreen/main-bg.png?ver=1.0' ) repeat-y top center;
 	}
+	// .home #content {
+	// 	padding-top: 30px;
+	// }
 	.bl-block {
 		// margin-left: auto;
 		// margin-right: auto;
 		min-width: 100%;
 		// padding: 0;
 		// margin: 2rem 0;
+	}
+	.bl-content-top {
+		position: relative;
+		// margin-bottom: 1.2rem;
+		padding-bottom: 35px;
+	}
+	.bl-slides {
+		width: 540px;
+		height: 328px;
+		overflow: visible;
+
+		.bl-slide-caption {
+			display: block;
+			color: $k2;
+			padding: 0 0.75em;
+			// margin-bottom: 0.5em;
+			width: 820px;
+			min-width: 820px;
+			max-width: 820px;
+			position: absolute;
+			left: 0;
+			top: 318px;
+		}
+	}
+	.sss {
+		overflow: visible;
+	}
+	.ssslide {
+		overflow: visible;
+	}
+	.creed {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	#bl-quick-menu {
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 	// #bl-curriculum img.bl-center-overflow {
 	// 	max-width: calc( $wide-content-w - 100px );

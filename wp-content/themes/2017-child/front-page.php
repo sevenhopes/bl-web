@@ -8,7 +8,7 @@
  * @package BridgeLight
  * @subpackage BridgeLight_MobileFirst
  * @since 1.0
- * @version 1.4
+ * @version 1.4.2
  */
 
 get_header();
@@ -23,22 +23,27 @@ get_header();
 				<h1>브릿지라잇 어학원</h1>
 			</header>
 
-			<div class="bl-slides">
-			<?php
-			$slides = json_decode( get_post_field( 'post_content', 1752 ) );
+			<div class="bl-content-top">
+				<div class="bl-slides">
+				<?php
+				$slides = json_decode( get_post_field( 'post_content', 1752 ) );
 
-			foreach ( (array) $slides as $s ) :
-			?>
-				<a href="<?php echo $s->link ?>">
-					<div class="bl-link-wrapper">
-						<img class="size-medium wp-image-<?php echo $s->attach ?>" src="<?php echo $s->src ?>" srcset="<?php echo wp_get_attachment_image_srcset( $s->attach ) ?>" sizes="100vw" />
-						<div class="bl-title"><h2><?php echo $s->title ?></h2></div>
-						<div class="bl-caption"><?php echo $s->caption ?></div>
-					</div>
-				</a>
-			<?php
-			endforeach;
-			?>
+				foreach ( (array) $slides as $s ) :
+				?>
+					<a href="<?php echo $s->link ?>">
+						<div class="bl-link-wrapper">
+							<img class="size-medium wp-image-<?php echo $s->attach ?>" src="<?php echo $s->src ?>" srcset="<?php echo wp_get_attachment_image_srcset( $s->attach ) ?>" sizes="100vw" />
+							<div class="bl-slide-title"><h2><?php echo $s->title ?></h2></div>
+							<div class="bl-slide-caption"><?php echo $s->caption ?></div>
+						</div>
+					</a>
+				<?php
+				endforeach;
+				?>
+				</div>
+				<div class="creed">
+					<img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/widescreen/creed.jpg?ver=1.0" width="320" height="270" />
+				</div>
 			</div>
 
 			<div id="bl-quick-menu">

@@ -1,5 +1,5 @@
 /*
-Version: 2.0.0
+Version: 2.1.3
 */
 (function( $ ) {
 
@@ -24,7 +24,6 @@ Version: 2.0.0
 		header_h = $header.height(),
 		is_front_page = $body.hasClass( 'home' ) || $body.hasClass( 'twentyseventeen-front-page' ),
 		// lang_kor = false,	// true: Korean
-		bookmark_top = 0,
 		is_widescreen = ( $body.find( '#content' ).width() == 860 );	// 960 - (padding-left 50 + padding-right 50)
 		// lang_val;
 
@@ -50,6 +49,91 @@ Version: 2.0.0
 	// $body.addClass( lang_val );
 
 	if ( is_front_page ) {
+		blInitFrontPage();
+	} else if ( $body.find( '#why-bl' ).length ) {
+		// '왜 브릿지라잇인가' 페이지
+		blInitWhyBlPage();
+	} else if ( $body.find( '#faq' ).length ) {
+		// '자주 묻는 질문' 페이지
+		blInitFaqPage();
+	} else if ( $body.find( '#study-in-america' ).length ) {
+		// '미국현지체험연수' 페이지
+		blInitSiaPage();
+	} // end of if ( 페이지별 처리 )
+
+	$( document ).ready( function() {
+
+		// SVG 이미지 처리 (부모테마 Twentyseventeen에서 가져옴)
+		if ( true === supportsInlineSVG() ) {
+			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
+		}
+
+		// 지도가 있는 페이지: 네이버 지도 객체 생성
+		if ( $body.find( '#bl-map').length ) {
+			blInitMap();
+		}
+
+		if ( is_front_page ) {
+			if ( 0 == $( window ).scrollTop() ) {
+				$body.find( '.bl-slides' ).sss();
+			} else {
+				$body.find( '.bl-slides' ).sss( { autostart: false } );
+			}
+		}
+
+		var scroll_timer,
+			scrolling = false;
+
+		// X // header의 높이를 스크롤다운 시 좀 줄였다가, top으로 스크롤업 시 다시 원래대로 만듬
+		// X // 변하는 header 높이에 따라, 내비게이션 메뉴($navMenu)의 높이도 변함.
+		$( window ).on( 'scroll', function() {
+			clearTimeout( scroll_timer );
+			scroll_timer = setTimeout( function() {
+				controlSlide();
+				// changeHeaderSize();
+				// if ( is_widescreen ) {
+				// 	$body.find( '.navigation-top' ).fadeOut( 200 );
+				// }
+				scrolling = false;
+			}, 100 );
+
+			if ( ! scrolling ) {
+				scrolling = true;
+				// changeHeaderSize();
+			}
+		});
+		/*function scroll_delay() {
+			controlSlide();
+			// changeHeaderSize();
+			if ( is_widescreen ) {
+				hideWideNav();
+			}
+			scrolling = false;
+		}*/
+
+		// 북마크 id로 바로 이동을 피하기 위해 URL 내의 북마크 id에 #을 하나 더 붙여서 넘어옴
+		// 예: bl-course-overview.php의 ##course-basic 또는 front-page.php의 ##events
+		var idx = window.location.href.search( '##' );
+		if ( idx != -1 ) {
+			var bookmark = window.location.href.substring( idx + 1 ),
+				bookmark_top = $( bookmark ).offset().top - header_h - 10;
+
+			if ( bookmark_top > 0 ) {
+				setTimeout( function() {
+					blScrollThePage( bookmark_top );
+					// var elem = document.getElementById( window.location.href.substring( idx + 2 ) );
+					// elem.scrollIntoView( { behavior: "smooth" } );
+				}, 400 );
+			}
+		}
+	}); // End of $(document).ready()
+
+	// Add header video class after the video is loaded. (부모테마 Twentyseventeen에서 가져옴)
+	$( document ).on( 'wp-custom-header-video-loaded', function() {
+		$body.addClass( 'has-header-video' );
+	});
+
+	function blInitFrontPage() {
 		var	$eventBlock = $body.find( '#bl-event' ),
 			$downArrow = $body.find( '.bl-down-arrow' ),
 			indi_intv;
@@ -64,16 +148,15 @@ Version: 2.0.0
 
 		$downArrow.on( 'click', function() {
 			$( 'html, body' ).animate( {
-				scrollTop: $( '#bl-news' ).offset().top - header_h - 5
+				scrollTop: $( '#bl-news' ).offset().top - header_h - ( is_widescreen ? 30 : 5 )
 			}, 400);
 		});
 
 		if ( ! $eventBlock.find( '.bl-event-item.bl-holiday' ).length ) {
 			$eventBlock.find( '.bl-event-comment' ).hide();
 		}
-
-	// '왜 브릿지라잇인가' 페이지
-	} else if ( $body.find( '#why-bl' ).length ) {
+	}
+	function blInitWhyBlPage() {
 		// Why Bridge Light 페이지의 accordion 동작
 		var $why_list = $body.find( '.bl-why-list' );
 
@@ -102,10 +185,8 @@ Version: 2.0.0
 				dt.find( 'button' ).toggleClass( 'opened' );
 			}
 		});
-
-	// '자주 묻는 질문' 페이지
-	} else if ( $body.find( '#faq' ).length ) {
-		// FAQ 페이지의 동작
+	}
+	function blInitFaqPage() {
 		var $cat_wrap = $body.find( '.bl-faq-category' ),
 			$categories = $cat_wrap.children( 'div' ),
 			$chosen_cat = $cat_wrap.children( '.top-10' ),
@@ -141,23 +222,15 @@ Version: 2.0.0
 			var _this = $( this ),
 				clicked_cat = _this.attr( 'class' );
 
+			if ( clicked_cat == $chosen_cat.attr( 'class' ) ) {
+				return;
+			}
+
 			$textbox.val( '' );
 			$faq_list.find( 'dt.opened' ).removeClass( 'opened' );
-			$answers.hide();
-			// $categories.removeClass( 'selected' );
 			$chosen_cat.removeClass( 'selected' );
 
-			$.each( $questions, function() {
-				if ( _this.hasClass( clicked_cat ) ) {
-					_this.show();
-				} else {
-					_this.hide();
-				}
-			});
-
-			_this.addClass( 'selected' );
-			$chosen_cat = _this;
-
+			blSelectFaqCategory( _this );
 			// console.log( 'click: ' + clicked_cat );
 		});
 
@@ -166,26 +239,17 @@ Version: 2.0.0
 			var _this = $( this );
 			input = $textbox.val();
 			$answers.hide();	// 타이핑 시 열려있는 답변 닫기
+			$chosen_cat.removeClass( 'selected' );
 			if ( input === '' ) {
 				$no_result.hide();
-				$answers.hide();
-				$chosen_cat.removeClass( 'selected' );
-				$.each( $questions, function() {
-					if ( _this.hasClass( $chosen_cat.attr( 'class' ) ) ) {
-						_this.show();
-					} else {
-						_this.hide();
-					}
-				});
-				$chosen_cat.addClass( 'selected' );
+				blSelectFaqCategory( $chosen_cat );
 			} else {
-				$.each( $questions, function() {
-					if ( -1 < _this.text().indexOf( input ) ) {
-						_this.show();
+				$questions.each( function() {
+					if ( -1 < $( this ).text().indexOf( input ) ) {
+						$( this ).show();
 					} else {
-						_this.hide();
+						$( this ).hide();
 					}
-
 					if ( $questions.children( ':visible' ).length == 0 ) {
 						$no_result.show();
 					} else {
@@ -205,25 +269,28 @@ Version: 2.0.0
 		});
 
 		// 처음엔 top-10 카테고리를 보여줌
-		// blShowCategory( 'top-10' );
-		// $chosen_cat.addClass( 'selected' );
-		$chosen_cat.trigger( 'click' );
+		blSelectFaqCategory( $chosen_cat );
 
-	// '미국현지체험연수' 페이지
-	} else if ( $body.find( '#study-in-america' ).length ) {
+		function blSelectFaqCategory( $cat ) {
+			$answers.hide();
+			$questions.each( function() {
+				if ( $( this ).hasClass( $cat.attr( 'class' ) ) ) {
+					$( this ).show();
+				} else {
+					$( this ).hide();
+				}
+			});
+			$cat.addClass( 'selected' );
+			$chosen_cat = $cat;
+		}
+	}
+	function blInitSiaPage() {
 		var $imgs = $body.find( '.bl-tabs .media div' ),
 			$tabs = $body.find( '.bl-tabs .tabs button' ),
 			$desc = $body.find( '.bl-tabs .desc div' ),
 			$selected = $tabs.eq( 0 );
 
 		$selected.addClass( 'selected' );
-
-		// $imgs.css( 'display', 'none');
-		// $imgs.eq( 0 ).css( 'display', 'block' );
-		// var img_height = $imgs.eq( 0 ).css( 'height' );
-		// $body.find( '.bl-tabs .media' )
-			// .css( 'min-height', img_height );
-			// .css( 'height' , img_height );
 
 		$tabs.on( 'click', function() {
 			var _this = $( this ),
@@ -237,24 +304,61 @@ Version: 2.0.0
 			$desc.hide();
 			$desc.eq( idx ).show();
 		});
-
-	} // end of if ( 페이지별 처리 )
-
-	// 북마크 id로 바로 이동을 피하기 위해 URL 내의 북마크 id에 #을 하나 더 붙여서 넘어옴
-	// 예: bl-course-overview.php의 ##course-basic 또는 front-page.php의 ##events
-	var idx = window.location.href.search( '##' );
-	if ( idx != -1 ) {
-		var bookmark = window.location.href.substring( idx + 1 );
-		bookmark_top = $( bookmark ).offset().top - header_h - 10;
 	}
-
+	function controlSlide() {
+		// 스크롤다운에 의해 페이지가 조금이라도 내려가면 슬라이드 멈춤, 맨 꼭대기일 때만 재생
+		if ( ! is_front_page ) {
+			return;
+		}
+		if ( 0 == $( window ).scrollTop() ) {
+			$body.find( '.bl-slides' ).sss( { playback: true } );
+		} else {
+			$body.find( '.bl-slides' ).sss( { playback: false } );
+		}
+	}
 	// 페이지를 스크롤 함. (북마크 링크 대신 사용. 스크롤 거리에 따라 속도 조절)
-	function scrollThePage( top ) {
-		var scroll_speed = bookmark_top < 400 ? 400 : Math.ceil( bookmark_top ) > 600 ? 600 : Math.ceil( bookmark_top );
+	function blScrollThePage( top ) {
+		var scroll_speed = top < 400 ? 400 : Math.ceil( top ) > 600 ? 600 : Math.ceil( top );
 		if ( is_widescreen ) { top -= 40; }
 		$( 'html, body' ).animate( { scrollTop: top }, scroll_speed );
 	}
+	function blInitMap() {
+		var map, marker, pano;
+		$.getScript( 'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=lsnb5x78u2&submodules=panorama', function() {
+			naver.maps.onJSContentLoaded = function() {
+				var location = new naver.maps.LatLng( 37.868950, 127.715030 );
 
+				map = new naver.maps.Map( 'bl-map', {
+					center: location,
+					zoom: 11,
+					minZoom: 1,
+					zoomControl: true,
+					zoomControlOptions: {
+						style: naver.maps.ZoomControlStyle.SMALL,
+						position: naver.maps.Position.TOP_RIGHT
+					},
+					mapDataControl: false,
+					logoControl: false,
+					scaleControl: false
+				});
+
+				marker = new naver.maps.Marker( {
+					position: location,
+					map: map
+				});
+
+				pano = new naver.maps.Panorama( 'bl-street', {
+					position: new naver.maps.LatLng( 37.869003, 127.714987 ),
+					// size: new naver.maps.Size('100%', '300px'),
+					pov: {
+						pan: 150,
+						tilt: 18,
+						fov: 90
+					}
+				});
+			};
+		});
+	}
 	/*
 	 * Test if inline SVGs are supported.
 	 * @link https://github.com/Modernizr/Modernizr/
@@ -264,108 +368,6 @@ Version: 2.0.0
 		var div = document.createElement( 'div' );
 		div.innerHTML = '<svg/>';
 		return 'http://www.w3.org/2000/svg' === ( 'undefined' !== typeof SVGRect && div.firstChild && div.firstChild.namespaceURI );
-	}
-
-
-	$( document ).ready( function() {
-
-		// SVG 이미지 처리 (부모테마 Twentyseventeen에서 가져옴)
-		if ( true === supportsInlineSVG() ) {
-			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
-		}
-
-		if ( bookmark_top != 0 ) {
-			scrollThePage( bookmark_top );
-		}
-
-		// 지도가 있는 페이지: 네이버 지도 객체 생성
-		if ( $body.find( '#bl-map').length ) {
-			var map, marker, pano;
-			$.getScript( 'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=lsnb5x78u2&submodules=panorama', function() {
-				naver.maps.onJSContentLoaded = function() {
-					var location = new naver.maps.LatLng( 37.868950, 127.715030 );
-
-					map = new naver.maps.Map( 'bl-map', {
-						center: location,
-						zoom: 11,
-						minZoom: 1,
-						zoomControl: true,
-						zoomControlOptions: {
-							style: naver.maps.ZoomControlStyle.SMALL,
-							position: naver.maps.Position.TOP_RIGHT
-						},
-						mapDataControl: false,
-						logoControl: false,
-						scaleControl: false
-					});
-
-					marker = new naver.maps.Marker( {
-						position: location,
-						map: map
-					});
-
-					pano = new naver.maps.Panorama( 'bl-street', {
-						position: new naver.maps.LatLng( 37.869003, 127.714987 ),
-						// size: new naver.maps.Size('100%', '300px'),
-						pov: {
-							pan: 150,
-							tilt: 18,
-							fov: 90
-						}
-					});
-				};
-			});
-		}
-
-		if ( is_front_page ) {
-			if ( 0 == $( window ).scrollTop() ) {
-				$body.find( '.bl-slides' ).sss();
-			} else {
-				$body.find( '.bl-slides' ).sss( { autostart: false } );
-			}
-		}
-
-		var scroll_timer,
-			scrolling = false;
-
-		// header의 높이를 스크롤다운 시 좀 줄였다가, top으로 스크롤업 시 다시 원래대로 만듬
-		// 변하는 header 높이에 따라, 내비게이션 메뉴($navMenu)의 높이도 변함.
-		$( window ).on( 'scroll', function() {
-			clearTimeout( scroll_timer );
-			scroll_timer = setTimeout( function() {
-				controlSlide();
-				// changeHeaderSize();
-				// if ( is_widescreen ) {
-				// 	$body.find( '.navigation-top' ).fadeOut( 200 );
-				// }
-				scrolling = false;
-			}, 100 );
-
-			if ( ! scrolling ) {
-				scrolling = true;
-				// changeHeaderSize();
-			}
-		});
-		/*function scroll_delay() {
-			controlSlide();
-			// changeHeaderSize();
-			if ( is_widescreen ) {
-				hideWideNav();
-			}
-			scrolling = false;
-		}*/
-	}); // End of $(document).ready()
-
-	// 스크롤다운에 의해 페이지가 조금이라도 내려가면 슬라이드 멈춤, 맨 꼭대기일 때만 재생
-	function controlSlide() {
-		if ( ! is_front_page ) {
-			return;
-		}
-		if ( 0 == $( window ).scrollTop() ) {
-			$body.find( '.bl-slides' ).sss( { playback: true } );
-		} else {
-			$body.find( '.bl-slides' ).sss( { playback: false } );
-		}
 	}
 
 	// 스크롤다운 시 헤더 높이 줄임
@@ -403,8 +405,4 @@ Version: 2.0.0
 		}
 	}
 */
-	// Add header video class after the video is loaded. (부모테마 Twentyseventeen에서 가져옴)
-	$( document ).on( 'wp-custom-header-video-loaded', function() {
-		$body.addClass( 'has-header-video' );
-	});
 })( jQuery );
