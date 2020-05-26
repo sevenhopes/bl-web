@@ -22,7 +22,7 @@ get_header(); ?>
 		<div class="bl-wrap">
 			<p class="bl-p">훌륭한 커리큘럼을 갖추고 있다고 해도 늘 점검하고 관리하지 않으면 앞으로 나아갈 수 없습니다. <span class="bl-ue">Good to Great</span>. 브릿지라잇의 프로그램은 매주, 매달 더 좋아집니다.<!-- 더 명료하게, 더 효율적으로, 그러나 더 따뜻하게. 그래서 우리는 자주 만나고, 함께 고민하며, 이미 만들어진 것을 새로이 하는 것에 주저하지 않습니다. 또한, 모든 회의 및 행사는 영어로 진행됩니다.--></p>
 
-			<img class="size-full wp-image-1218" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/06/collaboration-ig.png" alt="브릿지라잇 콜라보레이션" width="525" height="394" />
+			<img class="size-full wp-image-1218 aligncenter" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/06/collaboration-ig.png" alt="브릿지라잇 콜라보레이션" width="525" height="394" />
 		</div>
 	</div>
 

@@ -4142,6 +4142,20 @@ dl.bl-faq-list {
 		height: 1350px;
 		transform: rotate( -14deg );
 	}
+
+	#teachers {
+		.bl-t-profile {
+			width: 48%;
+			display: inline-block;
+			
+			&:nth-child(even) {
+				margin-left: calc( 100% * 0.03);
+			}
+		}
+		.bl-t-charge {
+			font-size: 1rem;
+		}
+	}
 }
 
 /* 1800px, Major, Desktop, 16:9 */
