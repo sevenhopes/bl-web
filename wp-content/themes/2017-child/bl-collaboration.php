@@ -11,7 +11,7 @@
 
 get_header(); ?>
 
-<div id="collabration" class="">
+<div id="collaboration" class="">
 
 	<div class="bl-page-header">
 		<div class="bl-page-title">Collaboration</div>
