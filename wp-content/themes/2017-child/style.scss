@@ -6,7 +6,7 @@ Template: twentyseventeen
 Author: Bridge Light Corp.
 Author URI: http://bridgelightels.com/m/
 Tags: 브릿지라잇,춘천영어학원,BridgeLight,춘천어학원,브릿지라잇어학원
-Version: 2.7.2
+Version: 2.7.5
 Text Domain: 2017-child
 Tags: mobile-first
 */
@@ -3106,7 +3106,6 @@ a.more-link {
 		div:first-child {
 			text-align: left;
 			margin-top: 0.5rem;
-			color: $green;
 		}
 		div:last-child {
 			text-align: right;
@@ -4145,6 +4144,9 @@ dl.bl-faq-list {
 	}
 
 	#course-overview {
+		.bl-block-header {
+			padding-left: 1.5rem;
+		}
 		img {
 			padding-right: 40px;
 			padding-left: 20px;
@@ -4194,6 +4196,7 @@ dl.bl-faq-list {
 					color: $orange;
 					height: $g-col2h;
 					padding: $g-col2p 0;
+
 					div:first-child {
 						margin-right: 0;
 					}
@@ -4212,7 +4215,84 @@ dl.bl-faq-list {
 			// margin-right: 60px;
 			// margin-left: 60px;
 		}
+	} // end of #course-overview
+	#semesters {
+		.bl-block-header {
+			padding-left: 1.5rem;
+		}
+		.bl-wrap {
+			padding-right: 1.5rem;
+			padding-left: 1.5rem;
+		}
+		.bl-desc-box {
+			padding-right: 3rem;
+			padding-left: 3rem;
+
+			&:last-child {
+				padding-bottom: 1rem;
+			}
+		}
 	}
+	.bl-iconic {
+		.circle {
+			width: 120px;
+			height: 120px;
+			font-size: 3.75rem;
+
+			span {
+				font-size: 7.5rem;
+				line-height: 1.2;
+			}
+		}
+		.desc {
+			font-size: 1.3rem;
+		}
+	}
+	.bl-procedure {
+		.proc-desc {
+			margin-left: 3rem;
+
+			> div:first-child {
+				font-size: 1.4rem;
+
+				span {
+					font-size: 2rem;
+					left: -25px;
+					top: -4px;
+				}
+			}
+		}
+	}
+	#english-camp {
+		.bl-block-header {
+			padding-left: 1.5rem;
+		}
+		.bl-wrap {
+			padding-right: 1.5rem;
+			padding-left: 1.5rem;
+		}
+		.bl-desc-box {
+			padding-right: 2rem;
+			padding-left: 2rem;
+
+			&:last-child {
+				padding-bottom: 1rem;
+			}
+		}
+		.bl-iconic {
+			div:nth-child(3) .circle {
+				font-size: 3.75rem;
+
+				div:first-child {
+					margin-top: 0.4rem;
+				}
+				div:last-child {
+					margin-top: 0rem;
+					margin-right: 0.3rem;
+				}
+			}
+		}
+	} // end of #english-camp
 }
 
 /* 1800px, Major, Desktop, 16:9 */
