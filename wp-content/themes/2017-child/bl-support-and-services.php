@@ -57,16 +57,18 @@ get_header(); ?>
 
 			<img class="size-full wp-image-1777" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/09/ig-busing-map.png" alt="통학버스 춘천전역 운행" width="1200" height="970" />
 
-			<h3>Bus Routes</h3>
-			<ul>
-				<li>1호 퇴계동 방면</li>
-				<li>2호 칠전동 방면</li>
-				<li>3호 신사우동 방면</li>
-				<li>5호 장학리 방면</li>
-				<li>7호 거두리 방면</li>
-				<li>12호 소양로 방면</li>
-			</ul>
-			<p class="bl-p">버스노선과 정류장에 대한 자세한 정보는 입학 과정 중 알려드립니다.</p>
+			<div class="bl-bus-route">
+				<h3>Bus Routes</h3>
+				<ul>
+					<li>1호 퇴계동 방면</li>
+					<li>2호 칠전동 방면</li>
+					<li>3호 신사우동 방면</li>
+					<li>5호 장학리 방면</li>
+					<li>7호 거두리 방면</li>
+					<li>12호 소양로 방면</li>
+				</ul>
+				<p class="bl-p">* 버스노선과 정류장에 대한 자세한 정보는 입학 과정 중 알려드립니다.</p>
+			</div>
 		</div>
 	</div>
 </div>
