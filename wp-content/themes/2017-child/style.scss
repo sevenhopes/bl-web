@@ -2693,6 +2693,10 @@ a.more-link {
 }
 
 #support-and-services {
+	.bl-bus-route {
+		padding-right: inherit;
+		padding-left: inherit;
+	}
 }
 
 #course-overview {
@@ -4129,10 +4133,19 @@ dl.bl-faq-list {
 		transform: rotate( -14deg );
 	}
 
-	#why-bl {
+	#why-bl,
+	#foundation-story,
+	#collaboration,
+	#support-and-services {
 		.bl-block {
 			padding-right: 1.5rem;
 			padding-left: 1.5rem;
+		}
+	}
+	#support-and-services {
+		.bl-bus-route {
+			padding-right: 1rem;
+			padding-left: 1rem;
 		}
 	}
 	#teachers {
@@ -4222,14 +4235,22 @@ dl.bl-faq-list {
 			// margin-left: 60px;
 		}
 	} // end of #course-overview
-	#semesters {
-		.bl-block-header {
-			padding-left: 1.5rem;
-		}
-		.bl-wrap {
+	#semesters,
+	#english-camp,
+	#extracurricular {
+		.bl-block {
 			padding-right: 1.5rem;
 			padding-left: 1.5rem;
 		}
+	}
+	#semesters {
+		// .bl-block-header {
+		// 	padding-left: 1.5rem;
+		// }
+		// .bl-wrap {
+		// 	padding-right: 1.5rem;
+		// 	padding-left: 1.5rem;
+		// }
 		.bl-desc-box {
 			padding-right: 3rem;
 			padding-left: 3rem;
@@ -4270,13 +4291,13 @@ dl.bl-faq-list {
 		}
 	}
 	#english-camp {
-		.bl-block-header {
-			padding-left: 1.5rem;
-		}
-		.bl-wrap {
-			padding-right: 1.5rem;
-			padding-left: 1.5rem;
-		}
+		// .bl-block-header {
+		// 	padding-left: 1.5rem;
+		// }
+		// .bl-wrap {
+		// 	padding-right: 1.5rem;
+		// 	padding-left: 1.5rem;
+		// }
 		.bl-desc-box {
 			padding-right: 2rem;
 			padding-left: 2rem;
@@ -4300,13 +4321,13 @@ dl.bl-faq-list {
 		}
 	} // end of #english-camp
 	#extracurricular {
-		.bl-block-header {
-			padding-left: 1.5rem;
-		}
-		.bl-wrap {
-			padding-right: 1.5rem;
-			padding-left: 1.5rem;
-		}
+		// .bl-block-header {
+		// 	padding-left: 1.5rem;
+		// }
+		// .bl-wrap {
+		// 	padding-right: 1.5rem;
+		// 	padding-left: 1.5rem;
+		// }
 	}
 }
 
