@@ -4129,6 +4129,12 @@ dl.bl-faq-list {
 		transform: rotate( -14deg );
 	}
 
+	#why-bl {
+		.bl-block {
+			padding-right: 1.5rem;
+			padding-left: 1.5rem;
+		}
+	}
 	#teachers {
 		.bl-t-profile {
 			width: 48%;
@@ -4293,6 +4299,15 @@ dl.bl-faq-list {
 			}
 		}
 	} // end of #english-camp
+	#extracurricular {
+		.bl-block-header {
+			padding-left: 1.5rem;
+		}
+		.bl-wrap {
+			padding-right: 1.5rem;
+			padding-left: 1.5rem;
+		}
+	}
 }
 
 /* 1800px, Major, Desktop, 16:9 */
