@@ -41,6 +41,11 @@ get_header(); ?>
 
 		<div class="bl-wrap">
 			<div class="bl-grid-metro">
+
+				<div class="category cat-regular">
+					<div>정규</div>
+					<div>학기</div>
+				</div>
 				<div class="regular">
 					<a href="http://www.bridgelightels.com/m/curriculum/regular-course##course-basic">
 						<div class="bl-item-wrap">
@@ -66,6 +71,11 @@ get_header(); ?>
 							<div>통합실전</div>
 						</div>
 					</a>
+				</div>
+
+				<div class="category cat-camp">
+					<div>방학</div>
+					<div>캠프</div>
 				</div>
 				<div class="camp">
 					<a href="http://www.bridgelightels.com/m/curriculum/english-camp##camp-musical">
@@ -93,6 +103,11 @@ get_header(); ?>
 							<div>영어논쟁</div>
 						</div>
 					</a>
+				</div>
+
+				<div class="category cat-extra col-2">
+					<div>교과외</div>
+					<div>학습</div>
 				</div>
 				<!--div class="a-camp">
 					<a href="http://www.bridgelightels.com/m/curriculum/study-in-america/">
