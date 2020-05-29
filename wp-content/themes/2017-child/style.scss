@@ -6,7 +6,7 @@ Template: twentyseventeen
 Author: Bridge Light Corp.
 Author URI: http://bridgelightels.com/m/
 Tags: 브릿지라잇,춘천영어학원,BridgeLight,춘천어학원,브릿지라잇어학원
-Version: 2.7.5
+Version: 2.7.7
 Text Domain: 2017-child
 Tags: mobile-first
 */
@@ -2424,7 +2424,8 @@ a.more-link {
 .bl-block {
 	margin-left: auto;
 	margin-right: auto;
-	min-width: 100vw;
+	// min-width: 100vw;
+	width: 100%;
 	padding: 0;
 	margin: 2rem 0;
 	display: block;
@@ -3729,7 +3730,7 @@ dl.bl-faq-list {
 
 .wp-caption .wp-caption-text {
 	margin: 0.25em 0.5em 0.25em 0;
-	text-align: right;
+	text-align: left;
 }
 
 /*--------------------------------------------------------------
