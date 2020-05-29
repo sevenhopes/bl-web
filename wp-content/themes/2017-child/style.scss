@@ -2652,6 +2652,13 @@ a.more-link {
 #collaboration {
 }
 
+#support-and-services {
+	.bl-bus-route {
+		padding-right: inherit;
+		padding-left: inherit;
+	}
+}
+
 #teachers {
 	.bl-t-profile {
 		width: auto;
@@ -2692,13 +2699,6 @@ a.more-link {
 	}
 }
 
-#support-and-services {
-	.bl-bus-route {
-		padding-right: inherit;
-		padding-left: inherit;
-	}
-}
-
 #course-overview {
 	.regular {
 		background-color: $blue-bl;
@@ -2735,7 +2735,6 @@ a.more-link {
 		}
 	}
 }
-
 
 .bl-item-wrap {
 	// display: -webkit-box;
@@ -4328,6 +4327,16 @@ dl.bl-faq-list {
 		// 	padding-right: 1.5rem;
 		// 	padding-left: 1.5rem;
 		// }
+	}
+
+	#admissions,
+	#appt-and-visit,
+	#admission-rules,
+	#faq {
+		.bl-block {
+			padding-right: 1.5rem;
+			padding-left: 1.5rem;
+		}
 	}
 }
 
