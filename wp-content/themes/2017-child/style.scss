@@ -4338,6 +4338,33 @@ dl.bl-faq-list {
 			padding-left: 1.5rem;
 		}
 	}
+
+	.has-sidebar:not(.error404) #primary {
+		float: unset;
+		width: auto;
+
+		.bl-block {
+			padding-right: 1.5rem;
+			padding-left: 1.5rem;
+		}
+	}
+
+	.blog {
+		article .post-thumbnail,
+		article .entry-content {
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+
+		#events .bl-wrap {
+			padding-right: 50px;
+			padding-left: 50px;
+		}
+	}
+
+	.post-navigation .nav-next {
+		margin-top: 0;
+	}
 }
 
 /* 1800px, Major, Desktop, 16:9 */

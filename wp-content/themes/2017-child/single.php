@@ -16,6 +16,8 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<div class="bl-block">
+
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -30,8 +32,8 @@ get_header(); ?>
 
 				the_post_navigation(
 					array(
-						'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', '2017-child' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( '이전 소식', '2017-child' ) . '</span>%title</span>',
-						'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', '2017-child' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( '다음 소식', '2017-child' ) . '</span> <span class="nav-title">%title</span>',
+						'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', '2017-child' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( '< 이전 소식', '2017-child' ) . '</span>%title</span>',
+						'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', '2017-child' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( '다음 소식 >', '2017-child' ) . '</span> <span class="nav-title">%title</span>',
 						'screen_reader_text' => __( 'Post navigation', '2017-child' ),
 						// 아래 두 줄로 현재 글과 같은 카테고리의 글로만 이전/다음 링크를 만듬
 						'in_same_term' => true,
@@ -41,6 +43,8 @@ get_header(); ?>
 
 			endwhile; // End of the loop.
 			?>
+
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
