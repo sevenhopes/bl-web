@@ -7,7 +7,7 @@
  * @package BridgeLight
  * @subpackage BridgeLight_MobileFirst
  * @since 1.0
- * @version 1.3
+ * @version 1.3.1
  */
 
 //
@@ -205,7 +205,7 @@ function bridgelight_include_opengraph_facebook(){
 		if ( is_single() ) {
 			echo '<meta property="og:image" content="'.get_the_post_thumbnail_url( get_the_ID(), 'full' ).'">';
 		} else {
-    	echo '<meta property="og:image" content="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/bridge-light-og-image.jpg">';
+    	echo '<meta property="og:image" content="/wp-content/themes/2017-child/assets/images/bridge-light-og-image.jpg">';
 		}
 }
 
