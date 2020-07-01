@@ -42,7 +42,7 @@ get_header();
 				?>
 				</div>
 				<div class="creed">
-					<img src="/wp-content/themes/2017-child/assets/images/widescreen/creed_en.jpg?ver=1.0" width="320" height="270" />
+					<img src="/wp-content/themes/2017-child/assets/images/widescreen/creed_en.jpg?ver=1.0" width="320" height="270" alt="교육 신조" />
 				</div>
 			</div>
 
