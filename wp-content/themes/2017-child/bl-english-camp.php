@@ -59,7 +59,7 @@ get_header(); ?>
 		<div class="bl-block-header">
 			<h2 class="bl-block-title">문법 캠프</h2>
 			<div class="bl-block-header-media">
-				<img class="size-full wp-image-1481" src="/wp-content/uploads/2019/06/teaching-peter.jpg" alt="수업 중인 피터 선생님" width="1200" height="675" />
+				<img class="size-full wp-image-1481" src="/wp-content/uploads/2019/09/camp-grammar.jpg" alt="영어문법캠프" width="1200" height="675" />
 			</div>
 		</div>
 
