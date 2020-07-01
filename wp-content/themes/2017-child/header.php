@@ -32,7 +32,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <meta property="og:site_name" content="브릿지라잇 어학원">
 <meta property="og:url" content="<?php the_permalink(); ?>">
-<!-- <meta property="og:image" content="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/bridge-light-og-image.jpg"> -->
+<!-- <meta property="og:image" content="/wp-content/themes/2017-child/assets/images/bridge-light-og-image.jpg"> -->
 <meta property="og:image:height" content="630">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:type" content="image/jpeg">
