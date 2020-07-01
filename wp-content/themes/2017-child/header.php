@@ -30,6 +30,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <?php wp_head(); ?>
 
+<meta name="description" content="<?php the_title(); ?>">
+<meta name="keywords" content="춘천, 영어학원, 어학원, <?php the_title(); ?>">
+<meta name="author" content="주식회사 브릿지라잇 (Bridge Light Inc.)">
 <meta property="og:site_name" content="브릿지라잇 어학원">
 <meta property="og:url" content="<?php the_permalink(); ?>">
 <!-- <meta property="og:image" content="/wp-content/themes/2017-child/assets/images/bridge-light-og-image.jpg"> -->
