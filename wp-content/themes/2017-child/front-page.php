@@ -8,7 +8,7 @@
  * @package BridgeLight
  * @subpackage BridgeLight_MobileFirst
  * @since 1.0
- * @version 1.4.2
+ * @version 1.4.3
  */
 
 get_header();
@@ -42,17 +42,17 @@ get_header();
 				?>
 				</div>
 				<div class="creed">
-					<img src="http://www.bridgelightels.com/m/wp-content/themes/2017-child/assets/images/widescreen/creed_en.jpg?ver=1.0" width="320" height="270" />
+					<img src="/wp-content/themes/2017-child/assets/images/widescreen/creed_en.jpg?ver=1.0" width="320" height="270" />
 				</div>
 			</div>
 
 			<div id="bl-quick-menu">
-				<div><a href="tel:033-243-5757"><i class="bl-sp icon-call" title="전화상담&예약"></i><span>문의전화</span></a></div>
-				<div><a href="http://www.bridgelightels.com/m/admission/appt-and-visit/"><i class="bl-sp icon-map" title="위치안내"></i><span>위치안내</span></a></div>
-				<div><a href="http://www.bridgelightels.com/m/curriculum/course-overview/"><i class="bl-sp icon-book" title="커리큘럼"></i><span>커리큘럼</span></a></div>
-				<div><a href="http://www.bridgelightels.com/m/curriculum/english-camp/"><i class="bl-sp icon-devel" title="방학영어캠프"></i><span>영어캠프</span></a></div>
-				<div><a href="http://www.bridgelightels.com/m/curriculum/admission-process/"><i class="bl-sp icon-mortar" title="입학과정"></i><span>입학과정</span></a></div>
-				<div><a href="http://www.bridgelightels.com/m/admission/faq/"><i class="bl-sp icon-faq" title="자주묻는질문"></i><span>FAQ</span></a></div>
+				<div class="tele"><a href="tel:033-243-5757"><i class="bl-sp icon-call" title="전화상담&예약"></i><span>문의전화</span></a></div>
+				<div class="appt"><a href="/admission/appt-and-visit/"><i class="bl-sp icon-map" title="위치안내"></i><span>위치안내</span></a></div>
+				<div class="curr"><a href="/curriculum/course-overview/"><i class="bl-sp icon-book" title="커리큘럼"></i><span>커리큘럼</span></a></div>
+				<div class="camp"><a href="/curriculum/english-camp/"><i class="bl-sp icon-devel" title="방학영어캠프"></i><span>영어캠프</span></a></div>
+				<div class="admt"><a href="/curriculum/admission-process/"><i class="bl-sp icon-mortar" title="입학과정"></i><span>입학과정</span></a></div>
+				<div class="faq"><a href="/admission/faq/"><i class="bl-sp icon-faq" title="자주묻는질문"></i><span>FAQ</span></a></div>
 			</div>
 
 			<div class="bl-down-arrow-wrapper">
@@ -64,7 +64,7 @@ get_header();
 			<div id="bl-news" class="bl-block">
 				<div class="bl-block-header">
 					<h2 class="bl-block-title">News</h2>
-					<div class="bl-inline-link"><a href="http://www.bridgelightels.com/m/news-n-events##news">All News</a></div>
+					<div class="bl-inline-link"><a href="/news-n-events##news">All News</a></div>
 				</div>
 
 				<?php
@@ -116,7 +116,7 @@ get_header();
 			<div id="bl-event" class="bl-block">
 				<div class="bl-block-header">
 					<h2 class="bl-block-title">Events</h2>
-					<div class="bl-inline-link"><a href="http://www.bridgelightels.com/m/news-n-events##events">All Events</a></div>
+					<div class="bl-inline-link"><a href="/news-n-events##events">All Events</a></div>
 				</div>
 				<div class="bl-wrap">
 
@@ -192,10 +192,10 @@ get_header();
 				<div class="bl-block-header">
 					<h2 class="bl-block-title">Why Bridge Light</h2>
 				</div>
-				<a href="http://www.bridgelightels.com/m/about/why-bridge-light/">
+				<a href="/about/why-bridge-light/">
 					<div class="bl-link-wrapper">
 						<div class="bl-block-header-media">
-							<img class="size-medium wp-image-2020" src="http://www.bridgelightels.com/m/wp-content/uploads/2020/02/main-building-at-night.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 2020 ) ?>" sizes="100vw" alt="브릿지라잇 본관 전경 (야간)" />
+							<img class="size-medium wp-image-2020" src="/wp-content/uploads/2020/02/main-building-at-night.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 2020 ) ?>" sizes="100vw" alt="브릿지라잇 본관 전경 (야간)" />
 						</div>
 						<div class="bl-wrap">
 							<p class="bl">브릿지라잇 어학원의 건물은 작은 영어권 도시입니다. 선생님들, 학생들 모두가 영어로 대화하는 장면이 브릿지라잇에서는 일상입니다. 가이드가 확실한 영어권 도시로 '매일' 여행오세요.</p>
@@ -208,10 +208,10 @@ get_header();
 				<div class="bl-block-header">
 					<h2 class="bl-block-title">Curriculum</h2>
 				</div>
-				<a href="http://www.bridgelightels.com/m/curriculum/course-overview/">
+				<a href="/curriculum/course-overview/">
 					<div class="bl-link-wrapper">
 						<div class="bl-block-header-media">
-							<img class="size-medium wp-image-2023" src="http://www.bridgelightels.com/m/wp-content/uploads/2020/02/Graphic-Roadmap-2019-09v2.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 2023 ) ?>" sizes="100vw" alt="브릿지라잇 커리큘럼 로드맵" />
+							<img class="size-medium wp-image-2023" src="/wp-content/uploads/2020/02/Graphic-Roadmap-2019-09v2.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 2023 ) ?>" sizes="100vw" alt="브릿지라잇 커리큘럼 로드맵" />
 						</div>
 						<div class="bl-wrap">
 							<p class="bl">초등 1학년부터 중학 3학년까지를 모두 아우르는 단계별 강의들이 개설 되어 있습니다. 모든 레벨에서 영어의 전 영역인 말하기, 듣기, 읽기, 쓰기를 종합적으로 학습합니다.</p>
@@ -224,10 +224,10 @@ get_header();
 				<div class="bl-block-header">
 					<h2 class="bl-block-title">Go with us</h2>
 				</div>
-				<a href="http://www.bridgelightels.com/m/admission/admission-process/">
+				<a href="/admission/admission-process/">
 					<div class="bl-link-wrapper">
 						<div class="bl-block-header-media">
-							<img class="size-medium wp-image-802" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/04/summer-musical-camp-2018.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 802 ) ?>" sizes="100vw" alt="여름방학 영어뮤지컬 캠프" />
+							<img class="size-medium wp-image-802" src="/wp-content/uploads/2019/04/summer-musical-camp-2018.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 802 ) ?>" sizes="100vw" alt="여름방학 영어뮤지컬 캠프" />
 						</div>
 						<div class="bl-wrap">
 							<p class="bl">많은 이들이 영어를 가르칩니다. 그렇지만 모든 아이들이 학원 가기를 좋아하는 건 아닙니다. 브릿지라잇의 영어수업은 지식 뿐 아니라 재미와 행복을 함께 전합니다. 신나서 가는 학원, 브릿지라잇은 그 방향으로 갑니다.</p>
