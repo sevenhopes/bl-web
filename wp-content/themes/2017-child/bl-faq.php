@@ -15,7 +15,7 @@ get_header(); ?>
 
 	<div class="bl-page-header">
 		<div style="display: none;" class="bl-page-header-media">
-			<img class="size-full wp-image-901" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/04/busing-evening-birdview.jpg" alt="셔틀버스 이용" width="1200" height="675" />
+			<img class="size-full wp-image-901" src="/wp-content/uploads/2019/04/busing-evening-birdview.jpg" alt="셔틀버스 이용" width="1200" height="675" />
 		</div>
 		<div class="bl-page-title">FAQ</div>
 		<h1 class="bl-heading">자주 묻는 질문</h1>
@@ -54,7 +54,7 @@ get_header(); ?>
 				<dd>정확한 상담을 위해 자녀와 꼭 같이 오시는 것을 권장합니다. 학부모님과의 상담만으로는 커리큘럼, 반배정 등과 같은 중요한 주제에 있어서 원활한 진행이 어렵기 때문입니다. 또한 첫등원 전에 학원에 한 번 들러보는 것도 때론 학생에게 큰 도움이 됩니다.</dd>
 
 				<dt class="faq-level"><strong>[레벨/학기]</strong> 정규학기 레벨은 어떻게 구성 되어 있나요?</dt>
-				<dd>정규학기 레벨은 크게 <strong>Basic, Special, Stage</strong> 세 가지 단계로 나뉘며, 총 11 단계로 이루어져 있습니다. (Basic 1~6, Special, Stage I, D, A, M) 프로그램과 관련한 자세한 사항은 <strong>{<a href="http://www.bridgelightels.com/m/curriculum/course-overview/">Curriculum</a>}</strong>의 페이지들을 참고해 주시기 바랍니다.</dd>
+				<dd>정규학기 레벨은 크게 <strong>Basic, Special, Stage</strong> 세 가지 단계로 나뉘며, 총 11 단계로 이루어져 있습니다. (Basic 1~6, Special, Stage I, D, A, M) 프로그램과 관련한 자세한 사항은 <strong>{<a href="/curriculum/course-overview/">Curriculum</a>}</strong>의 페이지들을 참고해 주시기 바랍니다.</dd>
 				<dt class="faq-level"><strong>[레벨/학기]</strong> 한 학기는 몇 개월인가요?</dt>
 				<dd>한 학기는 <strong>6개월</strong>이며, 봄-여름학기(3~8월), 가을-겨울학기(9~2월)로 구성 됩니다.</dd>
 				<dt class="faq-level"><strong>[레벨/학기]</strong> 다음 레벨로의 이동은 어떻게 이루어지나요?</dt>
@@ -95,7 +95,7 @@ get_header(); ?>
 				  </ul>
 			  </dd>
 				<dt class="faq-class top-10"><strong>[수업/교실]</strong> 방학 중 영어캠프 시간과 수업 내용은 어떤가요?</dt>
-				<dd>여름/겨울 방학 영어캠프의 수업시간은 <strong>오전 9:00~11:50</strong>입니다. 수업의 종류는 크게 세 가지로, 저레벨을 위해 재밌게 접근하는 <strong>영어뮤지컬</strong>, 문법강화를 위한 <strong>문법캠프(초/중/고급)</strong>, 그리고 고레벨 논리스피킹을 위한 <strong>영어논쟁캠프</strong>입니다. 자세한 내용은 {<a href="http://www.bridgelightels.com/m/curriculum/summer-winter-camp/">여름/겨울 영어캠프</a>} 페이지를 참고하시기 바랍니다.</dd>
+				<dd>여름/겨울 방학 영어캠프의 수업시간은 <strong>오전 9:00~11:50</strong>입니다. 수업의 종류는 크게 세 가지로, 저레벨을 위해 재밌게 접근하는 <strong>영어뮤지컬</strong>, 문법강화를 위한 <strong>문법캠프(초/중/고급)</strong>, 그리고 고레벨 논리스피킹을 위한 <strong>영어논쟁캠프</strong>입니다. 자세한 내용은 {<a href="/curriculum/summer-winter-camp/">여름/겨울 영어캠프</a>} 페이지를 참고하시기 바랍니다.</dd>
 				<dt class="faq-class"><strong>[수업/교실]</strong> 방학 중 영어캠프 기간 중에 정규수업도 하나요?</dt>
 				<dd>방학 중 영어캠프와 정규학기 수업은 시간대가 겹치지 않으며, 학기수업은 캠프기간 중에도 차질없이 진행됩니다. 따라서 캠프에 참가하면 2주 동안 하루 4시간반(오전 캠프 3시간, 오후 정규수업 1시간반)을 영어로 생활하는 것이기에 그만큼 실력 향상 비율이 평소보다 월등히 높습니다.</dd>
 
@@ -106,7 +106,7 @@ get_header(); ?>
 				<dt class="faq-tuition"><strong>[수강료/교재비]</strong> 수강료 납부일은 언제인가요?</dt>
 				<dd>수강료 납부일은 <strong>매월 1일</strong>로, 해당 월의 수업을 위한 수강료를 선납하는 방식입니다. 예를 들면, 7월분 수강료는 7월 1일에 납부하게 됩니다.</dd>
 				<dt class="faq-tuition"><strong>[수강료/교재비]</strong> 수강료 할인 같은 건 없나요?</dt>
-				<dd>브릿지라잇 어학원은 타 학원에서는 찾기 힘든 세 종류의 수강료 할인 혜택을 제공하고 있습니다. 다만, 다음 사항은 여러 가지 사유로 예고 없이 변경될 수 있으며, 각 혜택은 타인에게 양도될 수 없습니다<br>
+				<dd>브릿지라잇 어학원은 타 학원에서는 찾기 힘든 세 종류의 수강료 할인 혜택을 제공하고 있습니다. 다만, 다음 사항은 여러 가지 사유로 예고 없이 변경될 수 있으며, 각 혜택은 타인에게 양도될 수 없습니다.<br>
 					<ul>
 						<li><strong>여름/겨울 방학캠프 할인</strong>: 브릿지라잇 재학생은 캠프 참가비에서 2만원 할인</li>
 						<li><strong>형제자매 할인</strong>: 정규학기에 한 가정으로부터 2명 이상의 자녀가 수강하는 경우, <strong>매월</strong> 수강료 5만원 할인 (자녀 2명: 매월 5만원, 자녀 3명 이상: 매월 10만원)</li>

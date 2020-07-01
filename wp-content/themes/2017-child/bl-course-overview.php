@@ -24,7 +24,7 @@ get_header(); ?>
 		</div>
 
 		<div class="bl-wrap">
-			<img class="size-full wp-image-1428" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/06/ig-strategy.png" alt="교육전략" width="1200" height="700" />
+			<img class="size-full wp-image-1428" src="/wp-content/uploads/2019/06/ig-strategy.png" alt="교육전략" width="1200" height="700" />
 			<!-- <ul>
 				<li>회화, 문법, 어휘, Reading, Writing, 영어의 전 영역 통합적 교육</li>
 				<li>Phonics부터 TOEIC/TEPS까지 단계별로 세분화된 강좌 (초1~중3 전학년 준비)</li>
@@ -47,7 +47,7 @@ get_header(); ?>
 					<div>학기</div>
 				</div>
 				<div class="regular">
-					<a href="http://www.bridgelightels.com/m/curriculum/regular-course##course-basic">
+					<a href="/curriculum/regular-course##course-basic">
 						<div class="bl-item-wrap">
 							<div>Basic</div>
 							<div>1~6</div>
@@ -56,7 +56,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="regular">
-					<a href="http://www.bridgelightels.com/m/curriculum/regular-course##course-special">
+					<a href="/curriculum/regular-course##course-special">
 						<div class="bl-item-wrap">
 							<div>Special</div>
 							<div>미국교과</div>
@@ -64,7 +64,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="regular">
-					<a href="http://www.bridgelightels.com/m/curriculum/regular-course##course-stage">
+					<a href="/curriculum/regular-course##course-stage">
 						<div class="bl-item-wrap">
 							<div>Stage</div>
 							<div>I D A M</div>
@@ -78,7 +78,7 @@ get_header(); ?>
 					<div>캠프</div>
 				</div>
 				<div class="camp">
-					<a href="http://www.bridgelightels.com/m/curriculum/english-camp##camp-musical">
+					<a href="/curriculum/english-camp##camp-musical">
 						<div class="bl-item-wrap">
 							<div>Musical</div>
 							<div>Camp</div>
@@ -87,7 +87,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="camp">
-					<a href="http://www.bridgelightels.com/m/curriculum/english-camp##camp-grammar">
+					<a href="/curriculum/english-camp##camp-grammar">
 						<div class="bl-item-wrap">
 							<div>Grammar</div>
 							<div>Camp</div>
@@ -96,7 +96,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="camp">
-					<a href="http://www.bridgelightels.com/m/curriculum/english-camp##camp-debate">
+					<a href="/curriculum/english-camp##camp-debate">
 						<div class="bl-item-wrap">
 							<div>Debate</div>
 							<div>Camp</div>
@@ -110,7 +110,7 @@ get_header(); ?>
 					<div>학습</div>
 				</div>
 				<!--div class="a-camp">
-					<a href="http://www.bridgelightels.com/m/curriculum/study-in-america/">
+					<a href="/curriculum/study-in-america/">
 						<div class="bl-item-wrap">
 							<div>Study in</div>
 							<div>America</div>
@@ -119,7 +119,7 @@ get_header(); ?>
 					</a>
 				</div-->
 				<div class="extra">
-					<a href="http://www.bridgelightels.com/m/curriculum/extracurricular##english-contest">
+					<a href="/curriculum/extracurricular##english-contest">
 						<div class="bl-item-wrap">
 							<div>English</div>
 							<div>Contest</div>
@@ -128,7 +128,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="extra">
-					<a href="http://www.bridgelightels.com/m/curriculum/extracurricular##test-prep">
+					<a href="/curriculum/extracurricular##test-prep">
 						<div class="bl-item-wrap">
 							<div>Test</div>
 							<div>Preparation</div>
@@ -137,7 +137,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="extra">
-					<a href="http://www.bridgelightels.com/m/curriculum/extracurricular##building-session">
+					<a href="/curriculum/extracurricular##building-session">
 						<div class="bl-item-wrap">
 							<div>Building</div>
 							<div>Session</div>
@@ -146,7 +146,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="extra">
-					<a href="http://www.bridgelightels.com/m/curriculum/extracurricular##halloween">
+					<a href="/curriculum/extracurricular##halloween">
 						<div class="bl-item-wrap">
 							<div>Halloween</div>
 							<div>Party</div>
@@ -155,7 +155,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="extra">
-					<a href="http://www.bridgelightels.com/m/curriculum/extracurricular##christmas">
+					<a href="/curriculum/extracurricular##christmas">
 						<div class="bl-item-wrap">
 							<div>Christmas</div>
 							<div>Party</div>

@@ -88,7 +88,7 @@ get_header(); ?>
 		</div>
 
 		<div class="bl-wrap bl-proc-comment">
-			<p class="bl-p">* 궁금한 사항은 <a href="http://www.bridgelightels.com/m/admission/faq/">자주 묻는 질문</a> 페이지를 참고하시거나, 브릿지라잇으로 전화 주세요.</p>
+			<p class="bl-p">* 궁금한 사항은 <a href="/admission/faq/">자주 묻는 질문</a> 페이지를 참고하시거나, 브릿지라잇으로 전화 주세요.</p>
 		</div>
 	</div>
 
@@ -98,7 +98,7 @@ get_header(); ?>
 		</div>
 
 		<div class="bl-wrap">
-			<p class="bl-p">방학 영어캠프 등록에 대해서는 <a href="http://www.bridgelightels.com/m/curriculum/english-camp/">여름/겨울 영어캠프</a> 페이지를 참고하세요.</p>
+			<p class="bl-p">방학 영어캠프 등록에 대해서는 <a href="/curriculum/english-camp/">여름/겨울 영어캠프</a> 페이지를 참고하세요.</p>
 		</div>
 	</div>
 
@@ -108,7 +108,7 @@ get_header(); ?>
 		</div>
 
 		<div class="bl-wrap">
-			<p class="bl-p">한 달간의 해외 영어연수 등록에 대해서는 <a href="http://www.bridgelightels.com/m/curriculum/study-in-america/">미국현지체험연수</a> 페이지를 참고하세요.</p>
+			<p class="bl-p">한 달간의 해외 영어연수 등록에 대해서는 <a href="/curriculum/study-in-america/">미국현지체험연수</a> 페이지를 참고하세요.</p>
 		</div>
 	</div-->
 

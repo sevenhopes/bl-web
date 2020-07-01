@@ -19,7 +19,7 @@ get_header(); ?>
 	</div>
 
 	<div class="bl-block">
-		<img class="aligncenter wp-image-1526 size-medium" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/07/flags-study-in-america-300x170.png" alt="미국현지체험연수 상징" width="200" height="113" />
+		<img class="aligncenter wp-image-1526 size-medium" src="/wp-content/uploads/2019/07/flags-study-in-america-300x170.png" alt="미국현지체험연수 상징" width="200" height="113" />
 	</div>
 
 	<div class="bl-block">
@@ -36,10 +36,10 @@ get_header(); ?>
 		<div class="bl-wrap">
 			<div class="bl-tabs">
 				<div class="media">
-					<div><img class="homestay size-large wp-image-1541" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/07/sia-homestay-1024x576.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 1541 ) ?>" sizes="100vw" alt="홈스테이 - 미국현지체험연수" /></div>
-					<div><img class="school size-large wp-image-1542" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/07/sia-school-1024x576.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 1542 ) ?>" sizes="100vw" alt="미국학교생활 - 미국현지체험연수" /></div>
-					<div><img class="experience size-large wp-image-1540" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/07/sia-byu-1024x576.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 1540 ) ?>" sizes="100vw" alt="문화생활체험-미국현지체험연수" /></div>
-					<div><img class="travel size-large wp-image-1543" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/07/sia-travel-1024x576.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 1543 ) ?>" sizes="100vw" alt="미국서부여행 - 미국현지체험연수" /></div>
+					<div><img class="homestay size-large wp-image-1541" src="/wp-content/uploads/2019/07/sia-homestay-1024x576.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 1541 ) ?>" sizes="100vw" alt="홈스테이 - 미국현지체험연수" /></div>
+					<div><img class="school size-large wp-image-1542" src="/wp-content/uploads/2019/07/sia-school-1024x576.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 1542 ) ?>" sizes="100vw" alt="미국학교생활 - 미국현지체험연수" /></div>
+					<div><img class="experience size-large wp-image-1540" src="/wp-content/uploads/2019/07/sia-byu-1024x576.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 1540 ) ?>" sizes="100vw" alt="문화생활체험-미국현지체험연수" /></div>
+					<div><img class="travel size-large wp-image-1543" src="/wp-content/uploads/2019/07/sia-travel-1024x576.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 1543 ) ?>" sizes="100vw" alt="미국서부여행 - 미국현지체험연수" /></div>
 				</div>
 				<div class="tabs">
 					<button id="homestay"><i class="bl-sp icw-home" title="미국홈스테이"></i></button>

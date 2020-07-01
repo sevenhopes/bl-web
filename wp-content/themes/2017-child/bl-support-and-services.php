@@ -37,7 +37,7 @@ get_header(); ?>
 			<h3>Birthday</h3>
 			<p class="bl-p"><!-- 누군가가 내 생일을 기억하고 선물까지 준다면 아이들은 행복해 합니다. 서로 관심이 부족한 관계에서는 결코 가르침이나 배움이 이루어질 수 없기에,  -->교육의 시작은 관심이기에, 브릿지라잇은 원생들의 생일을 그냥 넘어가지 않습니다. 생일 선물의 종류는 해마다 바뀌고, 아이들의 공부에 도움을 줄 수 있는 물건으로 선정 됩니다.</p>
 
-			<img class="size-full wp-image-1703" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/09/birthday-gift.jpg" alt="브릿지라잇의 원생 생일 축하" width="1200" height="675" />
+			<img class="size-full wp-image-1703" src="/wp-content/uploads/2019/09/birthday-gift.jpg" alt="브릿지라잇의 원생 생일 축하" width="1200" height="675" />
 
 			<h3>Children’s Day</h3>
 			<p class="bl-p"><!-- 아이들은 특별합니다. 선생님과 학부모님, 우리 어른들 모두 언젠가 한 번은 어린이였습니다. 따지고 보면 인류는, 누군가의 어린 시절부터 시작된 번뜩이는 상상력, 끝없는 호기심에 의지해 지금껏 발전해 왔다고 해도 과언이 아닙니다. 때문에  -->무한한 가능성을 가진 아이들에게 스스로가 특별하다고 느끼게 해주는 것은, 누군가에겐 평생에 걸쳐 큰 힘이 됩니다. <!-- 그래서 대부분의 나라에서는 어린이날이 국경일입니다.  -->브릿지라잇은 매년 어린이날을 기념하여 모든 원생들에게 특별한 선물을 전해줍니다.</p>
@@ -55,7 +55,7 @@ get_header(); ?>
 		<div class="bl-wrap">
 			<p class="bl-p">브릿지라잇 어학원은 원생의 교통편의를 위해 춘천시의 전지역으로 통하는 차량을 운행합니다. <!-- 여러 대의 버스가 춘천 전역으로 오후 내내 돌아다니기 때문에 저희 버스를 춘천 시내에서 만나는 일은 어렵지 않습니다. 수백 명의 학생들이 월요일부터 금요일까지 매일 브릿지라잇의 버스를 타고 통학합니다. -->버스가 학원 앞에 도착하면, 미리 기다리던 선생님들이 따뜻하고 안전하게 원생들을 안내합니다.</p>
 
-			<img class="size-full wp-image-1777" src="http://www.bridgelightels.com/m/wp-content/uploads/2019/09/ig-busing-map.png" alt="통학버스 춘천전역 운행" width="1200" height="970" />
+			<img class="size-full wp-image-1777" src="/wp-content/uploads/2019/09/ig-busing-map.png" alt="통학버스 춘천전역 운행" width="1200" height="970" />
 
 			<div class="bl-bus-route">
 				<h3>Bus Routes</h3>
