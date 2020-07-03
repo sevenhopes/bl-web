@@ -32,7 +32,7 @@ get_header(); ?>
 				<div class="faq-admission">입학/퇴원</div>
 				<div class="faq-level">레벨/학기</div>
 				<div class="faq-class">수업/교실</div>
-				<div class="faq-tuition">수강료/교재비</div>
+				<div class="faq-tuition">수강료</div>
 				<div class="faq-attendance">출석/결석</div>
 				<div class="faq-bus">통학버스</div>
 			</div>
@@ -99,13 +99,13 @@ get_header(); ?>
 				<dt class="faq-class"><strong>[수업/교실]</strong> 방학 중 영어캠프 기간 중에 정규수업도 하나요?</dt>
 				<dd>방학 중 영어캠프와 정규학기 수업은 시간대가 겹치지 않으며, 학기수업은 캠프기간 중에도 차질없이 진행됩니다. 따라서 캠프에 참가하면 2주 동안 하루 4시간반(오전 캠프 3시간, 오후 정규수업 1시간반)을 영어로 생활하는 것이기에 그만큼 실력 향상 비율이 평소보다 월등히 높습니다.</dd>
 
-				<dt class="faq-tuition top-10"><strong>[수강료/교재비]</strong> 정규학기 수강료는 얼마인가요?</dt>
+				<dt class="faq-tuition top-10"><strong>[수강료]</strong> 정규학기 수강료는 얼마인가요?</dt>
 				<dd>정기학기 수업의 경우 수강료는 한 달에 27만원이며, 통학버스를 이용할 경우 1만원이 추가 됩니다. 학기 시작 시 6개월 분의 교재비가 별도로 있습니다.</dd>
-				<dt class="faq-tuition"><strong>[수강료/교재비]</strong> 교재비는 얼마인가요?</dt>
+				<dt class="faq-tuition"><strong>[수강료]</strong> 교재비는 얼마인가요?</dt>
 				<dd>교재비는 레벨마다 차이가 있어서 단정지어 말씀드리기 어렵습니다만, 보통 Basic 레벨은 6~8만원, Stage 레벨은 4~5만원 정도입니다.</dd>
-				<dt class="faq-tuition"><strong>[수강료/교재비]</strong> 수강료 납부일은 언제인가요?</dt>
+				<dt class="faq-tuition"><strong>[수강료]</strong> 수강료 납부일은 언제인가요?</dt>
 				<dd>수강료 납부일은 <strong>매월 1일</strong>로, 해당 월의 수업을 위한 수강료를 선납하는 방식입니다. 예를 들면, 7월분 수강료는 7월 1일에 납부하게 됩니다.</dd>
-				<dt class="faq-tuition"><strong>[수강료/교재비]</strong> 수강료 할인 같은 건 없나요?</dt>
+				<dt class="faq-tuition"><strong>[수강료]</strong> 수강료 할인 같은 건 없나요?</dt>
 				<dd>브릿지라잇 어학원은 타 학원에서는 찾기 힘든 세 종류의 수강료 할인 혜택을 제공하고 있습니다. 다만, 다음 사항은 여러 가지 사유로 예고 없이 변경될 수 있으며, 각 혜택은 타인에게 양도될 수 없습니다.<br>
 					<ul>
 						<li><strong>여름/겨울 방학캠프 할인</strong>: 브릿지라잇 재학생은 캠프 참가비에서 2만원 할인</li>
@@ -114,11 +114,11 @@ get_header(); ?>
 					</ul>
 				<span class="comment">* 형제자매 할인과 새학기 소개 할인이 중복 해당 되는 경우, 최대 합산 할인은 10만원입니다.</span>
 				</dd>
-				<dt class="faq-tuition"><strong>[수강료/교재비]</strong> 방학 중 영어캠프나 미국현지체험연수의 수강료는 얼마인가요?</dt>
+				<dt class="faq-tuition"><strong>[수강료]</strong> 방학 중 영어캠프나 미국현지체험연수의 수강료는 얼마인가요?</dt>
 				<dd>영어캠프의 수강료이며 25만원이며 교재비 포함입니다. 미국현지체험연수의 경우 부득이하게 수강료가 매년 다르게 책정이 되기 때문에 별도의 상담이 필요합니다.</dd>
-				<dt class="faq-tuition"><strong>[수강료/교재비]</strong> 공휴일로 인한 휴강 시 수강료의 차이가 있나요?</dt>
+				<dt class="faq-tuition"><strong>[수강료]</strong> 공휴일로 인한 휴강 시 수강료의 차이가 있나요?</dt>
 				<dd>공휴일로 인해 월 수업일수가 평월보다 1~2일 많거나 적더라도 수강료는 같습니다.</dd>
-				<dt class="faq-tuition"><strong>[수강료/교재비]</strong> 수강료의 환불이 가능한가요?</dt>
+				<dt class="faq-tuition"><strong>[수강료]</strong> 수강료의 환불이 가능한가요?</dt>
 				<dd>저희 어학원은 다음과 같이 법정 교습비 반환 규정을 따릅니다.<br>
 					<ol>
 						<li>납부 후 수업에 전혀 참여하지 않은 경우: <span class="bl-red">전액 환불</span></li>
@@ -131,7 +131,7 @@ get_header(); ?>
 						</li>
 					</ul>
 				</dd>
-				<dt class="faq-tuition"><strong>[수강료/교재비]</strong> 연말 소득공제는 어떻게 받나요?</dt>
+				<dt class="faq-tuition"><strong>[수강료]</strong> 연말 소득공제는 어떻게 받나요?</dt>
 				<dd>카드로 납부하는 경우 자동으로 소득공제를 받으실 수 있습니다. 계좌입금의 경우 입금확인 후 1주일 이내에 현금영수증을 발행해 드리며, 발행된 현금영수증은 국세청 홈페이지에서 확인하실 수있습니다.</dd>
 
 				<dt class="faq-attendance"><strong>[출석/결석]</strong> 수업에 사정이 있어 결석한 경우 보강이 가능한가요?</dt>
