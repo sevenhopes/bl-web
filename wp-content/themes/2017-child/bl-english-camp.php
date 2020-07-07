@@ -157,7 +157,7 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div class="bl-block bl-camp-admission">
+	<div class="bl-block" id="bl-camp-admission">
 		<div class="bl-block-header">
 			<h2 class="bl-block-title">영어캠프 등록절차</h2>
 		</div>
