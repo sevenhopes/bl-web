@@ -1362,7 +1362,6 @@ body {
 
 .bl-grid-metro {
 	display: grid;
-
 	grid-template-columns: repeat(3, minmax(5rem, 1fr));
 	grid-auto-rows: 1fr;
 	grid-gap: 0.4rem;
@@ -2635,7 +2634,7 @@ a.more-link {
 	dt h2 {
 		grid-area: title;
 		padding: 0;
-		margin: 0.3rem 0 0;
+		margin: 0.3rem 0 0 10px;
 		font-size: 28px;
 		font-size: 1.75rem;
 		font-weight: 400;
@@ -2981,9 +2980,9 @@ a.more-link {
 	.proc-dotted-line {
 		position: absolute;
 		left: 0;
-		top: 0;
+		top: 5%;
 		width: calc( 36px + 0.5rem );
-		height: 100%;
+		height: 90%;
 		border-right: 3px dotted $gold-l1;
 		// z-index: 0;
 	}
@@ -3054,11 +3053,11 @@ a.more-link {
 	}
 }
 
-#english-camp .proc-dotted-line {
-	height: 70%;
-}
+// #english-camp .proc-dotted-line {
+// 	height: 80%;
+// }
 
-.bl-camp-admission {
+#bl-camp-admission {
 }
 
 .bl-iconic {
@@ -3163,9 +3162,9 @@ a.more-link {
 	}
 }
 
-#study-in-america .proc-dotted-line {
-	height: 80%;
-}
+// #study-in-america .proc-dotted-line {
+// 	height: 80%;
+// }
 
 .bl-tabs {
 	.media {
@@ -3269,9 +3268,9 @@ a.more-link {
 #admissions {
 }
 
-#admissions .bl-procedure .proc-dotted-line {
-	height: 90%;
-}
+// #admissions .bl-procedure .proc-dotted-line {
+// 	height: 90%;
+// }
 
 #admissions .bl-proc-comment {
 	font-size: 13px;
@@ -4389,6 +4388,36 @@ dl.bl-faq-list {
 
 	// Internet Explorer 11 호환성 (IE10 또는 그 이하는 신경쓰지 않음)
 	.browser-ie {
+		#bl-quick-menu {
+			display: -ms-grid;
+			-ms-grid-columns: 1fr 1fr 1fr;
+			-ms-grid-rows: 1fr 1fr;
+
+			grid-template-columns: 1fr 1fr 1fr;
+
+			div { border: 1px solid $blue-d4; }
+			.tele { -ms-grid-row: 1; -ms-grid-column: 1; }
+			.appt { -ms-grid-row: 1; -ms-grid-column: 2; }
+			.curr { -ms-grid-row: 1; -ms-grid-column: 3; }
+			.camp { -ms-grid-row: 2; -ms-grid-column: 1; }
+			.admt { -ms-grid-row: 2; -ms-grid-column: 2; }
+			.faq  { -ms-grid-row: 2; -ms-grid-column: 3; }
+		}
+		#why-bl {
+			.bl-why-list {
+				dt {
+					display: -ms-grid;
+					-ms-grid-columns: 2.2rem 696px 2.5rem;
+
+					div { -ms-grid-column: 1; }
+					h2  { -ms-grid-column: 2; }
+					button { -ms-grid-column: 3; }
+				}
+				dd p {
+					width: 781px;
+				}
+			}
+		}
 		#course-overview {
 			.bl-grid-metro {
 				display: -ms-grid;
@@ -4416,20 +4445,39 @@ dl.bl-faq-list {
 				}
 			}
 		}
-		#bl-quick-menu {
-			display: -ms-grid;
-			-ms-grid-columns: 1fr 1fr 1fr;
-			-ms-grid-rows: 1fr 1fr;
+		#english-camp {
+			.bl-iconic {
+				display: -ms-grid;
+				-ms-grid-columns: 1fr 1fr 1fr;
 
-			grid-template-columns: 1fr 1fr 1fr;
+				.circle div { margin-top: 0.75rem; }
+				> div:nth-child(1) { -ms-grid-row: 1; -ms-grid-column:1; -ms-grid-column-align: center; margin-bottom: 0.75rem; }
+				> div:nth-child(2) { -ms-grid-row: 1; -ms-grid-column:2; -ms-grid-column-align: center; margin-bottom: 0.75rem; }
+				> div:nth-child(3) { -ms-grid-row: 1; -ms-grid-column:3; -ms-grid-column-align: center; margin-bottom: 0.75rem; }
+				> div:nth-child(4) { -ms-grid-row: 2; -ms-grid-column:1; }
+				> div:nth-child(5) { -ms-grid-row: 2; -ms-grid-column:2; }
+				> div:nth-child(6) { -ms-grid-row: 2; -ms-grid-column:3; }
+			}
+			.bl-procedure {
+				.proc-block {
+					display: -ms-grid;
+					-ms-grid-columns: 70px 662px;
 
-			div { border: 1px solid $blue-d4; }
-			.tele { -ms-grid-row: 1; -ms-grid-column: 1; }
-			.appt { -ms-grid-row: 1; -ms-grid-column: 2; }
-			.curr { -ms-grid-row: 1; -ms-grid-column: 3; }
-			.camp { -ms-grid-row: 2; -ms-grid-column: 1; }
-			.admt { -ms-grid-row: 2; -ms-grid-column: 2; }
-			.faq  { -ms-grid-row: 2; -ms-grid-column: 3; }
+					> div:nth-child(1) { -ms-grid-column:1; }
+					> div:nth-child(2) { -ms-grid-column:2; }
+				}
+			}
+		}
+		#admissions {
+			.bl-procedure {
+				.proc-block {
+					display: -ms-grid;
+					-ms-grid-columns: 70px 662px;
+
+					> div:nth-child(1) { -ms-grid-column:1; }
+					> div:nth-child(2) { -ms-grid-column:2; }
+				}
+			}
 		}
 		#admission-rules {
 			.bl-grid-tuition {
@@ -4491,6 +4539,9 @@ dl.bl-faq-list {
 				div:nth-child(6) { -ms-grid-row: 2; -ms-grid-column: 2; }
 				div:nth-child(7) { -ms-grid-row: 2; -ms-grid-column: 3; }
 			}
+		}
+		#news-n-events #news .wp-post-image {
+			max-width: 728px;
 		}
 	} // end of .browser-ie
 }
