@@ -98,7 +98,7 @@ get_header(); ?>
 		</div>
 
 		<div class="bl-wrap">
-			<p class="bl-p">방학 영어캠프 등록에 대해서는 <a href="/curriculum/english-camp/">여름/겨울 영어캠프</a> 페이지를 참고하세요.</p>
+			<p class="bl-p">방학 영어캠프 등록에 대해서는 <a href="/curriculum/english-camp##bl-camp-admission">여름/겨울 영어캠프</a> 페이지를 참고하세요.</p>
 		</div>
 	</div>
 
