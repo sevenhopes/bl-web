@@ -21,6 +21,9 @@ bl-media (legacy)/
 bl-media-library/
 wp-admin/
 wp-includes/
+languages/
+plugins/
+updraft/
 
 # wp-content/ files and dirs except my theme
 index.php
