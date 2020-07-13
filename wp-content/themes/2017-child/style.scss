@@ -6,7 +6,7 @@ Template: twentyseventeen
 Author: Bridge Light Corp.
 Author URI: http://bridgelightels.com/
 Tags: 브릿지라잇,춘천영어학원,BridgeLight,춘천어학원,브릿지라잇어학원
-Version: 2.7.13
+Version: 2.7.15
 Text Domain: 2017-child
 Tags: mobile-first
 */
@@ -1886,77 +1886,79 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	}
 }
 
-#bl-front-page-ko .bl-down-arrow-wrapper {
-	// background-color: $f7;
-	text-align: center;
-	max-height: 3rem;
-}
-
-#bl-front-page-ko .bl-down-arrow {
-	width: 4rem;
-	height: 3rem;
-	opacity: 0.2;
-	// padding-top: 0.5rem;
-
-	&:hover {
-		cursor: pointer;
+#bl-front-page-ko {
+	.bl-down-arrow-wrapper {
+		// background-color: $f7;
+		text-align: center;
+		max-height: 3rem;
 	}
-}
 
-#bl-front-page-ko .bl-block {
-	/*margin-bottom: 1.5em;*/
-	margin-top: 0;
-	padding-top: 2em;
-	margin-bottom: 0;
-	padding-bottom: 1em;
-}
+	.bl-down-arrow {
+		width: 4rem;
+		height: 3rem;
+		opacity: 0.2;
+		// padding-top: 0.5rem;
 
-// #bl-front-page-ko .bl-block:nth-child(odd) {
-// 	background-color: $f7;
-// }
+		&:hover {
+			cursor: pointer;
+		}
+	}
 
-// #bl-front-page-ko .bl-block:nth-child(even) {
-// }
+	.bl-block {
+		/*margin-bottom: 1.5em;*/
+		margin-top: 0;
+		padding-top: 2em;
+		margin-bottom: 0;
+		padding-bottom: 1em;
+	}
 
-#bl-front-page-ko .bl-block-header {
-	display: table;
-	width: 100%;
-	margin-bottom: 0.75rem;
-}
+	// .bl-block:nth-child(odd) {
+	// 	background-color: $f7;
+	// }
 
-#bl-front-page-ko .bl-block-header .bl-inline-link {
-	display: table-cell;
-	text-align: right;
-}
+	// .bl-block:nth-child(even) {
+	// }
 
-#bl-front-page-ko .bl-block-header a {
-	color: $gold;
-	letter-spacing: 0;
-	padding-right: 0.25rem;
-}
+	.bl-block-header {
+		display: table;
+		width: 100%;
+		margin-bottom: 0.75rem;
+	}
 
-#bl-front-page-ko h2.bl-block-title {
-	display: table-cell;
-	font-size: 2.4rem;
-	font-weight: 100;
-	text-transform: uppercase;
-}
+	.bl-block-header .bl-inline-link {
+		display: table-cell;
+		text-align: right;
+	}
 
-// #bl-front-page-ko h2.bl-block-title:first-letter {
-// 	font-weight: 100;
-// }
+	.bl-block-header a {
+		color: $gold;
+		letter-spacing: 0;
+		padding-right: 0.25rem;
+	}
 
-#bl-front-page-ko p {
-	text-indent: 0;
-}
+	h2.bl-block-title {
+		display: table-cell;
+		font-size: 2.4rem;
+		font-weight: 100;
+		text-transform: uppercase;
+	}
 
-#bl-front-page-ko .bl-block-content > h2 {
-	display: block;
-	font-size: 1.5rem;
-	font-weight: 500;
-	letter-spacing: 0;
-	margin-top: 0.75rem;
-	margin-bottom: 0.35rem;
+	// h2.bl-block-title:first-letter {
+	// 	font-weight: 100;
+	// }
+
+	p {
+		text-indent: 0;
+	}
+
+	.bl-block-content > h2 {
+		display: block;
+		font-size: 1.5rem;
+		font-weight: 500;
+		letter-spacing: 0;
+		margin-top: 0.75rem;
+		margin-bottom: 0.35rem;
+	}
 }
 
 #bl-news {
@@ -4544,6 +4546,12 @@ dl.bl-faq-list {
 			max-width: 728px;
 		}
 	} // end of .browser-ie
+
+	.en-US {
+		.nav-drawer > ul > li > a {
+			letter-spacing: 0;
+		}
+	}
 }
 
 /* 1800px, Major, Desktop, 16:9 */
