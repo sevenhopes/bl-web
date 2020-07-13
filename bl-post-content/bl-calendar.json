@@ -45,6 +45,87 @@
 			"pending": false
 		},
 		{
+			"title": "중등내신 특별수업",
+			"start": "2020-07-16",
+			"end": "2020-07-17",
+			"holiday": false,
+			"extra": "중학교 2학년, 3학년을 위한 내신대비수업",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "팝송 컨테스트 예선: Basic",
+			"start": "2020-07-30",
+			"end": "2020-07-31",
+			"holiday": false,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "정기 여름방학",
+			"start": "2020-08-10",
+			"end": "2020-08-14",
+			"holiday": true,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "팝송 컨테스트 예선: Stage",
+			"start": "2020-08-17",
+			"end": "2020-08-18",
+			"holiday": false,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "정기 TOEIC",
+			"start": "2020-08-19",
+			"end": "2020-08-20",
+			"holiday": false,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "팝송 컨테스트 본선",
+			"start": "2020-08-22",
+			"end": "2020-08-22",
+			"holiday": false,
+			"extra": "초등부문, 중등부문, 브릿지라잇 최고의 가수는?",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "추석",
+			"start": "2020-09-30",
+			"end": "2020-10-02",
+			"holiday": true,
+			"extra": "대보름",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "한글날",
+			"start": "2020-10-09",
+			"end": "2020-10-09",
+			"holiday": true,
+			"extra": "세종대왕님 감사합니다.",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "크리스마스",
+			"start": "2020-12-25",
+			"end": "2020-12-25",
+			"holiday": true,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
 			"title": "학원 Association Teacher Training",
 			"start": "2021-03-01",
 			"end": "2021-03-01",
