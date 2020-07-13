@@ -222,7 +222,7 @@ get_header();
 
 			<div id="bl-go-with-us" class="bl-block">
 				<div class="bl-block-header">
-					<h2 class="bl-block-title">Go with us</h2>
+					<h2 class="bl-block-title">Let's go with us</h2>
 				</div>
 				<a href="/admission/admission-process/">
 					<div class="bl-link-wrapper">
