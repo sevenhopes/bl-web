@@ -17,11 +17,7 @@
 <head>
 
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5GQSKZP');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5GQSKZP');</script>
 <!-- End Google Tag Manager -->
 
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -30,8 +26,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <?php wp_head(); ?>
 
-<meta name="description" content="<?php the_title(); ?>">
-<meta name="keywords" content="춘천, 영어학원, 어학원, <?php the_title(); ?>">
+<?php
+	$bl_title = get_the_title();
+	// $bl_desc = get_post_meta( 100, 'desc', true );
+	// if ( ! $bl_desc ) {
+		$bl_desc = $bl_title;
+	// }
+?>
+<meta name="description" content="<?php echo $bl_desc; ?>">
+<meta name="keywords" content="춘천, 영어학원, 어학원, <?php echo $bl_title; ?>">
 <meta name="author" content="주식회사 브릿지라잇 (Bridge Light Inc.)">
 <meta property="og:site_name" content="브릿지라잇 어학원">
 <meta property="og:url" content="<?php the_permalink(); ?>">
@@ -40,7 +43,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:image:width" content="1200">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:description" content="033-243-5757 #영어생활화 #매일수업 #방학영어캠프 #미국연수 #춘천전역버스 #초중영어 #춘천영어학원 #온의동영어학원">
-<meta property="og:title" content="<?php the_title(); ?> - 브릿지라잇 어학원">
+<meta property="og:title" content="<?php echo $bl_title; ?> - 브릿지라잇 어학원">
 <meta property="og:type" content="website">
 <meta property="fb:app_id" content="462886344532595">
 <link rel="canonical" href="http://www.bridgelightels.com/">
