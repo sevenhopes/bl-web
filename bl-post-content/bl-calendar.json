@@ -45,11 +45,20 @@
 			"pending": false
 		},
 		{
-			"title": "중등내신 특별수업",
+			"title": "중등내신 특별수업: 2학년",
+			"start": "2020-07-15",
+			"end": "2020-07-16",
+			"holiday": false,
+			"extra": "중학생 위한 내신대비수업",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "중등내신 특별수업: 3학년",
 			"start": "2020-07-16",
 			"end": "2020-07-17",
 			"holiday": false,
-			"extra": "중학교 2학년, 3학년을 위한 내신대비수업",
+			"extra": "중학생 위한 내신대비수업",
 			"public": true,
 			"pending": false
 		},
