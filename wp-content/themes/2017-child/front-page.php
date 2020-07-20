@@ -160,7 +160,6 @@ get_header();
 							<div class="e-i-extra"><?php echo $ev->{"extra"} ?></div>
 						</div>
 					</div>
-					<div class="bl-event-comment">* 빨강색 일정은 휴원</div>
 				<?php
 					endif;
 				endforeach;
@@ -185,6 +184,7 @@ get_header();
 				<?php
 				endif;
 				?>
+					<div class="bl-event-comment">* 빨강색 일정은 휴원</div>
 				</div>
 			</div><!-- #bl-event -->
 
