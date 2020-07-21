@@ -8,12 +8,112 @@
  */
 
 /**
+ * WordPress Body Class CSS for a Variety of Devices
+ * https://clicknathan.com/web-design/wordpress-body-class-css-for-a-variety-of-devices/
+ */
+// add conditional statements for mobile devices
+function blmobilefirst_is_ipad() {
+	return (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'iPad' );
+}
+// function blmobilefirst_is_iphone() {
+// 	return (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'iPhone' );
+// }
+// function blmobilefirst_is_ipod() {
+// 	return (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'iPod' );
+// }
+// function blmobilefirst_is_ios() {
+// 	return blmobilefirst_is_iphone() || blmobilefirst_is_ipad() || blmobilefirst_is_ipod();
+// }
+function blmobilefirst_is_android() { // detect ALL android devices
+	return (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'Android' );
+}
+function blmobilefirst_is_android_mobile() { // detect ALL android devices
+	return (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'Android' )
+		&& (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'Mobile' );
+}
+// function blmobilefirst_is_android_tablet() { // detect android tablets
+// 	return blmobilefirst_is_android() && !blmobilefirst_is_android_mobile();
+// }
+// function blmobilefirst_is_mobile_device() { // detect ALL mobile devices
+// 	return blmobilefirst_is_android_mobile() || blmobilefirst_is_iphone() || blmobilefirst_is_ipod();
+// }
+function blmobilefirst_is_tablet() { // detect ALL tablets
+	return ( blmobilefirst_is_android() && !blmobilefirst_is_android_mobile() ) || blmobilefirst_is_ipad();
+}
+// function blmobilefirst_is_kor_mutant() { // 국내의 돌연변이 브라우저들 인식하기
+// 	return (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'NAVER' ) // Naver 앱 인식
+// 		|| (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'SamsungBrowser' ) // 삼성인터넷 앱 인식
+// 		|| (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'DaumApps' ) // Daum 앱 인식
+// 		|| (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'Whale' );
+// }
+/*
+// add browser name & os type to body class
+add_filter( 'body_class', 'browser_body_class' );
+function browser_body_class( $classes ) {
+	global $is_gecko, $is_IE, $is_opera, $is_safari, $is_chrome, $blmobilefirst_is_iphone, $is_edge;
+
+	if ( wp_is_mobile() ) {
+		if ( blmobilefirst_is_kor_mutant() )  $classes[] = 'browser-kor-mutant';
+		elseif ( blmobilefirst_is_android() ) $classes[] = 'browser-android';
+		elseif ( blmobilefirst_is_iphone() )  $classes[] = 'browser-iphone';
+		elseif ( blmobilefirst_is_ipad() )    $classes[] = 'browser-ipad';
+		elseif ( blmobilefirst_is_ipod() )    $classes[] = 'browser-ipod';
+		elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Kindle' ) !== false ) $classes[] = 'browser-kindle';
+		elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'BlackBerry' ) !== false ) $classes[] = 'browser-blackberry';
+		elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Opera Mini' ) !== false ) $classes[] = 'browser-opera-mini';
+		elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Opera Mobi' ) !== false ) $classes[] = 'browser-opera-mobi';
+		if ( blmobilefirst_is_tablet() )  $classes[] = 'device-tablet';
+	} else {
+		if ( $is_gecko )      $classes[] = 'browser-gecko'; // Firefox
+		elseif ( $is_opera )  $classes[] = 'browser-opera';
+		elseif ( $is_safari ) $classes[] = 'browser-safari';
+		elseif ( $is_chrome ) $classes[] = 'browser-chrome';
+		elseif ( $is_edge )   $classes[] = 'browser-edge';
+				elseif ( $is_IE) {
+						$classes[] = 'browser-ie';
+						if ( preg_match( '/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', $_SERVER['HTTP_USER_AGENT'] , $browser_version ) )
+							$classes[] = 'ie-version-'.$browser_version[1];
+				}
+				else $classes[] = 'browser-unknown';
+		$classes[] = 'device-immobile';
+	}
+
+	if ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Windows' ) !== false ) $classes[] = 'os-windows';
+	elseif ( blmobilefirst_is_android() ) $classes[] = 'os-android';
+	elseif ( blmobilefirst_is_ios() )     $classes[] = 'os-ios';
+	elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Macintosh' ) !== false ) $classes[] = 'os-mac';
+	elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Linux' ) !== false )     $classes[] = 'os-linux';
+	elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Kindle' ) !== false )    $classes[] = 'os-kindle';
+	elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'BlackBerry' ) !== false ) $classes[] = 'os-blackberry';
+	else $classes[] = 'os-unknown';
+
+	return $classes;
+}
+*/
+/**
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
  * @return array
  */
 function blmobilefirst_body_classes( $classes ) {
+	global $is_IE;
+
+	// screen-medium = 태블릿 화면, screen-small = 폰화면, screen-large = 데스크탑 화면
+	if ( wp_is_mobile() ) {
+		if ( blmobilefirst_is_tablet() ) {
+			$classes[] = 'screen-medium';
+		} else {
+			$classes[] = 'screen-small';
+		}
+	} else {
+		$classes[] = 'screen-large';
+
+		if ( $is_IE ) {
+			$classes[] = 'browser-ie';
+		}
+	}
+
 	// Add class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
