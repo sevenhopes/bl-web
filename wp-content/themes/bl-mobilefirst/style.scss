@@ -8344,6 +8344,9 @@ dl.bl-faq-list {
 
 	// Internet Explorer 11 호환성 (IE10 또는 그 이하는 신경쓰지 않음)
 	.browser-ie {
+		.bl-under-header {
+			height: $wide-header-h;
+		}
 		#bl-quick-menu {
 			display: -ms-grid;
 			-ms-grid-columns: 1fr 1fr 1fr;
