@@ -85,7 +85,7 @@ get_header(); ?>
 						/* 공개 설정된 이벤트만 보여줌
 						 * 날짜가 정해지지 않은 경우(pending) t-o-day의 텍스트를 '?'로 바꾸고, <time>태그 텍스트에서 날짜 표시 대신 '0월 중'으로 표시
 						 * <time> 태그 부분에 대해:
-						 *   bl_w2k는 영어 요일을 한글 요일로 바꾸어 줌 (예. Wed -> 수)
+						 *   blmobilefirst_w2k는 영어 요일을 한글 요일로 바꾸어 줌 (예. Wed -> 수)
 						 *   <time>내의 if문은 이벤트가 1일 이상인 경우(끝날짜가 존재하는 경우) 끝날짜 부분 추가
 						 *   시작날짜와 끝날짜가 하루 차이면(딱 2일 이벤트의 경우), 날짜 사이에 '~' 대신 ',' 쉼표를 표시. 3일 이상 이벤트만 '~' 표시
 						 *   1일 이상 이벤트 중에 다음달로 끝날짜가 넘어가는 경우(예. 1월 30일 ~ 2월 5일)에만 끝날짜의 월 표시
@@ -100,7 +100,7 @@ get_header(); ?>
 						<div class="bl-event-info">
 							<h2 class="e-i-title"><?php echo $ev->{"title"} ?></h2>
 							<div class="e-i-date">
-								<time itemprop="startDate" datetime="<?php echo $ev->{"start"} ?>"><?php echo bl_w2k( date( $ev->{"pending"} ? "n\월 \중" : "n\월 j\일 D", $starttime ) ) ?></time><?php if ( $ev->{"end"} && ! $ev->{'pending'} ) : $endtime = strtotime( $ev->{"end"} ); ?><time itemprop="endDate" datetime="<?php echo $ev->{"end"} ?>"><?php echo $starttime == strtotime( "-1 day", $endtime ) ? ', ' : ' ~ ' ?><?php echo bl_w2k( date( substr_compare( $ev->{"start"}, substr( $ev->{"end"}, 5, 2 ), 5, 2) == 0 ? "j\일 D" : "n\월 j\일 D", $endtime ) ) ?></time><?php endif; ?>
+								<time itemprop="startDate" datetime="<?php echo $ev->{"start"} ?>"><?php echo blmobilefirst_w2k( date( $ev->{"pending"} ? "n\월 \중" : "n\월 j\일 D", $starttime ) ) ?></time><?php if ( $ev->{"end"} && ! $ev->{'pending'} ) : $endtime = strtotime( $ev->{"end"} ); ?><time itemprop="endDate" datetime="<?php echo $ev->{"end"} ?>"><?php echo $starttime == strtotime( "-1 day", $endtime ) ? ', ' : ' ~ ' ?><?php echo blmobilefirst_w2k( date( substr_compare( $ev->{"start"}, substr( $ev->{"end"}, 5, 2 ), 5, 2) == 0 ? "j\일 D" : "n\월 j\일 D", $endtime ) ) ?></time><?php endif; ?>
 							</div>
 							<div class="e-i-extra"><?php echo $ev->{"extra"} ?></div>
 						</div>

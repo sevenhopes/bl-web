@@ -41,7 +41,7 @@ get_header(); ?>
 						<div class="bl-event-info">
 							<h2 class="e-i-title"><?php echo $ev->{"title"} ?></h2>
 							<div class="e-i-date">
-								<time itemprop="startDate" datetime="<?php echo $ev->{"start"} ?>"><?php echo bl_w2k( date( $ev->{"pending"} ? "n\월 \중" : "n\월 j\일 D", $starttime ) ) ?></time><?php if ( $ev->{"end"} && ! $ev->{'pending'} ) : $endtime = strtotime( $ev->{"end"} ); ?><time itemprop="endDate" datetime="<?php echo $ev->{"end"} ?>"><?php echo $starttime == strtotime( "-1 day", $endtime ) ? ', ' : ' ~ ' ?><?php echo bl_w2k( date( substr_compare( $ev->{"start"}, substr( $ev->{"end"}, 5, 2 ), 5, 2) == 0 ? "j\일 D" : "n\월 j\일 D", $endtime ) ) ?></time><?php endif; ?>
+								<time itemprop="startDate" datetime="<?php echo $ev->{"start"} ?>"><?php echo blmobilefirst_w2k( date( $ev->{"pending"} ? "n\월 \중" : "n\월 j\일 D", $starttime ) ) ?></time><?php if ( $ev->{"end"} && ! $ev->{'pending'} ) : $endtime = strtotime( $ev->{"end"} ); ?><time itemprop="endDate" datetime="<?php echo $ev->{"end"} ?>"><?php echo $starttime == strtotime( "-1 day", $endtime ) ? ', ' : ' ~ ' ?><?php echo blmobilefirst_w2k( date( substr_compare( $ev->{"start"}, substr( $ev->{"end"}, 5, 2 ), 5, 2) == 0 ? "j\일 D" : "n\월 j\일 D", $endtime ) ) ?></time><?php endif; ?>
 							</div>
 							<div class="e-i-extra"><?php echo $ev->{"extra"} ?></div>
 						</div>
