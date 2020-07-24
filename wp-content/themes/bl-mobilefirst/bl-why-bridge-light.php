@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: ABOUT Why Bridge Light
+ * Template Name: ABOUT 왜 브릿지라잇인가
  *
  * 왜 브릿지라잇인가
  *
