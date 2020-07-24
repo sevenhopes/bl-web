@@ -8,7 +8,7 @@
  * @package BridgeLight
  * @subpackage BridgeLight_MobileFirst
  * @since 1.0
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 get_header();
@@ -17,7 +17,7 @@ get_header();
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
-		<div id="bl-front-page-ko" class="bl-wp-page">
+		<div id="bl-front-page" class="bl-wp-page">
 
 			<header id="bl-main-title" class="bl-main-title">
 				<h1>Bridge Light English Language School</h1>
@@ -198,7 +198,7 @@ get_header();
 							<img class="size-medium wp-image-2020" src="/wp-content/uploads/2020/02/main-building-at-night.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 2020 ) ?>" sizes="100vw" alt="The Night View of Bridge Light Main Bldg." />
 						</div>
 						<div class="bl-wrap">
-							<p class="bl">브릿지라잇 어학원의 건물은 작은 영어권 도시입니다. 선생님들, 학생들 모두가 영어로 대화하는 장면이 브릿지라잇에서는 일상입니다. 가이드가 확실한 영어권 도시로 '매일' 여행오세요.</p>
+							<p class="bl">The building of Bridge Light is a small English-spoken village. 선생님들, 학생들 모두가 영어로 대화하는 장면이 브릿지라잇에서는 일상입니다. 가이드가 확실한 영어권 도시로 '매일' 여행오세요.</p>
 						</div>
 					</div>
 				</a>
@@ -236,7 +236,7 @@ get_header();
 				</a>
 			</div>
 
-		</div><!-- #bl-front-page-ko ->
+		</div><!-- #bl-front-page ->
 
 	</main><!-- #main -->
 </div><!-- #primary -->
