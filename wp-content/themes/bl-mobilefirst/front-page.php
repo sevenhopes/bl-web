@@ -17,7 +17,7 @@ get_header();
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
-		<div id="bl-front-page-ko" class="bl-wp-page">
+		<div id="bl-front-page" class="bl-wp-page">
 
 			<header id="bl-main-title" class="bl-main-title">
 				<h1>브릿지라잇 어학원</h1>
@@ -236,7 +236,7 @@ get_header();
 				</a>
 			</div>
 
-		</div><!-- #bl-front-page-ko ->
+		</div><!-- #bl-front-page ->
 
 	</main><!-- #main -->
 </div><!-- #primary -->
