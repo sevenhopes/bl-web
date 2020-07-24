@@ -5,7 +5,7 @@ Theme URI: http://www.bridgelightels.com/
 Author: Bridge Light Corp.
 Author URI: http://bridgelightels.com/
 Tags: 브릿지라잇,춘천영어학원,BridgeLight,춘천어학원,브릿지라잇어학원
-Version: 2.7.15
+Version: 2.7.23
 Text Domain: bl-mobilefirst
 Tags: mobile-first
 */
@@ -5926,7 +5926,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	}
 }
 
-#bl-front-page-ko {
+#bl-front-page {
 	.bl-down-arrow-wrapper {
 		// background-color: $f7;
 		text-align: center;
@@ -6755,6 +6755,7 @@ a.more-link {
 	}
 
 	.bl-t-charge {
+		line-height: 1.5;
 	}
 }
 
@@ -7926,7 +7927,7 @@ dl.bl-faq-list {
 					opacity: 0.5;
 					line-height: 1;
 					font-weight: 300;
-					letter-spacing: -1px;
+					// letter-spacing: -1px;
 					padding: 10px 10px 9px;	// top 10px, bottom 9px, font 17px = 36px (nav-drawer-h)
 					box-sizing: padding-box;
 					display: block;
@@ -8433,9 +8434,9 @@ dl.bl-faq-list {
 
 	// Internet Explorer 11 호환성 (IE10 또는 그 이하는 신경쓰지 않음)
 	.browser-ie {
-		.bl-under-header {
-			height: $wide-header-h;
-		}
+		// .bl-under-header {
+		// 	height: $wide-header-h;
+		// }
 		#bl-quick-menu {
 			display: -ms-grid;
 			-ms-grid-columns: 1fr 1fr 1fr;
@@ -8591,9 +8592,61 @@ dl.bl-faq-list {
 		}
 	} // end of .browser-ie
 
-	.en-US {
-		.nav-drawer > ul > li > a {
+	$wide-nav-w-en:	 850px;
+	$wide-nav-menu-w-en: 170px;
+
+	// 브라우저 언어가 영어일 때만 적용되는 스타일
+	body.en, body.en-US,
+	body.en-AU, body.en-BZ, body.en-CA, body.en-CB, body.en-GB, body.en-IE,
+	body.en-JM, body.en-NZ, body.en-PH, body.en-TT, body.en-ZA, body.en-ZW {
+		.nav-drawer {
+			> ul {
+				width: $wide-nav-w-en;
+				margin: 0 auto;
+
+				> li {
+					width: $wide-nav-menu-w-en;
+					margin-left: -2px;	// inline-block으로 display 되는 li 사이의 간격을 삭제
+					margin-right: -2px;
+
+					> a {
+						padding: 10px 10px 9px;	// top 10px, bottom 9px, font 17px = 36px (nav-drawer-h)
+					}
+				}
+			}
+		}
+		.main-navigation > div > ul {
+			width: $wide-nav-w-en;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+
+			> li {
+				width: $wide-nav-menu-w-en;
+				margin-left: -2px;	// inline-block으로 display 되는 li 사이의 간격을 삭제
+				margin-right: -2px;
+			}
+		}
+		.main-navigation ul ul {
+			padding: 0;
+			width: $wide-nav-menu-w-en;
+
+			a {
+				width: $wide-nav-menu-w-en;
+				color: $ff;
+				padding: 0.4em 0;
+				font-size: 16px;
+				font-size: 1rem;
+				font-weight: 300;
+			}
+		}
+		.main-navigation ul ul a,
+		.main-navigation li li a,
+		.main-navigation a {
 			letter-spacing: 0;
+		}
+		.bl-page-header h1.bl-heading {
+			display: none;
 		}
 	}
 }
