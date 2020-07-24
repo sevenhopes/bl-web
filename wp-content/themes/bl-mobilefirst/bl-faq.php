@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: ADMISSIONS FAQ
+ * Template Name: ADMISSIONS 자주 묻는 질문
  *
  * 자주 묻는 질문
  *

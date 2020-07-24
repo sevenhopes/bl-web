@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: CURRICULUM Extracurricular
+ * Template Name: CURRICULUM 교과외 학습
  *
  * 교과외 학습
  *

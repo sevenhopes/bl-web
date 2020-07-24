@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: CURRICULUM Study in America
+ * Template Name: CURRICULUM 미국현지체험연수
  *
  * 미국현지체험연수
  *

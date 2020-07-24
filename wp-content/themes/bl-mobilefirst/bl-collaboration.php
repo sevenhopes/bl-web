@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: ABOUT Collaboration
+ * Template Name: ABOUT 콜라보레이션
  *
  * 콜라보레이션
  *

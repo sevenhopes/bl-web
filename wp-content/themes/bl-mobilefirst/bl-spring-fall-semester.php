@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: CURRICULUM Spring/Fall Semester
+ * Template Name: CURRICULUM 정규 학기
  *
  * 정규 학기
  *

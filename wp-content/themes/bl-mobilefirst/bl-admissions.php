@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: ADMISSIONS Admissions
+ * Template Name: ADMISSIONS 입학 과정
  *
  * 입학 과정
  *

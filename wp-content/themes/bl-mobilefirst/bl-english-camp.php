@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: CURRICULUM English Camp
+ * Template Name: CURRICULUM 여름/겨울 영어캠프
  *
  * 여름/겨울 영어캠프
  *

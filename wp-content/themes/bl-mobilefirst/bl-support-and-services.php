@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: ABOUT Support and Services
+ * Template Name: ABOUT 지원 및 서비스
  *
  * 지원 및 서비스
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: CURRICULUM Course Overview
+ * Template Name: CURRICULUM 교육과정 개요
  *
  * 교육과정 개요
  *

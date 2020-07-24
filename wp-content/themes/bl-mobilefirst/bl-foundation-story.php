@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: ABOUT Foundation Story
+ * Template Name: ABOUT 설립 배경
  *
  * 설립 배경
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: ADMISSIONS Appt & Visit
+ * Template Name: ADMISSIONS 예약 및 방문
  *
  * 예약 및 방문
  *

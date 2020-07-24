@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: ADMISSIONS Admission Rules
+ * Template Name: ADMISSIONS 등록 규정
  *
  * 등록 규정
  *
