@@ -1,6 +1,7 @@
 /* global blmobilefirstScreenReaderText */
 /**
  * 내비게이션 메뉴의 핸들러 자바스크립트 (jQuery)
+ * menu toggle: 메뉴를 보여주는 버튼, dropdown toggle: 서브메뉴를 보여주는 버튼 (메뉴 위에 있음)
  *
  * Version: 1.8.1
  */
@@ -38,7 +39,7 @@
 
 			// Add dropdown toggle that displays child menu items.
 			var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
-				.append( blmobilefirstScreenReaderText.icon );
+				.append( blmobilefirstScreenReaderText.icon ); // dropdown 화살표(svg) 추가
 
 			container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
 
@@ -89,14 +90,16 @@
 		// console.log( '$.blang.ko.address: ' + $.blang.ko.address );
 		// console.log( 'typeof $.blang.ko.address: ' + typeof $.blang.ko.address );
 
+		// PC 등 넓은 화면인 경우, 여기서 return
 		if ( is_widescreen ) {
 			blInitWideNavigation();
-			return;	// document.ready() 탈출. blInitMenuToggleEvents()와 blInitDropdowns()을 호출하지 않음.
+			return;
 		}
 
 		blInitMenuToggleEvents();
 		blInitDropdowns();
 
+		// PC 등 넓은 화면을 위한 메뉴 설정
 		function blInitWideNavigation() {
 			var cursor_over = false;
 			$body.find( '.nav-drawer > ul' ).on( 'mouseenter', function() {
@@ -125,6 +128,7 @@
 			}
 		}
 
+		// 메뉴 토글 동작
 		function blInitMenuToggleEvents() {
 
 			// 메뉴 펼침/숨김 상태 숨김으로 초기화.
@@ -198,11 +202,12 @@
 			}
 		} // End of blInitMenuToggleEvents()
 
+		// 서브메뉴 토글의 동작
 		function blInitDropdowns() {
 			// 기존 부모 테마의 클릭 이벤트 해제
 			// $dropdowns.unbind( 'click' );
 
-			// .main-navigation 메뉴의 마지막에 커스텀 메뉴를 추가 (메인페이지는 제외)
+			// .main-navigation 메뉴의 마지막에 커스텀 메뉴를 추가
 			$mainNav.find( '#top-menu' ).html( function() {
 				var $allmenubtn = ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a href="/admission/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
 				var $shareonly =  ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call disabled" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a class="disabled" href="/admission/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
@@ -320,14 +325,8 @@
 				$temp.remove();
 			}
 
-			// PC 등 넓은화면인 경우, 부모 메뉴의 하이퍼링크를 비활성 하지 않고 유지함.
-			if ( is_widescreen ) {
-				return;
-			}
-
 			// (모바일) 클릭 이벤트 재등록
-			// 위의 $mainNav.html() 함수가 기존 자식 오브젝트에 대한 모든 jquery 변수나 이벤트 핸들러를 무효화하기에
-			// 여기서 무효화된 $dropdowns 변수 대신 새 오브젝트를 다시 find함
+			// 상단의 커스텀메뉴 추가에서 $mainNav.find().html() 함수가 오브젝트 핸들을 무효화하기에 여기서 새 오브젝트 핸들러를 다시 얻음
 			$mainNav.find( '.dropdown-toggle' ).click( function( e ) {
 				var clickedDropdown = $( this ),
 					droppedMenu = $mainNav.find( '.dropdown-toggle.toggled-on' );
