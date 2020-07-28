@@ -97,7 +97,7 @@ function browser_body_class( $classes ) {
  * @return array
  */
 function blmobilefirst_body_classes( $classes ) {
-	global $is_IE;
+	global $is_IE, $GLOBALS;
 
 	// screen-medium = 태블릿 화면, screen-small = 폰화면, screen-large = 데스크탑 화면
 	if ( wp_is_mobile() ) {
@@ -113,6 +113,11 @@ function blmobilefirst_body_classes( $classes ) {
 			$classes[] = 'browser-ie';
 		}
 	}
+
+	if ( function_exists( 'pll_current_language' ) ) {
+		$GLOBALS['pll_lang'] = 'pll_'.pll_current_language();
+	}
+	$classes[] = $GLOBALS['pll_lang'];
 
 	// Add class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
