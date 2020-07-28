@@ -175,7 +175,7 @@ get_header();
 							<div class="t-o-mon"><?php echo date( "M" ) ?></div>
 						</div>
 						<div class="bl-event-info">
-							<h2 class="e-i-title">Enjoying English learning now!</h2>
+							<h2 class="e-i-title">Enjoying learning English now!</h2>
 							<div class="e-i-date">
 								<time itemprop="startDate" datetime="<?php echo $today ?>"><?php echo blmobilefirst_w2k( date( "n\월 j\일 D", $now ) ) ?></time>
 							</div>
