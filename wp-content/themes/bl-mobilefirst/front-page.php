@@ -12,6 +12,59 @@
  */
 
 get_header();
+
+// $bl_polylang = 'ko';
+$bl_fpdata = array(
+	'header h1'  => '브릿지라잇 어학원',
+	'slide id'   => 1752,
+	'call title' => '전화상담&예약',
+	'call text'  => '문의전화',
+	'map title'  => '위치안내',
+	'map text'   => '위치안내',
+	'curr title' => '커리큘럼',
+	'curr text'  => '커리큘럼',
+	'camp title' => '방학영어캠프',
+	'camp text'  => '영어캠프',
+	'enrol title'=> '입학과정',
+	'enrol text' => '입학과정',
+	'faq title'  => '자주묻는질문',
+	'faq text'   => 'FAQ',
+	// 'news cat'   => 'news',
+	'news no'    => '<p>앗, 아무 뉴스도 없습니다. 하지만 우리는 열심히 공부하고 있어요!^^</p>',
+	'event no'   => '오늘도 영어열공 중',
+	'holiday'    => '* 빨강색 일정은 휴원',
+	'why intro'  => '브릿지라잇 어학원의 건물은 작은 영어권 도시입니다. 선생님들, 학생들 모두가 영어로 대화하는 장면이 브릿지라잇에서는 일상입니다. 가이드가 확실한 영어권 도시로 \'매일\' 여행오세요.',
+	'curr intro' => '초등 1학년부터 중학 3학년까지를 모두 아우르는 단계별 강의들이 개설 되어 있습니다. 모든 레벨에서 영어의 전 영역인 말하기, 듣기, 읽기, 쓰기를 종합적으로 학습합니다.',
+	'go intro'   => '많은 이들이 영어를 가르칩니다. 그렇지만 모든 아이들이 학원 가기를 좋아하는 건 아닙니다. 브릿지라잇의 영어수업은 지식 뿐 아니라 재미와 행복을 함께 전합니다. 신나서 가는 학원, 브릿지라잇은 그 방향으로 갑니다.'
+);
+
+// if ( function_exists( 'pll_current_language' ) ) {
+// 	$bl_polylang = pll_current_language();
+// }
+
+if ( $GLOBALS['pll_lang'] != 'ko' ) {
+	$bl_fpdata['header h1']   = 'Bridge Light English Language School';
+	$bl_fpdata['slide id']    = 2239;
+	$bl_fpdata['call title']  = 'Dial Now';
+	$bl_fpdata['call text']   = 'Dial Now';
+	$bl_fpdata['map title']   = 'Location';
+	$bl_fpdata['map text']    = 'Location';
+	$bl_fpdata['curr title']  = 'Curriculum';
+	$bl_fpdata['curr text']   = 'Curriculum';
+	$bl_fpdata['camp title']  = 'English Camps';
+	$bl_fpdata['camp text']   = 'English Camps';
+	$bl_fpdata['enrol title'] = 'Admission';
+	$bl_fpdata['enrol text']  = 'Admission';
+	$bl_fpdata['faq title']   = 'Frequently Asked Questions';
+	$bl_fpdata['faq text']    = 'FAQ';
+	// $bl_fpdata['news cat']    = 'news-en';
+	$bl_fpdata['news no']     = '<p>Oops, there is no news. However, we are studying here! :)</p>';
+	$bl_fpdata['event no']    = 'We\'re enjoying learning English now!';
+	$bl_fpdata['holiday']     = '* Red events mean closing';
+	$bl_fpdata['why intro']   = 'The building of Bridge Light is a small English-spoken village. 브릿지라잇 어학원의 건물은 작은 영어권 도시입니다. 선생님들, 학생들 모두가 영어로 대화하는 장면이 브릿지라잇에서는 일상입니다. 가이드가 확실한 영어권 도시로 \'매일\' 여행오세요.';
+	$bl_fpdata['curr intro']  = 'Step-by-step lectures are ready to embrace elementary 1st grade to middle school 3rd. 모든 레벨에서 영어의 전 영역인 말하기, 듣기, 읽기, 쓰기를 종합적으로 학습합니다.';
+	$bl_fpdata['go intro']    = 'Many teach English. 그렇지만 모든 아이들이 학원 가기를 좋아하는 건 아닙니다. 브릿지라잇의 영어수업은 지식 뿐 아니라 재미와 행복을 함께 전합니다. 신나서 가는 학원, 브릿지라잇은 그 방향으로 갑니다.';
+}
 ?>
 
 <div id="primary" class="content-area">
@@ -20,13 +73,13 @@ get_header();
 		<div id="bl-front-page" class="bl-wp-page">
 
 			<header id="bl-main-title" class="bl-main-title">
-				<h1>브릿지라잇 어학원</h1>
+				<h1><?php echo $bl_fpdata['header h1'] ?></h1>
 			</header>
 
 			<div class="bl-content-top">
 				<div class="bl-slides">
 				<?php
-				$slides = json_decode( get_post_field( 'post_content', 1752 ) );
+				$slides = json_decode( get_post_field( 'post_content', $bl_fpdata['slide id'] ) );
 
 				foreach ( (array) $slides as $s ) :
 				?>
@@ -47,12 +100,12 @@ get_header();
 			</div>
 
 			<div id="bl-quick-menu">
-				<div class="tele"><a href="tel:033-243-5757"><i class="bl-sp icon-call" title="전화상담&예약"></i><span>문의전화</span></a></div>
-				<div class="appt"><a href="/admission/appt-and-visit/"><i class="bl-sp icon-map" title="위치안내"></i><span>위치안내</span></a></div>
-				<div class="curr"><a href="/curriculum/course-overview/"><i class="bl-sp icon-book" title="커리큘럼"></i><span>커리큘럼</span></a></div>
-				<div class="camp"><a href="/curriculum/english-camp/"><i class="bl-sp icon-devel" title="방학영어캠프"></i><span>영어캠프</span></a></div>
-				<div class="admt"><a href="/curriculum/admission-process/"><i class="bl-sp icon-mortar" title="입학과정"></i><span>입학과정</span></a></div>
-				<div class="faq"><a href="/admission/faq/"><i class="bl-sp icon-faq" title="자주묻는질문"></i><span>FAQ</span></a></div>
+				<div class="tele"><a href="tel:033-243-5757"><i class="bl-sp icon-call" title="<?php echo $bl_fpdata['call title'] ?>"></i><span><?php echo $bl_fpdata['call text'] ?></span></a></div>
+				<div class="appt"><a href="/admission/appt-and-visit/"><i class="bl-sp icon-map" title="<?php echo $bl_fpdata['map title'] ?>"></i><span><?php echo $bl_fpdata['map text'] ?></span></a></div>
+				<div class="curr"><a href="/curriculum/course-overview/"><i class="bl-sp icon-book" title="<?php echo $bl_fpdata['curr title'] ?>"></i><span><?php echo $bl_fpdata['curr text'] ?></span></a></div>
+				<div class="camp"><a href="/curriculum/english-camp/"><i class="bl-sp icon-devel" title="<?php echo $bl_fpdata['camp title'] ?>"></i><span><?php echo $bl_fpdata['camp text'] ?></span></a></div>
+				<div class="admt"><a href="/curriculum/admission-process/"><i class="bl-sp icon-mortar" title="<?php echo $bl_fpdata['enrol title'] ?>"></i><span><?php echo $bl_fpdata['enrol text'] ?></span></a></div>
+				<div class="faq"><a href="/admission/faq/"><i class="bl-sp icon-faq" title="<?php echo $bl_fpdata['faq title'] ?>"></i><span><?php echo $bl_fpdata['faq text'] ?></span></a></div>
 			</div>
 
 			<div class="bl-down-arrow-wrapper">
@@ -75,7 +128,7 @@ get_header();
 
 				$query = new WP_Query( array( 'category_name' => 'news' ) );
 				if ( ! $query->have_posts() ) :
-					echo "<p>앗, 아무 뉴스도 없습니다. 하지만 우리는 열심히 공부하고 있어요!^^</p>";
+					echo $bl_fpdata['news no'];
 				else :
 					// 최근 글을 하나 이상 보여줌
 					$query->the_post();
@@ -174,7 +227,7 @@ get_header();
 							<div class="t-o-mon"><?php echo date( "M" ) ?></div>
 						</div>
 						<div class="bl-event-info">
-							<h2 class="e-i-title">오늘도 영어열공 중</h2>
+							<h2 class="e-i-title"><?php echo $bl_fpdata['event no'] ?></h2>
 							<div class="e-i-date">
 								<time itemprop="startDate" datetime="<?php echo $today ?>"><?php echo blmobilefirst_w2k( date( "n\월 j\일 D", $now ) ) ?></time>
 							</div>
@@ -184,7 +237,7 @@ get_header();
 				<?php
 				endif;
 				?>
-					<div class="bl-event-comment">* 빨강색 일정은 휴원</div>
+					<div class="bl-event-comment"><?php echo $bl_fpdata['holiday'] ?></div>
 				</div>
 			</div><!-- #bl-event -->
 
@@ -198,7 +251,7 @@ get_header();
 							<img class="size-medium wp-image-2020" src="/wp-content/uploads/2020/02/main-building-at-night.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 2020 ) ?>" sizes="100vw" alt="브릿지라잇 본관 전경 (야간)" />
 						</div>
 						<div class="bl-wrap">
-							<p class="bl">브릿지라잇 어학원의 건물은 작은 영어권 도시입니다. 선생님들, 학생들 모두가 영어로 대화하는 장면이 브릿지라잇에서는 일상입니다. 가이드가 확실한 영어권 도시로 '매일' 여행오세요.</p>
+							<p class="bl"><?php echo $bl_fpdata['why intro'] ?></p>
 						</div>
 					</div>
 				</a>
@@ -214,7 +267,7 @@ get_header();
 							<img class="size-medium wp-image-2023" src="/wp-content/uploads/2020/02/Graphic-Roadmap-2019-09v2.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 2023 ) ?>" sizes="100vw" alt="브릿지라잇 커리큘럼 로드맵" />
 						</div>
 						<div class="bl-wrap">
-							<p class="bl">초등 1학년부터 중학 3학년까지를 모두 아우르는 단계별 강의들이 개설 되어 있습니다. 모든 레벨에서 영어의 전 영역인 말하기, 듣기, 읽기, 쓰기를 종합적으로 학습합니다.</p>
+							<p class="bl"><?php echo $bl_fpdata['curr intro'] ?></p>
 						</div>
 					</div>
 				</a>
@@ -230,7 +283,7 @@ get_header();
 							<img class="size-medium wp-image-802" src="/wp-content/uploads/2019/04/summer-musical-camp-2018.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 802 ) ?>" sizes="100vw" alt="여름방학 영어뮤지컬 캠프" />
 						</div>
 						<div class="bl-wrap">
-							<p class="bl">많은 이들이 영어를 가르칩니다. 그렇지만 모든 아이들이 학원 가기를 좋아하는 건 아닙니다. 브릿지라잇의 영어수업은 지식 뿐 아니라 재미와 행복을 함께 전합니다. 신나서 가는 학원, 브릿지라잇은 그 방향으로 갑니다.</p>
+							<p class="bl"><?php echo $bl_fpdata['go intro'] ?></p>
 						</div>
 					</div>
 				</a>
