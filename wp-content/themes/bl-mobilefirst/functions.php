@@ -10,6 +10,8 @@
  * @version 1.3.1
  */
 
+$GLOBALS['pll_lang'] = 'pll_ko';
+
 // 4.7 미만 버전에 테마 적용하려면 알림
 if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
