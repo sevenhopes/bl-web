@@ -9,11 +9,22 @@
  * @since 2017 Child 1.0
  */
 
+$currentLocale = setlocale(LC_ALL, 0);
+$currentLanguage = 'none';
+
+if ( function_exists( 'pll_current_language' ) ) {
+	$currentLanguage = pll_current_language();	// either ‘name’ or ‘locale’ or ‘slug’, defaults to ‘slug’
+}
+
 get_header(); ?>
 
 <div class="wrap">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+
+			<div class="bl-block">
+				<span><?php echo 'pll_lang = '.$currentLanguage; ?></span>
+			</div>
 
 			
 
