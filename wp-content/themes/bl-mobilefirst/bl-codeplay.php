@@ -26,6 +26,9 @@ get_header(); ?>
 				<span><?php echo 'pll_lang = '.$currentLanguage; ?></span>
 			</div>
 
+			<div class="bl-block">
+				<span><?php print_r($_SERVER); ?></span>
+			</div>
 			
 
 			<!-- <h1>Naver Blog the Most Recent Post</h1> -->
