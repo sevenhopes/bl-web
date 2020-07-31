@@ -1,0 +1,146 @@
+[
+		{
+			"title": "Beginning of Spring Semester",
+			"start": "2020-04-06",
+			"end": "2020-04-06",
+			"holiday": false,
+			"extra": "New class with new feel",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "TEPS: Mastery",
+			"start": "2020-04-09",
+			"end": "2020-04-10",
+			"holiday": false,
+			"extra": null,
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "General Election",
+			"start": "2020-04-15",
+			"end": "2020-04-15",
+			"holiday": true,
+			"extra": null,
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Spring Decoration",
+			"start": "2020-04-24",
+			"end": "2020-04-24",
+			"holiday": false,
+			"extra": "Study together with smelling the spring.",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Closing of May",
+			"start": "2020-04-30",
+			"end": "2020-05-05",
+			"holiday": true,
+			"extra": "Buddah's day, Labor day, Children's day, temporary closing (5.4)",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Middle School Test Prep.: 2nd grader",
+			"start": "2020-07-15",
+			"end": "2020-07-16",
+			"holiday": false,
+			"extra": "Provision for Midterm Exam",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Middle School Test Prep.: 3rd grader",
+			"start": "2020-07-16",
+			"end": "2020-07-17",
+			"holiday": false,
+			"extra": "Preparation for Midterm Exam",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Pop Song Contest: Preliminaries of Basic",
+			"start": "2020-07-30",
+			"end": "2020-07-31",
+			"holiday": false,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Summer Vacation",
+			"start": "2020-08-10",
+			"end": "2020-08-14",
+			"holiday": true,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Pop Song Contest: Preliminaries of Stage",
+			"start": "2020-08-17",
+			"end": "2020-08-18",
+			"holiday": false,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "BL TOEIC",
+			"start": "2020-08-19",
+			"end": "2020-08-20",
+			"holiday": false,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Pop Song Contest: Finals",
+			"start": "2020-08-22",
+			"end": "2020-08-22",
+			"holiday": false,
+			"extra": "Who's the best singer of Bridge Light?",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Chooseok",
+			"start": "2020-09-30",
+			"end": "2020-10-02",
+			"holiday": true,
+			"extra": "Jeongwol Daeboreum",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Hangullal",
+			"start": "2020-10-09",
+			"end": "2020-10-09",
+			"holiday": true,
+			"extra": "Appreciate, Sejong the great.",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Christmas",
+			"start": "2020-12-25",
+			"end": "2020-12-25",
+			"holiday": true,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Private School Association's Teacher Training",
+			"start": "2021-03-01",
+			"end": "2021-03-01",
+			"holiday": false,
+			"extra": "",
+			"public": false,
+			"pending": true
+		}
+]
