@@ -35,7 +35,7 @@ get_header(); ?>
 		<div class="bl-block">
 			<dt>
 				<div>2</div>
-				<h2 class="bl-block-title">Everyday Classes</h2>
+				<h2 class="bl-block-title">Everyday Class</h2>
 				<button><svg class="icon icon-angle-down"><use xlink:href="#icon-angle-down"></use></svg></button>
 			</dt>
 			<dd>
@@ -48,7 +48,7 @@ get_header(); ?>
 		<div class="bl-block">
 			<dt>
 				<div>3</div>
-				<h2 class="bl-block-title">English-only</h2>
+				<h2 class="bl-block-title">English-only Environment</h2>
 				<button><svg class="icon icon-angle-down"><use xlink:href="#icon-angle-down"></use></svg></button>
 			</dt>
 			<dd>
@@ -74,7 +74,7 @@ get_header(); ?>
 		<div class="bl-block">
 			<dt>
 				<div>5</div>
-				<h2 class="bl-block-title">Heartful Education</h2>
+				<h2 class="bl-block-title">Teaching by Heart</h2>
 				<button><svg class="icon icon-angle-down"><use xlink:href="#icon-angle-down"></use></svg></button>
 			</dt>
 			<dd>
