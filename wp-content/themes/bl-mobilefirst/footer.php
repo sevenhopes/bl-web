@@ -55,7 +55,7 @@ if ( $GLOBALS['pll_lang'] !== 'pll_ko' ) {
 	$bl_pagedata['fax']   = 'Fax 033-243-8484';
 	$bl_pagedata['w-day'] = 'Open: Weekday 2:00PM ~ 9:00PM';
 	$bl_pagedata['w-end'] = 'Close: Weekends & Holidays';
-	$bl_pagedata['addr']  = '(24433) 534, Sports town-gil, Chuncheon-si, Gangwon-do, Republic of Korea';
+	$bl_pagedata['addr']  = '(24433) 534, Sports town-gil, Chuncheon-si, Gangwon-do';
 	$bl_pagedata['reg']   = 'Chuncheon Office of Education No. 907';
 	$bl_pagedata['corp']  = 'Business License 221-81-37802';
 	$bl_pagedata['privacy']='Privacy Policy';
