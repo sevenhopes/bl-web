@@ -4652,6 +4652,10 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 	height: auto;
 }
 
+.site-footer .bl-dev-code {
+	background-color: $ff;
+}
+
 .bl-dev-div {
 	width: 100%;
 	height: 200px;
@@ -5194,6 +5198,14 @@ $menu-toggle-w: 56px;
 	font-size: 1.125rem;
 	font-weight: 400;
 	line-height: 1.4;
+}
+
+body.pll_en {
+	.main-navigation a,
+	.main-navigation ul ul a,
+	.main-navigation li li a {
+		letter-spacing: 0;
+	}
 }
 
 .main-navigation li {
@@ -7696,26 +7708,39 @@ dl.bl-faq-list {
 	overflow: hidden;
 	position: relative;
 	padding: 3.5em 0;
-}
 
-.site-footer .wrap {
-	padding: 0 0.5em 0 2em;
-}
+	.wrap {
+		padding: 0 0.5em 0 2em;
+	}
+	a {
+		color: $ff;
+	}
+	ul {
+		color: $f2;
+		list-style: none;
+		line-height: 2.5;
+		font-size: 14px;
 
-.site-footer a {
-	color: $ff;
-}
-
-.site-footer ul {
-	color: $f2;
-	list-style: none;
-	line-height: 2.5;
-	font-size: 14px;
-}
-
-.site-footer ul a {
-	color: $blue-l2;
-	// border-bottom: 1px dotted #999;
+		a {
+			color: $blue-l2;
+		}
+	}
+	.bl-lang {
+		position: relative;
+		z-index: 10;
+		a {
+			color: $ff;
+			&:hover {
+				color: $gold;
+			}
+		}
+		&.mobile {
+			display: block;
+		}
+		&.widescreen {
+			display: none;
+		}
+	}
 }
 
 #bl-social-links {
@@ -7952,6 +7977,15 @@ dl.bl-faq-list {
 			display: block;
 			position: relative;
 		}
+		.current-menu-item > a,
+		.current_page_item > a {
+			color: $blue-l2;
+			font-weight: 300;
+
+			&:hover {
+				color: $gold;
+			}
+		}
 	}
 	.main-navigation {
 		display: block;
@@ -7996,18 +8030,19 @@ dl.bl-faq-list {
 	.main-navigation li {
 		border-bottom: 0;
 	}
-	.main-navigation li.toggled-on .current-menu-item > a:hover,
-	.main-navigation li.toggled-on .current-menu-item > a:focus {
-		color: $gold;
+	// .main-navigation li.toggled-on .current-menu-item > a:hover,
+	// .main-navigation li.toggled-on .current-menu-item > a:focus {
+	.main-navigation li.toggled-on .current-menu-item {
+		color: $blue-l2;
 	}
 	.main-navigation li.toggled-on,
 	.main-navigation li.toggled-on > a {
 		background-color: transparent;
 		color: $blue-l2;
 
-		&:hover {
-			color: $blue-l2;
-		}
+		// &:hover {
+		// 	color: $blue-l2;
+		// }
 		&:focus,
 		&.focus {
 			color: $gold;
@@ -8037,6 +8072,12 @@ dl.bl-faq-list {
 			font-size: 17px;
 			font-size: 1.0625rem;
 			font-weight: 300;
+
+			&:hover,
+			&:focus,
+			&.focus {
+				color: $gold;
+			}
 		}
 	}
 	.main-navigation li li {
@@ -8182,6 +8223,15 @@ dl.bl-faq-list {
 			margin-left: auto;
 			padding-right: 60px;
 			padding-left: 60px;
+		}
+		.bl-lang {
+			&.mobile {
+				display: none;
+			}
+			&.widescreen {
+				display: inline-block;
+				float: right;
+			}
 		}
 	}
 	.bl-footer-logo {
@@ -8596,9 +8646,7 @@ dl.bl-faq-list {
 	$wide-nav-menu-w-en: 170px;
 
 	// 브라우저 언어가 영어일 때만 적용되는 스타일
-	body.en, body.en-US,
-	body.en-AU, body.en-BZ, body.en-CA, body.en-CB, body.en-GB, body.en-IE,
-	body.en-JM, body.en-NZ, body.en-PH, body.en-TT, body.en-ZA, body.en-ZW {
+	body.pll_en {
 		.nav-drawer {
 			> ul {
 				width: $wide-nav-w-en;
@@ -8640,13 +8688,23 @@ dl.bl-faq-list {
 				font-weight: 300;
 			}
 		}
-		.main-navigation ul ul a,
-		.main-navigation li li a,
-		.main-navigation a {
-			letter-spacing: 0;
-		}
+		// .main-navigation ul ul a,
+		// .main-navigation li li a,
+		// .main-navigation a {
+		// 	letter-spacing: 0;
+		// }
 		.bl-page-header h1.bl-heading {
 			display: none;
+		}
+		#bl-quick-menu {
+			 > div {
+			 	text-align: left;
+
+				a {
+					position: relative;
+					left: 20%;
+				}
+			 }
 		}
 	}
 }
