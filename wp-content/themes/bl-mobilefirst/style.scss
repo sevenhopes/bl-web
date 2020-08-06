@@ -2878,14 +2878,14 @@ p > object:only-child {
 --------------------------------------------------------------*/
 
 /* Adjust positioning of edit shortcuts, override style in customize-preview.css */
-@media screen and (min-width: 20em) {
+@media screen and (min-width: 320px) {
 
 	body.customize-partial-edit-shortcuts-shown .site-header .site-title {
 		padding-left: 0;
 	}
 }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 480px) {
 
 	/* Typography */
 
@@ -3014,7 +3014,7 @@ p > object:only-child {
 	}
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 768px) {
 
 	/* Typography */
 
@@ -3755,7 +3755,7 @@ p > object:only-child {
 	}
 }
 
-@media screen and ( min-width: 67em ) {
+@media screen and ( min-width: 1072px ) {
 
 	/* Layout */
 
@@ -3805,7 +3805,7 @@ p > object:only-child {
 	}
 }
 
-@media screen and ( min-width: 79em ) {
+@media screen and ( min-width: 1264px ) {
 
 	.has-sidebar .entry-content blockquote.alignleft {
 		margin-left: -20%;
@@ -3819,7 +3819,7 @@ p > object:only-child {
 	}
 }
 
-@media screen and ( max-width: 48.875em ) and ( min-width: 48em ) {
+@media screen and ( max-width: 782px ) and ( min-width: 768px ) {
 
 	.admin-bar .site-navigation-fixed.navigation-top,
 	.admin-bar .site-navigation-hidden.navigation-top {
@@ -7886,7 +7886,7 @@ body.pll_en {
 }
 
 /* 900px, Major, Tablets, landscape */
-@media screen and (min-width: 900px) { // = 1125px, 1em = 20px (왜때문에?)
+@media screen and (min-width: 900px) {
 /* 1200px, Major, Desktop, 4:3 */
 // @media screen and (min-width: 1200px) {
 
