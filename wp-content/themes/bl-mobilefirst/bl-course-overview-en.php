@@ -43,11 +43,11 @@ get_header(); ?>
 			<div class="bl-grid-metro">
 
 				<div class="category cat-regular">
-					<div>정규</div>
-					<div>학기</div>
+					<div>Regular</div>
+					<div>Courses</div>
 				</div>
 				<div class="regular">
-					<a href="/curriculum/regular-course##course-basic">
+					<a href="/en/curriculum-en/spring-fall-semester##course-basic">
 						<div class="bl-item-wrap">
 							<div>Basic</div>
 							<div>1~6</div>
@@ -56,7 +56,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="regular">
-					<a href="/curriculum/regular-course##course-special">
+					<a href="/en/curriculum-en/spring-fall-semester##course-special">
 						<div class="bl-item-wrap">
 							<div>Special</div>
 							<div>미국교과</div>
@@ -64,7 +64,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="regular">
-					<a href="/curriculum/regular-course##course-stage">
+					<a href="/en/curriculum-en/spring-fall-semester##course-stage">
 						<div class="bl-item-wrap">
 							<div>Stage</div>
 							<div>I D A M</div>
@@ -74,11 +74,11 @@ get_header(); ?>
 				</div>
 
 				<div class="category cat-camp">
-					<div>방학</div>
-					<div>캠프</div>
+					<div>English</div>
+					<div>Camps</div>
 				</div>
 				<div class="camp">
-					<a href="/curriculum/english-camp##camp-musical">
+					<a href="/en/curriculum-en/english-camps##camp-musical">
 						<div class="bl-item-wrap">
 							<div>Musical</div>
 							<div>Camp</div>
@@ -87,7 +87,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="camp">
-					<a href="/curriculum/english-camp##camp-grammar">
+					<a href="/en/curriculum-en/english-camps##camp-grammar">
 						<div class="bl-item-wrap">
 							<div>Grammar</div>
 							<div>Camp</div>
@@ -96,7 +96,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="camp">
-					<a href="/curriculum/english-camp##camp-debate">
+					<a href="/en/curriculum-en/english-camps##camp-debate">
 						<div class="bl-item-wrap">
 							<div>Debate</div>
 							<div>Camp</div>
@@ -106,11 +106,11 @@ get_header(); ?>
 				</div>
 
 				<div class="category cat-extra col-2">
-					<div>교과외</div>
-					<div>학습</div>
+					<div>Extra-</div>
+					<div>curricular</div>
 				</div>
 				<!--div class="a-camp">
-					<a href="/curriculum/study-in-america/">
+					<a href="/en/curriculum-en/study-in-america/">
 						<div class="bl-item-wrap">
 							<div>Study in</div>
 							<div>America</div>
@@ -119,7 +119,7 @@ get_header(); ?>
 					</a>
 				</div-->
 				<div class="extra">
-					<a href="/curriculum/extracurricular##english-contest">
+					<a href="/en/curriculum-en/extracurricular##english-contest">
 						<div class="bl-item-wrap">
 							<div>English</div>
 							<div>Contest</div>
@@ -128,7 +128,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="extra">
-					<a href="/curriculum/extracurricular##test-prep">
+					<a href="/en/curriculum-en/extracurricular##test-prep">
 						<div class="bl-item-wrap">
 							<div>Test</div>
 							<div>Preparation</div>
@@ -137,7 +137,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="extra">
-					<a href="/curriculum/extracurricular##building-session">
+					<a href="/en/curriculum-en/extracurricular##building-session">
 						<div class="bl-item-wrap">
 							<div>Building</div>
 							<div>Session</div>
@@ -146,7 +146,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="extra">
-					<a href="/curriculum/extracurricular##halloween">
+					<a href="/en/curriculum-en/extracurricular##halloween">
 						<div class="bl-item-wrap">
 							<div>Halloween</div>
 							<div>Party</div>
@@ -155,7 +155,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="extra">
-					<a href="/curriculum/extracurricular##christmas">
+					<a href="/en/curriculum-en/extracurricular##christmas">
 						<div class="bl-item-wrap">
 							<div>Christmas</div>
 							<div>Party</div>
@@ -167,13 +167,13 @@ get_header(); ?>
 
 			<div class="bl-legend">
 				<div class="bl-symbol regular"></div>
-				<div>정규학기</div>
+				<div>Regular Courses</div>
 				<div class="bl-symbol camp"></div>
-				<div>방학캠프</div>
+				<div>English Camps</div>
 				<!--div class="bl-symbol a-camp"></div>
 				<div>미국연수</div-->
 				<div class="bl-symbol extra"></div>
-				<div>교과외학습</div>
+				<div>Extracurricular</div>
 			</div>
 		</div>
 	</div>

@@ -30,7 +30,7 @@ $bl_pagedata = array(
 	'corp'  => '사업자등록번호 221-81-37802',
 	'privacy'=>'개인정보취급방침',
 	// 'refusal'=>'이메일무단수집거부',
-	'c-right'=>'ⓒ 브릿지라잇 2006-<?php echo date("Y"); ?>',
+	'c-right'=>'ⓒ 브릿지라잇 2006-'.date("Y"),
 	'lang'   =>'English Website'
 );
 
@@ -63,18 +63,8 @@ if ( $GLOBALS['pll_lang'] !== 'pll_ko' ) {
 	$bl_pagedata['c-right']='ⓒ Bridge Light Inc 2006-'.date("Y");
 	$bl_pagedata['lang']   ='한국어 웹사이트';
 
-	// if ( $bl_req_uri == '/en/' ) {
-	// 	$bl_lang_link = '/';
-	// } else {
-	// 	$bl_lang_link = str_replace( $bl_url_en_cat, $bl_url_ko_cat, $bl_req_uri );
-	// }
 	$bl_lang_link = $bl_req_uri == '/en/' ? '/' : str_replace( $bl_url_en_cat, $bl_url_ko_cat, $bl_req_uri );
 } else {
-	// if ( $bl_req_uri == '/' ) {
-	// 	$bl_lang_link = '/en/';
-	// } else {
-	// 	$bl_lang_link = str_replace( $bl_url_ko_cat, $bl_url_en_cat, $bl_req_uri );
-	// }
 	$bl_lang_link = $bl_req_uri == '/' ? '/en/' : str_replace( $bl_url_ko_cat, $bl_url_en_cat, $bl_req_uri );
 }
 ?>
@@ -144,7 +134,7 @@ if ( $GLOBALS['pll_lang'] !== 'pll_ko' ) {
 					<li><?php echo $bl_pagedata['corp'] ?></li>
 					<li><?php echo $bl_pagedata['privacy'] ?></li>
 					<!-- <li><?php echo $bl_pagedata['refusal'] ?></li> -->
-					<li class="bl-lang mobile"><a href="<?php echo $bl_lang_link ?>"><?php echo $bl_pagedata['lang'] ?></a></li>
+					<!-- <li class="bl-lang mobile"><a href="<?php echo $bl_lang_link ?>"><?php echo $bl_pagedata['lang'] ?></a></li> -->
 					<li><?php echo $bl_pagedata['c-right'] ?><span class="bl-lang widescreen"><a href="<?php echo $bl_lang_link ?>"><?php echo $bl_pagedata['lang'] ?></a></span></li>
 				</ul>
 

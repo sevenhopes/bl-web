@@ -32,8 +32,8 @@ get_header(); ?>
 						<i class="bl-sp icg-calendar" title="상담예약"></i>
 					</div>
 					<div class="proc-desc">
-						<div><span>1</span> 상담 예약</div>
-						<div>전화로 상담일정을 예약합니다. 방문시 꼭 학생을 데려오셔야 정확한 상담이 가능합니다.</div>
+						<div><span>1</span> Reservation for Consultation on Admission</div>
+						<div>You can make a reservation by phone. Students who want to study at Bridge Light as well as their parents must come for an accurate consultation.</div>
 					</div>
 				</div>
 
@@ -44,8 +44,8 @@ get_header(); ?>
 						<i class="bl-sp icg-interview" title="방문 상담"></i>
 					</div>
 					<div class="proc-desc">
-						<div><span>2</span> 어학원 방문</div>
-						<div>예약한 날짜에 방문하면 영어인터뷰, 레벨테스트 및 학부모님 상담이 진행됩니다. 상담이 끝나면 등록여부를 결정합니다.</div>
+						<div><span>2</span> Visiting Bridge Light</div>
+						<div>If the student visits Bridge Light on the reserved date, they will have an English interview and a level test, and their parents will have a consultation with the admission manager. After the consultation, the parents can decide whether to have their children registered for a class.</div>
 					</div>
 				</div>
 
@@ -56,8 +56,8 @@ get_header(); ?>
 						<i class="bl-sp icg-level" title="반편성·버스 안내"></i>
 					</div>
 					<div class="proc-desc">
-						<div><span>3</span> 반편성·버스 안내</div>
-						<div>상담결과와 학생의 일정에 맞추어 반을 결정한 후 통학버스에 대한 안내를 받습니다.</div>
+						<div><span>3</span> Assigning a class and informing of the bus route and stop</div>
+						<div>After deciding on the class for the student according to the result of the consultation and the student’s schedule, you will be informed of the bus schedule, route, and stop.</div>
 					</div>
 				</div>
 
@@ -68,8 +68,8 @@ get_header(); ?>
 						<i class="bl-sp icg-enroll" title="입학원서 작성"></i>
 					</div>
 					<div class="proc-desc">
-						<div><span>4</span> 입학원서 작성·수강료 납부</div>
-						<div>입학원서를 작성하고 수강료와 교재비를 납부하면 입학절차가 완료됩니다.</div>
+						<div><span>4</span> Filling out the enrollment form and tuition fee payment</div>
+						<div>When you fill out the enrollment form and pay the tuition fee, the admission process is completed.</div>
 					</div>
 				</div>
 
@@ -80,15 +80,15 @@ get_header(); ?>
 						<i class="bl-sp icg-class" title="수업 시작"></i>
 					</div>
 					<div class="proc-desc">
-						<div><span>5</span> 수업 시작</div>
-						<div>이제 영어로 생활하며 친구들과 선생님을 만날 시간입니다.</div>
+						<div><span>5</span> Class start</div>
+						<div>It is time to meet the teacher and their class mates and have fun in English!</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="bl-wrap bl-proc-comment">
-			<p class="bl-p">* 궁금한 사항은 <a href="/admission/faq/">자주 묻는 질문</a> 페이지를 참고하시거나, 브릿지라잇으로 전화 주세요.</p>
+			<p class="bl-p">* Refer to <a href="/en/admissions-en/faq/">the FAQ page</a> for any questions, or call us.</p>
 		</div>
 	</div>
 
@@ -98,7 +98,7 @@ get_header(); ?>
 		</div>
 
 		<div class="bl-wrap">
-			<p class="bl-p">방학 영어캠프 등록에 대해서는 <a href="/curriculum/english-camp##bl-camp-admission">여름/겨울 영어캠프</a> 페이지를 참고하세요.</p>
+			<p class="bl-p">Refer to <a href="/en/curriculum-en/english-camps##bl-camp-common-features">the summer/winter English camp page</a> for enrollment in the vacation English camp.</p>
 		</div>
 	</div>
 

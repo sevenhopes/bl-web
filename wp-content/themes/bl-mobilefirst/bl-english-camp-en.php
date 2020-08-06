@@ -119,7 +119,7 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div class="bl-block">
+	<div class="bl-block" id="bl-camp-common-features">
 		<div class="bl-block-header">
 			<h2 class="bl-block-title">Common Features</h2>
 		</div>
