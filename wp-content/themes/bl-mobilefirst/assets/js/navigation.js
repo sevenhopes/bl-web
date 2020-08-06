@@ -8,27 +8,64 @@
 
 (function( $ ) {
 
-	// *
-	// * Warning!! uglify(minify) 할 때 조심! 카카오링크 관련, 런타임 때 에러나는 경우가 있음!
-	// *
-	$.blang = {}; // bl + lang
-	$.blang.ko = {
+	// Stephen M. Harris of 'https://stackoverflow.com/questions/5069464/replace-multiple-strings-at-once'
+	function replaceBulk( str, findArray, replaceArray ) {
+		var i, regex = [], map = {};
+		for( i=0; i<findArray.length; i++ ) {
+			regex.push( findArray[i].replace( /([-[\]{}()*+?.\\^$|#,])/g,'\\$1') );
+			map[findArray[i]] = replaceArray[i];
+		}
+		regex = regex.join( '|' );
+		str = str.replace( new RegExp( regex, 'g' ), function( matched ) {
+			return map[matched];
+		});
+		return str;
+	}
+
+	var url = window.location.pathname,
+		url_ko_cat = ['/about/',		'/curriculum/',			'/admissions/',			'/news-n-events'],
+		url_en_cat = ['/en/about-en/',	'/en/curriculum-en/',	'/en/admissions-en/',	'/en/news-n-events-en'];
+
+	$.lang = {};
+	$.lang.ko = {
 		address: "강원도 춘천시 스포츠타운길 534 (온의동)",
 		linkdesc: "033-243-5757 #영어생활화 #매일수업 #방학영어캠프 #미국연수 #초중영어",
 		pageurlmsg: "이제 현재 페이지 주소를 붙여넣기 할 수 있습니다.",
-		siteurlmsg: "이제 웹사이트 주소를 붙여넣기 할 수 있습니다."
+		siteurlmsg: "이제 웹사이트 주소를 붙여넣기 할 수 있습니다.",
+		menucall: "전화상담&예약",
+		menumap: "위치안내",
+		menushare: "정보공유",
+		apptvisit: "/admissions/appt-and-visit",
+		langurl: "",
+		langswitch: "English Website"
 	};
-	$.blang.en = {
+	$.lang.en = {
 		address: "534, Sports town-gil, Chuncheon-si, Gangwon-do, Republic of Korea",
 		linkdesc: "033-243-5757 #DailyEnglishClass #EnglishStudyCamp #MonthLongUSAStudy",
 		pageurlmsg: "Now you can paste the current page's URL.",
-		siteurlmsg: "Now you can paste the website's URL."
+		siteurlmsg: "Now you can paste the website's URL.",
+		menucall: "Phone call",
+		menumap: "Location",
+		menushare: "Share this page",
+		apptvisit: "/en/admissions-en/appt-and-visit",
+		langurl: "",
+		langswitch: "한국어 웹사이트"
 	};
 
-	var scrolling = false,
+	var $body = $( 'body' ),
+		scrolling = false,
 		current_top = 0,
 		scroll_interval = 350,
 		is_widescreen = ( $( '#content' ).width() == 860 );	// 960 - (padding-left 50 + padding-right 50)
+
+		if ( $body.hasClass( 'pll_ko' ) ) {
+			$.lang.ko.langurl = replaceBulk( url, url_ko_cat, url_en_cat );
+			langset = $.lang.ko;
+		} else {
+			$.lang.en.langurl = replaceBulk( url, url_en_cat, url_ko_cat );
+			langset = $.lang.en;
+		}
+
 
 	// document.ready() 밖으로 꺼내면 .dropdown-toggle을 선택하지 못 함.
 	// $( document ).ready( function() {
@@ -74,21 +111,19 @@
 
 		///// bl //////////////////////////////////////////////////////////////////
 		/////
-		var	$body = $( 'body' ),
-			$blMenuToggle = $body.find( '#bl-menu-toggle' ),
+		var	$blMenuToggle = $body.find( '#bl-menu-toggle' ),
 			$navTop = $body.find( '.navigation-top' ),
 			$mainNav = $navTop.find( '.main-navigation' ),
 			$dropdowns = $mainNav.find( '.dropdown-toggle' ), // 모든 드롭다운 버튼(화살표)
 			$sharelayer = $( '.bl-share-layer' ),
 			isFrontPage = $body.hasClass( 'home' ),
-			langset = $body.hasClass( 'ko-KR' ) ? $.blang.ko : $.blang.en,
 			site_name = document.head.querySelector('meta[property="og:site_name"]').getAttribute('content'),
 			og_image = document.head.querySelector('meta[property="og:image"]').getAttribute('content');
 
 		// console.log( 'langset.address: ' + langset.address );
 		// console.log( 'typeof langset.address: ' + typeof langset.address );
-		// console.log( '$.blang.ko.address: ' + $.blang.ko.address );
-		// console.log( 'typeof $.blang.ko.address: ' + typeof $.blang.ko.address );
+		// console.log( '$.lang.ko.address: ' + $.lang.ko.address );
+		// console.log( 'typeof $.lang.ko.address: ' + typeof $.lang.ko.address );
 
 		// PC 등 넓은 화면인 경우, 여기서 return
 		if ( is_widescreen ) {
@@ -209,9 +244,18 @@
 
 			// .main-navigation 메뉴의 마지막에 커스텀 메뉴를 추가
 			$mainNav.find( '#top-menu' ).html( function() {
-				var $allmenubtn = ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a href="/admission/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
-				var $shareonly =  ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call disabled" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a class="disabled" href="/admission/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
-				return $( this ).html() + ( isFrontPage ? $shareonly : $allmenubtn );
+				// var $allmenubtn = ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a href="/admissions/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
+				// var $shareonly =  ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call disabled" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a class="disabled" href="/admissions/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
+				// return $( this ).html() + ( isFrontPage ? $shareonly : $allmenubtn );
+				return $( this ).html()
+					+ ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page">'
+					+ '<div><a class="bl-custom-call" href="tel:033-243-5757"><i class="bl-sp icw-call" title="'
+					+ langset.menucall + '"></i></a></div><div><a href="'
+					+ langset.apptvisit + '"><i class="bl-sp icw-map" title="'
+					+ langset.menumap + '"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="' // 하이퍼링크를 js event로 처리
+					+ langset.menushare + '"></i></a></div><div><a href="'
+					+ langset.langurl + '"><i class="bl-sp icw-langswitch" title="'
+					+ langset.langswitch + '"></i></a></div></li>';
 			});
 
 			// 전화하기 커스텀 메뉴 동작: 네비 메뉴 메뉴 닫음
