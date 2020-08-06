@@ -4529,7 +4529,7 @@ $sp-h80: $sp-h * $ratio-80;
 	width: 14px;
 	height: 14px;
 }
-////////////////////////////////////////////////// 사용 않는 아이콘
+////////////////////////////////////////////////// 기타 아이콘
 .icw-community {
 	background-position: ($ic-s * -7) ($ic-s * -3);
 	width: $ic-s;
@@ -4539,6 +4539,12 @@ $sp-h80: $sp-h * $ratio-80;
 	background-position: ($ic-s * -8) ($ic-s * -3);
 	width: $ic-s;
 	height: $ic-s;
+}
+.icw-langswitch {
+	background-position: ($ic-64 * -9) ($ic-64 * -3);
+	width: $ic-64;
+	height: $ic-64;
+	background-size: $sp-w64 $sp-h64;
 }
 
 // 강사진 이미지 스프라이트 (bl-teachers.php)
@@ -5200,14 +5206,6 @@ $menu-toggle-w: 56px;
 	line-height: 1.4;
 }
 
-body.pll_en {
-	.main-navigation a,
-	.main-navigation ul ul a,
-	.main-navigation li li a {
-		letter-spacing: 0;
-	}
-}
-
 .main-navigation li {
 	list-style: none;
 	padding-top: 0;
@@ -5254,10 +5252,10 @@ body.pll_en {
 		padding: 0.6em 0.8em 3px;
 		opacity: 0.9;
 
-		&.disabled {
-			cursor: unset;
-			opacity: 0.2;
-		}
+		// &.disabled {
+		// 	cursor: unset;
+		// 	opacity: 0.2;
+		// }
 	}
 	i {
 		width: 32px;
@@ -6738,36 +6736,32 @@ a.more-link {
 		padding: 0.522rem 0 0 0.522rem;
 		font-size: 1.125em;
 		font-weight: 300;
-	}
 
-	.bl-t-pic {
-		display: inline-block;
-		// padding-bottom: -0.525rem;
-	}
+		.bl-t-pic {
+			display: inline-block;
+			// padding-bottom: -0.525rem;
+		}
+		.bl-t-info {
+			display: inline-block;
+			vertical-align: top;
+			letter-spacing: 0;
+			padding-left: 0.5em;
 
-	.bl-t-info {
-		display: inline-block;
-		vertical-align: top;
-		letter-spacing: 0;
-		padding-left: 0.5em;
-	}
-
-	.bl-t-info span {
-		display: block;
-		/*line-height: 1.55;*/
-	}
-
-	.bl-t-name {
-		font-size: 1.125em;
-		font-weight: 400;
-		padding: 0.1em 0 0;
-	}
-
-	.bl-t-position {
-	}
-
-	.bl-t-charge {
-		line-height: 1.5;
+			span {
+				display: block;
+				/*line-height: 1.55;*/
+			}
+			.bl-t-name {
+				font-size: 1.125em;
+				font-weight: 400;
+				padding: 0.1em 0 0;
+			}
+			.bl-t-position {
+			}
+			.bl-t-charge {
+				line-height: 1.25;
+			}
+		}
 	}
 }
 
@@ -7832,7 +7826,58 @@ dl.bl-faq-list {
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-19.0 Media Queries
+19.0 Multi-language
+--------------------------------------------------------------*/
+
+body.pll_ko {
+	#teachers {
+		.bl-t-profile {
+		}
+	}
+}
+
+body.pll_en {
+	.bl-wrap {
+		.bl-p {
+			text-align: justify;
+			word-break: break-word;
+			letter-spacing: -1px;
+			-webkit-hyphens: auto;
+			-ms-hyphens: auto;
+			hyphens: auto;
+		}
+	}
+	.main-navigation a,
+	.main-navigation ul ul a,
+	.main-navigation li li a {
+		letter-spacing: 0;
+	}
+	#teachers {
+		.bl-t-profile {
+			font-size: 1em;
+			font-weight: 300;
+
+			.bl-t-pic {
+				display: inline-block;
+				// padding-bottom: -0.525rem;
+			}
+			.bl-t-info {
+				.bl-t-name {
+					font-size: 1em;
+				}
+				.bl-t-charge {
+					line-height: 1.25;
+				}
+			}
+		}
+	}
+	.bl-page-header h1.bl-heading {
+		display: none;
+	}
+}
+
+/*--------------------------------------------------------------
+20.0 Media Queries
 --------------------------------------------------------------*/
 
 /* 600px, Major, Tablets, portrait */
@@ -8647,6 +8692,13 @@ dl.bl-faq-list {
 
 	// 브라우저 언어가 영어일 때만 적용되는 스타일
 	body.pll_en {
+		.bl-wrap {
+			.bl-p {
+				// text-align: justify;
+				// word-break: keep-all;
+				letter-spacing: 0;
+			}
+		}
 		.nav-drawer {
 			> ul {
 				width: $wide-nav-w-en;
@@ -8688,14 +8740,6 @@ dl.bl-faq-list {
 				font-weight: 300;
 			}
 		}
-		// .main-navigation ul ul a,
-		// .main-navigation li li a,
-		// .main-navigation a {
-		// 	letter-spacing: 0;
-		// }
-		.bl-page-header h1.bl-heading {
-			display: none;
-		}
 		#bl-quick-menu {
 			 > div {
 			 	text-align: left;
@@ -8706,7 +8750,17 @@ dl.bl-faq-list {
 				}
 			 }
 		}
-	}
+		#course-overview {
+			.bl-grid-metro {
+				& > div.category {
+					div {
+						line-height: 1.2;
+						font-size: 1.2rem;
+					}
+				}
+			}
+		}
+	} // end of body.pll_en
 }
 
 /* 1800px, Major, Desktop, 16:9 */
