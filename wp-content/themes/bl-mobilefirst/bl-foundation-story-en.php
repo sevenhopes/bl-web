@@ -20,20 +20,20 @@ get_header(); ?>
 
 	<div class="bl-block">
 		<div class="bl-ble-quote" style="display: none;"><br class="bl-br">
-			<b>다리</b>를 세우다.<br class="bl-br">
-			<b>빛</b>을 밝히다.<br class="bl-br">
+			<b>Bridging</b> the Gaps,<br class="bl-br">
+			<b>Lighting</b> the Way.<br class="bl-br">
 		</div>
 
 		<br class="bl-br clear" style="display: none;">
 
 		<div class="bl-wrap">
-			<p class="bl-p">영어교육은 실제 생활에서 영어를 사용할 때 비로소 그 의미와 가치가 살아납니다. 이는 학습자가 영어로 읽고 쓰는 것 이외에, 효과적으로 듣고 말할 수 있어야 함을 의미합니다.</p>
+			<p class="bl-p">Bridge Light was founded in January of 2003 on the premise that English education in Korea has historically fallen short of achieving its intended purposes. It is our desire and veritable ambition to be the difference─to provide instruction and guidance that will lead to the practical application of English in social, educational, and real life situations. Practical application should be defined as the ability not only to read and write, but to speak effectively. It is our philosophy that outcomes-based education is the most suitable approach to achieving the desired practical application skills we seek to develop in each student.</p>
 
 		<img class="size-full wp-image-1886" src="/wp-content/uploads/2019/09/mr-mrs-orr.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 1886 ) ?>" sizes="100vw" alt="데이빗 오어 원장과 김보미 부원장" />
 
-			<p class="bl-p">교육기업 브릿지라잇은 이를 위해 ‘살아있는 교육, 최상의 영어교육을 위한 끝없는 도전’이라는 명백한 목표를 갖고 있습니다. 실력과 멘토링 능력을 겸비한 브릿지라잇의 교사진은 원생들을 위한 튼튼한 다리(<span class="bl-ue">Bridge</span>)가 되겠습니다. 어둠 속에서 길을 안내해 주는 망망대해의 등대처럼, 원생들을 열정과 이해의 세계로 인도해 주는 불빛(<span class="bl-ue">Light</span>)이 되겠습니다.</p>
+			<p class="bl-p">It is our philosophy that English education is best achieved when the values of discipline and respect are pervasive throughout the institution, and when educators are thoroughly prepared and eager to build the <span class="bl-ue">bridges</span> of understanding. Like the lighthouse on the distant dark horizon, our teachers will be prepared to <span class="bl-ue">light</span> the way for those children floundering in the murky waters of confusion and misunderstanding. We will challenge our students; they will be expected to meet those challenges. We believe that when the aforementioned attributes of education are in harmony, we will successfully create an environment which will be most conducive to second language instruction and acquisition.</p>
 
-			<p class="bl-p">불변의 가치를 고수하는 전통, 멈추지 않는 진화가 공존하는 교육기업 브릿지라잇이 될 것을 약속 드립니다.</p>
+			<p class="bl-p">We pledge to never forget the sacrifices parents make to ensure their children's potential, and we will honor their sacrifices with vigilance of the heart.</p>
 		</div>
 	</div>
 
@@ -47,14 +47,14 @@ get_header(); ?>
 
 		<div class="bl-wrap">
 			<?php if ( wp_is_mobile() ) : ?>
-			<img class="size-large wp-image-1873 aligncenter" src="/wp-content/uploads/2019/09/ig-history-329x800.png" srcset="<?php echo wp_get_attachment_image_srcset( 1873 ) ?>" alt="브릿지라잇 연혁" />
+			<img class="size-large wp-image-2284 aligncenter" src="http://bridgelightels.com/wp-content/uploads/2020/08/ig-history-302x800.png" alt="History of Bridge Light" width="302" height="800" />
 			<?php else : ?>
-			<img class="size-large wp-image-1873 aligncenter" style="display: block;" src="/wp-content/uploads/2019/09/ig-history.png" alt="브릿지라잇 연혁" width="600" height="1460" />
+			<img class="size-large wp-image-2284 aligncenter" src="http://bridgelightels.com/wp-content/uploads/2020/08/ig-history.png" alt="History of Bridge Light" width="600" height="1460" />
 			<?php endif ?>
 		</div>
 
 		<div class="bl-wrap">
-			<p class="bl-p">브릿지라잇은 초중등 영어교육 전문기업으로 20여년간 늘 같은 장소에서 춘천의 아이들을 가르쳐 왔습니다. 그 세월 동안 브릿지라잇은 수많은 선생님과 학생들, 그 모두의 삶의 기억에 한 페이지의 추억 그 이상이며, 동시에 차후 글로벌 세계의 새로운 시민으로 활약할 아이들의 미래를 준비하는 비전으로서 함께 해 왔습니다.<!-- 우리 아이들이 미래를 준비하는 영광스러운 무대가 되어주는 역할을 소명으로 삼아 브릿지라잇은 앞으로도 전심전력하겠습니다.--></p>
+			<p class="bl-p">Bridge Light, as a specialized organization in English education, has been teaching Chuncheon's children at the same spot for almost 20 years. We have been more than just a piece of memories among students and teachers for that time, and also we have been together as a vision with the children to prepare their future as global citizens.</p>
 		</div>
 	</div>
 
