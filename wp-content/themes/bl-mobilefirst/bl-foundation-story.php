@@ -47,9 +47,9 @@ get_header(); ?>
 
 		<div class="bl-wrap">
 			<?php if ( wp_is_mobile() ) : ?>
-			<img class="size-large wp-image-1873 aligncenter" src="/wp-content/uploads/2019/09/ig-history-329x800.png" srcset="<?php echo wp_get_attachment_image_srcset( 1873 ) ?>" alt="브릿지라잇 연혁" />
+			<img class="size-large wp-image-2284 aligncenter" src="http://bridgelightels.com/wp-content/uploads/2020/08/ig-history-302x800.png" alt="브릿지라잇 연혁" width="302" height="800" />
 			<?php else : ?>
-			<img class="size-large wp-image-1873 aligncenter" style="display: block;" src="/wp-content/uploads/2019/09/ig-history.png" alt="브릿지라잇 연혁" width="600" height="1460" />
+			<img class="size-large wp-image-2284 aligncenter" src="http://bridgelightels.com/wp-content/uploads/2020/08/ig-history.png" alt="브릿지라잇 연혁" width="600" height="1460" />
 			<?php endif ?>
 		</div>
 
