@@ -32,11 +32,29 @@
 	// if ( ! $bl_desc ) {
 		$bl_desc = $bl_title;
 	// }
+	$bl_keywords = "춘천, 영어학원, 어학원, ".$bl_title;
+	$bl_author = "주식회사 브릿지라잇";
+	$bl_ogsite = "브릿지라잇 어학원";
+	$bl_ogdesc = "033-243-5757 #영어생활화 #매일수업 #방학영어캠프 #미국연수 #춘천전역버스 #초중영어 #춘천영어학원 #온의동영어학원";
+	$bl_ogtitle = $bl_title." - 브릿지라잇 어학원";
+	$bl_cano   = "http://www.bridgelightels.com/";
+	$bl_uhead  = "We are 춘천 영어학원, 브릿지라잇 어학원, Bridge Light, Bridge Light English Language School.";
+
+	if ( $GLOBALS['pll_lang'] !== 'pll_ko' ) {
+		$bl_keywords = "Chuncheon, English School, Academy, Language School, ".$bl_title;
+		$bl_author = "Bridge Light Inc.";
+		$bl_ogsite = "Bridge Light English Language School";
+		$bl_ogdesc = "033-243-5757 #EnglishOnly #EverydayClass #EnglishCamp #StudyInAmerica #SchoolBusAllOverCity #ElementarySchoolEnglish #MiddleSchoolEnglish #EnglishSchool";
+		$bl_ogtitle = $bl_title." - Bridge Light English Language School";
+		$bl_cano   = "http://www.bridgelightels.com/en/";
+		$bl_uhead  = "We are Chuncheon's English School, Bridge Light, Bridge Light English Language School.";
+	}
 ?>
-<meta name="description" content="<?php echo $bl_desc; ?>">
-<meta name="keywords" content="춘천, 영어학원, 어학원, <?php echo $bl_title; ?>">
-<meta name="author" content="주식회사 브릿지라잇 (Bridge Light Inc.)">
-<meta property="og:site_name" content="브릿지라잇 어학원">
+<meta name="blcode" content="<?php echo $GLOBALS['pll_lang'] ?>">
+<meta name="description" content="<?php echo $bl_desc ?>">
+<meta name="keywords" content="<?php echo $bl_keywords ?>">
+<meta name="author" content="<?php echo $bl_author ?>">
+<meta property="og:site_name" content="<?php echo $bl_ogsite ?>">
 <meta property="og:url" content="<?php the_permalink(); ?>">
 <!-- <meta property="og:image" content="/wp-content/themes/bl-mobilefirst/assets/images/bridge-light-og-image.jpg"> -->
 <meta property="og:image:height" content="630">
@@ -46,7 +64,7 @@
 <meta property="og:title" content="<?php echo $bl_title; ?> - 브릿지라잇 어학원">
 <meta property="og:type" content="website">
 <meta property="fb:app_id" content="462886344532595">
-<link rel="canonical" href="http://www.bridgelightels.com/">
+<link rel="canonical" href="<?php the_permalink(); ?>">
 
 <!-- <meta name="theme-color" content="#ffffff"> -->
 <!-- <meta name="msapplication-navbutton-color" content="#ffffff"> -->
