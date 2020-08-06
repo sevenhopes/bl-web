@@ -81,8 +81,17 @@
 			"pending": false
 		},
 		{
-			"title": "Pop Song Contest: Preliminaries of Stage",
+			"title": "광복절 (대체 휴일)",
 			"start": "2020-08-17",
+			"end": "2020-08-17",
+			"holiday": true,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Pop Song Contest: Preliminaries of Stage",
+			"start": "2020-08-18",
 			"end": "2020-08-18",
 			"holiday": false,
 			"extra": "",
@@ -103,7 +112,7 @@
 			"start": "2020-08-22",
 			"end": "2020-08-22",
 			"holiday": false,
-			"extra": "Who's the best singer of Bridge Light?",
+			"extra": "Be the best singer of Bridge Light!",
 			"public": true,
 			"pending": false
 		},

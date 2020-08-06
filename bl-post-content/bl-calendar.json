@@ -81,8 +81,17 @@
 			"pending": false
 		},
 		{
-			"title": "팝송 컨테스트 예선: Stage",
+			"title": "광복절 (대체 휴일)",
 			"start": "2020-08-17",
+			"end": "2020-08-17",
+			"holiday": true,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "팝송 컨테스트 예선: Stage",
+			"start": "2020-08-18",
 			"end": "2020-08-18",
 			"holiday": false,
 			"extra": "",
