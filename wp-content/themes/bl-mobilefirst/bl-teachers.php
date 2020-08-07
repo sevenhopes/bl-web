@@ -28,7 +28,7 @@ $teachers = array(
 	new Teacher( "t-bomi",		"부원장 김보미",				"김 보 미 'Mrs. Orr'",		array("Basic Program","Stage Program"), "부원장" ),
 	new Teacher( "t-yoomi",		"원감 김유미",					"김 유 미 'Mrs. Kim'",		array("입학 상담","Basic Program"), "원감" ),
 	new Teacher( "t-peter", 	"팀장 이상인 (Peter)",	"이 상 인 'Peter'",			array("Stage Program","Special Program"), "팀장 / 교육연구부" ),
-	new Teacher( "t-dean",		"팀장 윤영호 (Dean)",	"윤 영 호 'Dean'",				array("Stage Program"), "팀장 / 교육연구부" ),
+	new Teacher( "t-dean",		"팀장 윤영호 (Dean)",	"윤 영 호 'Dean'",				array("Stage Program", "Basic Program"), "팀장 / 교육연구부" ),
 	new Teacher( "t-ethan", 	"실장 이혁수 (Ethan)",	"이 혁 수 'Ethan'",			array("IT, PR, HR"), "실장 / 시스템인터넷사업실" ),
 	new Teacher( "t-eunji", 	"팀장 이은지", 				"이 은 지 'Eunji'",			array("교무 운용"), "팀장 / 교육연구부" ),
 	new Teacher( "t-rachel",	"강사 함영진 (Rachel)","함 영 진 'Rachel'" ),

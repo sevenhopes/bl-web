@@ -28,7 +28,7 @@ $teachers = array(
 	new Teacher( "t-bomi",		"Vice Principal Bomi Orr", "Bomi K. Orr", array("Basic Program", "Stage Program"), "Vice Principal & Founder" ),
 	new Teacher( "t-yoomi",		"General Manager Yoomi Kim", "Yoomi Kim", array("Enrollment Consultation", "Basic Program"), "General Manager" ),
 	new Teacher( "t-peter", 	"Teacher Sang In Lee (Peter)", "Sang In Lee 'Peter'", array("Stage Program", "Special Program"), "Team Leader" ),
-	new Teacher( "t-dean",		"Teacher Young Ho Yoon (Dean)", "Young Ho Yoon 'Dean'", array("Stage Program"), "Team Leader" ),
+	new Teacher( "t-dean",		"Teacher Young Ho Yoon (Dean)", "Young Ho Yoon 'Dean'", array("Stage Program", "Basic Program"), "Team Leader" ),
 	new Teacher( "t-ethan", 	"PR/HR/IT Manager Hyeoksoo Lee (Ethan)", "Hyeoksoo Lee 'Ethan'", array("IT, PR, HR"), "IT Manager" ),
 	new Teacher( "t-eunji", 	"Assistant Manager Eunji Lee", "Eunji Lee", array("Faculty Assist"), "Team Leader" ),
 	new Teacher( "t-rachel",	"Teacher Yeong Jin Hahm (Rachel)","Yeong Jin Hahm 'Rachel'" ),
