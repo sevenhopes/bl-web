@@ -47,7 +47,7 @@ get_header(); ?>
 					<div>학기</div>
 				</div>
 				<div class="regular">
-					<a href="/curriculum/regular-course##course-basic">
+					<a href="/curriculum/spring-fall-semester##course-basic">
 						<div class="bl-item-wrap">
 							<div>Basic</div>
 							<div>1~6</div>
@@ -56,7 +56,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="regular">
-					<a href="/curriculum/regular-course##course-special">
+					<a href="/curriculum/spring-fall-semester##course-special">
 						<div class="bl-item-wrap">
 							<div>Special</div>
 							<div>미국교과</div>
@@ -64,7 +64,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="regular">
-					<a href="/curriculum/regular-course##course-stage">
+					<a href="/curriculum/spring-fall-semester##course-stage">
 						<div class="bl-item-wrap">
 							<div>Stage</div>
 							<div>I D A M</div>
