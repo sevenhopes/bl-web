@@ -7865,8 +7865,11 @@ body.pll_en {
 				.bl-t-name {
 					font-size: 1em;
 				}
+				.bl-t-position {
+					margin-bottom: 0.5rem;
+				}
 				.bl-t-charge {
-					line-height: 1.25;
+					line-height: 1.5;
 				}
 			}
 		}
@@ -7896,6 +7899,19 @@ body.pll_en {
 */
 /* 600px, Major, Tablets, portrait */
 @media screen and (min-width: 600px) {
+	#teachers {
+		.bl-t-profile {
+			width: 48%;
+			display: inline-block;
+			
+			&:nth-child(even) {
+				margin-left: calc( 100% * 0.03);
+			}
+		}
+		.bl-t-charge {
+			font-size: 1rem;
+		}
+	}
 	#semesters {
 		.bl-course-feature {
 			ul li {
