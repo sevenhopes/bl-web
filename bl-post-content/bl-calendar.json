@@ -114,7 +114,7 @@
 			"holiday": false,
 			"extra": "초등부문, 중등부문, 브릿지라잇 최고의 가수는?",
 			"public": true,
-			"pending": false
+			"pending": true
 		},
 		{
 			"title": "추석",
