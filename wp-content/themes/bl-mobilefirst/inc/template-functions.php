@@ -114,9 +114,12 @@ function blmobilefirst_body_classes( $classes ) {
 		}
 	}
 
-	if ( function_exists( 'pll_current_language' ) ) {
-		$GLOBALS['pll_lang'] = 'pll_'.pll_current_language();
-	}
+	// if ( function_exists( 'pll_current_language' ) ) {
+	// 	$GLOBALS['pll_lang'] = 'pll_'.pll_current_language();
+	// } else {
+	// 	$GLOBALS['pll_lang'] = 'pll_ko';
+	// }
+	$GLOBALS['pll_lang'] = function_exists( 'pll_current_language' ) ? 'pll_'.pll_current_language() : 'pll_ko';
 	$classes[] = $GLOBALS['pll_lang'];
 
 	// Add class of group-blog to blogs with more than 1 published author.
