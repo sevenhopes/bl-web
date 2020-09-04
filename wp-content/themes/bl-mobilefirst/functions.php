@@ -474,6 +474,12 @@ function blmobilefirst_scripts() {
 		);
 	}
 
+	// Though localization is the primary use, it can be used to make any data available to your script that you can normally only get from the server side of WordPress.
+	// https://developer.wordpress.org/reference/functions/wp_localize_script/
+	// 아래 함수는 지역화가 첫번째 쓰임이지만, 또한 (다른 쓰임도 있는데) 보통 워드프레스의 서버측으로부터만 얻을 수 있는 데이타에 개발자의 자바스크립트가 접근이 가능하도록 한다.
+	// 간단히 PHP에서 Javascript로 데이터를 전달할 수 있음.
+	wp_localize_script( 'blmobilefirst-skip-link-focus-fix', 'blmobilefirstScreenReaderText', $blmobilefirst_l10n );
+
 	wp_enqueue_script( 'blmobilefirst-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '20190121', true );
 
 	wp_enqueue_script( 'minified-js', get_stylesheet_directory_uri().'/assets/js/bl.min.js', array( 'jquery' ), '1.1', true );
@@ -481,12 +487,6 @@ function blmobilefirst_scripts() {
 	wp_enqueue_script( 'kakaolink', 'https://developers.kakao.com/sdk/js/kakao.min.js', array(), null );
 
 	// wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
-
-	// Though localization is the primary use, it can be used to make any data available to your script that you can normally only get from the server side of WordPress.
-	// https://developer.wordpress.org/reference/functions/wp_localize_script/
-	// 아래 함수는 지역화가 첫번째 쓰임이지만, 또한 (다른 쓰임도 있는데) 보통 워드프레스의 서버측으로부터만 얻을 수 있는 데이타에 개발자의 자바스크립트가 접근이 가능하도록 한다.
-	// 간단히 PHP에서 Javascript로 데이터를 전달할 수 있음.
-	wp_localize_script( 'blmobilefirst-skip-link-focus-fix', 'blmobilefirstScreenReaderText', $blmobilefirst_l10n );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
