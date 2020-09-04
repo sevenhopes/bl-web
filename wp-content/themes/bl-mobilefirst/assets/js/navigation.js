@@ -36,8 +36,8 @@
 		menumap: "위치안내",
 		menushare: "정보공유",
 		apptvisit: "/admissions/appt-and-visit",
-		langurl: "",
-		langswitch: "English Website"
+		langswitch: "English Website",
+		langurl: "/en/"
 	};
 	$.lang.en = {
 		address: "534, Sports town-gil, Chuncheon-si, Gangwon-do, Republic of Korea",
@@ -48,21 +48,26 @@
 		menumap: "Location",
 		menushare: "Share this page",
 		apptvisit: "/en/admissions-en/appt-and-visit",
-		langurl: "",
-		langswitch: "한국어 웹사이트"
+		langswitch: "한국어 웹사이트",
+		langurl: "/"
 	};
 
 	var $body = $( 'body' ),
 		scrolling = false,
 		current_top = 0,
 		scroll_interval = 350,
+		is_front_page = $body.hasClass( 'home' ),
 		is_widescreen = ( $( '#content' ).width() == 860 );	// 960 - (padding-left 50 + padding-right 50)
 
 		if ( $body.hasClass( 'pll_ko' ) ) {
-			$.lang.ko.langurl = replaceBulk( url, url_ko_cat, url_en_cat );
+			if ( ! is_front_page ) {
+				$.lang.ko.langurl = replaceBulk( url, url_ko_cat, url_en_cat );
+			}
 			langset = $.lang.ko;
 		} else {
-			$.lang.en.langurl = replaceBulk( url, url_en_cat, url_ko_cat );
+			if ( ! is_front_page ) {
+				$.lang.en.langurl = replaceBulk( url, url_en_cat, url_ko_cat );
+			}
 			langset = $.lang.en;
 		}
 
@@ -116,7 +121,7 @@
 			$mainNav = $navTop.find( '.main-navigation' ),
 			$dropdowns = $mainNav.find( '.dropdown-toggle' ), // 모든 드롭다운 버튼(화살표)
 			$sharelayer = $( '.bl-share-layer' ),
-			isFrontPage = $body.hasClass( 'home' ),
+			// isFrontPage = $body.hasClass( 'home' ),
 			site_name = document.head.querySelector('meta[property="og:site_name"]').getAttribute('content'),
 			og_image = document.head.querySelector('meta[property="og:image"]').getAttribute('content');
 
@@ -246,7 +251,7 @@
 			$mainNav.find( '#top-menu' ).html( function() {
 				// var $allmenubtn = ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a href="/admissions/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
 				// var $shareonly =  ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call disabled" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a class="disabled" href="/admissions/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
-				// return $( this ).html() + ( isFrontPage ? $shareonly : $allmenubtn );
+				// return $( this ).html() + ( is_front_page ? $shareonly : $allmenubtn );
 				return $( this ).html()
 					+ ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page">'
 					+ '<div><a class="bl-custom-call" href="tel:033-243-5757"><i class="bl-sp icw-call" title="'
