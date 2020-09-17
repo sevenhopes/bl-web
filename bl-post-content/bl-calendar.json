@@ -1,109 +1,28 @@
 [
 		{
-			"title": "봄학기 개강",
-			"start": "2020-04-06",
-			"end": "2020-04-06",
+			"title": "담임선생님 Greeting 전화상담",
 			"holiday": false,
-			"extra": "새 기분, 새 학기",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "TEPS: Mastery",
-			"start": "2020-04-09",
-			"end": "2020-04-10",
-			"holiday": false,
+			"start": "2020-09-01",
+			"end": "2020-09-02",
 			"extra": null,
 			"public": true,
 			"pending": false
 		},
 		{
-			"title": "총선거일",
-			"start": "2020-04-15",
-			"end": "2020-04-15",
-			"holiday": true,
-			"extra": null,
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "봄맞이 교실 데코레이션",
-			"start": "2020-04-24",
-			"end": "2020-04-24",
+			"title": "가을학기 개강",
 			"holiday": false,
-			"extra": "교실에서 봄내음 느끼며 같이 공부해요.",
+			"start": "2020-09-03",
+			"end": "2020-09-03",
+			"extra": "Let's start again!",
 			"public": true,
 			"pending": false
 		},
 		{
-			"title": "5월 연휴",
-			"start": "2020-04-30",
-			"end": "2020-05-05",
-			"holiday": true,
-			"extra": "부처님오신날, 근로자의날, 어린이날, 징검다리휴원(5.4)",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "중등내신 특별수업: 2학년",
-			"start": "2020-07-15",
-			"end": "2020-07-16",
+			"title": "정기 TEPS 시험",
 			"holiday": false,
-			"extra": "중학생 위한 내신대비수업",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "중등내신 특별수업: 3학년",
-			"start": "2020-07-16",
-			"end": "2020-07-17",
-			"holiday": false,
-			"extra": "중학생 위한 내신대비수업",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "팝송 컨테스트 예선: Basic",
-			"start": "2020-07-30",
-			"end": "2020-07-31",
-			"holiday": false,
-			"extra": "",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "정기 여름방학",
-			"start": "2020-08-10",
-			"end": "2020-08-14",
-			"holiday": true,
-			"extra": "",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "광복절 (대체 휴일)",
-			"start": "2020-08-17",
-			"end": "2020-08-17",
-			"holiday": true,
-			"extra": "",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "팝송 컨테스트 예선: Stage",
-			"start": "2020-08-18",
-			"end": "2020-08-18",
-			"holiday": false,
-			"extra": "",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "정기 TOEIC",
-			"start": "2020-08-19",
-			"end": "2020-08-20",
-			"holiday": false,
-			"extra": "",
+			"start": "2020-09-08",
+			"end": "2020-09-09",
+			"extra": "Mastery Stage",
 			"public": true,
 			"pending": false
 		},
@@ -113,7 +32,7 @@
 			"end": "2020-08-22",
 			"holiday": false,
 			"extra": "초등부문, 중등부문, 브릿지라잇 최고의 가수는?",
-			"public": true,
+			"public": false,
 			"pending": true
 		},
 		{
@@ -126,11 +45,74 @@
 			"pending": false
 		},
 		{
+			"title": "개천절",
+			"holiday": true,
+			"start": "2020-10-03",
+			"end": "2020-10-03",
+			"extra": null,
+			"public": false,
+			"pending": false
+		},
+		{
+			"title": "Halloween Decoration Contest",
+			"holiday": false,
+			"start": "2020-10-04",
+			"end": "2020-10-04",
+			"extra": "할로윈을 맞이하는 올바른 자세",
+			"public": false,
+			"pending": false
+		},
+		{
 			"title": "한글날",
 			"start": "2020-10-09",
 			"end": "2020-10-09",
 			"holiday": true,
 			"extra": "세종대왕님 감사합니다.",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Halloween Party",
+			"holiday": false,
+			"start": "2020-10-30",
+			"end": "2020-10-30",
+			"extra": "Stay scary. Stay crazy.",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "기본과정(Basic) 중간고사",
+			"holiday": false,
+			"start": "2020-11-25",
+			"end": "2020-11-29",
+			"extra": "상세 일정은 레벨마다 다르며, 기간 외에도 가능",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "기말고사대비 중학내신 특별수업",
+			"holiday": false,
+			"start": "2020-11-27",
+			"end": "2020-11-28",
+			"extra": "이번엔 중학교 2학년만 해당",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "Christmas 카드만들기 컨테스트 마감",
+			"holiday": false,
+			"start": "2020-12-01",
+			"end": "2020-12-01",
+			"extra": "초등 부문 & 중등 부문",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "Christmas Party",
+			"holiday": false,
+			"start": "2020-12-24",
+			"end": "2020-12-24",
+			"extra": "With Enjoying Lip Dub",
 			"public": true,
 			"pending": false
 		},
@@ -141,6 +123,123 @@
 			"holiday": true,
 			"extra": "",
 			"public": true,
+			"pending": false
+		},
+		{
+			"title": "정기 겨울방학",
+			"holiday": true,
+			"start": "2020-12-30",
+			"end": "2021-01-03",
+			"extra": "",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "신정",
+			"holiday": true,
+			"start": "2021-01-01",
+			"end": "2021-01-01",
+			"extra": "Happy New Year!",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "설날",
+			"holiday": true,
+			"start": "2021-02-11",
+			"end": "2021-01-12",
+			"extra": "Happy New Year!",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "겨울방학 영어캠프 등록마감",
+			"holiday": false,
+			"start": "2020-02-07",
+			"end": "2020-02-07",
+			"extra": "2주 동안 영어실력 쑥쑥!",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "미국현지체험연수 (Study in America)",
+			"holiday": false,
+			"start": "2020-01-01",
+			"end": "2020-02-01",
+			"extra": "",
+			"public": false,
+			"pending": true
+		},
+		{
+			"title": "정기 TOEIC 시험",
+			"holiday": false,
+			"start": "2020-02-22",
+			"end": "2020-02-23",
+			"extra": "Stage Levels, Basic 6, Special Elementary",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "Staff Luncheon",
+			"holiday": false,
+			"start": "2021-02-19",
+			"end": "2021-02-19",
+			"extra": "",
+			"public": false,
+			"pending": true
+		},
+		{
+			"title": "졸업식 & 장학금 수여식",
+			"holiday": false,
+			"start": "2021-02-27",
+			"end": "2021-02-27",
+			"extra": "",
+			"public": false,
+			"pending": true
+		},
+		{
+			"title": "겨울방학 영어캠프",
+			"holiday": false,
+			"start": "2021-02-17",
+			"end": "2021-03-04",
+			"extra": "Learn! Having Fun!",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "가을학기 종강",
+			"holiday": false,
+			"start": "2021-02-26",
+			"end": "2021-02-26",
+			"extra": "변경된 일정에 유의!",
+			"public": false,
+			"pending": false
+		},
+		{
+			"title": "학기준비기간",
+			"holiday": true,
+			"start": "2021-03-01",
+			"end": "2021-03-02",
+			"extra": "최선을 다해 준비하겠습니다.",
+			"public": false,
+			"pending": true
+		},
+		{
+			"title": "봄학기 개강",
+			"holiday": false,
+			"start": "2021-03-04",
+			"end": "2021-03-04",
+			"extra": "변경된 일정에 유의! 재학생은 원래 교실로, 신입생은 지하1층 로비로 오세요.",
+			"public": false,
+			"pending": false
+		},
+		{
+			"title": "새학기 전화상담",
+			"holiday": false,
+			"start": "2021-03-08",
+			"end": "2021-03-12",
+			"extra": "상담이 예정된 시간을 문자로 알려드립니다.",
+			"public": false,
 			"pending": false
 		},
 		{

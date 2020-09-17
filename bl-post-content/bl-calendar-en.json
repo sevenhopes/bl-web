@@ -1,128 +1,65 @@
 [
 		{
-			"title": "Beginning of Spring Semester",
-			"start": "2020-04-06",
-			"end": "2020-04-06",
+			"title": "Phone Consultation",
 			"holiday": false,
-			"extra": "New class with new feel",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "TEPS: Mastery",
-			"start": "2020-04-09",
-			"end": "2020-04-10",
-			"holiday": false,
+			"start": "2020-09-01",
+			"end": "2020-09-02",
 			"extra": null,
 			"public": true,
 			"pending": false
 		},
 		{
-			"title": "General Election",
-			"start": "2020-04-15",
-			"end": "2020-04-15",
-			"holiday": true,
-			"extra": null,
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "Spring Decoration",
-			"start": "2020-04-24",
-			"end": "2020-04-24",
+			"title": "Start of Fall-Winter Semester",
 			"holiday": false,
-			"extra": "Study together with smelling the spring.",
+			"start": "2020-09-03",
+			"end": "2020-09-03",
+			"extra": "Let's start again!",
 			"public": true,
 			"pending": false
 		},
 		{
-			"title": "Closing of May",
-			"start": "2020-04-30",
-			"end": "2020-05-05",
-			"holiday": true,
-			"extra": "Buddah's day, Labor day, Children's day, temporary closing (5.4)",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "Middle School Test Prep.: 2nd grader",
-			"start": "2020-07-15",
-			"end": "2020-07-16",
+			"title": "Mastery TEPS",
 			"holiday": false,
-			"extra": "Provision for Midterm Exam",
+			"start": "2020-09-08",
+			"end": "2020-09-09",
+			"extra": "Mastery Stage",
 			"public": true,
 			"pending": false
 		},
 		{
-			"title": "Middle School Test Prep.: 3rd grader",
-			"start": "2020-07-16",
-			"end": "2020-07-17",
-			"holiday": false,
-			"extra": "Preparation for Midterm Exam",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "Pop Song Contest: Preliminaries of Basic",
-			"start": "2020-07-30",
-			"end": "2020-07-31",
-			"holiday": false,
-			"extra": "",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "Summer Vacation",
-			"start": "2020-08-10",
-			"end": "2020-08-14",
-			"holiday": true,
-			"extra": "",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "광복절 (대체 휴일)",
-			"start": "2020-08-17",
-			"end": "2020-08-17",
-			"holiday": true,
-			"extra": "",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "Pop Song Contest: Preliminaries of Stage",
-			"start": "2020-08-18",
-			"end": "2020-08-18",
-			"holiday": false,
-			"extra": "",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "BL TOEIC",
-			"start": "2020-08-19",
-			"end": "2020-08-20",
-			"holiday": false,
-			"extra": "",
-			"public": true,
-			"pending": false
-		},
-		{
-			"title": "Pop Song Contest: Finals",
+			"title": "Pop Song Contest Finals",
 			"start": "2020-08-22",
 			"end": "2020-08-22",
 			"holiday": false,
-			"extra": "Be the best singer of Bridge Light!",
-			"public": true,
-			"pending": false
+			"extra": "Be the best singer! You're the one!",
+			"public": false,
+			"pending": true
 		},
 		{
 			"title": "Chooseok",
 			"start": "2020-09-30",
 			"end": "2020-10-02",
 			"holiday": true,
-			"extra": "Jeongwol Daeboreum",
+			"extra": "Daeboreum",
 			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Gaecheonjeol",
+			"holiday": true,
+			"start": "2020-10-03",
+			"end": "2020-10-03",
+			"extra": null,
+			"public": false,
+			"pending": false
+		},
+		{
+			"title": "Halloween Decoration Contest",
+			"holiday": false,
+			"start": "2020-10-04",
+			"end": "2020-10-04",
+			"extra": "A righteous attitude to welcome Halloween",
+			"public": false,
 			"pending": false
 		},
 		{
@@ -130,7 +67,52 @@
 			"start": "2020-10-09",
 			"end": "2020-10-09",
 			"holiday": true,
-			"extra": "Appreciate, Sejong the great.",
+			"extra": "Respect. Sejong the Great.",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Halloween Party",
+			"holiday": false,
+			"start": "2020-10-30",
+			"end": "2020-10-30",
+			"extra": "Stay scary. Stay crazy.",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Basic levels Midterm Exams",
+			"holiday": false,
+			"start": "2020-11-25",
+			"end": "2020-11-29",
+			"extra": "Various schedules by Levels",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "Middle School Test Prep.",
+			"holiday": false,
+			"start": "2020-11-27",
+			"end": "2020-11-28",
+			"extra": "2nd & 3rd graders",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "Christmas Card Contest",
+			"holiday": false,
+			"start": "2020-12-01",
+			"end": "2020-12-01",
+			"extra": "Two divisions: Elementary school & middle school",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "Christmas Party",
+			"holiday": false,
+			"start": "2020-12-24",
+			"end": "2020-12-24",
+			"extra": "With Enjoying Lip Dub",
 			"public": true,
 			"pending": false
 		},
@@ -144,7 +126,124 @@
 			"pending": false
 		},
 		{
-			"title": "Private School Association's Teacher Training",
+			"title": "Winter Vacation",
+			"holiday": true,
+			"start": "2020-12-30",
+			"end": "2021-01-03",
+			"extra": "",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "Sinjeong",
+			"holiday": true,
+			"start": "2021-01-01",
+			"end": "2021-01-01",
+			"extra": "Happy New Year!",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Seollal",
+			"holiday": true,
+			"start": "2021-02-11",
+			"end": "2021-01-12",
+			"extra": "Happy New Year!",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "Deadline of Winter English Camp Registration",
+			"holiday": false,
+			"start": "2020-02-07",
+			"end": "2020-02-07",
+			"extra": "A big growth of two weeks!",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "Study in America",
+			"holiday": false,
+			"start": "2020-01-01",
+			"end": "2020-02-01",
+			"extra": "",
+			"public": false,
+			"pending": true
+		},
+		{
+			"title": "TOEIC",
+			"holiday": false,
+			"start": "2020-02-22",
+			"end": "2020-02-23",
+			"extra": "Stage Levels, Basic 6",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "Staff Luncheon",
+			"holiday": false,
+			"start": "2021-02-19",
+			"end": "2021-02-19",
+			"extra": "",
+			"public": false,
+			"pending": true
+		},
+		{
+			"title": "Commencement & Scholarship Awards",
+			"holiday": false,
+			"start": "2021-02-27",
+			"end": "2021-02-27",
+			"extra": "",
+			"public": false,
+			"pending": true
+		},
+		{
+			"title": "Winter English Camp",
+			"holiday": false,
+			"start": "2021-02-17",
+			"end": "2021-03-04",
+			"extra": "Learn! Having Fun!",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "End of Fall-Winter Semester",
+			"holiday": false,
+			"start": "2021-02-26",
+			"end": "2021-02-26",
+			"extra": "Stay tuned for change of schedule!",
+			"public": false,
+			"pending": false
+		},
+		{
+			"title": "Semester Preparation",
+			"holiday": true,
+			"start": "2021-03-01",
+			"end": "2021-03-02",
+			"extra": "We'll do the best for the new start.",
+			"public": false,
+			"pending": true
+		},
+		{
+			"title": "Start of Spring-Summer Semester",
+			"holiday": false,
+			"start": "2021-03-04",
+			"end": "2021-03-04",
+			"extra": "Just come to your old classroom. New student? Come down to the basement!",
+			"public": false,
+			"pending": false
+		},
+		{
+			"title": "Phone Consultation",
+			"holiday": false,
+			"start": "2021-03-08",
+			"end": "2021-03-12",
+			"extra": "Glad to have a chance to teach your child.",
+			"public": false,
+			"pending": false
+		},
+		{
+			"title": "Hagwon Association Teacher Training",
 			"start": "2021-03-01",
 			"end": "2021-03-01",
 			"holiday": false,
