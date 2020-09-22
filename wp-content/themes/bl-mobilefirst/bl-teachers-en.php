@@ -27,8 +27,8 @@ $teachers = array(
 	new Teacher( "t-david",		"Principal David Orr", "David Orr", array("Stage Program"), "Principal & Founder" ),
 	new Teacher( "t-bomi",		"Vice Principal Bomi Orr", "Bomi K. Orr", array("Basic Program", "Stage Program"), "Vice Principal & Founder" ),
 	new Teacher( "t-yoomi",		"General Manager Yoomi Kim", "Yoomi Kim", array("Enrollment Consultation", "Basic Program"), "General Manager" ),
-	new Teacher( "t-peter", 	"Teacher Sang In Lee (Peter)", "Sang In Lee 'Peter'", array("Stage Program", "Special Program"), "Team Leader" ),
-	new Teacher( "t-dean",		"Teacher Young Ho Yoon (Dean)", "Young Ho Yoon 'Dean'", array("Stage Program", "Basic Program"), "Team Leader" ),
+	new Teacher( "t-peter", 	"Teacher Sang In Lee (Peter)", "Sang In Lee 'Peter'", array("Stage Program"), "Team Leader" ),
+	new Teacher( "t-dean",		"Teacher Young Ho Yoon (Dean)", "Young Ho Yoon 'Dean'", array("Stage Program"), "Team Leader" ),
 	new Teacher( "t-ethan", 	"PR/HR/IT Manager Hyeoksoo Lee (Ethan)", "Hyeoksoo Lee 'Ethan'", array("IT, PR, HR"), "IT Manager" ),
 	new Teacher( "t-eunji", 	"Assistant Manager Eunji Lee", "Eunji Lee", array("Faculty Assist"), "Team Leader" ),
 	new Teacher( "t-rachel",	"Teacher Yeong Jin Hahm (Rachel)","Yeong Jin Hahm 'Rachel'" ),
@@ -43,7 +43,9 @@ $teachers = array(
 	new Teacher( "t-scarlett","Teacher Ji Hyun Lee (Scarlett)",	"Ji Hyun Lee 'Scarlett'" ),
 	new Teacher( "t-jessy",		"Teacher Seon Jeong Yang (Jessy)", "Seon Jeong Yang 'Jessy'" ),
 	new Teacher( "t-yunah",		"Teacher Yun Ah Lee (Yunah)", "Yun Ah Lee 'Yunah'" ),
-	new Teacher( "t-eva",			"Teacher Yeon Ju Lim (Eva)",		"Yeon Ju Lim 'Eva'" ),
+	// new Teacher( "t-eva",			"Teacher Yeon Ju Lim (Eva)",		"Yeon Ju Lim 'Eva'" ),
+	new Teacher( "t-aileen",	"Teacher Eunae Sim (Aileen)", "Eun Ae Sim 'Aileen'" ),
+	new Teacher( "t-yoon",		"Teacher Hyeyoon Kang (Yoon)", "Hey Yoon Kang 'Yoon'" ),
 	new Teacher( "t-judy",		"Consulting Manager Nae Won Kwak (Judy)",	"Nae Won Kwak 'Judy'", array("General Consultation", "Reception"), "Consulting Manager" )
 );
 ?>
