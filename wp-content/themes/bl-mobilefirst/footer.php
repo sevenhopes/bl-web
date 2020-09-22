@@ -39,6 +39,10 @@ $bl_url_en_cat = array( '/en/about-en/', '/en/curriculum-en/', '/en/admissions-e
 $bl_req_uri = $_SERVER['REQUEST_URI'];
 $bl_lang_link = '/';
 
+wp_reset_postdata();
+$bl_p = get_post();
+
+// English to Korean (현재 페이지가 영어, 링크는 한국어페이지)
 if ( $GLOBALS['pll_lang'] !== 'pll_ko' ) {
 	$bl_pagedata['share'] = 'Share';
 	$bl_pagedata['kakao'] = 'Kakaotalk';
@@ -63,9 +67,11 @@ if ( $GLOBALS['pll_lang'] !== 'pll_ko' ) {
 	$bl_pagedata['c-right']='ⓒ Bridge Light Inc 2006-'.date("Y");
 	$bl_pagedata['lang']   ='한국어 웹사이트';
 
-	$bl_lang_link = $bl_req_uri == '/en/' ? '/' : str_replace( $bl_url_en_cat, $bl_url_ko_cat, $bl_req_uri );
+	$bl_lang_link = is_home() ? '/news-n-events' : '/'.pll_get_post( $bl_p->ID, 'ko' );
+
+// Korean to English (현재 페이지가 한국어, 링크는 영어페이지)
 } else {
-	$bl_lang_link = $bl_req_uri == '/' ? '/en/' : str_replace( $bl_url_ko_cat, $bl_url_en_cat, $bl_req_uri );
+	$bl_lang_link = is_home() ? '/en/news-n-events-en' : '/en/'.pll_get_post( $bl_p->ID, 'en' );
 }
 ?>
 
@@ -149,7 +155,13 @@ if ( $GLOBALS['pll_lang'] !== 'pll_ko' ) {
 
 				<div class="bl-dev-code">
 					<?php
-						print_r( $_SERVER ); echo '<p></p>';
+					echo 'bl_p->ID: '.$bl_p->ID.'\n';
+					if ( function_exists( 'pll_get_post') ) {
+						echo 'pll_get_: '.pll_get_post( $bl_p->ID, 'en' );
+					}
+					
+
+						// print_r( $_SERVER ); echo '<p></p>';
 						// echo $_SERVER['HTTP_USER_AGENT'] . "<br>";
 						// echo '<p>c-raw: '.$current_raw.'</p>';
 						// echo '<p>w-raw: '.$weekago_raw.'</p>';
