@@ -22,35 +22,35 @@
 		return str;
 	}
 
-	var url = window.location.pathname,
-		url_ko_cat = ['/about/',		'/curriculum/',			'/admissions/',			'/news-n-events'],
-		url_en_cat = ['/en/about-en/',	'/en/curriculum-en/',	'/en/admissions-en/',	'/en/news-n-events-en'];
+	var url_ko_cat = ['/about/',		'/curriculum/',			'/admissions/',			'/news-n-events'],
+		url_en_cat = ['/en/about-en/',	'/en/curriculum-en/',	'/en/admissions-en/',	'/en/news-n-events-en'],
+		bl_langset = {
+			address: "강원도 춘천시 스포츠타운길 534 (온의동)",
+			linkdesc: "033-243-5757 #영어생활화 #매일수업 #방학영어캠프 #미국연수 #초중영어",
+			pageurlmsg: "이제 현재 페이지 주소를 붙여넣기 할 수 있습니다.",
+			siteurlmsg: "이제 웹사이트 주소를 붙여넣기 할 수 있습니다.",
+			menucall: "전화상담&예약",
+			menumap: "위치안내",
+			menushare: "정보공유",
+			apptvisit: "/admissions/appt-and-visit",
+			langswitch: "English Website",
+			langurl: "/",
 
-	$.lang = {};
-	$.lang.ko = {
-		address: "강원도 춘천시 스포츠타운길 534 (온의동)",
-		linkdesc: "033-243-5757 #영어생활화 #매일수업 #방학영어캠프 #미국연수 #초중영어",
-		pageurlmsg: "이제 현재 페이지 주소를 붙여넣기 할 수 있습니다.",
-		siteurlmsg: "이제 웹사이트 주소를 붙여넣기 할 수 있습니다.",
-		menucall: "전화상담&예약",
-		menumap: "위치안내",
-		menushare: "정보공유",
-		apptvisit: "/admissions/appt-and-visit",
-		langswitch: "English Website",
-		langurl: "/en/"
-	};
-	$.lang.en = {
-		address: "534, Sports town-gil, Chuncheon-si, Gangwon-do, Republic of Korea",
-		linkdesc: "033-243-5757 #DailyEnglishClass #EnglishStudyCamp #MonthLongUSAStudy",
-		pageurlmsg: "Now you can paste the current page's URL.",
-		siteurlmsg: "Now you can paste the website's URL.",
-		menucall: "Phone call",
-		menumap: "Location",
-		menushare: "Share this page",
-		apptvisit: "/en/admissions-en/appt-and-visit",
-		langswitch: "한국어 웹사이트",
-		langurl: "/"
-	};
+			setEnglish: function() {
+				this.address = "534, Sports town-gil, Chuncheon-si, Gangwon-do, Republic of Korea";
+				this.linkdesc = "033-243-5757 #DailyEnglishClass #EnglishStudyCamp #MonthLongUSAStudy";
+				this.pageurlmsg = "Now you can paste the current page's URL.";
+				this.siteurlmsg = "Now you can paste the website's URL.";
+				this.menucall = "Phone call";
+				this.menumap = "Location";
+				this.menushare = "Share this page";
+				this.apptvisit = "/en/admissions-en/appt-and-visit";
+				this.langswitch = "한국어 웹사이트";
+			},
+			setURL: function( url ) {
+				this.langurl = url;
+			}
+		};
 
 	var $body = $( 'body' ),
 		scrolling = false,
@@ -58,19 +58,13 @@
 		scroll_interval = 350,
 		is_front_page = $body.hasClass( 'home' ),
 		is_widescreen = ( $( '#content' ).width() == 860 );	// 960 - (padding-left 50 + padding-right 50)
-
-		if ( $body.hasClass( 'pll_ko' ) ) {
-			if ( ! is_front_page ) {
-				$.lang.ko.langurl = replaceBulk( url, url_ko_cat, url_en_cat );
-			}
-			langset = $.lang.ko;
-		} else {
-			if ( ! is_front_page ) {
-				$.lang.en.langurl = replaceBulk( url, url_en_cat, url_ko_cat );
-			}
-			langset = $.lang.en;
-		}
-
+		
+	if ( $body.hasClass( 'pll_ko' ) ) {
+		bl_langset.setURL( $body.hasClass( 'blog' ) ? '/en/news-n-events-en' : '/' + blmobilefirstScreenReaderText.bl_pll_translation_id );
+	} else {
+		bl_langset.setEnglish();
+		bl_langset.setURL( $body.hasClass( 'blog' ) ? '/news-n-events' : '/' + blmobilefirstScreenReaderText.bl_pll_translation_id );
+	}
 
 	// document.ready() 밖으로 꺼내면 .dropdown-toggle을 선택하지 못 함.
 	// $( document ).ready( function() {
@@ -125,8 +119,8 @@
 			site_name = document.head.querySelector('meta[property="og:site_name"]').getAttribute('content'),
 			og_image = document.head.querySelector('meta[property="og:image"]').getAttribute('content');
 
-		// console.log( 'langset.address: ' + langset.address );
-		// console.log( 'typeof langset.address: ' + typeof langset.address );
+		// console.log( 'bl_langset.address: ' + bl_langset.address );
+		// console.log( 'typeof bl_langset.address: ' + typeof bl_langset.address );
 		// console.log( '$.lang.ko.address: ' + $.lang.ko.address );
 		// console.log( 'typeof $.lang.ko.address: ' + typeof $.lang.ko.address );
 
@@ -252,15 +246,15 @@
 				// var $allmenubtn = ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a href="/admissions/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
 				// var $shareonly =  ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page"><div><a class="bl-custom-call disabled" href="tel:033-243-5757"><i class="bl-sp icw-call" title="전화상담&예약"></i></a></div><div><a class="disabled" href="/admissions/appt-and-visit/"><i class="bl-sp icw-map" title="위치안내"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="정보공유"></i></a></div></li>';
 				// return $( this ).html() + ( is_front_page ? $shareonly : $allmenubtn );
-				return $( this ).html()
-					+ ' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page">'
-					+ '<div><a class="bl-custom-call" href="tel:033-243-5757"><i class="bl-sp icw-call" title="'
-					+ langset.menucall + '"></i></a></div><div><a href="'
-					+ langset.apptvisit + '"><i class="bl-sp icw-map" title="'
-					+ langset.menumap + '"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="' // 하이퍼링크를 js event로 처리
-					+ langset.menushare + '"></i></a></div><div><a href="'
-					+ langset.langurl + '"><i class="bl-sp icw-langswitch" title="'
-					+ langset.langswitch + '"></i></a></div></li>';
+				return $( this ).html() + 
+					' <li id="menu-item-99999" class="bl-custom-menu menu-item menu-item-type-post_type menu-item-object-page">' + 
+					'<div><a class="bl-custom-call" href="tel:033-243-5757"><i class="bl-sp icw-call" title="' + 
+					bl_langset.menucall + '"></i></a></div><div><a href="' + 
+					bl_langset.apptvisit + '"><i class="bl-sp icw-map" title="' + 
+					bl_langset.menumap + '"></i></a></div><div><a class="bl-custom-share" href=""><i class="bl-sp icw-share" title="' + 
+					bl_langset.menushare + '"></i></a></div><div><a href="' + 
+					bl_langset.langurl + '"><i class="bl-sp icw-langswitch" title="' + 
+					bl_langset.langswitch + '"></i></a></div></li>';
 			});
 
 			// 전화하기 커스텀 메뉴 동작: 네비 메뉴 메뉴 닫음
@@ -298,11 +292,11 @@
 			Kakao.Link.createDefaultButton({
 				container: '#bl-share-kakao',
 				objectType: 'location',
-				address: langset.address,
+				address: bl_langset.address,
 				addressTitle: site_name,
 				content: {
 					title: document.title,
-					description: langset.linkdesc,
+					description: bl_langset.linkdesc,
 					imageUrl: og_image,
 					link: {
 						mobileWebUrl: window.location.href,
@@ -344,7 +338,7 @@
 				e.preventDefault();
 				e.stopPropagation();
 				copyPageURL();
-				alert( langset.pageurlmsg );
+				alert( bl_langset.pageurlmsg );
 				$sharelayer.trigger( 'click' );
 			});
 			// 메인 페이지 주소 복사
@@ -352,7 +346,7 @@
 				e.preventDefault();
 				e.stopPropagation();
 				copyHomeURL();
-				alert( langset.siteurlmsg );
+				alert( bl_langset.siteurlmsg );
 				$sharelayer.trigger( 'click' );
 			});
 			// 현재 페이지의 주소 복사
