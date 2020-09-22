@@ -76,11 +76,22 @@ get_header(); ?>
 				<div class="bl-wrap">
 				<?php
 				// Events 글의 아이디로 그 글의 내용인 JSON 코드 파싱
-				$events = json_decode( get_post_field( 'post_content', 2071 ) );
+				$event_page_id = $GLOBALS['pll_lang'] !== 'pll_ko' ? 2236 : 2071;
+				$events = json_decode( get_post_field( 'post_content', $event_page_id ) );
 
 				if ( $events ) :
 					foreach ( $events as $ev ) :
+						$one_day = $ev->{"start"} == $ev->{"end"};
 						$starttime = strtotime( $ev->{"start"} );
+						$endtime = strtotime( $ev->{"end"} );
+
+						if ( $GLOBALS['pll_lang'] !== 'pll_ko' ) {
+							$startdatef = date( "M j D", $starttime );
+							$enddatef = date( substr_compare( $ev->{"start"}, substr( $ev->{"end"}, 5, 2 ), 5, 2) == 0 ? "j D" : "M j D", $endtime );
+						} else {
+							$startdatef = blmobilefirst_w2k( date( "n\월 j\일 D", $starttime ) );
+							$enddatef = blmobilefirst_w2k( date( substr_compare( $ev->{"start"}, substr( $ev->{"end"}, 5, 2 ), 5, 2) == 0 ? "j\일 D" : "n\월 j\일 D", $endtime ) );
+						}
 
 						/* 공개 설정된 이벤트만 보여줌
 						 * 날짜가 정해지지 않은 경우(pending) t-o-day의 텍스트를 '?'로 바꾸고, <time>태그 텍스트에서 날짜 표시 대신 '0월 중'으로 표시
@@ -92,15 +103,15 @@ get_header(); ?>
 						 */
 						if ( $ev->{"public"} ) :
 				?>
-					<div class="bl-event-item<?php echo $ev->{"holiday"} ? ' bl-holiday' : ( $ev->{"public"} ? '' : ' staff-event'); ?>" data-date="<?php echo $ev->{"start"} ?>">
+					<div class="bl-event-item<?php echo $ev->{"holiday"} ? ' bl-holiday' : ''; ?>" data-date="<?php echo $ev->{"start"} ?>">
 						<div class="bl-tear-off">
-							<div class="t-o-day"><?php echo $ev->{"pending"} ? '?' : date( "j", $starttime ) ?></div>
+							<div class="t-o-day"><?php echo date( "j", $starttime ) ?></div>
 							<div class="t-o-mon"><?php echo date( "M", $starttime ) ?></div>
 						</div>
 						<div class="bl-event-info">
 							<h2 class="e-i-title"><?php echo $ev->{"title"} ?></h2>
 							<div class="e-i-date">
-								<time itemprop="startDate" datetime="<?php echo $ev->{"start"} ?>"><?php echo blmobilefirst_w2k( date( $ev->{"pending"} ? "n\월 \중" : "n\월 j\일 D", $starttime ) ) ?></time><?php if ( $ev->{"end"} && ! $ev->{'pending'} ) : $endtime = strtotime( $ev->{"end"} ); ?><time itemprop="endDate" datetime="<?php echo $ev->{"end"} ?>"><?php echo $starttime == strtotime( "-1 day", $endtime ) ? ', ' : ' ~ ' ?><?php echo blmobilefirst_w2k( date( substr_compare( $ev->{"start"}, substr( $ev->{"end"}, 5, 2 ), 5, 2) == 0 ? "j\일 D" : "n\월 j\일 D", $endtime ) ) ?></time><?php endif; ?>
+								<time itemprop="startDate" datetime="<?php echo $ev->{"start"} ?>"><?php echo $startdatef ?></time><?php if ( ! $one_day ) : ?><time itemprop="endDate" datetime="<?php echo $ev->{"end"} ?>"><?php echo $starttime == strtotime( "-1 day", $endtime ) || isset( $ev->{"separated"} ) ? ', ': ' ~ ' ?><?php echo $enddatef ?></time><?php endif; ?>
 							</div>
 							<div class="e-i-extra"><?php echo $ev->{"extra"} ?></div>
 						</div>
