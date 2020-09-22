@@ -99,6 +99,9 @@ function browser_body_class( $classes ) {
 function blmobilefirst_body_classes( $classes ) {
 	global $is_IE, $GLOBALS;
 
+	// 현재 페이지의 PolyLang 언어가 무엇인지 <body> class에 추가
+	$classes[] = $GLOBALS['pll_lang'];
+
 	// screen-medium = 태블릿 화면, screen-small = 폰화면, screen-large = 데스크탑 화면
 	if ( wp_is_mobile() ) {
 		if ( blmobilefirst_is_tablet() ) {
@@ -113,14 +116,6 @@ function blmobilefirst_body_classes( $classes ) {
 			$classes[] = 'browser-ie';
 		}
 	}
-
-	// if ( function_exists( 'pll_current_language' ) ) {
-	// 	$GLOBALS['pll_lang'] = 'pll_'.pll_current_language();
-	// } else {
-	// 	$GLOBALS['pll_lang'] = 'pll_ko';
-	// }
-	$GLOBALS['pll_lang'] = function_exists( 'pll_current_language' ) ? 'pll_'.pll_current_language() : 'pll_ko';
-	$classes[] = $GLOBALS['pll_lang'];
 
 	// Add class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
