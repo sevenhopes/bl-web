@@ -25,9 +25,9 @@ get_header(); ?>
 
 		<div class="bl-wrap">
 			<ul>
-				<li>전화 : 033-243-5757 / 033-243-8484</li>
-				<li>운영시간 : 월 ~ 금 14:00 ~ 21:00</li>
-				<li class="bl-ue">상담·방문 전 꼭 전화로 예약을 부탁 드립니다.</li>
+				<li>Telephone/Fax : 033-243-5757 / 033-243-8484</li>
+				<li>Business Hours : 2:00 pm ~ 9:00 pm, Mon to Fri</li>
+				<li class="bl-ue">Make a reservation call before your visit, please.</li>
 			</ul>
 		</div>
 	</div>
@@ -40,8 +40,8 @@ get_header(); ?>
 		<div class="bl-wrap">
 			<h3>Address</h3>
 			<ul>
-				<li>도로명 : 강원도 춘천시 스포츠타운길 534</li>
-				<li>지번명 : 강원도 춘천시 온의동 65-27</li>
+				<li>Address : (24433) 534, Sports town-gil, Chuncheon-si, Gangwon-do</li>
+				<!-- <li>지번명 : 강원도 춘천시 온의동 65-27</li> -->
 			</ul>
 
 			<h3>Map View</h3>
