@@ -10,7 +10,7 @@
  * @version 1.3.1
  */
 
-$GLOBALS['pll_lang'] = 'pll_ko';
+// $GLOBALS['pll_lang'] = 'pll_ko';
 
 // 4.7 미만 버전에 테마 적용하려면 알림
 if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
@@ -472,6 +472,17 @@ function blmobilefirst_scripts() {
 				'fallback' => true,
 			)
 		);
+	}
+
+	$GLOBALS['pll_lang'] = function_exists( 'pll_current_language' ) ? 'pll_'.pll_current_language() : 'pll_ko';
+
+	if ( function_exists( 'pll_get_post' ) ) {
+		wp_reset_postdata();
+		$bl_p = get_post();
+		$bl_pll_lang = pll_current_language();
+		$bl_translation_lang = $bl_pll_lang == 'ko' ? 'en' : 'ko';
+		$blmobilefirst_l10n['bl_post_id'] = __( $bl_p->ID, 'blmobilefirst' );
+		$blmobilefirst_l10n['bl_pll_translation_id'] = __( pll_get_post( $bl_p->ID, $bl_translation_lang ), 'blmobilefirst' );
 	}
 
 	// Though localization is the primary use, it can be used to make any data available to your script that you can normally only get from the server side of WordPress.
