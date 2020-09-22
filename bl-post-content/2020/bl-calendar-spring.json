@@ -1,0 +1,137 @@
+[
+		{
+			"title": "봄학기 개강",
+			"start": "2020-04-06",
+			"end": "2020-04-06",
+			"holiday": false,
+			"extra": "새 기분, 새 학기",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "TEPS: Mastery",
+			"start": "2020-04-09",
+			"end": "2020-04-10",
+			"holiday": false,
+			"extra": null,
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "총선거일",
+			"start": "2020-04-15",
+			"end": "2020-04-15",
+			"holiday": true,
+			"extra": null,
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "봄맞이 교실 데코레이션",
+			"start": "2020-04-24",
+			"end": "2020-04-24",
+			"holiday": false,
+			"extra": "교실에서 봄내음 느끼며 같이 공부해요.",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "5월 연휴",
+			"start": "2020-04-30",
+			"end": "2020-05-05",
+			"holiday": true,
+			"extra": "부처님오신날, 근로자의날, 어린이날, 징검다리휴원(5.4)",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "중등내신 특별수업: 2학년",
+			"start": "2020-07-15",
+			"end": "2020-07-16",
+			"holiday": false,
+			"extra": "중학생 위한 내신대비수업",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "중등내신 특별수업: 3학년",
+			"start": "2020-07-16",
+			"end": "2020-07-17",
+			"holiday": false,
+			"extra": "중학생 위한 내신대비수업",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "팝송 컨테스트 예선: Basic",
+			"start": "2020-07-30",
+			"end": "2020-07-31",
+			"holiday": false,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "정기 여름방학",
+			"start": "2020-08-10",
+			"end": "2020-08-14",
+			"holiday": true,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "광복절 (대체 휴일)",
+			"start": "2020-08-17",
+			"end": "2020-08-17",
+			"holiday": true,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "팝송 컨테스트 예선: Stage",
+			"start": "2020-08-18",
+			"end": "2020-08-18",
+			"holiday": false,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "정기 TOEIC",
+			"start": "2020-08-19",
+			"end": "2020-08-20",
+			"holiday": false,
+			"extra": "",
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "팝송 컨테스트 본선",
+			"start": "2020-08-22",
+			"end": "2020-08-22",
+			"holiday": false,
+			"extra": "초등부문, 중등부문, 브릿지라잇 최고의 가수는?",
+			"public": true,
+			"pending": true
+		},
+		{
+			"title": "담임선생님 Greeting 전화상담",
+			"holiday": false,
+			"start": "2019-09-16",
+			"end": "2019-09-20",
+			"extra": null,
+			"public": true,
+			"pending": false
+		},
+		{
+			"title": "가을학기 개강",
+			"holiday": false,
+			"start": "2019-09-04",
+			"end": "2019-09-04",
+			"extra": "Let's start again!",
+			"public": true,
+			"pending": false
+		}
+]
