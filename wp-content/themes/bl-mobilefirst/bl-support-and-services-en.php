@@ -37,7 +37,7 @@ get_header(); ?>
 			<h3>Birthday</h3>
 			<p class="bl-p">Since the interest that teachers have in their students is the starting point of good education, Bridge Light does care about the birthdays of its students. The kinds of the birthday gift change every year and items that help students study more effectively are chosen with care as the gift.</p>
 
-			<img class="size-full wp-image-1703" src="/wp-content/uploads/2019/09/birthday-gift.jpg" alt="브릿지라잇의 원생 생일 축하" width="1200" height="675" />
+			<img loading="lazy" class="size-full wp-image-1703" src="/wp-content/uploads/2019/09/birthday-gift.jpg" alt="브릿지라잇의 원생 생일 축하" width="1200" height="675" />
 
 			<h3>Children’s Day</h3>
 			<p class="bl-p">Making children feel like they are special, especially when they have infinite possibilities, can be a huge encouragement to them throughout their lifetime. Every year, Bridge Light gives special gifts to all of its students in celebration of Children’s Day.</p>
@@ -55,7 +55,7 @@ get_header(); ?>
 		<div class="bl-wrap">
 			<p class="bl-p">Bridge Light runs buses to all areas of Chuncheon for the convenience of its students. When the buses arrive at Bridge Light, the teachers guide the students to the school safely with a warm heart.</p>
 
-			<img class="size-full wp-image-1777" src="/wp-content/uploads/2019/09/ig-busing-map.png" alt="통학버스 춘천전역 운행" width="1200" height="970" />
+			<img loading="lazy" class="size-full wp-image-1777" src="/wp-content/uploads/2019/09/ig-busing-map.png" alt="통학버스 춘천전역 운행" width="1200" height="970" />
 
 			<div class="bl-bus-route">
 				<h3>Bus Routes</h3>

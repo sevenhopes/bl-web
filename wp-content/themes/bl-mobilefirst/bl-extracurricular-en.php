@@ -68,7 +68,7 @@ get_header(); ?>
 		<div class="bl-block-header">
 			<h2 class="bl-block-title">Christmas Party</h2>
 			<div class="bl-block-header-media">
-				<img class="wp-image-1802 size-full" src="/wp-content/uploads/2019/09/christmas-party.jpg" alt="크리스마스 파티" width="1200" height="675" />
+				<img loading="lazy" class="wp-image-1802 size-full" src="/wp-content/uploads/2019/09/christmas-party.jpg" alt="크리스마스 파티" width="1200" height="675" />
 			</div>
 		</div>
 

@@ -59,7 +59,7 @@ get_header(); ?>
 		<div class="bl-block-header">
 			<h2 class="bl-block-title">문법 캠프</h2>
 			<div class="bl-block-header-media">
-				<img class="size-full wp-image-1481" src="/wp-content/uploads/2019/09/camp-grammar.jpg" alt="영어문법캠프" width="1200" height="675" />
+				<img loading="lazy" class="size-full wp-image-1481" src="/wp-content/uploads/2019/09/camp-grammar.jpg" alt="영어문법캠프" width="1200" height="675" />
 			</div>
 		</div>
 
@@ -93,7 +93,7 @@ get_header(); ?>
 		<div class="bl-block-header">
 			<h2 class="bl-block-title">논쟁 캠프</h2>
 			<div class="bl-block-header-media">
-				<img class="size-full wp-image-1483" src="/wp-content/uploads/2019/06/camp-debate.jpg" alt="영어논쟁캠프" width="1200" height="675" />
+				<img loading="lazy" class="size-full wp-image-1483" src="/wp-content/uploads/2019/06/camp-debate.jpg" alt="영어논쟁캠프" width="1200" height="675" />
 			</div>
 		</div>
 

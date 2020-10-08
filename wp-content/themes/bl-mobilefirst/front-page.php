@@ -81,22 +81,24 @@ if ( $GLOBALS['pll_lang'] !== 'pll_ko' ) {
 				<div class="bl-slides">
 				<?php
 				$slides = json_decode( get_post_field( 'post_content', $bl_pagedata['slide id'] ) );
+				$loading = 'eager';
 
 				foreach ( (array) $slides as $s ) :
 				?>
 					<a href="<?php echo $s->link ?>">
 						<div class="bl-link-wrapper">
-							<img class="size-medium wp-image-<?php echo $s->attach ?>" src="<?php echo $s->src ?>" srcset="<?php echo wp_get_attachment_image_srcset( $s->attach ) ?>" sizes="100vw" />
+							<img loading="<?php echo $loading ?>" class="size-medium wp-image-<?php echo $s->attach ?>" src="<?php echo $s->src ?>" srcset="<?php echo wp_get_attachment_image_srcset( $s->attach ) ?>" sizes="100vw" />
 							<div class="bl-slide-title"><h2><?php echo $s->title ?></h2></div>
 							<div class="bl-slide-caption"><?php echo $s->caption ?></div>
 						</div>
 					</a>
 				<?php
+				$loading = 'lazy';
 				endforeach;
 				?>
 				</div>
 				<div class="creed">
-					<img src="/wp-content/themes/bl-mobilefirst/assets/images/widescreen/creed_en.jpg?ver=1.0" width="320" height="270" alt="교육 신조" />
+					<img loading="auto" src="/wp-content/themes/bl-mobilefirst/assets/images/widescreen/creed_en.jpg?ver=1.0" width="320" height="270" alt="교육 신조" />
 				</div>
 			</div>
 
@@ -262,7 +264,7 @@ if ( $GLOBALS['pll_lang'] !== 'pll_ko' ) {
 				<a href="/about/why-bridge-light/">
 					<div class="bl-link-wrapper">
 						<div class="bl-block-header-media">
-							<img class="size-medium wp-image-2020" src="/wp-content/uploads/2020/02/main-building-at-night.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 2020 ) ?>" sizes="100vw" alt="<?php echo $bl_pagedata['why alt'] ?>" />
+							<img loading="lazy" class="size-medium wp-image-2020" src="/wp-content/uploads/2020/02/main-building-at-night.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 2020 ) ?>" sizes="100vw" alt="<?php echo $bl_pagedata['why alt'] ?>" />
 						</div>
 						<div class="bl-wrap">
 							<p class="bl"><?php echo $bl_pagedata['why intro'] ?></p>
@@ -278,7 +280,7 @@ if ( $GLOBALS['pll_lang'] !== 'pll_ko' ) {
 				<a href="/curriculum/course-overview/">
 					<div class="bl-link-wrapper">
 						<div class="bl-block-header-media">
-							<img class="size-medium wp-image-2023" src="/wp-content/uploads/2020/02/Graphic-Roadmap-2019-09v2.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 2023 ) ?>" sizes="100vw" alt="<?php echo $bl_pagedata['curr alt'] ?>" />
+							<img loading="lazy" class="size-medium wp-image-2023" src="/wp-content/uploads/2020/02/Graphic-Roadmap-2019-09v2.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 2023 ) ?>" sizes="100vw" alt="<?php echo $bl_pagedata['curr alt'] ?>" />
 						</div>
 						<div class="bl-wrap">
 							<p class="bl"><?php echo $bl_pagedata['curr intro'] ?></p>
@@ -294,7 +296,7 @@ if ( $GLOBALS['pll_lang'] !== 'pll_ko' ) {
 				<a href="/admission/admission-process/">
 					<div class="bl-link-wrapper">
 						<div class="bl-block-header-media">
-							<img class="size-medium wp-image-802" src="/wp-content/uploads/2019/04/summer-musical-camp-2018.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 802 ) ?>" sizes="100vw" alt="<?php echo $bl_pagedata['go alt'] ?>" />
+							<img loading="lazy" class="size-medium wp-image-802" src="/wp-content/uploads/2019/04/summer-musical-camp-2018.jpg" srcset="<?php echo wp_get_attachment_image_srcset( 802 ) ?>" sizes="100vw" alt="<?php echo $bl_pagedata['go alt'] ?>" />
 						</div>
 						<div class="bl-wrap">
 							<p class="bl"><?php echo $bl_pagedata['go intro'] ?></p>
